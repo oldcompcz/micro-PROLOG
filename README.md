@@ -1,7 +1,7 @@
 # micro-PROLOG
 Disassembled code of SPECTRUM micro-PROLOG T1.0
 
-![pic1.png](pictures/Micro-PROLOG.gif)
+![pic1.png](pictures/Micro-PROLOG.png)
 
 ## 1. Introduction
 
