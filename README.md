@@ -9,7 +9,7 @@ Disassembled code of SPECTRUM micro-PROLOG T1.0
 
 The first versions were implemented at Imperial College London, by Frank McCabe and Richard Ennals, under the supervision of Robert Kowalski between 1979 and 1980.
 
-Marketed from 1980 by the British company LPA Ldt. ( Logic Programming Associates Limited ), 8-bit versions were made for several computers, such as the ZX Spectrum, Commodore 64, BBC Micro, MSX and the Apple II, among others. A version for the CP/M operating system was also released.
+Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates Limited), 8-bit versions were made for several computers, such as the ZX Spectrum, Commodore 64, BBC Micro, MSX and the Apple II, among others. A version for the CP/M operating system was also released.
 
 ## 2. Resources
 
