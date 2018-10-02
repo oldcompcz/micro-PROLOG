@@ -5,12 +5,17 @@ Disassembled code of SPECTRUM micro-PROLOG T1.0
 
 ## 1. Introduction
 
-[Micro-PROLOG](http://www.worldofspectrum.org/infoseekid.cgi?id=0008429) is a variant or dialect of the PROLOG language, initially created for 8-bit microcomputers, popularized in the early 1980s. It was used in public education, usually as an introduction to logic programming and Artificial Intelligence.
+[Micro-PROLOG](http://www.worldofspectrum.org/infoseekid.cgi?id=0008429) is a variant or dialect of the PROLOG language, initially created for 8-bit microcomputers, popularised in the early 1980s. It was used in public education, usually as an introduction to logic programming and Artificial Intelligence.
+
+The first versions were implemented at Imperial College London, by Frank McCabe and Richard Ennals, under the supervision of Robert Kowalski between 1979 and 1980.
+
+Marketed from 1980 by the British company LPA Ldt. ( Logic Programming Associates Limited ), 8-bit versions were made for several computers, such as the ZX Spectrum, Commodore 64, BBC Micro, MSX and the Apple II, among others. A version for the CP/M operating system was also released.
 
 ## 2. Resources
 
 * [SPECTRUM micro-PROLOG Manual](http://www.worldofspectrum.org/pub/sinclair/games-info/m/Micro-PROLOG.pdf) in PDF
 * [SPECTRUM micro-PROLOG Primer](http://www.worldofspectrum.org/pub/sinclair/games-info/m/Micro-PROLOGPrimer.pdf) in PDF
+* [The Czech version of the manual](https://sam.speccy.cz/olddocs/microprolog_use-man_cz.pdf)
 
 ## 2. CP/M version resources
 
