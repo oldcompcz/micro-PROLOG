@@ -30,6 +30,7 @@ Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates 
 ## 2.3 Other sources
 
 * [Microcomputer PROLOG implementations: The state-of-the-art](http://www.berghel.com/publications/micropro/micropro_ncc87.pdf) (1987)
+* [Logické programování v malém](http://www.abclinuxu.cz/blog/squeaker/2018/10/logicke-programovani-v-malem) (article, Czech)
 
 ## 3. How to compile
 
