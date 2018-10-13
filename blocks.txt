@@ -1,0 +1,74 @@
+; comment
+
+;test_bytedata:	start 0x0100 end 0x0200 type bytedata
+;test_worddata:	start 0x0200 end 0x0300 type worddata
+;test_code:	start 0x0300 end 0x0500 type code
+;test_pointers:	start 0x0400 end 0x0410 type pointers
+
+nospace_string:	start 0x62e9 end 0x62f7 type bytedata
+dictfull_string: start 0x62f8 end 0x6309 type bytedata
+
+WRITE_string: start 0x69C8 end 0x69CD type bytedata
+READ_string: start 0x6C46 end 0x6C4A type bytedata
+INTOK_string: start 0x6F0D end 0x6F12 type bytedata
+LISTP_string: start 0x6F66 end 0x6F6B type bytedata
+RFILL_string: start 0x7246 end 0x724B type bytedata
+CON__string: start 0x72AE end 0x72B2 type bytedata
+LST__string: start 0x734F end 0x7353 type bytedata
+RDR__string: start 0x737D end 0x7381 type bytedata
+NEW_string: start 0x7585 end 0x7588 type bytedata
+NUM_string: start 0x7592 end 0x7595 type bytedata
+VAR_string: start 0x75AB end 0x75AE type bytedata
+LST_string: start 0x75C4 end 0x75C7 type bytedata
+CON_string: start 0x75DD end 0x75E0 type bytedata
+FAIL_string: start 0x7602 end 0x7606 type bytedata
+SYS_string: start 0x7613 end 0x7616 type bytedata
+CMOD_string: start 0x76BB end 0x76BF type bytedata
+OPMOD_string: start 0x76E7 end 0x76EC type bytedata
+CRMOD_string: start 0x772C end 0x7731 type bytedata
+CLMOD_string: start 0x7810 end 0x7815 type bytedata
+SPACE_string: start 0x78DD end 0x78E2 type bytedata
+CHAROF_string: start 0x7B82 end 0x7B88 type bytedata
+STRINGOF_string: start 0x7BF4 end 0x7BFC type bytedata
+ADDCL_string: start 0x7D2C end 0x7D31 type bytedata
+KILL_string: start 0x7F71 end 0x7F75 type bytedata
+ABORT_string: start 0x7FE8 end 0x7FED type bytedata
+LNE_string: start 0x7FFE end 0x8001 type bytedata
+PNT_string: start 0x80C2 end 0x80C5 type bytedata
+RND_string: start 0x816D end 0x8170 type bytedata
+BP_string: start 0x81F8 end 0x81FA type bytedata
+CLS_string: start 0x8231 end 0x8234 type bytedata
+PIO_string: start 0x8278 end 0x827B type bytedata
+BORDER_string: start 0x82DA end 0x82E0 type bytedata
+HYBRID_string: start 0x831E end 0x8324 type bytedata
+NORMAL_string: start 0x833B end 0x8341 type bytedata
+INKEY_string: start 0x835C end 0x8361 type bytedata
+NOT_string: start 0x83B5 end 0x83B8 type bytedata
+EQ_string: start 0x83F8 end 0x83FA type bytedata
+IF_string: start 0x841C end 0x841E type bytedata
+OR_string: start 0x846A end 0x846C type bytedata
+CL_string: start 0x7D2F end 0x7D31 type bytedata
+DELCL_string: start 0x85B4 end 0x85B9 type bytedata
+LOAD_string: start 0x8629 end 0x862D type bytedata
+SAVE_string: start 0x8767 end 0x876B type bytedata
+LIST_string: start 0x87AB end 0x87AF type bytedata
+ALL_string: start 0x87B9 end 0x87BC type bytedata
+_SUP__string: start 0x8837 end 0x883C type bytedata
+DICT_string: start 0x8924 end 0x8928 type bytedata
+ISALL_string: start 0x8A0D end 0x8A12 type bytedata
+FORALL_string: start 0x8AA6 end 0x8AAC type bytedata
+SUM_string: start 0x8B1E end 0x8B21 type bytedata
+LESS_string: start 0x8CD1 end 0x8CD5 type bytedata
+SIGN_string: start 0x8D55 end 0x8D59 type bytedata
+INT_string: start 0x8DA6 end 0x8DA9 type bytedata
+OPEN_string: start 0x9481 end 0x9485 type bytedata
+CREATE_string: start 0x94D1 end 0x94D7 type bytedata
+CLOSE_string: start 0x953C end 0x9541 type bytedata
+
+BLOCK_OK___string: start 0x922A end 0x9234 type bytedata
+READ_ERROR_string: start 0x923A end 0x9244 type bytedata
+_ERROR__string: start 0x9749 end 0x9750 type bytedata
+
+INTRO_string: start 0x962C end 0x9663 type bytedata ; bitAnd 127
+BYTESFREE_string: start 0x96A4 end 0x96B0 type bytedata ; bitAnd 127
+

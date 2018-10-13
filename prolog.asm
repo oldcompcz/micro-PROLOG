@@ -301,10 +301,10 @@ sub_6259h:
 	inc bc			;626a	03 	. 
 	ld h,b			;626b	60 	` 
 l626ch:
-	ld hl,l62e9h		;626c	21 e9 62 	! . b 
+	ld hl,nospace_string_start		;626c	21 e9 62 	! . b 
 	jr l6274h		;626f	18 03 	. . 
 l6271h:
-	ld hl,l62f8h		;6271	21 f8 62 	! . b 
+	ld hl,dictfull_string_start		;6271	21 f8 62 	! . b 
 l6274h:
 	call sub_72a1h		;6274	cd a1 72 	. . r 
 	call sub_739bh		;6277	cd 9b 73 	. . s 
@@ -342,7 +342,7 @@ l62a7h:
 	ld a,(hl)			;62b2	7e 	~ 
 	cp 003h		;62b3	fe 03 	. . 
 	jr z,l62c7h		;62b5	28 10 	( . 
-	ld hl,l6309h		;62b7	21 09 63 	! . c 
+	ld hl,dictfull_string_end		;62b7	21 09 63 	! . c 
 	call sub_72a1h		;62ba	cd a1 72 	. . r 
 	pop hl			;62bd	e1 	. 
 	call sub_6b26h		;62be	cd 26 6b 	. & k 
@@ -365,12 +365,46 @@ l62c7h:
 	jp nz,l6106h		;62e0	c2 06 61 	. . a 
 	call sub_9623h		;62e3	cd 23 96 	. # . 
 	jp l6106h		;62e6	c3 06 61 	. . a 
-l62e9h:
-	defb "No Space left\r\0"
 
-l62f8h:
-        defb "Dictionary full\r\0"
-l6309h:
+; BLOCK 'nospace_string' (start 0x62e9 end 0x62f7)
+nospace_string_start:
+	defb 04eh		;62e9	4e 	N 
+	defb 06fh		;62ea	6f 	o 
+	defb 020h		;62eb	20 	  
+	defb 053h		;62ec	53 	S 
+	defb 070h		;62ed	70 	p 
+	defb 061h		;62ee	61 	a 
+	defb 063h		;62ef	63 	c 
+	defb 065h		;62f0	65 	e 
+	defb 020h		;62f1	20 	  
+	defb 06ch		;62f2	6c 	l 
+	defb 065h		;62f3	65 	e 
+	defb 066h		;62f4	66 	f 
+	defb 074h		;62f5	74 	t 
+	defb 00dh		;62f6	0d 	. 
+nospace_string_end:
+	nop			;62f7	00 	. 
+
+; BLOCK 'dictfull_string' (start 0x62f8 end 0x6309)
+dictfull_string_start:
+	defb 044h		;62f8	44 	D 
+	defb 069h		;62f9	69 	i 
+	defb 063h		;62fa	63 	c 
+	defb 074h		;62fb	74 	t 
+	defb 069h		;62fc	69 	i 
+	defb 06fh		;62fd	6f 	o 
+	defb 06eh		;62fe	6e 	n 
+	defb 061h		;62ff	61 	a 
+	defb 072h		;6300	72 	r 
+	defb 079h		;6301	79 	y 
+	defb 020h		;6302	20 	  
+	defb 066h		;6303	66 	f 
+	defb 075h		;6304	75 	u 
+	defb 06ch		;6305	6c 	l 
+	defb 06ch		;6306	6c 	l 
+	defb 00dh		;6307	0d 	. 
+	defb 000h		;6308	00 	. 
+dictfull_string_end:
 	ld b,l			;6309	45 	E 
 	ld (hl),d			;630a	72 	r 
 	ld (hl),d			;630b	72 	r 
@@ -419,7 +453,6 @@ l6358h:
 	inc b			;635a	04 	. 
 	dec b			;635b	05 	. 
 	ld hl,(0984bh)		;635c	2a 4b 98 	* K . 
-l635fh:
 	ld (09855h),hl		;635f	22 55 98 	" U . 
 	jr z,l636bh		;6362	28 07 	( . 
 l6364h:
@@ -1430,7 +1463,16 @@ l69a5h:
 	ld l,h			;69c4	6c 	l 
 	inc b			;69c5	04 	. 
 	adc a,069h		;69c6	ce 69 	. i 
-	defb "WRITE", 255
+
+; BLOCK 'WRITE_string' (start 0x69c8 end 0x69cd)
+WRITE_string_start:
+	defb 057h		;69c8	57 	W 
+	defb 052h		;69c9	52 	R 
+	defb 049h		;69ca	49 	I 
+	defb 054h		;69cb	54 	T 
+	defb 045h		;69cc	45 	E 
+WRITE_string_end:
+	rst 38h			;69cd	ff 	. 
 	ld ix,l69d5h		;69ce	dd 21 d5 69 	. ! . i 
 	jp l65f7h		;69d2	c3 f7 65 	. . e 
 l69d5h:
@@ -1847,7 +1889,15 @@ sub_6c34h:
 	inc b			;6c43	04 	. 
 	ld c,e			;6c44	4b 	K 
 	ld l,h			;6c45	6c 	l 
-	defb "READ", 255
+
+; BLOCK 'READ_string' (start 0x6c46 end 0x6c4a)
+READ_string_start:
+	defb 052h		;6c46	52 	R 
+	defb 045h		;6c47	45 	E 
+	defb 041h		;6c48	41 	A 
+	defb 044h		;6c49	44 	D 
+READ_string_end:
+	rst 38h			;6c4a	ff 	. 
 	ld ix,l6c52h		;6c4b	dd 21 52 6c 	. ! R l 
 	jp l65f7h		;6c4f	c3 f7 65 	. . e 
 l6c52h:
@@ -2312,7 +2362,16 @@ l6f01h:
 	inc b			;6f0a	04 	. 
 	inc de			;6f0b	13 	. 
 	ld l,a			;6f0c	6f 	o 
-	defb "INTOK", 255
+
+; BLOCK 'INTOK_string' (start 0x6f0d end 0x6f12)
+INTOK_string_start:
+	defb 049h		;6f0d	49 	I 
+	defb 04eh		;6f0e	4e 	N 
+	defb 054h		;6f0f	54 	T 
+	defb 04fh		;6f10	4f 	O 
+	defb 04bh		;6f11	4b 	K 
+INTOK_string_end:
+	rst 38h			;6f12	ff 	. 
 	ld ix,l6f1ah		;6f13	dd 21 1a 6f 	. ! . o 
 	jp l65f7h		;6f17	c3 f7 65 	. . e 
 l6f1ah:
@@ -2369,7 +2428,16 @@ l6f53h:
 	inc b			;6f63	04 	. 
 	ld l,h			;6f64	6c 	l 
 	ld l,a			;6f65	6f 	o 
-	defb "LISTP", 255
+
+; BLOCK 'LISTP_string' (start 0x6f66 end 0x6f6b)
+LISTP_string_start:
+	defb 04ch		;6f66	4c 	L 
+	defb 049h		;6f67	49 	I 
+	defb 053h		;6f68	53 	S 
+	defb 054h		;6f69	54 	T 
+	defb 050h		;6f6a	50 	P 
+LISTP_string_end:
+	rst 38h			;6f6b	ff 	. 
 	ld ix,l6f73h		;6f6c	dd 21 73 6f 	. ! s o 
 	jp l65f7h		;6f70	c3 f7 65 	. . e 
 l6f73h:
@@ -2724,7 +2792,7 @@ l71a2h:
 	or a			;71a5	b7 	. 
 	sbc hl,de		;71a6	ed 52 	. R 
 	jr nz,l71afh		;71a8	20 05 	  . 
-	ld hl,07354h		;71aa	21 54 73 	! T s 
+	ld hl,l7354h		;71aa	21 54 73 	! T s 
 	jr l719eh		;71ad	18 ef 	. . 
 l71afh:
 	ld hl,l7363h		;71af	21 63 73 	! c s 
@@ -2763,7 +2831,7 @@ l71f0h:
 	or a			;71f3	b7 	. 
 	sbc hl,de		;71f4	ed 52 	. R 
 	jr nz,l7205h		;71f6	20 0d 	  . 
-	ld hl,07382h		;71f8	21 82 73 	! . s 
+	ld hl,l7382h		;71f8	21 82 73 	! . s 
 	ld (09866h),hl		;71fb	22 66 98 	" f . 
 	ld hl,l7397h		;71fe	21 97 73 	! . s 
 	ld (09869h),hl		;7201	22 69 98 	" i . 
@@ -2814,7 +2882,16 @@ l7205h:
 	inc b			;7243	04 	. 
 	ld c,h			;7244	4c 	L 
 	ld (hl),d			;7245	72 	r 
-	defb "RFILL", 255
+
+; BLOCK 'RFILL_string' (start 0x7246 end 0x724b)
+RFILL_string_start:
+	defb 052h		;7246	52 	R 
+	defb 046h		;7247	46 	F 
+	defb 049h		;7248	49 	I 
+	defb 04ch		;7249	4c 	L 
+	defb 04ch		;724a	4c 	L 
+RFILL_string_end:
+	rst 38h			;724b	ff 	. 
 	ld hl,l755ch		;724c	21 5c 75 	! \ u 
 	ld (0986ch),hl		;724f	22 6c 98 	" l . 
 	ld a,001h		;7252	3e 01 	> . 
@@ -2870,9 +2947,18 @@ sub_72a1h:
 l72abh:
 	ld b,0ffh		;72ab	06 ff 	. . 
 	rst 38h			;72ad	ff 	. 
-	defb "CON:", 255, 0eh
-	ld b,01eh		;72b4	06 1e 	. . 
-	rst 38h			;72b6	ff 	. 
+
+; BLOCK 'CON__string' (start 0x72ae end 0x72b2)
+CON__string_start:
+	defb 043h		;72ae	43 	C 
+	defb 04fh		;72af	4f 	O 
+	defb 04eh		;72b0	4e 	N 
+	defb 03ah		;72b1	3a 	: 
+CON__string_end:
+	rst 38h			;72b2	ff 	. 
+sub_72b3h:
+	ld c,006h		;72b3	0e 06 	. . 
+	ld e,0ffh		;72b5	1e ff 	. . 
 	call sub_9176h		;72b7	cd 76 91 	. v . 
 	or a			;72ba	b7 	. 
 	ret nz			;72bb	c0 	. 
@@ -2908,7 +2994,7 @@ sub_72d3h:
 	ldir		;72ea	ed b0 	. . 
 	jr l72f4h		;72ec	18 06 	. . 
 l72eeh:
-	call 072b3h		;72ee	cd b3 72 	. . r 
+	call sub_72b3h		;72ee	cd b3 72 	. . r 
 	or a			;72f1	b7 	. 
 	jr z,l72eeh		;72f2	28 fa 	( . 
 l72f4h:
@@ -2936,7 +3022,7 @@ sub_7310h:
 	push bc			;7311	c5 	. 
 	push af			;7312	f5 	. 
 l7313h:
-	call 072b3h		;7313	cd b3 72 	. . r 
+	call sub_72b3h		;7313	cd b3 72 	. . r 
 	or a			;7316	b7 	. 
 	jr z,l7348h		;7317	28 2f 	( / 
 	cp 018h		;7319	fe 18 	. . 
@@ -2973,8 +3059,17 @@ l7348h:
 l734ch:
 	ld b,0ffh		;734c	06 ff 	. . 
 	rst 38h			;734e	ff 	. 
-	defb "LST:", 255, 0cdh
-	djnz l73cah		;7355	10 73 	. s 
+
+; BLOCK 'LST__string' (start 0x734f end 0x7353)
+LST__string_start:
+	defb 04ch		;734f	4c 	L 
+	defb 053h		;7350	53 	S 
+	defb 054h		;7351	54 	T 
+	defb 03ah		;7352	3a 	: 
+LST__string_end:
+	rst 38h			;7353	ff 	. 
+l7354h:
+	call sub_7310h		;7354	cd 10 73 	. . s 
 	push bc			;7357	c5 	. 
 	push de			;7358	d5 	. 
 	ld e,a			;7359	5f 	_ 
@@ -3004,7 +3099,17 @@ l7363h:
 l737ah:
 	ld b,0ffh		;737a	06 ff 	. . 
 	rst 38h			;737c	ff 	. 
-	defb "RDR:", 255, 0e5h
+
+; BLOCK 'RDR__string' (start 0x737d end 0x7381)
+RDR__string_start:
+	defb 052h		;737d	52 	R 
+	defb 044h		;737e	44 	D 
+	defb 052h		;737f	52 	R 
+	defb 03ah		;7380	3a 	: 
+RDR__string_end:
+	rst 38h			;7381	ff 	. 
+l7382h:
+	push hl			;7382	e5 	. 
 	ld hl,09a84h		;7383	21 84 9a 	! . . 
 	ld a,(hl)			;7386	7e 	~ 
 	or a			;7387	b7 	. 
@@ -3053,7 +3158,6 @@ l73ach:
 l73c8h:
 	pop hl			;73c8	e1 	. 
 	push bc			;73c9	c5 	. 
-l73cah:
 	ld de,09973h		;73ca	11 73 99 	. s . 
 	ld a,(09972h)		;73cd	3a 72 99 	: r . 
 	ld c,a			;73d0	4f 	O 
@@ -3357,7 +3461,14 @@ l7578h:
 	inc b			;7582	04 	. 
 	inc bc			;7583	03 	. 
 	ld h,b			;7584	60 	` 
-	defb "NEW", 255
+
+; BLOCK 'NEW_string' (start 0x7585 end 0x7588)
+NEW_string_start:
+	defb 04eh		;7585	4e 	N 
+	defb 045h		;7586	45 	E 
+	defb 057h		;7587	57 	W 
+NEW_string_end:
+	rst 38h			;7588	ff 	. 
 	ex af,af'			;7589	08 	. 
 	adc a,a			;758a	8f 	. 
 	ld (hl),l			;758b	75 	u 
@@ -3367,7 +3478,14 @@ l7578h:
 	inc b			;758f	04 	. 
 	sub (hl)			;7590	96 	. 
 	ld (hl),l			;7591	75 	u 
-	defb "NUM", 255
+
+; BLOCK 'NUM_string' (start 0x7592 end 0x7595)
+NUM_string_start:
+	defb 04eh		;7592	4e 	N 
+	defb 055h		;7593	55 	U 
+	defb 04dh		;7594	4d 	M 
+NUM_string_end:
+	rst 38h			;7595	ff 	. 
 	ld ix,l759dh		;7596	dd 21 9d 75 	. ! . u 
 	jp l65f7h		;759a	c3 f7 65 	. . e 
 l759dh:
@@ -3385,7 +3503,14 @@ l759dh:
 	inc b			;75a8	04 	. 
 	xor a			;75a9	af 	. 
 	ld (hl),l			;75aa	75 	u 
-	defb "VAR", 255
+
+; BLOCK 'VAR_string' (start 0x75ab end 0x75ae)
+VAR_string_start:
+	defb 056h		;75ab	56 	V 
+	defb 041h		;75ac	41 	A 
+	defb 052h		;75ad	52 	R 
+VAR_string_end:
+	rst 38h			;75ae	ff 	. 
 	ld ix,l75b6h		;75af	dd 21 b6 75 	. ! . u 
 	jp l65f7h		;75b3	c3 f7 65 	. . e 
 l75b6h:
@@ -3399,7 +3524,14 @@ l75b6h:
 	call nc,00475h		;75bf	d4 75 04 	. u . 
 	ret z			;75c2	c8 	. 
 	ld (hl),l			;75c3	75 	u 
-	defb "LST", 255
+
+; BLOCK 'LST_string' (start 0x75c4 end 0x75c7)
+LST_string_start:
+	defb 04ch		;75c4	4c 	L 
+	defb 053h		;75c5	53 	S 
+	defb 054h		;75c6	54 	T 
+LST_string_end:
+	rst 38h			;75c7	ff 	. 
 	ld ix,l75cfh		;75c8	dd 21 cf 75 	. ! . u 
 	jp l65f7h		;75cc	c3 f7 65 	. . e 
 l75cfh:
@@ -3414,7 +3546,14 @@ l75cfh:
 	inc b			;75da	04 	. 
 	pop hl			;75db	e1 	. 
 	ld (hl),l			;75dc	75 	u 
-	defb "CON", 255
+
+; BLOCK 'CON_string' (start 0x75dd end 0x75e0)
+CON_string_start:
+	defb 043h		;75dd	43 	C 
+	defb 04fh		;75de	4f 	O 
+	defb 04eh		;75df	4e 	N 
+CON_string_end:
+	rst 38h			;75e0	ff 	. 
 	ld ix,l75e8h		;75e1	dd 21 e8 75 	. ! . u 
 	jp l65f7h		;75e5	c3 f7 65 	. . e 
 l75e8h:
@@ -3444,7 +3583,15 @@ l75e8h:
 	inc b			;75ff	04 	. 
 	rlca			;7600	07 	. 
 	halt			;7601	76 	v 
-	defb "FAIL", 255
+
+; BLOCK 'FAIL_string' (start 0x7602 end 0x7606)
+FAIL_string_start:
+	defb 046h		;7602	46 	F 
+	defb 041h		;7603	41 	A 
+	defb 049h		;7604	49 	I 
+	defb 04ch		;7605	4c 	L 
+FAIL_string_end:
+	rst 38h			;7606	ff 	. 
 	or 001h		;7607	f6 01 	. . 
 	ret			;7609	c9 	. 
 	ex af,af'			;760a	08 	. 
@@ -3455,7 +3602,14 @@ l75e8h:
 	inc b			;7610	04 	. 
 	rla			;7611	17 	. 
 	halt			;7612	76 	v 
-	defb "SYS", 255 
+
+; BLOCK 'SYS_string' (start 0x7613 end 0x7616)
+SYS_string_start:
+	defb 053h		;7613	53 	S 
+	defb 059h		;7614	59 	Y 
+	defb 053h		;7615	53 	S 
+SYS_string_end:
+	rst 38h			;7616	ff 	. 
 	ld ix,l761eh		;7617	dd 21 1e 76 	. ! . v 
 	jp l65f7h		;761b	c3 f7 65 	. . e 
 l761eh:
@@ -3566,8 +3720,16 @@ l769ch:
 	inc b			;76b8	04 	. 
 	ret nz			;76b9	c0 	. 
 	halt			;76ba	76 	v 
-        defb "CMOD", 255	 
-        ld ix,l76c7h		;76c0	dd 21 c7 76 	. ! . v 
+
+; BLOCK 'CMOD_string' (start 0x76bb end 0x76bf)
+CMOD_string_start:
+	defb 043h		;76bb	43 	C 
+	defb 04dh		;76bc	4d 	M 
+	defb 04fh		;76bd	4f 	O 
+	defb 044h		;76be	44 	D 
+CMOD_string_end:
+	rst 38h			;76bf	ff 	. 
+	ld ix,l76c7h		;76c0	dd 21 c7 76 	. ! . v 
 	jp l65f7h		;76c4	c3 f7 65 	. . e 
 l76c7h:
 	rst 38h			;76c7	ff 	. 
@@ -3593,7 +3755,16 @@ l76c7h:
 	inc b			;76e4	04 	. 
 	defb 0edh;next byte illegal after ed		;76e5	ed 	. 
 	halt			;76e6	76 	v 
-        defb "OPMOD", 255
+
+; BLOCK 'OPMOD_string' (start 0x76e7 end 0x76ec)
+OPMOD_string_start:
+	defb 04fh		;76e7	4f 	O 
+	defb 050h		;76e8	50 	P 
+	defb 04dh		;76e9	4d 	M 
+	defb 04fh		;76ea	4f 	O 
+	defb 044h		;76eb	44 	D 
+OPMOD_string_end:
+	rst 38h			;76ec	ff 	. 
 	ld ix,l76f4h		;76ed	dd 21 f4 76 	. ! . v 
 	jp l65f7h		;76f1	c3 f7 65 	. . e 
 l76f4h:
@@ -3633,8 +3804,17 @@ sub_7713h:
 	rlca			;7727	07 	. 
 	ld a,b			;7728	78 	x 
 	inc b			;7729	04 	. 
-	defb 32h, 77h
-	defb "CRMOD", 255
+	defb 032h,077h		;772a	32 77 	2 w 
+
+; BLOCK 'CRMOD_string' (start 0x772c end 0x7731)
+CRMOD_string_start:
+	defb 043h		;772c	43 	C 
+	defb 052h		;772d	52 	R 
+	defb 04dh		;772e	4d 	M 
+	defb 04fh		;772f	4f 	O 
+	defb 044h		;7730	44 	D 
+CRMOD_string_end:
+	rst 38h			;7731	ff 	. 
 	ld ix,l7739h		;7732	dd 21 39 77 	. ! 9 w 
 	jp l65f7h		;7736	c3 f7 65 	. . e 
 l7739h:
@@ -3768,7 +3948,16 @@ l77fch:
 	inc bc			;780a	03 	. 
 	call nc,00478h		;780b	d4 78 04 	. x . 
 	ld d,078h		;780e	16 78 	. x 
-	defb "CLMOD", 255
+
+; BLOCK 'CLMOD_string' (start 0x7810 end 0x7815)
+CLMOD_string_start:
+	defb 043h		;7810	43 	C 
+	defb 04ch		;7811	4c 	L 
+	defb 04dh		;7812	4d 	M 
+	defb 04fh		;7813	4f 	O 
+	defb 044h		;7814	44 	D 
+CLMOD_string_end:
+	rst 38h			;7815	ff 	. 
 sub_7816h:
 	ld hl,l8b10h		;7816	21 10 8b 	! . . 
 	ld (09a8eh),hl		;7819	22 8e 9a 	" . . 
@@ -3902,7 +4091,16 @@ l78ceh:
 	inc b			;78da	04 	. 
 	ex (sp),hl			;78db	e3 	. 
 	ld a,b			;78dc	78 	x 
-	defb "SPACE", 255
+
+; BLOCK 'SPACE_string' (start 0x78dd end 0x78e2)
+SPACE_string_start:
+	defb 053h		;78dd	53 	S 
+	defb 050h		;78de	50 	P 
+	defb 041h		;78df	41 	A 
+	defb 043h		;78e0	43 	C 
+	defb 045h		;78e1	45 	E 
+SPACE_string_end:
+	rst 38h			;78e2	ff 	. 
 	ld ix,l78eah		;78e3	dd 21 ea 78 	. ! . x 
 	jp l65f7h		;78e7	c3 f7 65 	. . e 
 l78eah:
@@ -4346,7 +4544,17 @@ l7b6dh:
 	inc b			;7b7f	04 	. 
 	adc a,c			;7b80	89 	. 
 	ld a,e			;7b81	7b 	{ 
-	defb "CHAROF", 255 
+
+; BLOCK 'CHAROF_string' (start 0x7b82 end 0x7b88)
+CHAROF_string_start:
+	defb 043h		;7b82	43 	C 
+	defb 048h		;7b83	48 	H 
+	defb 041h		;7b84	41 	A 
+	defb 052h		;7b85	52 	R 
+	defb 04fh		;7b86	4f 	O 
+	defb 046h		;7b87	46 	F 
+CHAROF_string_end:
+	rst 38h			;7b88	ff 	. 
 	ld ix,l7b90h		;7b89	dd 21 90 7b 	. ! . { 
 	jp l65f7h		;7b8d	c3 f7 65 	. . e 
 l7b90h:
@@ -4419,8 +4627,20 @@ l7bdbh:
 	inc hl			;7bef	23 	# 
 	ld a,l			;7bf0	7d 	} 
 	inc b			;7bf1	04 	. 
-	defb 0fdh,07bh
-	defb "STRINGOF", 255
+	defb 0fdh,07bh		;7bf2	fd 7b 	. { 
+
+; BLOCK 'STRINGOF_string' (start 0x7bf4 end 0x7bfc)
+STRINGOF_string_start:
+	defb 053h		;7bf4	53 	S 
+	defb 054h		;7bf5	54 	T 
+	defb 052h		;7bf6	52 	R 
+	defb 049h		;7bf7	49 	I 
+	defb 04eh		;7bf8	4e 	N 
+	defb 047h		;7bf9	47 	G 
+	defb 04fh		;7bfa	4f 	O 
+	defb 046h		;7bfb	46 	F 
+STRINGOF_string_end:
+	rst 38h			;7bfc	ff 	. 
 	ld ix,l7c04h		;7bfd	dd 21 04 7c 	. ! . | 
 	jp l65f7h		;7c01	c3 f7 65 	. . e 
 l7c04h:
@@ -4633,8 +4853,21 @@ sub_7d0ah:
 	ld l,b			;7d27	68 	h 
 	ld a,a			;7d28	7f 	 
 	inc b			;7d29	04 	. 
-	defb 32h, 7dh
-	defb "ADDCL", 255
+	defb 032h,07dh		;7d2a	32 7d 	2 } 
+
+; BLOCK 'ADDCL_string' (start 0x7d2c end 0x7d31)
+ADDCL_string_start:
+	defb 041h		;7d2c	41 	A 
+	defb 044h		;7d2d	44 	D 
+	defb 044h		;7d2e	44 	D 
+
+; BLOCK 'CL_string' (start 0x7d2f end 0x7d31)
+CL_string_start:
+	defb 043h		;7d2f	43 	C 
+	defb 04ch		;7d30	4c 	L 
+ADDCL_string_end:
+CL_string_end:
+	rst 38h			;7d31	ff 	. 
 	ld hl,(0984fh)		;7d32	2a 4f 98 	* O . 
 	ld ix,(09843h)		;7d35	dd 2a 43 98 	. * C . 
 	ld e,(ix+00ah)		;7d39	dd 5e 0a 	. ^ . 
@@ -4980,7 +5213,15 @@ l7f5bh:
 	inc b			;7f6e	04 	. 
 	halt			;7f6f	76 	v 
 	ld a,a			;7f70	7f 	 
-	defb "KILL", 255
+
+; BLOCK 'KILL_string' (start 0x7f71 end 0x7f75)
+KILL_string_start:
+	defb 04bh		;7f71	4b 	K 
+	defb 049h		;7f72	49 	I 
+	defb 04ch		;7f73	4c 	L 
+	defb 04ch		;7f74	4c 	L 
+KILL_string_end:
+	rst 38h			;7f75	ff 	. 
 	ld ix,l7f7dh		;7f76	dd 21 7d 7f 	. ! }  
 	jp l65f7h		;7f7a	c3 f7 65 	. . e 
 l7f7dh:
@@ -5057,7 +5298,16 @@ l7fd9h:
 	ld a,a			;7fe4	7f 	 
 	inc b			;7fe5	04 	. 
 	xor 07fh		;7fe6	ee 7f 	.  
-	defb "ABORT", 255
+
+; BLOCK 'ABORT_string' (start 0x7fe8 end 0x7fed)
+ABORT_string_start:
+	defb 041h		;7fe8	41 	A 
+	defb 042h		;7fe9	42 	B 
+	defb 04fh		;7fea	4f 	O 
+	defb 052h		;7feb	52 	R 
+	defb 054h		;7fec	54 	T 
+ABORT_string_end:
+	rst 38h			;7fed	ff 	. 
 	ld sp,(09803h)		;7fee	ed 7b 03 98 	. { . . 
 	jp l6025h		;7ff2	c3 25 60 	. % ` 
 	ex af,af'			;7ff5	08 	. 
@@ -5069,11 +5319,14 @@ l7fd9h:
 	inc b			;7ffb	04 	. 
 	ld (bc),a			;7ffc	02 	. 
 	add a,b			;7ffd	80 	. 
-;	defb "LNE", 255
-	ld c,h			;7ffe	4c 	L 
+
+; BLOCK 'LNE_string' (start 0x7ffe end 0x8001)
+LNE_string_start:
+	defb 04ch		;7ffe	4c 	L 
 l7fffh:
-	ld c,(hl)			;7fff	4e 	N 
-	ld b,l			;8000	45 	E 
+	defb 04eh		;7fff	4e 	N 
+	defb 045h		;8000	45 	E 
+LNE_string_end:
 	rst 38h			;8001	ff 	. 
 	call 01cadh		;8002	cd ad 1c 	. . . 
 	ld ix,l800ch		;8005	dd 21 0c 80 	. ! . . 
@@ -5190,7 +5443,14 @@ sub_80ach:
 	add a,c			;80be	81 	. 
 	inc b			;80bf	04 	. 
 	add a,080h		;80c0	c6 80 	. . 
-	defb "PNT", 255
+
+; BLOCK 'PNT_string' (start 0x80c2 end 0x80c5)
+PNT_string_start:
+	defb 050h		;80c2	50 	P 
+	defb 04eh		;80c3	4e 	N 
+	defb 054h		;80c4	54 	T 
+PNT_string_end:
+	rst 38h			;80c5	ff 	. 
 	call 01cadh		;80c6	cd ad 1c 	. . . 
 	ld ix,l80d0h		;80c9	dd 21 d0 80 	. ! . . 
 	jp l65f7h		;80cd	c3 f7 65 	. . e 
@@ -5296,7 +5556,14 @@ sub_814ch:
 	inc b			;816a	04 	. 
 	ld (hl),c			;816b	71 	q 
 	add a,c			;816c	81 	. 
-	defb "RND", 255
+
+; BLOCK 'RND_string' (start 0x816d end 0x8170)
+RND_string_start:
+	defb 052h		;816d	52 	R 
+	defb 04eh		;816e	4e 	N 
+	defb 044h		;816f	44 	D 
+RND_string_end:
+	rst 38h			;8170	ff 	. 
 	ld ix,l8178h		;8171	dd 21 78 81 	. ! x . 
 	jp l65f7h		;8175	c3 f7 65 	. . e 
 l8178h:
@@ -5388,7 +5655,13 @@ l81ebh:
 	inc b			;81f5	04 	. 
 	ei			;81f6	fb 	. 
 	add a,c			;81f7	81 	. 
-	defb "BP", 255
+
+; BLOCK 'BP_string' (start 0x81f8 end 0x81fa)
+BP_string_start:
+	defb 042h		;81f8	42 	B 
+	defb 050h		;81f9	50 	P 
+BP_string_end:
+	rst 38h			;81fa	ff 	. 
 	ld ix,l8202h		;81fb	dd 21 02 82 	. ! . . 
 	jp l65f7h		;81ff	c3 f7 65 	. . e 
 l8202h:
@@ -5428,7 +5701,14 @@ l8226h:
 	inc b			;822e	04 	. 
 	dec (hl)			;822f	35 	5 
 	add a,d			;8230	82 	. 
-	defb "CLS", 255
+
+; BLOCK 'CLS_string' (start 0x8231 end 0x8234)
+CLS_string_start:
+	defb 043h		;8231	43 	C 
+	defb 04ch		;8232	4c 	L 
+	defb 053h		;8233	53 	S 
+CLS_string_end:
+	rst 38h			;8234	ff 	. 
 	ld ix,l823ch		;8235	dd 21 3c 82 	. ! < . 
 	jp l65f7h		;8239	c3 f7 65 	. . e 
 l823ch:
@@ -5471,7 +5751,14 @@ l825ah:
 	inc b			;8275	04 	. 
 	ld a,h			;8276	7c 	| 
 	add a,d			;8277	82 	. 
-	defb "PIO", 255
+
+; BLOCK 'PIO_string' (start 0x8278 end 0x827b)
+PIO_string_start:
+	defb 050h		;8278	50 	P 
+	defb 049h		;8279	49 	I 
+	defb 04fh		;827a	4f 	O 
+PIO_string_end:
+	rst 38h			;827b	ff 	. 
 	ld ix,l8283h		;827c	dd 21 83 82 	. ! . . 
 	jp l65f7h		;8280	c3 f7 65 	. . e 
 l8283h:
@@ -5534,7 +5821,17 @@ sub_82bch:
 	inc b			;82d7	04 	. 
 	pop hl			;82d8	e1 	. 
 	add a,d			;82d9	82 	. 
-	defb "BORDER", 255
+
+; BLOCK 'BORDER_string' (start 0x82da end 0x82e0)
+BORDER_string_start:
+	defb 042h		;82da	42 	B 
+	defb 04fh		;82db	4f 	O 
+	defb 052h		;82dc	52 	R 
+	defb 044h		;82dd	44 	D 
+	defb 045h		;82de	45 	E 
+	defb 052h		;82df	52 	R 
+BORDER_string_end:
+	rst 38h			;82e0	ff 	. 
 	ld ix,l82e8h		;82e1	dd 21 e8 82 	. ! . . 
 	jp l65f7h		;82e5	c3 f7 65 	. . e 
 l82e8h:
@@ -5574,7 +5871,17 @@ l8313h:
 	ld (00483h),a		;8319	32 83 04 	2 . . 
 	dec h			;831c	25 	% 
 	add a,e			;831d	83 	. 
-	defb "HYBRID", 255
+
+; BLOCK 'HYBRID_string' (start 0x831e end 0x8324)
+HYBRID_string_start:
+	defb 048h		;831e	48 	H 
+	defb 059h		;831f	59 	Y 
+	defb 042h		;8320	42 	B 
+	defb 052h		;8321	52 	R 
+	defb 049h		;8322	49 	I 
+	defb 044h		;8323	44 	D 
+HYBRID_string_end:
+	rst 38h			;8324	ff 	. 
 	call 00dafh		;8325	cd af 0d 	. . . 
 	ld a,003h		;8328	3e 03 	> . 
 	ld (09b6ch),a		;832a	32 6c 9b 	2 l . 
@@ -5588,7 +5895,17 @@ l8313h:
 	inc b			;8338	04 	. 
 	ld b,d			;8339	42 	B 
 	add a,e			;833a	83 	. 
-	defb "NORMAL", 255
+
+; BLOCK 'NORMAL_string' (start 0x833b end 0x8341)
+NORMAL_string_start:
+	defb 04eh		;833b	4e 	N 
+	defb 04fh		;833c	4f 	O 
+	defb 052h		;833d	52 	R 
+	defb 04dh		;833e	4d 	M 
+	defb 041h		;833f	41 	A 
+	defb 04ch		;8340	4c 	L 
+NORMAL_string_end:
+	rst 38h			;8341	ff 	. 
 	res 0,(iy+002h)		;8342	fd cb 02 86 	. . . . 
 	call 00dafh		;8346	cd af 0d 	. . . 
 	ld a,002h		;8349	3e 02 	> . 
@@ -5605,7 +5922,16 @@ l8313h:
 	inc b			;8359	04 	. 
 	ld h,d			;835a	62 	b 
 	add a,e			;835b	83 	. 
-	defb "INKEY", 255
+
+; BLOCK 'INKEY_string' (start 0x835c end 0x8361)
+INKEY_string_start:
+	defb 049h		;835c	49 	I 
+	defb 04eh		;835d	4e 	N 
+	defb 04bh		;835e	4b 	K 
+	defb 045h		;835f	45 	E 
+	defb 059h		;8360	59 	Y 
+INKEY_string_end:
+	rst 38h			;8361	ff 	. 
 	ld ix,l8369h		;8362	dd 21 69 83 	. ! i . 
 	jp l65f7h		;8366	c3 f7 65 	. . e 
 l8369h:
@@ -5664,7 +5990,14 @@ l83a0h:
 	inc bc			;83b2	03 	. 
 	cp c			;83b3	b9 	. 
 	add a,e			;83b4	83 	. 
-	defb "NOT", 255
+
+; BLOCK 'NOT_string' (start 0x83b5 end 0x83b8)
+NOT_string_start:
+	defb 04eh		;83b5	4e 	N 
+	defb 04fh		;83b6	4f 	O 
+	defb 054h		;83b7	54 	T 
+NOT_string_end:
+	rst 38h			;83b8	ff 	. 
 	inc bc			;83b9	03 	. 
 	cp a			;83ba	bf 	. 
 	add a,e			;83bb	83 	. 
@@ -5718,7 +6051,13 @@ l83a0h:
 	inc bc			;83f5	03 	. 
 	ei			;83f6	fb 	. 
 	add a,e			;83f7	83 	. 
-	defb "EQ", 255
+
+; BLOCK 'EQ_string' (start 0x83f8 end 0x83fa)
+EQ_string_start:
+	defb 045h		;83f8	45 	E 
+	defb 051h		;83f9	51 	Q 
+EQ_string_end:
+	rst 38h			;83fa	ff 	. 
 	inc bc			;83fb	03 	. 
 	ld bc,01084h		;83fc	01 84 10 	. . . 
 	rst 38h			;83ff	ff 	. 
@@ -5747,7 +6086,13 @@ l83a0h:
 	inc bc			;8419	03 	. 
 	rra			;841a	1f 	. 
 	add a,h			;841b	84 	. 
-	defb "IF", 255
+
+; BLOCK 'IF_string' (start 0x841c end 0x841e)
+IF_string_start:
+	defb 049h		;841c	49 	I 
+	defb 046h		;841d	46 	F 
+IF_string_end:
+	rst 38h			;841e	ff 	. 
 	inc bc			;841f	03 	. 
 	dec h			;8420	25 	% 
 	add a,h			;8421	84 	. 
@@ -5815,7 +6160,13 @@ l83a0h:
 	inc bc			;8467	03 	. 
 	ld l,l			;8468	6d 	m 
 	add a,h			;8469	84 	. 
-	DEFB "OR", 255
+
+; BLOCK 'OR_string' (start 0x846a end 0x846c)
+OR_string_start:
+	defb 04fh		;846a	4f 	O 
+	defb 052h		;846b	52 	R 
+OR_string_end:
+	rst 38h			;846c	ff 	. 
 	inc bc			;846d	03 	. 
 	ld (hl),e			;846e	73 	s 
 	add a,h			;846f	84 	. 
@@ -5876,7 +6227,9 @@ l849dh:
 	inc bc			;84a9	03 	. 
 	xor a			;84aa	af 	. 
 	add a,h			;84ab	84 	. 
-	defb "CL", 255
+	ld b,e			;84ac	43 	C 
+	ld c,h			;84ad	4c 	L 
+	rst 38h			;84ae	ff 	. 
 	inc bc			;84af	03 	. 
 	or l			;84b0	b5 	. 
 	add a,h			;84b1	84 	. 
@@ -6115,7 +6468,16 @@ l8537h:
 	inc bc			;85b1	03 	. 
 	cp d			;85b2	ba 	. 
 	add a,l			;85b3	85 	. 
-	defb "DELCL", 255
+
+; BLOCK 'DELCL_string' (start 0x85b4 end 0x85b9)
+DELCL_string_start:
+	defb 044h		;85b4	44 	D 
+	defb 045h		;85b5	45 	E 
+	defb 04ch		;85b6	4c 	L 
+	defb 043h		;85b7	43 	C 
+	defb 04ch		;85b8	4c 	L 
+DELCL_string_end:
+	rst 38h			;85b9	ff 	. 
 	inc bc			;85ba	03 	. 
 	ret nz			;85bb	c0 	. 
 	add a,l			;85bc	85 	. 
@@ -6205,7 +6567,15 @@ l8537h:
 	add a,a			;8625	87 	. 
 	inc bc			;8626	03 	. 
 	ld l,086h		;8627	2e 86 	. . 
-	defb "LOAD", 255
+
+; BLOCK 'LOAD_string' (start 0x8629 end 0x862d)
+LOAD_string_start:
+	defb 04ch		;8629	4c 	L 
+	defb 04fh		;862a	4f 	O 
+	defb 041h		;862b	41 	A 
+	defb 044h		;862c	44 	D 
+LOAD_string_end:
+	rst 38h			;862d	ff 	. 
 	inc bc			;862e	03 	. 
 	inc (hl)			;862f	34 	4 
 	add a,(hl)			;8630	86 	. 
@@ -6475,7 +6845,15 @@ l86ach:
 	inc bc			;8764	03 	. 
 	ld l,h			;8765	6c 	l 
 	add a,a			;8766	87 	. 
-	defb "SAVE", 255
+
+; BLOCK 'SAVE_string' (start 0x8767 end 0x876b)
+SAVE_string_start:
+	defb 053h		;8767	53 	S 
+	defb 041h		;8768	41 	A 
+	defb 056h		;8769	56 	V 
+	defb 045h		;876a	45 	E 
+SAVE_string_end:
+	rst 38h			;876b	ff 	. 
 	inc bc			;876c	03 	. 
 	ld (hl),d			;876d	72 	r 
 	add a,a			;876e	87 	. 
@@ -6532,7 +6910,15 @@ l86ach:
 	inc bc			;87a8	03 	. 
 	cp l			;87a9	bd 	. 
 	add a,a			;87aa	87 	. 
-	defb "LIST", 255
+
+; BLOCK 'LIST_string' (start 0x87ab end 0x87af)
+LIST_string_start:
+	defb 04ch		;87ab	4c 	L 
+	defb 049h		;87ac	49 	I 
+	defb 053h		;87ad	53 	S 
+	defb 054h		;87ae	54 	T 
+LIST_string_end:
+	rst 38h			;87af	ff 	. 
 l87b0h:
 	ex af,af'			;87b0	08 	. 
 	or (hl)			;87b1	b6 	. 
@@ -6541,7 +6927,14 @@ l87b0h:
 	ld de,01088h		;87b4	11 88 10 	. . . 
 	rst 38h			;87b7	ff 	. 
 	rst 38h			;87b8	ff 	. 
-	defb "ALL", 255
+
+; BLOCK 'ALL_string' (start 0x87b9 end 0x87bc)
+ALL_string_start:
+	defb 041h		;87b9	41 	A 
+	defb 04ch		;87ba	4c 	L 
+	defb 04ch		;87bb	4c 	L 
+ALL_string_end:
+	rst 38h			;87bc	ff 	. 
 	inc bc			;87bd	03 	. 
 	jp 00387h		;87be	c3 87 03 	. . . 
 	defb 0edh;next byte illegal after ed		;87c1	ed 	. 
@@ -6649,7 +7042,16 @@ l8834h:
 	inc bc			;8834	03 	. 
 	dec a			;8835	3d 	= 
 	adc a,b			;8836	88 	. 
-	defb "<SUP>", 255
+
+; BLOCK '_SUP__string' (start 0x8837 end 0x883c)
+_SUP__string_start:
+	defb 03ch		;8837	3c 	< 
+	defb 053h		;8838	53 	S 
+	defb 055h		;8839	55 	U 
+	defb 050h		;883a	50 	P 
+	defb 03eh		;883b	3e 	> 
+_SUP__string_end:
+	rst 38h			;883c	ff 	. 
 	inc bc			;883d	03 	. 
 	ld b,e			;883e	43 	C 
 	adc a,b			;883f	88 	. 
@@ -6859,7 +7261,15 @@ l884ch:
 	inc bc			;8921	03 	. 
 	add hl,hl			;8922	29 	) 
 	adc a,c			;8923	89 	. 
-	defb "DICT", 255 
+
+; BLOCK 'DICT_string' (start 0x8924 end 0x8928)
+DICT_string_start:
+	defb 044h		;8924	44 	D 
+	defb 049h		;8925	49 	I 
+	defb 043h		;8926	43 	C 
+	defb 054h		;8927	54 	T 
+DICT_string_end:
+	rst 38h			;8928	ff 	. 
 	inc bc			;8929	03 	. 
 	cpl			;892a	2f 	/ 
 	adc a,c			;892b	89 	. 
@@ -7058,7 +7468,16 @@ l884ch:
 	inc bc			;8a0a	03 	. 
 	inc de			;8a0b	13 	. 
 	adc a,d			;8a0c	8a 	. 
-	defb "ISALL", 255
+
+; BLOCK 'ISALL_string' (start 0x8a0d end 0x8a12)
+ISALL_string_start:
+	defb 049h		;8a0d	49 	I 
+	defb 053h		;8a0e	53 	S 
+	defb 041h		;8a0f	41 	A 
+	defb 04ch		;8a10	4c 	L 
+	defb 04ch		;8a11	4c 	L 
+ISALL_string_end:
+	rst 38h			;8a12	ff 	. 
 	inc bc			;8a13	03 	. 
 	add hl,de			;8a14	19 	. 
 	adc a,d			;8a15	8a 	. 
@@ -7191,7 +7610,17 @@ l884ch:
 	inc bc			;8aa3	03 	. 
 	xor l			;8aa4	ad 	. 
 	adc a,d			;8aa5	8a 	. 
-	defb "FORALL", 255
+
+; BLOCK 'FORALL_string' (start 0x8aa6 end 0x8aac)
+FORALL_string_start:
+	defb 046h		;8aa6	46 	F 
+	defb 04fh		;8aa7	4f 	O 
+	defb 052h		;8aa8	52 	R 
+	defb 041h		;8aa9	41 	A 
+	defb 04ch		;8aaa	4c 	L 
+	defb 04ch		;8aab	4c 	L 
+FORALL_string_end:
+	rst 38h			;8aac	ff 	. 
 	inc bc			;8aad	03 	. 
 	or e			;8aae	b3 	. 
 	adc a,d			;8aaf	8a 	. 
@@ -7293,8 +7722,15 @@ l8b10h:
 	ret nc			;8b19	d0 	. 
 	adc a,e			;8b1a	8b 	. 
 	inc b			;8b1b	04 	. 
-	defb 22h, 8bh
-	defb "SUM", 255
+	defb 022h,08bh		;8b1c	22 8b 	" . 
+
+; BLOCK 'SUM_string' (start 0x8b1e end 0x8b21)
+SUM_string_start:
+	defb 053h		;8b1e	53 	S 
+	defb 055h		;8b1f	55 	U 
+	defb 04dh		;8b20	4d 	M 
+SUM_string_end:
+	rst 38h			;8b21	ff 	. 
 	ld ix,l8b29h		;8b22	dd 21 29 8b 	. ! ) . 
 	jp l65f7h		;8b26	c3 f7 65 	. . e 
 l8b29h:
@@ -7539,7 +7975,15 @@ l8cbdh:
 	adc a,l			;8ccd	8d 	. 
 	inc b			;8cce	04 	. 
 	sub 08ch		;8ccf	d6 8c 	. . 
-	defb "LESS", 255
+
+; BLOCK 'LESS_string' (start 0x8cd1 end 0x8cd5)
+LESS_string_start:
+	defb 04ch		;8cd1	4c 	L 
+	defb 045h		;8cd2	45 	E 
+	defb 053h		;8cd3	53 	S 
+	defb 053h		;8cd4	53 	S 
+LESS_string_end:
+	rst 38h			;8cd5	ff 	. 
 	ld ix,l8cddh		;8cd6	dd 21 dd 8c 	. ! . . 
 	jp l65f7h		;8cda	c3 f7 65 	. . e 
 l8cddh:
@@ -7637,7 +8081,15 @@ l8d49h:
 	inc b			;8d52	04 	. 
 	ld e,d			;8d53	5a 	Z 
 	adc a,l			;8d54	8d 	. 
-	DEFB "SIGN", 255
+
+; BLOCK 'SIGN_string' (start 0x8d55 end 0x8d59)
+SIGN_string_start:
+	defb 053h		;8d55	53 	S 
+	defb 049h		;8d56	49 	I 
+	defb 047h		;8d57	47 	G 
+	defb 04eh		;8d58	4e 	N 
+SIGN_string_end:
+	rst 38h			;8d59	ff 	. 
 	ld ix,l8d61h		;8d5a	dd 21 61 8d 	. ! a . 
 	jp l65f7h		;8d5e	c3 f7 65 	. . e 
 l8d61h:
@@ -7692,7 +8144,14 @@ l8d93h:
 	inc b			;8da3	04 	. 
 	xor d			;8da4	aa 	. 
 	adc a,l			;8da5	8d 	. 
-	defb "INT", 255
+
+; BLOCK 'INT_string' (start 0x8da6 end 0x8da9)
+INT_string_start:
+	defb 049h		;8da6	49 	I 
+	defb 04eh		;8da7	4e 	N 
+	defb 054h		;8da8	54 	T 
+INT_string_end:
+	rst 38h			;8da9	ff 	. 
 	ld ix,l8db1h		;8daa	dd 21 b1 8d 	. ! . . 
 	jp l65f7h		;8dae	c3 f7 65 	. . e 
 l8db1h:
@@ -8522,23 +8981,45 @@ l9204h:
 	scf			;920e	37 	7 
 	call sub_92cah		;920f	cd ca 92 	. . . 
 	pop de			;9212	d1 	. 
-	jr nc,l9234h		;9213	30 1f 	0 . 
+	jr nc,BLOCK_OK___string_end		;9213	30 1f 	0 . 
 	ld hl,(09b6ah)		;9215	2a 6a 9b 	* j . 
 	inc h			;9218	24 	$ 
 	call sub_9372h		;9219	cd 72 93 	. r . 
-	jr nz,l9244h		;921c	20 26 	  & 
-	ld ix,l922ah		;921e	dd 21 2a 92 	. ! * . 
+	jr nz,READ_ERROR_string_end		;921c	20 26 	  & 
+	ld ix,BLOCK_OK___string_start		;921e	dd 21 2a 92 	. ! * . 
 	call sub_933eh		;9222	cd 3e 93 	. > . 
 	call sub_9365h		;9225	cd 65 93 	. e . 
 	jr l924fh		;9228	18 25 	. % 
-l922ah:
-        defb "BLOCK OK  "    
-l9234h:
-	ld ix,l923ah		;9234	dd 21 3a 92 	. ! : . 
+
+; BLOCK 'BLOCK_OK___string' (start 0x922a end 0x9234)
+BLOCK_OK___string_start:
+	defb 042h		;922a	42 	B 
+	defb 04ch		;922b	4c 	L 
+	defb 04fh		;922c	4f 	O 
+	defb 043h		;922d	43 	C 
+	defb 04bh		;922e	4b 	K 
+	defb 020h		;922f	20 	  
+	defb 04fh		;9230	4f 	O 
+	defb 04bh		;9231	4b 	K 
+	defb 020h		;9232	20 	  
+	defb 020h		;9233	20 	  
+BLOCK_OK___string_end:
+	ld ix,READ_ERROR_string_start		;9234	dd 21 3a 92 	. ! : . 
 	jr l9247h		;9238	18 0d 	. . 
-l923ah:
-        defb "READ ERROR" 
-l9244h:
+
+; BLOCK 'READ_ERROR_string' (start 0x923a end 0x9244)
+READ_ERROR_string_start:
+	defb 052h		;923a	52 	R 
+	defb 045h		;923b	45 	E 
+	defb 041h		;923c	41 	A 
+	defb 044h		;923d	44 	D 
+	defb 020h		;923e	20 	  
+	defb 045h		;923f	45 	E 
+	defb 052h		;9240	52 	R 
+	defb 052h		;9241	52 	R 
+	defb 04fh		;9242	4f 	O 
+	defb 052h		;9243	52 	R 
+READ_ERROR_string_end:
 	push hl			;9244	e5 	. 
 	pop ix		;9245	dd e1 	. . 
 l9247h:
@@ -8900,7 +9381,15 @@ sub_945dh:
 	inc b			;947e	04 	. 
 	add a,(hl)			;947f	86 	. 
 	sub h			;9480	94 	. 
-	defb "OPEN", 255 
+
+; BLOCK 'OPEN_string' (start 0x9481 end 0x9485)
+OPEN_string_start:
+	defb 04fh		;9481	4f 	O 
+	defb 050h		;9482	50 	P 
+	defb 045h		;9483	45 	E 
+	defb 04eh		;9484	4e 	N 
+OPEN_string_end:
+	rst 38h			;9485	ff 	. 
 	ld ix,l948dh		;9486	dd 21 8d 94 	. ! . . 
 	jp l65f7h		;948a	c3 f7 65 	. . e 
 l948dh:
@@ -8948,7 +9437,17 @@ l94c5h:
 	inc b			;94ce	04 	. 
 	ret c			;94cf	d8 	. 
 	sub h			;94d0	94 	. 
-	defb "CREATE", 255 
+
+; BLOCK 'CREATE_string' (start 0x94d1 end 0x94d7)
+CREATE_string_start:
+	defb 043h		;94d1	43 	C 
+	defb 052h		;94d2	52 	R 
+	defb 045h		;94d3	45 	E 
+	defb 041h		;94d4	41 	A 
+	defb 054h		;94d5	54 	T 
+	defb 045h		;94d6	45 	E 
+CREATE_string_end:
+	rst 38h			;94d7	ff 	. 
 	ld ix,l94dfh		;94d8	dd 21 df 94 	. ! . . 
 	jp l65f7h		;94dc	c3 f7 65 	. . e 
 l94dfh:
@@ -9012,7 +9511,16 @@ l952dh:
 	inc b			;9539	04 	. 
 	ld b,d			;953a	42 	B 
 	sub l			;953b	95 	. 
-	defb "CLOSE", 255
+
+; BLOCK 'CLOSE_string' (start 0x953c end 0x9541)
+CLOSE_string_start:
+	defb 043h		;953c	43 	C 
+	defb 04ch		;953d	4c 	L 
+	defb 04fh		;953e	4f 	O 
+	defb 053h		;953f	53 	S 
+	defb 045h		;9540	45 	E 
+CLOSE_string_end:
+	rst 38h			;9541	ff 	. 
 	ld ix,l9549h		;9542	dd 21 49 95 	. ! I . 
 	jp l65f7h		;9546	c3 f7 65 	. . e 
 l9549h:
@@ -9185,46 +9693,65 @@ sub_9623h:
 	ret			;9628	c9 	. 
 sub_9629h:
 	call sub_7296h		;9629	cd 96 72 	. . r 
-	and b			;962c	a0 	. 
-	and b			;962d	a0 	. 
-	and b			;962e	a0 	. 
-	out (0d0h),a		;962f	d3 d0 	. . 
-	push bc			;9631	c5 	. 
-	jp 0d2d4h		;9632	c3 d4 d2 	. . . 
-	push de			;9635	d5 	. 
-	call 0eda0h		;9636	cd a0 ed 	. . . 
-	jp (hl)			;9639	e9 	. 
-	ex (sp),hl			;963a	e3 	. 
-	jp p,0adefh		;963b	f2 ef ad 	. . . 
-	ret nc			;963e	d0 	. 
-	jp nc,0cccfh		;963f	d2 cf cc 	. . . 
-	rst 8			;9642	cf 	. 
-	rst 0			;9643	c7 	. 
-	and b			;9644	a0 	. 
-	call nc,0aeb1h		;9645	d4 b1 ae 	. . . 
-	or b			;9648	b0 	. 
-	dec c			;9649	0d 	. 
-	and b			;964a	a0 	. 
-	and b			;964b	a0 	. 
-	and b			;964c	a0 	. 
-	and b			;964d	a0 	. 
-	and b			;964e	a0 	. 
-	xor b			;964f	a8 	. 
-	ex (sp),hl			;9650	e3 	. 
-	xor c			;9651	a9 	. 
-	and b			;9652	a0 	. 
-	or c			;9653	b1 	. 
-	cp c			;9654	b9 	. 
-	cp b			;9655	b8 	. 
-	or e			;9656	b3 	. 
-	and b			;9657	a0 	. 
-	and b			;9658	a0 	. 
-	call z,0d0a0h		;9659	cc a0 d0 	. . . 
-	and b			;965c	a0 	. 
-	pop bc			;965d	c1 	. 
-	and b			;965e	a0 	. 
-	and b			;965f	a0 	. 
-	call z,0e4f4h		;9660	cc f4 e4 	. . . 
+
+; BLOCK 'INTRO_string' (start 0x962c end 0x9663)
+INTRO_string_start:
+	defb 0a0h		;962c	a0 	. 
+	defb 0a0h		;962d	a0 	. 
+	defb 0a0h		;962e	a0 	. 
+	defb 0d3h		;962f	d3 	. 
+	defb 0d0h		;9630	d0 	. 
+	defb 0c5h		;9631	c5 	. 
+	defb 0c3h		;9632	c3 	. 
+	defb 0d4h		;9633	d4 	. 
+	defb 0d2h		;9634	d2 	. 
+	defb 0d5h		;9635	d5 	. 
+	defb 0cdh		;9636	cd 	. 
+	defb 0a0h		;9637	a0 	. 
+	defb 0edh		;9638	ed 	. 
+	defb 0e9h		;9639	e9 	. 
+	defb 0e3h		;963a	e3 	. 
+	defb 0f2h		;963b	f2 	. 
+	defb 0efh		;963c	ef 	. 
+	defb 0adh		;963d	ad 	. 
+	defb 0d0h		;963e	d0 	. 
+	defb 0d2h		;963f	d2 	. 
+	defb 0cfh		;9640	cf 	. 
+	defb 0cch		;9641	cc 	. 
+	defb 0cfh		;9642	cf 	. 
+	defb 0c7h		;9643	c7 	. 
+	defb 0a0h		;9644	a0 	. 
+	defb 0d4h		;9645	d4 	. 
+	defb 0b1h		;9646	b1 	. 
+	defb 0aeh		;9647	ae 	. 
+	defb 0b0h		;9648	b0 	. 
+	defb 00dh		;9649	0d 	. 
+	defb 0a0h		;964a	a0 	. 
+	defb 0a0h		;964b	a0 	. 
+	defb 0a0h		;964c	a0 	. 
+	defb 0a0h		;964d	a0 	. 
+	defb 0a0h		;964e	a0 	. 
+	defb 0a8h		;964f	a8 	. 
+	defb 0e3h		;9650	e3 	. 
+	defb 0a9h		;9651	a9 	. 
+	defb 0a0h		;9652	a0 	. 
+	defb 0b1h		;9653	b1 	. 
+	defb 0b9h		;9654	b9 	. 
+	defb 0b8h		;9655	b8 	. 
+	defb 0b3h		;9656	b3 	. 
+	defb 0a0h		;9657	a0 	. 
+	defb 0a0h		;9658	a0 	. 
+	defb 0cch		;9659	cc 	. 
+	defb 0a0h		;965a	a0 	. 
+	defb 0d0h		;965b	d0 	. 
+	defb 0a0h		;965c	a0 	. 
+	defb 0c1h		;965d	c1 	. 
+	defb 0a0h		;965e	a0 	. 
+	defb 0a0h		;965f	a0 	. 
+	defb 0cch		;9660	cc 	. 
+	defb 0f4h		;9661	f4 	. 
+	defb 0e4h		;9662	e4 	. 
+INTRO_string_end:
 	xor (hl)			;9663	ae 	. 
 	nop			;9664	00 	. 
 	ld hl,09da5h		;9665	21 a5 9d 	! . . 
@@ -9251,15 +9778,22 @@ sub_9629h:
 	push hl			;969d	e5 	. 
 	call sub_6b26h		;969e	cd 26 6b 	. & k 
 	call sub_7296h		;96a1	cd 96 72 	. . r 
-	and b			;96a4	a0 	. 
-	jp nz,0f4f9h		;96a5	c2 f9 f4 	. . . 
-	push hl			;96a8	e5 	. 
-	di			;96a9	f3 	. 
-	and b			;96aa	a0 	. 
-	add a,0f2h		;96ab	c6 f2 	. . 
-	push hl			;96ad	e5 	. 
-	push hl			;96ae	e5 	. 
-	and b			;96af	a0 	. 
+
+; BLOCK 'BYTESFREE_string' (start 0x96a4 end 0x96b0)
+BYTESFREE_string_start:
+	defb 0a0h		;96a4	a0 	. 
+	defb 0c2h		;96a5	c2 	. 
+	defb 0f9h		;96a6	f9 	. 
+	defb 0f4h		;96a7	f4 	. 
+	defb 0e5h		;96a8	e5 	. 
+	defb 0f3h		;96a9	f3 	. 
+	defb 0a0h		;96aa	a0 	. 
+	defb 0c6h		;96ab	c6 	. 
+	defb 0f2h		;96ac	f2 	. 
+	defb 0e5h		;96ad	e5 	. 
+	defb 0e5h		;96ae	e5 	. 
+	defb 0a0h		;96af	a0 	. 
+BYTESFREE_string_end:
 	nop			;96b0	00 	. 
 	pop hl			;96b1	e1 	. 
 	srl h		;96b2	cb 3c 	. < 
@@ -9331,16 +9865,24 @@ l9712h:
 	ld de,09b19h		;972f	11 19 9b 	. . . 
 	ld bc,00006h		;9732	01 06 00 	. . . 
 	ldir		;9735	ed b0 	. . 
-	ld hl,l9749h		;9737	21 49 97 	! I . 
+	ld hl,_ERROR__string_start		;9737	21 49 97 	! I . 
 	ld de,09ca5h		;973a	11 a5 9c 	. . . 
 	ld bc,00008h		;973d	01 08 00 	. . . 
 	ldir		;9740	ed b0 	. . 
 	call sub_79e6h		;9742	cd e6 79 	. . y 
 	ld (09b1ah),hl		;9745	22 1a 9b 	" . . 
 	ret			;9748	c9 	. 
-l9749h:
-	ccf			;9749	3f 	? 
-	defb "ERROR?"
+
+; BLOCK '_ERROR__string' (start 0x9749 end 0x9750)
+_ERROR__string_start:
+	defb 03fh		;9749	3f 	? 
+	defb 045h		;974a	45 	E 
+	defb 052h		;974b	52 	R 
+	defb 052h		;974c	52 	R 
+	defb 04fh		;974d	4f 	O 
+	defb 052h		;974e	52 	R 
+	defb 03fh		;974f	3f 	? 
+_ERROR__string_end:
 	cp 0f4h		;9750	fe f4 	. . 
 	or l			;9752	b5 	. 
 	xor (hl)			;9753	ae 	. 
