@@ -9,6 +9,22 @@ ROM_OUT_CURS_WITHOUT_CHECK:    equ 018e8h
 ROM_INPUT_AD:                  equ 015e6h
 ROM_PRINT_A_2:                 equ 015f2h
 
+; system variables
+
+SYSVAR_ERR_SP:				   equ 05c3dh	; Address of item on machine stack to use as error return
+SYSVAR_CHANS:                  equ 05c4fh   ; Address of channel data
+SYSVAR_CURCHL:                 equ 05c51h   ; Address of information used for input and output
+SYSVAR_SCR_CT:                 equ 05c8ch   ; Scroll counter
+SYSVAR_ATTR_T:                 equ 05c8fh   ; Temporary current colours
+SYSVAR_ATTR_P:                 equ 05c8dh   ; Permanent current colours
+SYSVAR_COORDS:                 equ 05c7dh   ; Coordinates of last point plotted
+SYSVAR_MODE:                   equ 05c41h   ; Specifies K, L, C, E or G cursor
+SYSVAR_S_POSNL2:               equ 05c8bh   ; Like S-POSN for lower part of screen 
+SYSVAR_DF_SZ:                  equ 05c6bh   ; The number of lines in the lower part of the screen
+SYSVAR_BORDCR:                 equ 05c48h   ; Border colour
+SYSVAR_SEED:                   equ 05c76h   ; The seed for RND
+SYSVAR_FRAMES:                 equ 05c78h   ; Frame counter
+SYSVAR_P_FLAG:                 equ 05c91h   ; More flags
 
     org     06000h
 
@@ -22,7 +38,7 @@ l6003h:
     ld hl,l6286h               ;6007    21 86 62    ! . b          (flow from: 6006)
     push hl                    ;600a    e5      .                  (flow from: 6007)
     ld (09803h),sp             ;600b    ed 73 03 98     . s . .    (flow from: 600a)
-    ld (05c3dh),sp             ;600f    ed 73 3d 5c     . s = \    (flow from: 600b)
+    ld (SYSVAR_ERR_SP),sp             ;600f    ed 73 3d 5c     . s = \    (flow from: 600b)
     ld hl,0ffffh               ;6013    21 ff ff    ! . .          (flow from: 600f)
     ld (0985bh),hl             ;6016    22 5b 98    " [ .          (flow from: 6013)
     call sub_9629h             ;6019    cd 29 96    . ) .          (flow from: 6016)
@@ -5380,7 +5396,7 @@ l800ch:
     cp 0ffh                    ;8032    fe ff   . . 
     call 00d5eh                ;8034    cd 5e 0d    . ^ . 
     ld a,(09822h)              ;8037    3a 22 98    : " . 
-    ld (05c8fh),a              ;803a    32 8f 5c    2 . \ 
+    ld (SYSVAR_ATTR_T),a       ;803a    32 8f 5c    2 . \ 
     call sub_808fh             ;803d    cd 8f 80    . . . 
     ld hl,(0980ah)             ;8040    2a 0a 98    * . . 
     ld de,00080h               ;8043    11 80 00    . . . 
@@ -5390,7 +5406,7 @@ l800ch:
     ld de,00058h               ;804d    11 58 00    . X . 
     call sub_8088h             ;8050    cd 88 80    . . . 
     ld b,l                     ;8053    45      E 
-    ld (05c7dh),bc             ;8054    ed 43 7d 5c     . C } \ 
+    ld (SYSVAR_COORDS),bc      ;8054    ed 43 7d 5c     . C } \ 
     push bc                    ;8058    c5      . 
     ld hl,(09816h)             ;8059    2a 16 98    * . . 
     ld de,00080h               ;805c    11 80 00    . . . 
@@ -5439,9 +5455,9 @@ sub_809dh:
     call sub_8e01h             ;80a8    cd 01 8e    . . . 
     ret                        ;80ab    c9      . 
 sub_80ach:
-    ld hl,(05c8dh)             ;80ac    2a 8d 5c    * . \ 
-    ld (05c8fh),hl             ;80af    22 8f 5c    " . \ 
-    ld hl,05c91h               ;80b2    21 91 5c    ! . \ 
+    ld hl,(SYSVAR_ATTR_P)      ;80ac    2a 8d 5c    * . \ 
+    ld (SYSVAR_ATTR_T),hl      ;80af    22 8f 5c    " . \ 
+    ld hl,SYSVAR_P_FLAG        ;80b2    21 91 5c    ! . \ 
     call 00d63h                ;80b5    cd 63 0d    . c . 
     ret                        ;80b8    c9      . 
     ex af,af'                  ;80b9    08      . 
@@ -5501,7 +5517,7 @@ l80d0h:
     cp 0ffh                    ;80f7    fe ff   . . 
     call 00d5eh                ;80f9    cd 5e 0d    . ^ . 
     ld a,(09816h)              ;80fc    3a 16 98    : . . 
-    ld (05c8fh),a              ;80ff    32 8f 5c    2 . \ 
+    ld (SYSVAR_ATTR_T),a       ;80ff    32 8f 5c    2 . \ 
     call sub_814ch             ;8102    cd 4c 81    . L . 
     call 022e5h                ;8105    cd e5 22    . . " 
     jp l8147h                  ;8108    c3 47 81    . G . 
@@ -5596,14 +5612,14 @@ l8178h:
     rst 38h                    ;8189    ff      . 
     rst 38h                    ;818a    ff      . 
     rst 38h                    ;818b    ff      . 
-    ld hl,(05c78h)             ;818c    2a 78 5c    * x \ 
+    ld hl,(SYSVAR_FRAMES)      ;818c    2a 78 5c    * x \ 
     jr l819ah                  ;818f    18 09   . . 
     ld a,(0980ch)              ;8191    3a 0c 98    : . . 
     cp 004h                    ;8194    fe 04   . . 
     ret nz                     ;8196    c0      . 
     ld hl,(0980ah)             ;8197    2a 0a 98    * . . 
 l819ah:
-    ld (05c76h),hl             ;819a    22 76 5c    " v \ 
+    ld (SYSVAR_SEED),hl        ;819a    22 76 5c    " v \ 
     cp a                       ;819d    bf      . 
     ret                        ;819e    c9      . 
     ld a,(09812h)              ;819f    3a 12 98    : . . 
@@ -5618,7 +5634,7 @@ l819ah:
     ret                        ;81b5    c9      . 
 sub_81b6h:
     push hl                    ;81b6    e5      . 
-    ld hl,(05c76h)             ;81b7    2a 76 5c    * v \ 
+    ld hl,(SYSVAR_SEED)        ;81b7    2a 76 5c    * v \ 
     ld de,0004dh               ;81ba    11 4d 00    . M . 
     ld a,h                     ;81bd    7c      | 
     or l                       ;81be    b5      . 
@@ -5632,7 +5648,7 @@ sub_81b6h:
 l81cch:
     sbc hl,de                  ;81cc    ed 52   . R 
 l81ceh:
-    ld (05c76h),hl             ;81ce    22 76 5c    " v \ 
+    ld (SYSVAR_SEED),hl        ;81ce    22 76 5c    " v \ 
     pop de                     ;81d1    d1      . 
     call sub_81d9h             ;81d2    cd d9 81    . . . 
     ld h,b                     ;81d5    60      ` 
@@ -5731,7 +5747,7 @@ l823ch:
     rst 38h                    ;8243    ff      . 
     rst 38h                    ;8244    ff      . 
     rst 38h                    ;8245    ff      . 
-    ld a,(05c8fh)              ;8246    3a 8f 5c    : . \ 
+    ld a,(SYSVAR_ATTR_T)       ;8246    3a 8f 5c    : . \ 
     jr l825ah                  ;8249    18 0f   . . 
     ld a,(0980ch)              ;824b    3a 0c 98    : . . 
     cp 004h                    ;824e    fe 04   . . 
@@ -5741,7 +5757,7 @@ l823ch:
     sla a                      ;8256    cb 27   . ' 
     sla a                      ;8258    cb 27   . ' 
 l825ah:
-    ld (05c8dh),a              ;825a    32 8d 5c    2 . \ 
+    ld (SYSVAR_ATTR_P),a       ;825a    32 8d 5c    2 . \ 
     push af                    ;825d    f5      . 
     ld a,(iy+002h)             ;825e    fd 7e 02    . ~ . 
     push af                    ;8261    f5      . 
@@ -5749,7 +5765,7 @@ l825ah:
     pop af                     ;8265    f1      . 
     ld (iy+002h),a             ;8266    fd 77 02    . w . 
     pop af                     ;8269    f1      . 
-    ld (05c8fh),a              ;826a    32 8f 5c    2 . \ 
+    ld (SYSVAR_ATTR_T),a       ;826a    32 8f 5c    2 . \ 
     cp a                       ;826d    bf      . 
     ret                        ;826e    c9      . 
     ex af,af'                  ;826f    08      . 
@@ -5863,10 +5879,10 @@ l82e8h:
     rlca                       ;82ff    07      . 
     rlca                       ;8300    07      . 
     rlca                       ;8301    07      . 
-    ld (05c48h),a              ;8302    32 48 5c    2 H \ 
+    ld (SYSVAR_BORDCR),a       ;8302    32 48 5c    2 H \ 
     bit 1,(iy+002h)            ;8305    fd cb 02 4e     . . . N 
     jr nz,l8313h               ;8309    20 08     . 
-    ld a,(05c6bh)              ;830b    3a 6b 5c    : k \ 
+    ld a,(SYSVAR_DF_SZ)        ;830b    3a 6b 5c    : k \ 
     dec a                      ;830e    3d      = 
     ld b,a                     ;830f    47      G 
     call 00e44h                ;8310    cd 44 0e    . D . 
@@ -5919,7 +5935,7 @@ NORMAL_string_end:
     call 00dafh                ;8346    cd af 0d    . . . 
     ld a,002h                  ;8349    3e 02   > . 
     ld (09b6ch),a              ;834b    32 6c 9b    2 l . 
-    ld (05c6bh),a              ;834e    32 6b 5c    2 k \ 
+    ld (SYSVAR_DF_SZ),a        ;834e    32 6b 5c    2 k \ 
     cp a                       ;8351    bf      . 
     ret                        ;8352    c9      . 
     ex af,af'                  ;8353    08      . 
@@ -5977,7 +5993,7 @@ l838fh:
 l8394h:
     ld l,a                     ;8394    6f      o 
     xor a                      ;8395    af      . 
-    ld (05c41h),a              ;8396    32 41 5c    2 A \ 
+    ld (SYSVAR_MODE),a         ;8396    32 41 5c    2 A \ 
     res 3,(iy+030h)            ;8399    fd cb 30 9e     . . 0 . 
     jp l7bdbh                  ;839d    c3 db 7b    . . { 
 l83a0h:
@@ -8939,8 +8955,8 @@ l91adh:
     call sub_91d0h             ;91ad    cd d0 91    . . .          (flow from: 9186 91b0)
     jp nc,l92c5h               ;91b0    d2 c5 92    . . .          (flow from: 91d5 91dc)
     res 3,(iy+002h)            ;91b3    fd cb 02 9e     . . . .    (flow from: 91b0)
-    ld hl,(05c4fh)             ;91b7    2a 4f 5c    * O \          (flow from: 15e3 91b3)
-    ld (05c51h),hl             ;91ba    22 51 5c    " Q \          (flow from: 91b7)
+    ld hl,(SYSVAR_CHANS)       ;91b7    2a 4f 5c    * O \          (flow from: 15e3 91b3)
+    ld (SYSVAR_CURCHL),hl      ;91ba    22 51 5c    " Q \          (flow from: 91b7)
     call ROM_INPUT_AD          ;91bd    cd e6 15    . . .          (flow from: 91ba)
     jr nc,l91cch               ;91c0    30 0a   0 .                (flow from: 1600 92t)
     res 0,(iy+007h)            ;91c2    fd cb 07 86     . . . .    (flow from: 91c0)
@@ -9078,22 +9094,22 @@ l9286h:
     ld (de),a                  ;9299    12      . 
     jr l92c4h                  ;929a    18 28   . ( 
 l929ch:
-    ld hl,(05c4fh)             ;929c    2a 4f 5c    * O \          (flow from: 9197)
-    ld (05c51h),hl             ;929f    22 51 5c    " Q \          (flow from: 929c)
+    ld hl,(SYSVAR_CHANS)       ;929c    2a 4f 5c    * O \          (flow from: 9197)
+    ld (SYSVAR_CURCHL),hl      ;929f    22 51 5c    " Q \          (flow from: 929c)
     ld a,0ffh                  ;92a2    3e ff   > .                (flow from: 929f)
-    ld (05c8ch),a              ;92a4    32 8c 5c    2 . \          (flow from: 92a2)
+    ld (SYSVAR_SCR_CT),a       ;92a4    32 8c 5c    2 . \          (flow from: 92a2)
     ld a,e                     ;92a7    7b      {                  (flow from: 92a4)
     call ROM_PRINT_A_2         ;92a8    cd f2 15    . . .          (flow from: 92a7)
     res 1,(iy+001h)            ;92ab    fd cb 01 8e     . . . .    (flow from: 1600)
     bit 0,(iy+002h)            ;92af    fd cb 02 46     . . . F    (flow from: 92ab)
     jr z,l92c4h                ;92b3    28 0f   ( .                (flow from: 92af)
-    ld hl,05c6bh               ;92b5    21 6b 5c    ! k \ 
+    ld hl,SYSVAR_DF_SZ         ;92b5    21 6b 5c    ! k \ 
     ld a,(hl)                  ;92b8    7e      ~ 
     cp 004h                    ;92b9    fe 04   . . 
     jr c,l92c4h                ;92bb    38 07   8 . 
     ld (hl),003h               ;92bd    36 03   6 . 
     ld a,016h                  ;92bf    3e 16   > . 
-    ld (05c8bh),a              ;92c1    32 8b 5c    2 . \ 
+    ld (SYSVAR_S_POSNL2),a     ;92c1    32 8b 5c    2 . \ 
 l92c4h:
     xor a                      ;92c4    af      .                  (flow from: 91f7 924f 9284 92b3)
 l92c5h:
@@ -9908,10 +9924,10 @@ _ERROR__string_end:
     cp b                       ;975e    b8      . 
     or e                       ;975f    b3      . 
     xor a                      ;9760    af      . 
-    ld (05c41h),a              ;9761    32 41 5c    2 A \ 
+    ld (SYSVAR_MODE),a         ;9761    32 41 5c    2 A \ 
     ld a,030h                  ;9764    3e 30   > 0 
-    ld (05c8dh),a              ;9766    32 8d 5c    2 . \ 
-    ld (05c8fh),a              ;9769    32 8f 5c    2 . \ 
+    ld (SYSVAR_ATTR_P),a       ;9766    32 8d 5c    2 . \ 
+    ld (SYSVAR_ATTR_T),a       ;9769    32 8f 5c    2 . \ 
     jp l6003h                  ;976c    c3 03 60    . . ` 
     call nz,0c2d2h             ;976f    c4 d2 c2    . . . 
     nop                        ;9772    00      . 
