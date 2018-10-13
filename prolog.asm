@@ -11,7 +11,7 @@ ROM_PRINT_A_2:                 equ 015f2h
 
 ; system variables
 
-SYSVAR_ERR_SP:				   equ 05c3dh	; Address of item on machine stack to use as error return
+SYSVAR_ERR_SP:                 equ 05c3dh   ; Address of item on machine stack to use as error return
 SYSVAR_CHANS:                  equ 05c4fh   ; Address of channel data
 SYSVAR_CURCHL:                 equ 05c51h   ; Address of information used for input and output
 SYSVAR_SCR_CT:                 equ 05c8ch   ; Scroll counter
@@ -38,7 +38,7 @@ l6003h:
     ld hl,l6286h               ;6007    21 86 62    ! . b          (flow from: 6006)
     push hl                    ;600a    e5      .                  (flow from: 6007)
     ld (09803h),sp             ;600b    ed 73 03 98     . s . .    (flow from: 600a)
-    ld (SYSVAR_ERR_SP),sp             ;600f    ed 73 3d 5c     . s = \    (flow from: 600b)
+    ld (SYSVAR_ERR_SP),sp      ;600f    ed 73 3d 5c     . s = \    (flow from: 600b)
     ld hl,0ffffh               ;6013    21 ff ff    ! . .          (flow from: 600f)
     ld (0985bh),hl             ;6016    22 5b 98    " [ .          (flow from: 6013)
     call sub_9629h             ;6019    cd 29 96    . ) .          (flow from: 6016)
