@@ -4,198 +4,198 @@
 	org	06000h
 
 l6000h:
-	inc bc			;6000	03 	. 
-	adc a,c			;6001	89 	. 
-	ld (hl),l			;6002	75 	u 
+	inc bc			;6000	03 	. 		 (flow from: )
+	adc a,c			;6001	89 	. 	 (flow from: 6000)
+	ld (hl),l			;6002	75 	u 	 (flow from: 6001)
 l6003h:
-	ld sp,0ffffh		;6003	31 ff ff 	1 . . 
-	nop			;6006	00 	. 
-	ld hl,l6286h		;6007	21 86 62 	! . b 
-	push hl			;600a	e5 	. 
-	ld (09803h),sp		;600b	ed 73 03 98 	. s . . 
-	ld (05c3dh),sp		;600f	ed 73 3d 5c 	. s = \ 
-	ld hl,0ffffh		;6013	21 ff ff 	! . . 
-	ld (0985bh),hl		;6016	22 5b 98 	" [ . 
-	call sub_9629h		;6019	cd 29 96 	. ) . 
-	ld hl,(09805h)		;601c	2a 05 98 	* . . 
-	inc hl			;601f	23 	# 
-	ld (hl),0ffh		;6020	36 ff 	6 . 
-	inc hl			;6022	23 	# 
-	ld (hl),0ffh		;6023	36 ff 	6 . 
+	ld sp,0ffffh		;6003	31 ff ff 	1 . . 	 (flow from: 6002)
+	nop			;6006	00 	. 	 (flow from: 6003)
+	ld hl,l6286h		;6007	21 86 62 	! . b 	 (flow from: 6006)
+	push hl			;600a	e5 	. 	 (flow from: 6007)
+	ld (09803h),sp		;600b	ed 73 03 98 	. s . . 	 (flow from: 600a)
+	ld (05c3dh),sp		;600f	ed 73 3d 5c 	. s = \ 	 (flow from: 600b)
+	ld hl,0ffffh		;6013	21 ff ff 	! . . 	 (flow from: 600f)
+	ld (0985bh),hl		;6016	22 5b 98 	" [ . 	 (flow from: 6013)
+	call sub_9629h		;6019	cd 29 96 	. ) . 	 (flow from: 6016)
+	ld hl,(09805h)		;601c	2a 05 98 	* . . 	 (flow from: 9748)
+	inc hl			;601f	23 	# 	 (flow from: 601c)
+	ld (hl),0ffh		;6020	36 ff 	6 . 	 (flow from: 601f)
+	inc hl			;6022	23 	# 	 (flow from: 6020)
+	ld (hl),0ffh		;6023	36 ff 	6 . 	 (flow from: 6022)
 l6025h:
-	ld hl,l8834h		;6025	21 34 88 	! 4 . 
-	ld (09841h),hl		;6028	22 41 98 	" A . 
-	ld hl,l884ch		;602b	21 4c 88 	! L . 
-	ld (09845h),hl		;602e	22 45 98 	" E . 
-	ld hl,l849dh		;6031	21 9d 84 	! . . 
-	ld (09849h),hl		;6034	22 49 98 	" I . 
-	ld hl,(09837h)		;6037	2a 37 98 	* 7 . 
-	ld (0984bh),hl		;603a	22 4b 98 	" K . 
-	call sub_6312h		;603d	cd 12 63 	. . c 
-	ld hl,(0983dh)		;6040	2a 3d 98 	* = . 
-	ld ix,(0983dh)		;6043	dd 2a 3d 98 	. * = . 
-	ld (0983fh),hl		;6047	22 3f 98 	" ? . 
-	ld (09843h),hl		;604a	22 43 98 	" C . 
-	ld (09847h),hl		;604d	22 47 98 	" G . 
-	ld (ix+002h),l		;6050	dd 75 02 	. u . 
-	ld (ix+003h),h		;6053	dd 74 03 	. t . 
-	ld (ix+006h),l		;6056	dd 75 06 	. u . 
-	ld (ix+007h),h		;6059	dd 74 07 	. t . 
+	ld hl,l8834h		;6025	21 34 88 	! 4 . 	 (flow from: 6023)
+	ld (09841h),hl		;6028	22 41 98 	" A . 	 (flow from: 6025)
+	ld hl,l884ch		;602b	21 4c 88 	! L . 	 (flow from: 6028)
+	ld (09845h),hl		;602e	22 45 98 	" E . 	 (flow from: 602b)
+	ld hl,l849dh		;6031	21 9d 84 	! . . 	 (flow from: 602e)
+	ld (09849h),hl		;6034	22 49 98 	" I . 	 (flow from: 6031)
+	ld hl,(09837h)		;6037	2a 37 98 	* 7 . 	 (flow from: 6034)
+	ld (0984bh),hl		;603a	22 4b 98 	" K . 	 (flow from: 6037)
+	call sub_6312h		;603d	cd 12 63 	. . c 	 (flow from: 603a)
+	ld hl,(0983dh)		;6040	2a 3d 98 	* = . 	 (flow from: 639b)
+	ld ix,(0983dh)		;6043	dd 2a 3d 98 	. * = . 	 (flow from: 6040)
+	ld (0983fh),hl		;6047	22 3f 98 	" ? . 	 (flow from: 6043)
+	ld (09843h),hl		;604a	22 43 98 	" C . 	 (flow from: 6047)
+	ld (09847h),hl		;604d	22 47 98 	" G . 	 (flow from: 604a)
+	ld (ix+002h),l		;6050	dd 75 02 	. u . 	 (flow from: 604d)
+	ld (ix+003h),h		;6053	dd 74 03 	. t . 	 (flow from: 6050)
+	ld (ix+006h),l		;6056	dd 75 06 	. u . 	 (flow from: 6053)
+	ld (ix+007h),h		;6059	dd 74 07 	. t . 	 (flow from: 6056)
 l605ch:
-	ld ix,(09843h)		;605c	dd 2a 43 98 	. * C . 
-	ld e,(ix+00ah)		;6060	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;6063	dd 56 0b 	. V . 
-	ld (09853h),de		;6066	ed 53 53 98 	. S S . 
-	call sub_7310h		;606a	cd 10 73 	. . s 
-	ld hl,(09845h)		;606d	2a 45 98 	* E . 
-	ld a,(hl)			;6070	7e 	~ 
-	cp 003h		;6071	fe 03 	. . 
-	jp nz,l6290h		;6073	c2 90 62 	. . b 
-	call sub_9623h		;6076	cd 23 96 	. # . 
-	call sub_6575h		;6079	cd 75 65 	. u e 
-	cp 003h		;607c	fe 03 	. . 
-	jr z,l6097h		;607e	28 17 	( . 
-	cp 008h		;6080	fe 08 	. . 
-	jp nz,l6290h		;6082	c2 90 62 	. . b 
-	call sub_9623h		;6085	cd 23 96 	. # . 
-	ld a,(hl)			;6088	7e 	~ 
-	cp 004h		;6089	fe 04 	. . 
-	jp nz,l6290h		;608b	c2 90 62 	. . b 
-	ld bc,l849dh		;608e	01 9d 84 	. . . 
-	ld (0984fh),bc		;6091	ed 43 4f 98 	. C O . 
-	jr l60b3h		;6095	18 1c 	. . 
+	ld ix,(09843h)		;605c	dd 2a 43 98 	. * C . 	 (flow from: 6059 6167 624c)
+	ld e,(ix+00ah)		;6060	dd 5e 0a 	. ^ . 	 (flow from: 0052 605c)
+	ld d,(ix+00bh)		;6063	dd 56 0b 	. V . 	 (flow from: 0052 6060)
+	ld (09853h),de		;6066	ed 53 53 98 	. S S . 	 (flow from: 6063)
+	call sub_7310h		;606a	cd 10 73 	. . s 	 (flow from: 6066)
+	ld hl,(09845h)		;606d	2a 45 98 	* E . 	 (flow from: 734b)
+	ld a,(hl)			;6070	7e 	~ 	 (flow from: 606d)
+	cp 003h		;6071	fe 03 	. . 	 (flow from: 6070)
+	jp nz,l6290h		;6073	c2 90 62 	. . b 	 (flow from: 6071)
+	call sub_9623h		;6076	cd 23 96 	. # . 	 (flow from: 6073)
+	call sub_6575h		;6079	cd 75 65 	. u e 	 (flow from: 9628)
+	cp 003h		;607c	fe 03 	. . 	 (flow from: 658a)
+	jr z,l6097h		;607e	28 17 	( . 	 (flow from: 607c)
+	cp 008h		;6080	fe 08 	. . 	 (flow from: 607e)
+	jp nz,l6290h		;6082	c2 90 62 	. . b 	 (flow from: 6080)
+	call sub_9623h		;6085	cd 23 96 	. # . 	 (flow from: 6082)
+	ld a,(hl)			;6088	7e 	~ 	 (flow from: 9628)
+	cp 004h		;6089	fe 04 	. . 	 (flow from: 6088)
+	jp nz,l6290h		;608b	c2 90 62 	. . b 	 (flow from: 6089)
+	ld bc,l849dh		;608e	01 9d 84 	. . . 	 (flow from: 608b)
+	ld (0984fh),bc		;6091	ed 43 4f 98 	. C O . 	 (flow from: 608e)
+	jr l60b3h		;6095	18 1c 	. . 	 (flow from: 6091)
 l6097h:
-	call sub_9623h		;6097	cd 23 96 	. # . 
-	inc hl			;609a	23 	# 
-	inc hl			;609b	23 	# 
-	inc hl			;609c	23 	# 
-	ld (0984fh),hl		;609d	22 4f 98 	" O . 
-	dec hl			;60a0	2b 	+ 
-	dec hl			;60a1	2b 	+ 
-	dec hl			;60a2	2b 	+ 
-	call sub_6575h		;60a3	cd 75 65 	. u e 
-	cp 008h		;60a6	fe 08 	. . 
-	jp nz,l6290h		;60a8	c2 90 62 	. . b 
-	call sub_9623h		;60ab	cd 23 96 	. # . 
-	ld a,(hl)			;60ae	7e 	~ 
-	cp 004h		;60af	fe 04 	. . 
-	jr nz,l60dbh		;60b1	20 28 	  ( 
+	call sub_9623h		;6097	cd 23 96 	. # . 	 (flow from: 607e)
+	inc hl			;609a	23 	# 	 (flow from: 9628)
+	inc hl			;609b	23 	# 	 (flow from: 609a)
+	inc hl			;609c	23 	# 	 (flow from: 609b)
+	ld (0984fh),hl		;609d	22 4f 98 	" O . 	 (flow from: 609c)
+	dec hl			;60a0	2b 	+ 	 (flow from: 0052 609d)
+	dec hl			;60a1	2b 	+ 	 (flow from: 60a0)
+	dec hl			;60a2	2b 	+ 	 (flow from: 60a1)
+	call sub_6575h		;60a3	cd 75 65 	. u e 	 (flow from: 60a2)
+	cp 008h		;60a6	fe 08 	. . 	 (flow from: 658a)
+	jp nz,l6290h		;60a8	c2 90 62 	. . b 	 (flow from: 60a6)
+	call sub_9623h		;60ab	cd 23 96 	. # . 	 (flow from: 60a8)
+	ld a,(hl)			;60ae	7e 	~ 	 (flow from: 9628)
+	cp 004h		;60af	fe 04 	. . 	 (flow from: 60ae)
+	jr nz,l60dbh		;60b1	20 28 	  ( 	 (flow from: 60af)
 l60b3h:
-	push de			;60b3	d5 	. 
-	ld de,l60bch		;60b4	11 bc 60 	. . ` 
-	push de			;60b7	d5 	. 
-	call sub_9623h		;60b8	cd 23 96 	. # . 
-	jp (hl)			;60bb	e9 	. 
+	push de			;60b3	d5 	. 	 (flow from: 6095 60b1)
+	ld de,l60bch		;60b4	11 bc 60 	. . ` 	 (flow from: 60b3)
+	push de			;60b7	d5 	. 	 (flow from: 60b4)
+	call sub_9623h		;60b8	cd 23 96 	. # . 	 (flow from: 60b7)
+	jp (hl)			;60bb	e9 	. 	 (flow from: 9628)
 l60bch:
-	pop de			;60bc	d1 	. 
-	jp nz,l624fh		;60bd	c2 4f 62 	. O b 
-	ld hl,(09845h)		;60c0	2a 45 98 	* E . 
-	call sub_9623h		;60c3	cd 23 96 	. # . 
-	inc hl			;60c6	23 	# 
-	inc hl			;60c7	23 	# 
-	inc hl			;60c8	23 	# 
-	call sub_6575h		;60c9	cd 75 65 	. u e 
-	ld (09845h),hl		;60cc	22 45 98 	" E . 
-	cp 010h		;60cf	fe 10 	. . 
-	ld bc,(09843h)		;60d1	ed 4b 43 98 	. K C . 
-	ld ix,(09843h)		;60d5	dd 2a 43 98 	. * C . 
-	jr l6144h		;60d9	18 69 	. i 
+	pop de			;60bc	d1 	. 	 (flow from: 663d 6679 768a 7823 7e37)
+	jp nz,l624fh		;60bd	c2 4f 62 	. O b 	 (flow from: 60bc)
+	ld hl,(09845h)		;60c0	2a 45 98 	* E . 	 (flow from: 60bd)
+	call sub_9623h		;60c3	cd 23 96 	. # . 	 (flow from: 60c0)
+	inc hl			;60c6	23 	# 	 (flow from: 9628)
+	inc hl			;60c7	23 	# 	 (flow from: 60c6)
+	inc hl			;60c8	23 	# 	 (flow from: 60c7)
+	call sub_6575h		;60c9	cd 75 65 	. u e 	 (flow from: 60c8)
+	ld (09845h),hl		;60cc	22 45 98 	" E . 	 (flow from: 658a)
+	cp 010h		;60cf	fe 10 	. . 	 (flow from: 60cc)
+	ld bc,(09843h)		;60d1	ed 4b 43 98 	. K C . 	 (flow from: 60cf)
+	ld ix,(09843h)		;60d5	dd 2a 43 98 	. * C . 	 (flow from: 60d1)
+	jr l6144h		;60d9	18 69 	. i 	 (flow from: 60d5)
 l60dbh:
-	cp 003h		;60db	fe 03 	. . 
-	jp nz,l62a4h		;60dd	c2 a4 62 	. . b 
-	ld (09841h),hl		;60e0	22 41 98 	" A . 
+	cp 003h		;60db	fe 03 	. . 	 (flow from: 60b1)
+	jp nz,l62a4h		;60dd	c2 a4 62 	. . b 	 (flow from: 60db)
+	ld (09841h),hl		;60e0	22 41 98 	" A . 	 (flow from: 60dd)
 l60e3h:
-	call sub_6312h		;60e3	cd 12 63 	. . c 
-	jp nz,l624fh		;60e6	c2 4f 62 	. O b 
-	ld ix,(09843h)		;60e9	dd 2a 43 98 	. * C . 
-	ld e,(ix+00ah)		;60ed	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;60f0	dd 56 0b 	. V . 
-	ld (09853h),de		;60f3	ed 53 53 98 	. S S . 
-	ld hl,(09845h)		;60f7	2a 45 98 	* E . 
-	call sub_9623h		;60fa	cd 23 96 	. # . 
-	call sub_6575h		;60fd	cd 75 65 	. u e 
-	call sub_9623h		;6100	cd 23 96 	. # . 
-	inc hl			;6103	23 	# 
-	inc hl			;6104	23 	# 
-	inc hl			;6105	23 	# 
+	call sub_6312h		;60e3	cd 12 63 	. . c 	 (flow from: 60e0 6256)
+	jp nz,l624fh		;60e6	c2 4f 62 	. O b 	 (flow from: 639b 63a3)
+	ld ix,(09843h)		;60e9	dd 2a 43 98 	. * C . 	 (flow from: 0052 60e6)
+	ld e,(ix+00ah)		;60ed	dd 5e 0a 	. ^ . 	 (flow from: 60e9)
+	ld d,(ix+00bh)		;60f0	dd 56 0b 	. V . 	 (flow from: 60ed)
+	ld (09853h),de		;60f3	ed 53 53 98 	. S S . 	 (flow from: 60f0)
+	ld hl,(09845h)		;60f7	2a 45 98 	* E . 	 (flow from: 60f3)
+	call sub_9623h		;60fa	cd 23 96 	. # . 	 (flow from: 60f7)
+	call sub_6575h		;60fd	cd 75 65 	. u e 	 (flow from: 9628)
+	call sub_9623h		;6100	cd 23 96 	. # . 	 (flow from: 658a)
+	inc hl			;6103	23 	# 	 (flow from: 9628)
+	inc hl			;6104	23 	# 	 (flow from: 6103)
+	inc hl			;6105	23 	# 	 (flow from: 6104)
 l6106h:
-	ex de,hl			;6106	eb 	. 
-	ld hl,(09851h)		;6107	2a 51 98 	* Q . 
-	ld b,000h		;610a	06 00 	. . 
-	call sub_63edh		;610c	cd ed 63 	. . c 
-	jp nz,l624fh		;610f	c2 4f 62 	. O b 
-	ld hl,(0984dh)		;6112	2a 4d 98 	* M . 
-	ld de,(09855h)		;6115	ed 5b 55 98 	. [ U . 
-	call sub_6575h		;6119	cd 75 65 	. u e 
-	cp 010h		;611c	fe 10 	. . 
-	jr nz,l616ah		;611e	20 4a 	  J 
+	ex de,hl			;6106	eb 	. 	 (flow from: 6105)
+	ld hl,(09851h)		;6107	2a 51 98 	* Q . 	 (flow from: 6106)
+	ld b,000h		;610a	06 00 	. . 	 (flow from: 6107)
+	call sub_63edh		;610c	cd ed 63 	. . c 	 (flow from: 610a)
+	jp nz,l624fh		;610f	c2 4f 62 	. O b 	 (flow from: 6481 64ae 6504)
+	ld hl,(0984dh)		;6112	2a 4d 98 	* M . 	 (flow from: 610f)
+	ld de,(09855h)		;6115	ed 5b 55 98 	. [ U . 	 (flow from: 6112)
+	call sub_6575h		;6119	cd 75 65 	. u e 	 (flow from: 6115)
+	cp 010h		;611c	fe 10 	. . 	 (flow from: 658a)
+	jr nz,l616ah		;611e	20 4a 	  J 	 (flow from: 611c)
 	ld ix,(0983dh)		;6120	dd 2a 3d 98 	. * = . 
 l6124h:
-	ld l,(ix+004h)		;6124	dd 6e 04 	. n . 
-	ld h,(ix+005h)		;6127	dd 66 05 	. f . 
-	call sub_9623h		;612a	cd 23 96 	. # . 
-	inc hl			;612d	23 	# 
-	inc hl			;612e	23 	# 
-	inc hl			;612f	23 	# 
-	ld c,(ix+002h)		;6130	dd 4e 02 	. N . 
-	ld b,(ix+003h)		;6133	dd 46 03 	. F . 
-	push bc			;6136	c5 	. 
-	pop ix		;6137	dd e1 	. . 
-	ld e,(ix+00ah)		;6139	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;613c	dd 56 0b 	. V . 
-	call sub_6575h		;613f	cd 75 65 	. u e 
-	cp 010h		;6142	fe 10 	. . 
+	ld l,(ix+004h)		;6124	dd 6e 04 	. n . 	 (flow from: 6144)
+	ld h,(ix+005h)		;6127	dd 66 05 	. f . 	 (flow from: 6124)
+	call sub_9623h		;612a	cd 23 96 	. # . 	 (flow from: 6127)
+	inc hl			;612d	23 	# 	 (flow from: 9628)
+	inc hl			;612e	23 	# 	 (flow from: 612d)
+	inc hl			;612f	23 	# 	 (flow from: 612e)
+	ld c,(ix+002h)		;6130	dd 4e 02 	. N . 	 (flow from: 612f)
+	ld b,(ix+003h)		;6133	dd 46 03 	. F . 	 (flow from: 6130)
+	push bc			;6136	c5 	. 	 (flow from: 6133)
+	pop ix		;6137	dd e1 	. . 	 (flow from: 6136)
+	ld e,(ix+00ah)		;6139	dd 5e 0a 	. ^ . 	 (flow from: 6137)
+	ld d,(ix+00bh)		;613c	dd 56 0b 	. V . 	 (flow from: 6139)
+	call sub_6575h		;613f	cd 75 65 	. u e 	 (flow from: 613c)
+	cp 010h		;6142	fe 10 	. . 	 (flow from: 658a)
 l6144h:
-	jr z,l6124h		;6144	28 de 	( . 
-	cp 003h		;6146	fe 03 	. . 
-	jp nz,l6290h		;6148	c2 90 62 	. . b 
-	ld d,b			;614b	50 	P 
-	ld e,c			;614c	59 	Y 
-	ld (09843h),de		;614d	ed 53 43 98 	. S C . 
-	ld (09845h),hl		;6151	22 45 98 	" E . 
-	ld hl,(09847h)		;6154	2a 47 98 	* G . 
-	call sub_65f1h		;6157	cd f1 65 	. . e 
-	jr nc,l615dh		;615a	30 01 	0 . 
-	ex de,hl			;615c	eb 	. 
+	jr z,l6124h		;6144	28 de 	( . 	 (flow from: 60d9 6142)
+	cp 003h		;6146	fe 03 	. . 	 (flow from: 6144)
+	jp nz,l6290h		;6148	c2 90 62 	. . b 	 (flow from: 6146)
+	ld d,b			;614b	50 	P 	 (flow from: 6148)
+	ld e,c			;614c	59 	Y 	 (flow from: 614b)
+	ld (09843h),de		;614d	ed 53 43 98 	. S C . 	 (flow from: 614c)
+	ld (09845h),hl		;6151	22 45 98 	" E . 	 (flow from: 614d)
+	ld hl,(09847h)		;6154	2a 47 98 	* G . 	 (flow from: 6151)
+	call sub_65f1h		;6157	cd f1 65 	. . e 	 (flow from: 6154)
+	jr nc,l615dh		;615a	30 01 	0 . 	 (flow from: 65f6)
+	ex de,hl			;615c	eb 	. 	 (flow from: 615a)
 l615dh:
-	ld (0983dh),hl		;615d	22 3d 98 	" = . 
-	ld de,0000ch		;6160	11 0c 00 	. . . 
-	add hl,de			;6163	19 	. 
-	ld (0984bh),hl		;6164	22 4b 98 	" K . 
-	jp l605ch		;6167	c3 5c 60 	. \ ` 
+	ld (0983dh),hl		;615d	22 3d 98 	" = . 	 (flow from: 615a 615c)
+	ld de,0000ch		;6160	11 0c 00 	. . . 	 (flow from: 615d)
+	add hl,de			;6163	19 	. 	 (flow from: 6160)
+	ld (0984bh),hl		;6164	22 4b 98 	" K . 	 (flow from: 6163)
+	jp l605ch		;6167	c3 5c 60 	. \ ` 	 (flow from: 6164)
 l616ah:
-	cp 003h		;616a	fe 03 	. . 
-	jp nz,l6290h		;616c	c2 90 62 	. . b 
-	ld de,(09845h)		;616f	ed 5b 45 98 	. [ E . 
-	ld (09845h),hl		;6173	22 45 98 	" E . 
-	ex de,hl			;6176	eb 	. 
-	call sub_9623h		;6177	cd 23 96 	. # . 
-	inc hl			;617a	23 	# 
-	inc hl			;617b	23 	# 
-	inc hl			;617c	23 	# 
-	ld de,(09853h)		;617d	ed 5b 53 98 	. [ S . 
-	call sub_6575h		;6181	cd 75 65 	. u e 
-	cp 010h		;6184	fe 10 	. . 
-	jp nz,l6246h		;6186	c2 46 62 	. F b 
-	ld hl,(09857h)		;6189	2a 57 98 	* W . 
-	ld de,(09843h)		;618c	ed 5b 43 98 	. [ C . 
-	or a			;6190	b7 	. 
-	sbc hl,de		;6191	ed 52 	. R 
-	jp nz,l6246h		;6193	c2 46 62 	. F b 
-	ld hl,(09847h)		;6196	2a 47 98 	* G . 
-	or a			;6199	b7 	. 
-	sbc hl,de		;619a	ed 52 	. R 
-	jp nc,l6246h		;619c	d2 46 62 	. F b 
-	ld hl,(09853h)		;619f	2a 53 98 	* S . 
-	ld de,(09855h)		;61a2	ed 5b 55 98 	. [ U . 
-	or a			;61a6	b7 	. 
-	sbc hl,de		;61a7	ed 52 	. R 
-	ex de,hl			;61a9	eb 	. 
-	ld bc,(09845h)		;61aa	ed 4b 45 98 	. K E . 
-	dec hl			;61ae	2b 	+ 
-	or a			;61af	b7 	. 
-	sbc hl,bc		;61b0	ed 42 	. B 
-	jr nc,l61c2h		;61b2	30 0e 	0 . 
+	cp 003h		;616a	fe 03 	. . 	 (flow from: 611e)
+	jp nz,l6290h		;616c	c2 90 62 	. . b 	 (flow from: 616a)
+	ld de,(09845h)		;616f	ed 5b 45 98 	. [ E . 	 (flow from: 616c)
+	ld (09845h),hl		;6173	22 45 98 	" E . 	 (flow from: 616f)
+	ex de,hl			;6176	eb 	. 	 (flow from: 6173)
+	call sub_9623h		;6177	cd 23 96 	. # . 	 (flow from: 6176)
+	inc hl			;617a	23 	# 	 (flow from: 9628)
+	inc hl			;617b	23 	# 	 (flow from: 617a)
+	inc hl			;617c	23 	# 	 (flow from: 617b)
+	ld de,(09853h)		;617d	ed 5b 53 98 	. [ S . 	 (flow from: 617c)
+	call sub_6575h		;6181	cd 75 65 	. u e 	 (flow from: 617d)
+	cp 010h		;6184	fe 10 	. . 	 (flow from: 658a)
+	jp nz,l6246h		;6186	c2 46 62 	. F b 	 (flow from: 6184)
+	ld hl,(09857h)		;6189	2a 57 98 	* W . 	 (flow from: 6186)
+	ld de,(09843h)		;618c	ed 5b 43 98 	. [ C . 	 (flow from: 6189)
+	or a			;6190	b7 	. 	 (flow from: 618c)
+	sbc hl,de		;6191	ed 52 	. R 	 (flow from: 6190)
+	jp nz,l6246h		;6193	c2 46 62 	. F b 	 (flow from: 6191)
+	ld hl,(09847h)		;6196	2a 47 98 	* G . 	 (flow from: 6193)
+	or a			;6199	b7 	. 	 (flow from: 6196)
+	sbc hl,de		;619a	ed 52 	. R 	 (flow from: 6199)
+	jp nc,l6246h		;619c	d2 46 62 	. F b 	 (flow from: 619a)
+	ld hl,(09853h)		;619f	2a 53 98 	* S . 	 (flow from: 619c)
+	ld de,(09855h)		;61a2	ed 5b 55 98 	. [ U . 	 (flow from: 619f)
+	or a			;61a6	b7 	. 	 (flow from: 61a2)
+	sbc hl,de		;61a7	ed 52 	. R 	 (flow from: 61a6)
+	ex de,hl			;61a9	eb 	. 	 (flow from: 61a7)
+	ld bc,(09845h)		;61aa	ed 4b 45 98 	. K E . 	 (flow from: 61a9)
+	dec hl			;61ae	2b 	+ 	 (flow from: 61aa)
+	or a			;61af	b7 	. 	 (flow from: 61ae)
+	sbc hl,bc		;61b0	ed 42 	. B 	 (flow from: 61af)
+	jr nc,l61c2h		;61b2	30 0e 	0 . 	 (flow from: 61b0)
 	ld hl,(0983dh)		;61b4	2a 3d 98 	* = . 
 	or a			;61b7	b7 	. 
 	sbc hl,bc		;61b8	ed 42 	. B 
@@ -205,18 +205,18 @@ l616ah:
 	add hl,de			;61be	19 	. 
 	ld (09845h),hl		;61bf	22 45 98 	" E . 
 l61c2h:
-	ld bc,(09855h)		;61c2	ed 4b 55 98 	. K U . 
-	ld hl,(0983dh)		;61c6	2a 3d 98 	* = . 
-	or a			;61c9	b7 	. 
-	sbc hl,bc		;61ca	ed 42 	. B 
-	jr z,l621ch		;61cc	28 4e 	( N 
-	ld b,l			;61ce	45 	E 
-	ld (09859h),de		;61cf	ed 53 59 98 	. S Y . 
-	ld hl,(09855h)		;61d3	2a 55 98 	* U . 
+	ld bc,(09855h)		;61c2	ed 4b 55 98 	. K U . 	 (flow from: 61b2)
+	ld hl,(0983dh)		;61c6	2a 3d 98 	* = . 	 (flow from: 61c2)
+	or a			;61c9	b7 	. 	 (flow from: 61c6)
+	sbc hl,bc		;61ca	ed 42 	. B 	 (flow from: 61c9)
+	jr z,l621ch		;61cc	28 4e 	( N 	 (flow from: 61ca)
+	ld b,l			;61ce	45 	E 	 (flow from: 61cc)
+	ld (09859h),de		;61cf	ed 53 59 98 	. S Y . 	 (flow from: 61ce)
+	ld hl,(09855h)		;61d3	2a 55 98 	* U . 	 (flow from: 61cf)
 l61d6h:
-	ld a,(hl)			;61d6	7e 	~ 
-	cp 001h		;61d7	fe 01 	. . 
-	jr nz,l6215h		;61d9	20 3a 	  : 
+	ld a,(hl)			;61d6	7e 	~ 	 (flow from: 61d3 621a)
+	cp 001h		;61d7	fe 01 	. . 	 (flow from: 61d6)
+	jr nz,l6215h		;61d9	20 3a 	  : 	 (flow from: 61d7)
 	push hl			;61db	e5 	. 
 	call sub_9623h		;61dc	cd 23 96 	. # . 
 	ex de,hl			;61df	eb 	. 
@@ -257,38 +257,38 @@ l620ah:
 l6214h:
 	pop hl			;6214	e1 	. 
 l6215h:
-	inc hl			;6215	23 	# 
-	inc hl			;6216	23 	# 
-	inc hl			;6217	23 	# 
-	dec b			;6218	05 	. 
-	dec b			;6219	05 	. 
-	djnz l61d6h		;621a	10 ba 	. . 
+	inc hl			;6215	23 	# 	 (flow from: 61d9)
+	inc hl			;6216	23 	# 	 (flow from: 6215)
+	inc hl			;6217	23 	# 	 (flow from: 6216)
+	dec b			;6218	05 	. 	 (flow from: 6217)
+	dec b			;6219	05 	. 	 (flow from: 6218)
+	djnz l61d6h		;621a	10 ba 	. . 	 (flow from: 6219)
 l621ch:
-	ld de,(0983dh)		;621c	ed 5b 3d 98 	. [ = . 
-	ld hl,(09843h)		;6220	2a 43 98 	* C . 
-	ld bc,0000ch		;6223	01 0c 00 	. . . 
-	ldir		;6226	ed b0 	. . 
-	ld de,(09855h)		;6228	ed 5b 55 98 	. [ U . 
-	ld hl,(0984bh)		;622c	2a 4b 98 	* K . 
-	or a			;622f	b7 	. 
-	sbc hl,de		;6230	ed 52 	. R 
-	ld b,h			;6232	44 	D 
-	ld c,l			;6233	4d 	M 
-	ex de,hl			;6234	eb 	. 
-	ld de,(09853h)		;6235	ed 5b 53 98 	. [ S . 
-	ldir		;6239	ed b0 	. . 
-	ld (0984bh),de		;623b	ed 53 4b 98 	. S K . 
-	ld hl,0fff4h		;623f	21 f4 ff 	! . . 
-	add hl,de			;6242	19 	. 
-	ld (0983dh),hl		;6243	22 3d 98 	" = . 
+	ld de,(0983dh)		;621c	ed 5b 3d 98 	. [ = . 	 (flow from: 621a)
+	ld hl,(09843h)		;6220	2a 43 98 	* C . 	 (flow from: 621c)
+	ld bc,0000ch		;6223	01 0c 00 	. . . 	 (flow from: 6220)
+	ldir		;6226	ed b0 	. . 	 (flow from: 6223 6226)
+	ld de,(09855h)		;6228	ed 5b 55 98 	. [ U . 	 (flow from: 6226)
+	ld hl,(0984bh)		;622c	2a 4b 98 	* K . 	 (flow from: 0052 6228)
+	or a			;622f	b7 	. 	 (flow from: 622c)
+	sbc hl,de		;6230	ed 52 	. R 	 (flow from: 622f)
+	ld b,h			;6232	44 	D 	 (flow from: 6230)
+	ld c,l			;6233	4d 	M 	 (flow from: 6232)
+	ex de,hl			;6234	eb 	. 	 (flow from: 6233)
+	ld de,(09853h)		;6235	ed 5b 53 98 	. [ S . 	 (flow from: 6234)
+	ldir		;6239	ed b0 	. . 	 (flow from: 0052 6235 6239)
+	ld (0984bh),de		;623b	ed 53 4b 98 	. S K . 	 (flow from: 6239)
+	ld hl,0fff4h		;623f	21 f4 ff 	! . . 	 (flow from: 623b)
+	add hl,de			;6242	19 	. 	 (flow from: 623f)
+	ld (0983dh),hl		;6243	22 3d 98 	" = . 	 (flow from: 6242)
 l6246h:
-	ld hl,(0983dh)		;6246	2a 3d 98 	* = . 
-	ld (09843h),hl		;6249	22 43 98 	" C . 
-	jp l605ch		;624c	c3 5c 60 	. \ ` 
+	ld hl,(0983dh)		;6246	2a 3d 98 	* = . 	 (flow from: 0052 6186 619c 6243)
+	ld (09843h),hl		;6249	22 43 98 	" C . 	 (flow from: 6246)
+	jp l605ch		;624c	c3 5c 60 	. \ ` 	 (flow from: 6249)
 l624fh:
-	ld ix,(09847h)		;624f	dd 2a 47 98 	. * G . 
-	call sub_63a4h		;6253	cd a4 63 	. . c 
-	jp l60e3h		;6256	c3 e3 60 	. . ` 
+	ld ix,(09847h)		;624f	dd 2a 47 98 	. * G . 	 (flow from: 60bd 610f)
+	call sub_63a4h		;6253	cd a4 63 	. . c 	 (flow from: 624f)
+	jp l60e3h		;6256	c3 e3 60 	. . ` 	 (flow from: 63ec)
 sub_6259h:
 	call sub_7296h		;6259	cd 96 72 	. . r 
 	out (0f9h),a		;625c	d3 f9 	. . 
@@ -413,150 +413,150 @@ dictfull_string_end:
 	ld a,(02020h)		;630e	3a 20 20 	:     
 	nop			;6311	00 	. 
 sub_6312h:
-	ld hl,(0983dh)		;6312	2a 3d 98 	* = . 
-	ld (09857h),hl		;6315	22 57 98 	" W . 
-	ld hl,(09841h)		;6318	2a 41 98 	* A . 
-	ld a,(hl)			;631b	7e 	~ 
-	cp 003h		;631c	fe 03 	. . 
-	ret nz			;631e	c0 	. 
-	call sub_9623h		;631f	cd 23 96 	. # . 
-	ld a,(hl)			;6322	7e 	~ 
-	cp 003h		;6323	fe 03 	. . 
-	ret nz			;6325	c0 	. 
-	push hl			;6326	e5 	. 
-	call sub_9623h		;6327	cd 23 96 	. # . 
-	push hl			;632a	e5 	. 
-	ld a,(hl)			;632b	7e 	~ 
-	cp 004h		;632c	fe 04 	. . 
-	call nz,sub_6259h		;632e	c4 59 62 	. Y b 
-	call sub_9623h		;6331	cd 23 96 	. # . 
-	push hl			;6334	e5 	. 
-	push hl			;6335	e5 	. 
-	add hl,hl			;6336	29 	) 
-	pop de			;6337	d1 	. 
-	add hl,de			;6338	19 	. 
-	ld de,00012h		;6339	11 12 00 	. . . 
-	add hl,de			;633c	19 	. 
-	ld de,(0984bh)		;633d	ed 5b 4b 98 	. [ K . 
-	add hl,de			;6341	19 	. 
-	ld de,(0983bh)		;6342	ed 5b 3b 98 	. [ ; . 
-	call sub_65f1h		;6346	cd f1 65 	. . e 
-	jr c,l6358h		;6349	38 0d 	8 . 
+	ld hl,(0983dh)		;6312	2a 3d 98 	* = . 	 (flow from: 603d 60e3)
+	ld (09857h),hl		;6315	22 57 98 	" W . 	 (flow from: 6312)
+	ld hl,(09841h)		;6318	2a 41 98 	* A . 	 (flow from: 6315)
+	ld a,(hl)			;631b	7e 	~ 	 (flow from: 6318)
+	cp 003h		;631c	fe 03 	. . 	 (flow from: 631b)
+	ret nz			;631e	c0 	. 	 (flow from: 631c)
+	call sub_9623h		;631f	cd 23 96 	. # . 	 (flow from: 631e)
+	ld a,(hl)			;6322	7e 	~ 	 (flow from: 9628)
+	cp 003h		;6323	fe 03 	. . 	 (flow from: 6322)
+	ret nz			;6325	c0 	. 	 (flow from: 6323)
+	push hl			;6326	e5 	. 	 (flow from: 6325)
+	call sub_9623h		;6327	cd 23 96 	. # . 	 (flow from: 6326)
+	push hl			;632a	e5 	. 	 (flow from: 9628)
+	ld a,(hl)			;632b	7e 	~ 	 (flow from: 632a)
+	cp 004h		;632c	fe 04 	. . 	 (flow from: 632b)
+	call nz,sub_6259h		;632e	c4 59 62 	. Y b 	 (flow from: 632c)
+	call sub_9623h		;6331	cd 23 96 	. # . 	 (flow from: 632e)
+	push hl			;6334	e5 	. 	 (flow from: 9628)
+	push hl			;6335	e5 	. 	 (flow from: 0052 6334)
+	add hl,hl			;6336	29 	) 	 (flow from: 6335)
+	pop de			;6337	d1 	. 	 (flow from: 6336)
+	add hl,de			;6338	19 	. 	 (flow from: 6337)
+	ld de,00012h		;6339	11 12 00 	. . . 	 (flow from: 0052 6338)
+	add hl,de			;633c	19 	. 	 (flow from: 6339)
+	ld de,(0984bh)		;633d	ed 5b 4b 98 	. [ K . 	 (flow from: 633c)
+	add hl,de			;6341	19 	. 	 (flow from: 633d)
+	ld de,(0983bh)		;6342	ed 5b 3b 98 	. [ ; . 	 (flow from: 6341)
+	call sub_65f1h		;6346	cd f1 65 	. . e 	 (flow from: 6342)
+	jr c,l6358h		;6349	38 0d 	8 . 	 (flow from: 65f6)
 	call sub_6713h		;634b	cd 13 67 	. . g 
 	ld de,(0983bh)		;634e	ed 5b 3b 98 	. [ ; . 
 	or a			;6352	b7 	. 
 	sbc hl,de		;6353	ed 52 	. R 
 	jp nc,l626ch		;6355	d2 6c 62 	. l b 
 l6358h:
-	pop bc			;6358	c1 	. 
-	ld b,c			;6359	41 	A 
-	inc b			;635a	04 	. 
-	dec b			;635b	05 	. 
-	ld hl,(0984bh)		;635c	2a 4b 98 	* K . 
-	ld (09855h),hl		;635f	22 55 98 	" U . 
-	jr z,l636bh		;6362	28 07 	( . 
+	pop bc			;6358	c1 	. 	 (flow from: 6349)
+	ld b,c			;6359	41 	A 	 (flow from: 6358)
+	inc b			;635a	04 	. 	 (flow from: 6359)
+	dec b			;635b	05 	. 	 (flow from: 635a)
+	ld hl,(0984bh)		;635c	2a 4b 98 	* K . 	 (flow from: 635b)
+	ld (09855h),hl		;635f	22 55 98 	" U . 	 (flow from: 0052 635c)
+	jr z,l636bh		;6362	28 07 	( . 	 (flow from: 635f)
 l6364h:
-	ld (hl),000h		;6364	36 00 	6 . 
-	inc hl			;6366	23 	# 
-	inc hl			;6367	23 	# 
-	inc hl			;6368	23 	# 
-	djnz l6364h		;6369	10 f9 	. . 
+	ld (hl),000h		;6364	36 00 	6 . 	 (flow from: 6362 6369)
+	inc hl			;6366	23 	# 	 (flow from: 6364)
+	inc hl			;6367	23 	# 	 (flow from: 6366)
+	inc hl			;6368	23 	# 	 (flow from: 6367)
+	djnz l6364h		;6369	10 f9 	. . 	 (flow from: 6368)
 l636bh:
-	ld (0983dh),hl		;636b	22 3d 98 	" = . 
-	pop hl			;636e	e1 	. 
-	inc hl			;636f	23 	# 
-	inc hl			;6370	23 	# 
-	inc hl			;6371	23 	# 
-	call sub_9623h		;6372	cd 23 96 	. # . 
-	ld (09851h),hl		;6375	22 51 98 	" Q . 
-	inc hl			;6378	23 	# 
-	inc hl			;6379	23 	# 
-	inc hl			;637a	23 	# 
-	ld (0984dh),hl		;637b	22 4d 98 	" M . 
-	pop hl			;637e	e1 	. 
-	inc hl			;637f	23 	# 
-	inc hl			;6380	23 	# 
-	inc hl			;6381	23 	# 
-	ld (09841h),hl		;6382	22 41 98 	" A . 
-	ld hl,09841h		;6385	21 41 98 	! A . 
-	ld de,(0983dh)		;6388	ed 5b 3d 98 	. [ = . 
-	ld bc,0000ch		;638c	01 0c 00 	. . . 
-	ldir		;638f	ed b0 	. . 
-	ld (0984bh),de		;6391	ed 53 4b 98 	. S K . 
-	ld hl,(09841h)		;6395	2a 41 98 	* A . 
-	ld a,(hl)			;6398	7e 	~ 
-	cp 010h		;6399	fe 10 	. . 
-	ret z			;639b	c8 	. 
-	ld hl,(0983dh)		;639c	2a 3d 98 	* = . 
-	ld (09847h),hl		;639f	22 47 98 	" G . 
-	cp a			;63a2	bf 	. 
-	ret			;63a3	c9 	. 
+	ld (0983dh),hl		;636b	22 3d 98 	" = . 	 (flow from: 6362 6369)
+	pop hl			;636e	e1 	. 	 (flow from: 636b)
+	inc hl			;636f	23 	# 	 (flow from: 636e)
+	inc hl			;6370	23 	# 	 (flow from: 636f)
+	inc hl			;6371	23 	# 	 (flow from: 6370)
+	call sub_9623h		;6372	cd 23 96 	. # . 	 (flow from: 6371)
+	ld (09851h),hl		;6375	22 51 98 	" Q . 	 (flow from: 9628)
+	inc hl			;6378	23 	# 	 (flow from: 6375)
+	inc hl			;6379	23 	# 	 (flow from: 6378)
+	inc hl			;637a	23 	# 	 (flow from: 6379)
+	ld (0984dh),hl		;637b	22 4d 98 	" M . 	 (flow from: 637a)
+	pop hl			;637e	e1 	. 	 (flow from: 637b)
+	inc hl			;637f	23 	# 	 (flow from: 637e)
+	inc hl			;6380	23 	# 	 (flow from: 637f)
+	inc hl			;6381	23 	# 	 (flow from: 6380)
+	ld (09841h),hl		;6382	22 41 98 	" A . 	 (flow from: 6381)
+	ld hl,09841h		;6385	21 41 98 	! A . 	 (flow from: 6382)
+	ld de,(0983dh)		;6388	ed 5b 3d 98 	. [ = . 	 (flow from: 6385)
+	ld bc,0000ch		;638c	01 0c 00 	. . . 	 (flow from: 6388)
+	ldir		;638f	ed b0 	. . 	 (flow from: 0052 638c 638f)
+	ld (0984bh),de		;6391	ed 53 4b 98 	. S K . 	 (flow from: 638f)
+	ld hl,(09841h)		;6395	2a 41 98 	* A . 	 (flow from: 0052 6391)
+	ld a,(hl)			;6398	7e 	~ 	 (flow from: 6395)
+	cp 010h		;6399	fe 10 	. . 	 (flow from: 6398)
+	ret z			;639b	c8 	. 	 (flow from: 6399)
+	ld hl,(0983dh)		;639c	2a 3d 98 	* = . 	 (flow from: 639b)
+	ld (09847h),hl		;639f	22 47 98 	" G . 	 (flow from: 639c)
+	cp a			;63a2	bf 	. 	 (flow from: 639f)
+	ret			;63a3	c9 	. 	 (flow from: 63a2)
 sub_63a4h:
-	ld e,(ix+008h)		;63a4	dd 5e 08 	. ^ . 
-	ld d,(ix+009h)		;63a7	dd 56 09 	. V . 
-	ld hl,(09849h)		;63aa	2a 49 98 	* I . 
+	ld e,(ix+008h)		;63a4	dd 5e 08 	. ^ . 	 (flow from: 6253)
+	ld d,(ix+009h)		;63a7	dd 56 09 	. V . 	 (flow from: 63a4)
+	ld hl,(09849h)		;63aa	2a 49 98 	* I . 	 (flow from: 63a7)
 l63adh:
-	push hl			;63ad	e5 	. 
-	or a			;63ae	b7 	. 
-	sbc hl,de		;63af	ed 52 	. R 
-	pop hl			;63b1	e1 	. 
-	jr z,l63d7h		;63b2	28 23 	( # 
-	ld a,(hl)			;63b4	7e 	~ 
-	push hl			;63b5	e5 	. 
-	push af			;63b6	f5 	. 
-	call sub_9623h		;63b7	cd 23 96 	. # . 
-	pop af			;63ba	f1 	. 
-	cp 010h		;63bb	fe 10 	. . 
-	jr z,l63c8h		;63bd	28 09 	( . 
-	cp 005h		;63bf	fe 05 	. . 
-	jr nz,l63c6h		;63c1	20 03 	  . 
+	push hl			;63ad	e5 	. 	 (flow from: 63aa 63d5)
+	or a			;63ae	b7 	. 	 (flow from: 63ad)
+	sbc hl,de		;63af	ed 52 	. R 	 (flow from: 63ae)
+	pop hl			;63b1	e1 	. 	 (flow from: 63af)
+	jr z,l63d7h		;63b2	28 23 	( # 	 (flow from: 63b1)
+	ld a,(hl)			;63b4	7e 	~ 	 (flow from: 63b2)
+	push hl			;63b5	e5 	. 	 (flow from: 63b4)
+	push af			;63b6	f5 	. 	 (flow from: 63b5)
+	call sub_9623h		;63b7	cd 23 96 	. # . 	 (flow from: 63b6)
+	pop af			;63ba	f1 	. 	 (flow from: 9628)
+	cp 010h		;63bb	fe 10 	. . 	 (flow from: 63ba)
+	jr z,l63c8h		;63bd	28 09 	( . 	 (flow from: 63bb)
+	cp 005h		;63bf	fe 05 	. . 	 (flow from: 63bd)
+	jr nz,l63c6h		;63c1	20 03 	  . 	 (flow from: 63bf)
 	inc hl			;63c3	23 	# 
 	inc hl			;63c4	23 	# 
 	inc hl			;63c5	23 	# 
 l63c6h:
-	ld (hl),000h		;63c6	36 00 	6 . 
+	ld (hl),000h		;63c6	36 00 	6 . 	 (flow from: 63c1)
 l63c8h:
-	pop hl			;63c8	e1 	. 
-	inc hl			;63c9	23 	# 
-	inc hl			;63ca	23 	# 
-	inc hl			;63cb	23 	# 
-	ld a,(hl)			;63cc	7e 	~ 
-	cp 003h		;63cd	fe 03 	. . 
-	call nz,sub_6259h		;63cf	c4 59 62 	. Y b 
-	call sub_9623h		;63d2	cd 23 96 	. # . 
-	jr l63adh		;63d5	18 d6 	. . 
+	pop hl			;63c8	e1 	. 	 (flow from: 63c6)
+	inc hl			;63c9	23 	# 	 (flow from: 63c8)
+	inc hl			;63ca	23 	# 	 (flow from: 63c9)
+	inc hl			;63cb	23 	# 	 (flow from: 63ca)
+	ld a,(hl)			;63cc	7e 	~ 	 (flow from: 63cb)
+	cp 003h		;63cd	fe 03 	. . 	 (flow from: 63cc)
+	call nz,sub_6259h		;63cf	c4 59 62 	. Y b 	 (flow from: 63cd)
+	call sub_9623h		;63d2	cd 23 96 	. # . 	 (flow from: 63cf)
+	jr l63adh		;63d5	18 d6 	. . 	 (flow from: 9628)
 l63d7h:
-	push ix		;63d7	dd e5 	. . 
-	pop hl			;63d9	e1 	. 
-	ld de,09841h		;63da	11 41 98 	. A . 
-	ld bc,0000ch		;63dd	01 0c 00 	. . . 
-	ldir		;63e0	ed b0 	. . 
-	ld hl,(0984bh)		;63e2	2a 4b 98 	* K . 
-	ld bc,0fff4h		;63e5	01 f4 ff 	. . . 
-	add hl,bc			;63e8	09 	. 
-	ld (0983dh),hl		;63e9	22 3d 98 	" = . 
-	ret			;63ec	c9 	. 
+	push ix		;63d7	dd e5 	. . 	 (flow from: 63b2)
+	pop hl			;63d9	e1 	. 	 (flow from: 63d7)
+	ld de,09841h		;63da	11 41 98 	. A . 	 (flow from: 63d9)
+	ld bc,0000ch		;63dd	01 0c 00 	. . . 	 (flow from: 63da)
+	ldir		;63e0	ed b0 	. . 	 (flow from: 63dd 63e0)
+	ld hl,(0984bh)		;63e2	2a 4b 98 	* K . 	 (flow from: 63e0)
+	ld bc,0fff4h		;63e5	01 f4 ff 	. . . 	 (flow from: 63e2)
+	add hl,bc			;63e8	09 	. 	 (flow from: 63e5)
+	ld (0983dh),hl		;63e9	22 3d 98 	" = . 	 (flow from: 63e8)
+	ret			;63ec	c9 	. 	 (flow from: 63e9)
 sub_63edh:
-	ld a,(hl)			;63ed	7e 	~ 
-	cp 00ch		;63ee	fe 0c 	. . 
-	jr nz,l63ffh		;63f0	20 0d 	  . 
-	set 0,b		;63f2	cb c0 	. . 
-	call sub_9623h		;63f4	cd 23 96 	. # . 
-	push de			;63f7	d5 	. 
-	ld de,(09855h)		;63f8	ed 5b 55 98 	. [ U . 
-	add hl,de			;63fc	19 	. 
-	pop de			;63fd	d1 	. 
+	ld a,(hl)			;63ed	7e 	~ 	 (flow from: 610c 64a8 64b5)
+	cp 00ch		;63ee	fe 0c 	. . 	 (flow from: 63ed)
+	jr nz,l63ffh		;63f0	20 0d 	  . 	 (flow from: 63ee)
+	set 0,b		;63f2	cb c0 	. . 	 (flow from: 63f0)
+	call sub_9623h		;63f4	cd 23 96 	. # . 	 (flow from: 63f2)
+	push de			;63f7	d5 	. 	 (flow from: 9628)
+	ld de,(09855h)		;63f8	ed 5b 55 98 	. [ U . 	 (flow from: 63f7)
+	add hl,de			;63fc	19 	. 	 (flow from: 63f8)
+	pop de			;63fd	d1 	. 	 (flow from: 0052 63fc)
 l63feh:
-	ld a,(hl)			;63fe	7e 	~ 
+	ld a,(hl)			;63fe	7e 	~ 	 (flow from: 63fd)
 l63ffh:
-	cp 001h		;63ff	fe 01 	. . 
-	jr nz,l640ah		;6401	20 07 	  . 
+	cp 001h		;63ff	fe 01 	. . 	 (flow from: 63f0 63fe)
+	jr nz,l640ah		;6401	20 07 	  . 	 (flow from: 63ff)
 	set 0,b		;6403	cb c0 	. . 
 	call sub_9623h		;6405	cd 23 96 	. # . 
 	jr l63feh		;6408	18 f4 	. . 
 l640ah:
-	cp 005h		;640a	fe 05 	. . 
-	jr nz,l6418h		;640c	20 0a 	  . 
+	cp 005h		;640a	fe 05 	. . 	 (flow from: 6401)
+	jr nz,l6418h		;640c	20 0a 	  . 	 (flow from: 640a)
 	set 0,b		;640e	cb c0 	. . 
 	call sub_9623h		;6410	cd 23 96 	. # . 
 	inc hl			;6413	23 	# 
@@ -564,28 +564,28 @@ l640ah:
 	inc hl			;6415	23 	# 
 	jr l63feh		;6416	18 e6 	. . 
 l6418h:
-	ld a,(de)			;6418	1a 	. 
-	cp 00ch		;6419	fe 0c 	. . 
-	jr nz,l642ch		;641b	20 0f 	  . 
-	set 1,b		;641d	cb c8 	. . 
-	ex de,hl			;641f	eb 	. 
-	call sub_9623h		;6420	cd 23 96 	. # . 
-	push de			;6423	d5 	. 
-	ld de,(09853h)		;6424	ed 5b 53 98 	. [ S . 
-	add hl,de			;6428	19 	. 
-	pop de			;6429	d1 	. 
-	ex de,hl			;642a	eb 	. 
+	ld a,(de)			;6418	1a 	. 	 (flow from: 640c)
+	cp 00ch		;6419	fe 0c 	. . 	 (flow from: 6418)
+	jr nz,l642ch		;641b	20 0f 	  . 	 (flow from: 6419)
+	set 1,b		;641d	cb c8 	. . 	 (flow from: 641b)
+	ex de,hl			;641f	eb 	. 	 (flow from: 641d)
+	call sub_9623h		;6420	cd 23 96 	. # . 	 (flow from: 641f)
+	push de			;6423	d5 	. 	 (flow from: 9628)
+	ld de,(09853h)		;6424	ed 5b 53 98 	. [ S . 	 (flow from: 6423)
+	add hl,de			;6428	19 	. 	 (flow from: 0052 6424)
+	pop de			;6429	d1 	. 	 (flow from: 6428)
+	ex de,hl			;642a	eb 	. 	 (flow from: 6429)
 l642bh:
-	ld a,(de)			;642b	1a 	. 
+	ld a,(de)			;642b	1a 	. 	 (flow from: 642a)
 l642ch:
-	cp 001h		;642c	fe 01 	. . 
-	jr nz,l6437h		;642e	20 07 	  . 
+	cp 001h		;642c	fe 01 	. . 	 (flow from: 0052 641b 642b)
+	jr nz,l6437h		;642e	20 07 	  . 	 (flow from: 642c)
 	set 1,b		;6430	cb c8 	. . 
 	call sub_65ebh		;6432	cd eb 65 	. . e 
 	jr l642bh		;6435	18 f4 	. . 
 l6437h:
-	cp 005h		;6437	fe 05 	. . 
-	jr nz,l6445h		;6439	20 0a 	  . 
+	cp 005h		;6437	fe 05 	. . 	 (flow from: 642e)
+	jr nz,l6445h		;6439	20 0a 	  . 	 (flow from: 6437)
 	set 1,b		;643b	cb c8 	. . 
 	call sub_65ebh		;643d	cd eb 65 	. . e 
 	inc de			;6440	13 	. 
@@ -593,46 +593,46 @@ l6437h:
 	inc de			;6442	13 	. 
 	jr l642bh		;6443	18 e6 	. . 
 l6445h:
-	cp 000h		;6445	fe 00 	. . 
-	jr nz,l6467h		;6447	20 1e 	  . 
-	cp (hl)			;6449	be 	. 
-	jr nz,l6450h		;644a	20 04 	  . 
-	call sub_65f1h		;644c	cd f1 65 	. . e 
-	ret z			;644f	c8 	. 
+	cp 000h		;6445	fe 00 	. . 	 (flow from: 6439)
+	jr nz,l6467h		;6447	20 1e 	  . 	 (flow from: 6445)
+	cp (hl)			;6449	be 	. 	 (flow from: 6447)
+	jr nz,l6450h		;644a	20 04 	  . 	 (flow from: 6449)
+	call sub_65f1h		;644c	cd f1 65 	. . e 	 (flow from: 644a)
+	ret z			;644f	c8 	. 	 (flow from: 65f6)
 l6450h:
-	bit 0,b		;6450	cb 40 	. @ 
-	ld bc,(09855h)		;6452	ed 4b 55 98 	. K U . 
-	jr z,l64b8h		;6456	28 60 	( ` 
-	push de			;6458	d5 	. 
-	push hl			;6459	e5 	. 
-	call sub_6530h		;645a	cd 30 65 	. 0 e 
-	pop hl			;645d	e1 	. 
-	pop de			;645e	d1 	. 
-	ld a,(de)			;645f	1a 	. 
-	cp 000h		;6460	fe 00 	. . 
-	jr nz,l64bdh		;6462	20 59 	  Y 
-	ex de,hl			;6464	eb 	. 
-	jr l64bdh		;6465	18 56 	. V 
+	bit 0,b		;6450	cb 40 	. @ 	 (flow from: 644f)
+	ld bc,(09855h)		;6452	ed 4b 55 98 	. K U . 	 (flow from: 6450)
+	jr z,l64b8h		;6456	28 60 	( ` 	 (flow from: 6452)
+	push de			;6458	d5 	. 	 (flow from: 6456)
+	push hl			;6459	e5 	. 	 (flow from: 6458)
+	call sub_6530h		;645a	cd 30 65 	. 0 e 	 (flow from: 6459)
+	pop hl			;645d	e1 	. 	 (flow from: 656c)
+	pop de			;645e	d1 	. 	 (flow from: 645d)
+	ld a,(de)			;645f	1a 	. 	 (flow from: 645e)
+	cp 000h		;6460	fe 00 	. . 	 (flow from: 645f)
+	jr nz,l64bdh		;6462	20 59 	  Y 	 (flow from: 6460)
+	ex de,hl			;6464	eb 	. 	 (flow from: 6462)
+	jr l64bdh		;6465	18 56 	. V 	 (flow from: 6464)
 l6467h:
-	ld a,(hl)			;6467	7e 	~ 
-	cp 000h		;6468	fe 00 	. . 
-	jr nz,l647ch		;646a	20 10 	  . 
-	ex de,hl			;646c	eb 	. 
-	bit 1,b		;646d	cb 48 	. H 
-	ld bc,(09853h)		;646f	ed 4b 53 98 	. K S . 
-	jr z,l64b8h		;6473	28 43 	( C 
-	push de			;6475	d5 	. 
-	call sub_6530h		;6476	cd 30 65 	. 0 e 
-	pop de			;6479	d1 	. 
-	jr l64bdh		;647a	18 41 	. A 
+	ld a,(hl)			;6467	7e 	~ 	 (flow from: 0052 6447)
+	cp 000h		;6468	fe 00 	. . 	 (flow from: 6467)
+	jr nz,l647ch		;646a	20 10 	  . 	 (flow from: 6468)
+	ex de,hl			;646c	eb 	. 	 (flow from: 0052 646a)
+	bit 1,b		;646d	cb 48 	. H 	 (flow from: 646c)
+	ld bc,(09853h)		;646f	ed 4b 53 98 	. K S . 	 (flow from: 646d)
+	jr z,l64b8h		;6473	28 43 	( C 	 (flow from: 646f)
+	push de			;6475	d5 	. 	 (flow from: 6473)
+	call sub_6530h		;6476	cd 30 65 	. 0 e 	 (flow from: 0052 6475)
+	pop de			;6479	d1 	. 	 (flow from: 6574)
+	jr l64bdh		;647a	18 41 	. A 	 (flow from: 6479)
 l647ch:
-	ld a,(de)			;647c	1a 	. 
-	cp (hl)			;647d	be 	. 
-	ret nz			;647e	c0 	. 
-	cp 010h		;647f	fe 10 	. . 
-	ret z			;6481	c8 	. 
-	cp 00ah		;6482	fe 0a 	. . 
-	jr nz,l6497h		;6484	20 11 	  . 
+	ld a,(de)			;647c	1a 	. 	 (flow from: 646a)
+	cp (hl)			;647d	be 	. 	 (flow from: 647c)
+	ret nz			;647e	c0 	. 	 (flow from: 0052 647d)
+	cp 010h		;647f	fe 10 	. . 	 (flow from: 647e)
+	ret z			;6481	c8 	. 	 (flow from: 647f)
+	cp 00ah		;6482	fe 0a 	. . 	 (flow from: 6481)
+	jr nz,l6497h		;6484	20 11 	  . 	 (flow from: 6482)
 	call sub_9623h		;6486	cd 23 96 	. # . 
 	ex de,hl			;6489	eb 	. 
 	call sub_9623h		;648a	cd 23 96 	. # . 
@@ -646,51 +646,51 @@ l648fh:
 	djnz l648fh		;6494	10 f9 	. . 
 	ret			;6496	c9 	. 
 l6497h:
-	cp 003h		;6497	fe 03 	. . 
-	call sub_9623h		;6499	cd 23 96 	. # . 
-	call sub_65ebh		;649c	cd eb 65 	. . e 
-	jr z,l64a5h		;649f	28 04 	( . 
-	or a			;64a1	b7 	. 
-	sbc hl,de		;64a2	ed 52 	. R 
-	ret			;64a4	c9 	. 
+	cp 003h		;6497	fe 03 	. . 	 (flow from: 6484)
+	call sub_9623h		;6499	cd 23 96 	. # . 	 (flow from: 6497)
+	call sub_65ebh		;649c	cd eb 65 	. . e 	 (flow from: 9628)
+	jr z,l64a5h		;649f	28 04 	( . 	 (flow from: 0052 65f0)
+	or a			;64a1	b7 	. 	 (flow from: 649f)
+	sbc hl,de		;64a2	ed 52 	. R 	 (flow from: 64a1)
+	ret			;64a4	c9 	. 	 (flow from: 64a2)
 l64a5h:
-	push de			;64a5	d5 	. 
-	push hl			;64a6	e5 	. 
-	push bc			;64a7	c5 	. 
-	call sub_63edh		;64a8	cd ed 63 	. . c 
-	pop bc			;64ab	c1 	. 
-	pop hl			;64ac	e1 	. 
-	pop de			;64ad	d1 	. 
-	ret nz			;64ae	c0 	. 
-	inc de			;64af	13 	. 
-	inc de			;64b0	13 	. 
-	inc de			;64b1	13 	. 
-	inc hl			;64b2	23 	# 
-	inc hl			;64b3	23 	# 
-	inc hl			;64b4	23 	# 
-	jp sub_63edh		;64b5	c3 ed 63 	. . c 
+	push de			;64a5	d5 	. 	 (flow from: 0052 649f)
+	push hl			;64a6	e5 	. 	 (flow from: 64a5)
+	push bc			;64a7	c5 	. 	 (flow from: 64a6)
+	call sub_63edh		;64a8	cd ed 63 	. . c 	 (flow from: 64a7)
+	pop bc			;64ab	c1 	. 	 (flow from: 647e 64a4 6504)
+	pop hl			;64ac	e1 	. 	 (flow from: 64ab)
+	pop de			;64ad	d1 	. 	 (flow from: 0052 64ac)
+	ret nz			;64ae	c0 	. 	 (flow from: 64ad)
+	inc de			;64af	13 	. 	 (flow from: 64ae)
+	inc de			;64b0	13 	. 	 (flow from: 64af)
+	inc de			;64b1	13 	. 	 (flow from: 64b0)
+	inc hl			;64b2	23 	# 	 (flow from: 64b1)
+	inc hl			;64b3	23 	# 	 (flow from: 64b2)
+	inc hl			;64b4	23 	# 	 (flow from: 0052 64b3)
+	jp sub_63edh		;64b5	c3 ed 63 	. . c 	 (flow from: 64b4)
 l64b8h:
-	push de			;64b8	d5 	. 
-	call sub_6505h		;64b9	cd 05 65 	. . e 
-	pop de			;64bc	d1 	. 
+	push de			;64b8	d5 	. 	 (flow from: 6473)
+	call sub_6505h		;64b9	cd 05 65 	. . e 	 (flow from: 64b8)
+	pop de			;64bc	d1 	. 	 (flow from: 6574)
 l64bdh:
-	push de			;64bd	d5 	. 
-	push ix		;64be	dd e5 	. . 
-	ld ix,(09847h)		;64c0	dd 2a 47 98 	. * G . 
-	ld l,(ix+00ah)		;64c4	dd 6e 0a 	. n . 
-	ld h,(ix+00bh)		;64c7	dd 66 0b 	. f . 
-	pop ix		;64ca	dd e1 	. . 
-	or a			;64cc	b7 	. 
-	sbc hl,de		;64cd	ed 52 	. R 
-	jr c,l64d5h		;64cf	38 04 	8 . 
-	ld a,00ch		;64d1	3e 0c 	> . 
-	jr l64eah		;64d3	18 15 	. . 
+	push de			;64bd	d5 	. 	 (flow from: 6465 647a 64bc 6670)
+	push ix		;64be	dd e5 	. . 	 (flow from: 64bd)
+	ld ix,(09847h)		;64c0	dd 2a 47 98 	. * G . 	 (flow from: 64be)
+	ld l,(ix+00ah)		;64c4	dd 6e 0a 	. n . 	 (flow from: 64c0)
+	ld h,(ix+00bh)		;64c7	dd 66 0b 	. f . 	 (flow from: 64c4)
+	pop ix		;64ca	dd e1 	. . 	 (flow from: 0052 64c7)
+	or a			;64cc	b7 	. 	 (flow from: 0052 64ca)
+	sbc hl,de		;64cd	ed 52 	. R 	 (flow from: 64cc)
+	jr c,l64d5h		;64cf	38 04 	8 . 	 (flow from: 64cd)
+	ld a,00ch		;64d1	3e 0c 	> . 	 (flow from: 64cf)
+	jr l64eah		;64d3	18 15 	. . 	 (flow from: 64d1)
 l64d5h:
-	ld hl,(0983bh)		;64d5	2a 3b 98 	* ; . 
-	scf			;64d8	37 	7 
-	sbc hl,de		;64d9	ed 52 	. R 
-	jr c,l64dfh		;64db	38 02 	8 . 
-	jr l6502h		;64dd	18 23 	. # 
+	ld hl,(0983bh)		;64d5	2a 3b 98 	* ; . 	 (flow from: 64cf)
+	scf			;64d8	37 	7 	 (flow from: 64d5)
+	sbc hl,de		;64d9	ed 52 	. R 	 (flow from: 64d8)
+	jr c,l64dfh		;64db	38 02 	8 . 	 (flow from: 64d9)
+	jr l6502h		;64dd	18 23 	. # 	 (flow from: 64db)
 l64dfh:
 	bit 0,e		;64df	cb 43 	. C 
 	ld a,001h		;64e1	3e 01 	> . 
@@ -700,86 +700,86 @@ l64dfh:
 	dec de			;64e8	1b 	. 
 	dec de			;64e9	1b 	. 
 l64eah:
-	call sub_6593h		;64ea	cd 93 65 	. . e 
-	push hl			;64ed	e5 	. 
-	ld (hl),a			;64ee	77 	w 
-	inc hl			;64ef	23 	# 
-	ld (hl),e			;64f0	73 	s 
-	inc hl			;64f1	23 	# 
-	ld (hl),d			;64f2	72 	r 
-	inc hl			;64f3	23 	# 
-	ld de,(09849h)		;64f4	ed 5b 49 98 	. [ I . 
-	ld (hl),003h		;64f8	36 03 	6 . 
-	inc hl			;64fa	23 	# 
-	ld (hl),e			;64fb	73 	s 
-	inc hl			;64fc	23 	# 
-	ld (hl),d			;64fd	72 	r 
-	pop hl			;64fe	e1 	. 
-	ld (09849h),hl		;64ff	22 49 98 	" I . 
+	call sub_6593h		;64ea	cd 93 65 	. . e 	 (flow from: 64d3)
+	push hl			;64ed	e5 	. 	 (flow from: 65ea)
+	ld (hl),a			;64ee	77 	w 	 (flow from: 64ed)
+	inc hl			;64ef	23 	# 	 (flow from: 64ee)
+	ld (hl),e			;64f0	73 	s 	 (flow from: 64ef)
+	inc hl			;64f1	23 	# 	 (flow from: 64f0)
+	ld (hl),d			;64f2	72 	r 	 (flow from: 64f1)
+	inc hl			;64f3	23 	# 	 (flow from: 64f2)
+	ld de,(09849h)		;64f4	ed 5b 49 98 	. [ I . 	 (flow from: 64f3)
+	ld (hl),003h		;64f8	36 03 	6 . 	 (flow from: 64f4)
+	inc hl			;64fa	23 	# 	 (flow from: 64f8)
+	ld (hl),e			;64fb	73 	s 	 (flow from: 64fa)
+	inc hl			;64fc	23 	# 	 (flow from: 64fb)
+	ld (hl),d			;64fd	72 	r 	 (flow from: 64fc)
+	pop hl			;64fe	e1 	. 	 (flow from: 64fd)
+	ld (09849h),hl		;64ff	22 49 98 	" I . 	 (flow from: 64fe)
 l6502h:
-	pop de			;6502	d1 	. 
-	cp a			;6503	bf 	. 
-	ret			;6504	c9 	. 
+	pop de			;6502	d1 	. 	 (flow from: 64dd 64ff)
+	cp a			;6503	bf 	. 	 (flow from: 6502)
+	ret			;6504	c9 	. 	 (flow from: 6503)
 sub_6505h:
-	ld a,(hl)			;6505	7e 	~ 
-	cp 003h		;6506	fe 03 	. . 
-	jr nz,l6528h		;6508	20 1e 	  . 
-	push hl			;650a	e5 	. 
-	call sub_6593h		;650b	cd 93 65 	. . e 
-	ex de,hl			;650e	eb 	. 
-	ld (hl),003h		;650f	36 03 	6 . 
-	inc hl			;6511	23 	# 
-	ld (hl),e			;6512	73 	s 
-	inc hl			;6513	23 	# 
-	ld (hl),d			;6514	72 	r 
-	pop hl			;6515	e1 	. 
-	call sub_9623h		;6516	cd 23 96 	. # . 
-	push de			;6519	d5 	. 
-	push hl			;651a	e5 	. 
-	call sub_6505h		;651b	cd 05 65 	. . e 
-	pop hl			;651e	e1 	. 
-	pop de			;651f	d1 	. 
-	inc hl			;6520	23 	# 
-	inc hl			;6521	23 	# 
-	inc hl			;6522	23 	# 
-	inc de			;6523	13 	. 
-	inc de			;6524	13 	. 
-	inc de			;6525	13 	. 
-	jr sub_6505h		;6526	18 dd 	. . 
+	ld a,(hl)			;6505	7e 	~ 	 (flow from: 64b9 651b 6526)
+	cp 003h		;6506	fe 03 	. . 	 (flow from: 6505)
+	jr nz,l6528h		;6508	20 1e 	  . 	 (flow from: 6506)
+	push hl			;650a	e5 	. 	 (flow from: 6508)
+	call sub_6593h		;650b	cd 93 65 	. . e 	 (flow from: 650a)
+	ex de,hl			;650e	eb 	. 	 (flow from: 65ea)
+	ld (hl),003h		;650f	36 03 	6 . 	 (flow from: 650e)
+	inc hl			;6511	23 	# 	 (flow from: 650f)
+	ld (hl),e			;6512	73 	s 	 (flow from: 6511)
+	inc hl			;6513	23 	# 	 (flow from: 6512)
+	ld (hl),d			;6514	72 	r 	 (flow from: 6513)
+	pop hl			;6515	e1 	. 	 (flow from: 6514)
+	call sub_9623h		;6516	cd 23 96 	. # . 	 (flow from: 6515)
+	push de			;6519	d5 	. 	 (flow from: 9628)
+	push hl			;651a	e5 	. 	 (flow from: 6519)
+	call sub_6505h		;651b	cd 05 65 	. . e 	 (flow from: 651a)
+	pop hl			;651e	e1 	. 	 (flow from: 6574)
+	pop de			;651f	d1 	. 	 (flow from: 651e)
+	inc hl			;6520	23 	# 	 (flow from: 651f)
+	inc hl			;6521	23 	# 	 (flow from: 6520)
+	inc hl			;6522	23 	# 	 (flow from: 6521)
+	inc de			;6523	13 	. 	 (flow from: 6522)
+	inc de			;6524	13 	. 	 (flow from: 6523)
+	inc de			;6525	13 	. 	 (flow from: 6524)
+	jr sub_6505h		;6526	18 dd 	. . 	 (flow from: 6525)
 l6528h:
-	cp 00ch		;6528	fe 0c 	. . 
-	jr nz,l6533h		;652a	20 07 	  . 
-	call sub_9623h		;652c	cd 23 96 	. # . 
-	add hl,bc			;652f	09 	. 
+	cp 00ch		;6528	fe 0c 	. . 	 (flow from: 0052 6508 6531)
+	jr nz,l6533h		;652a	20 07 	  . 	 (flow from: 0052 6528)
+	call sub_9623h		;652c	cd 23 96 	. # . 	 (flow from: 652a)
+	add hl,bc			;652f	09 	. 	 (flow from: 9628)
 sub_6530h:
-	ld a,(hl)			;6530	7e 	~ 
-	jr l6528h		;6531	18 f5 	. . 
+	ld a,(hl)			;6530	7e 	~ 	 (flow from: 645a 6476 652f)
+	jr l6528h		;6531	18 f5 	. . 	 (flow from: 6530)
 l6533h:
-	cp 001h		;6533	fe 01 	. . 
-	jr nz,l653ch		;6535	20 05 	  . 
+	cp 001h		;6533	fe 01 	. . 	 (flow from: 652a)
+	jr nz,l653ch		;6535	20 05 	  . 	 (flow from: 6533)
 	call sub_9623h		;6537	cd 23 96 	. # . 
 	jr sub_6530h		;653a	18 f4 	. . 
 l653ch:
-	cp 005h		;653c	fe 05 	. . 
-	jr nz,l6548h		;653e	20 08 	  . 
+	cp 005h		;653c	fe 05 	. . 	 (flow from: 6535)
+	jr nz,l6548h		;653e	20 08 	  . 	 (flow from: 653c)
 	call sub_9623h		;6540	cd 23 96 	. # . 
 	inc hl			;6543	23 	# 
 	inc hl			;6544	23 	# 
 	inc hl			;6545	23 	# 
 	jr sub_6530h		;6546	18 e8 	. . 
 l6548h:
-	cp 000h		;6548	fe 00 	. . 
-	jr nz,l656dh		;654a	20 21 	  ! 
-	ld (de),a			;654c	12 	. 
-	call sub_65f1h		;654d	cd f1 65 	. . e 
-	jr nc,l6553h		;6550	30 01 	0 . 
+	cp 000h		;6548	fe 00 	. . 	 (flow from: 653e)
+	jr nz,l656dh		;654a	20 21 	  ! 	 (flow from: 0052 6548)
+	ld (de),a			;654c	12 	. 	 (flow from: 654a)
+	call sub_65f1h		;654d	cd f1 65 	. . e 	 (flow from: 654c)
+	jr nc,l6553h		;6550	30 01 	0 . 	 (flow from: 65f6)
 	ex de,hl			;6552	eb 	. 
 l6553h:
-	call sub_68d5h		;6553	cd d5 68 	. . h 
-	ld a,001h		;6556	3e 01 	> . 
-	jr nc,l655dh		;6558	30 03 	0 . 
-	ex de,hl			;655a	eb 	. 
-	jr l6566h		;655b	18 09 	. . 
+	call sub_68d5h		;6553	cd d5 68 	. . h 	 (flow from: 6550)
+	ld a,001h		;6556	3e 01 	> . 	 (flow from: 0052 68e8)
+	jr nc,l655dh		;6558	30 03 	0 . 	 (flow from: 6556)
+	ex de,hl			;655a	eb 	. 	 (flow from: 6558)
+	jr l6566h		;655b	18 09 	. . 	 (flow from: 655a)
 l655dh:
 	bit 0,l		;655d	cb 45 	. E 
 	jr z,l6566h		;655f	28 05 	( . 
@@ -788,239 +788,239 @@ l655dh:
 	dec hl			;6563	2b 	+ 
 	ld a,005h		;6564	3e 05 	> . 
 l6566h:
-	ex de,hl			;6566	eb 	. 
-	ld (hl),a			;6567	77 	w 
-	inc hl			;6568	23 	# 
-	ld (hl),e			;6569	73 	s 
-	inc hl			;656a	23 	# 
-	ld (hl),d			;656b	72 	r 
-	ret			;656c	c9 	. 
+	ex de,hl			;6566	eb 	. 	 (flow from: 655b)
+	ld (hl),a			;6567	77 	w 	 (flow from: 6566)
+	inc hl			;6568	23 	# 	 (flow from: 6567)
+	ld (hl),e			;6569	73 	s 	 (flow from: 6568)
+	inc hl			;656a	23 	# 	 (flow from: 6569)
+	ld (hl),d			;656b	72 	r 	 (flow from: 656a)
+	ret			;656c	c9 	. 	 (flow from: 656b)
 l656dh:
-	push bc			;656d	c5 	. 
-	ld bc,00003h		;656e	01 03 00 	. . . 
-	ldir		;6571	ed b0 	. . 
-	pop bc			;6573	c1 	. 
-	ret			;6574	c9 	. 
+	push bc			;656d	c5 	. 	 (flow from: 0052 654a)
+	ld bc,00003h		;656e	01 03 00 	. . . 	 (flow from: 656d)
+	ldir		;6571	ed b0 	. . 	 (flow from: 656e 6571)
+	pop bc			;6573	c1 	. 	 (flow from: 6571)
+	ret			;6574	c9 	. 	 (flow from: 0052 6573)
 sub_6575h:
-	ld a,(hl)			;6575	7e 	~ 
-	cp 00ch		;6576	fe 0c 	. . 
-	jr nz,l657fh		;6578	20 05 	  . 
-	call sub_9623h		;657a	cd 23 96 	. # . 
-	add hl,de			;657d	19 	. 
+	ld a,(hl)			;6575	7e 	~ 	 (flow from: 0052 6079 60a3 60c9 60fd 6119 613f 6181 6622 668b 6a0e 6a25 6a3b 7d43 7dee 7e3f)
+	cp 00ch		;6576	fe 0c 	. . 	 (flow from: 0052 6575)
+	jr nz,l657fh		;6578	20 05 	  . 	 (flow from: 6576)
+	call sub_9623h		;657a	cd 23 96 	. # . 	 (flow from: 6578)
+	add hl,de			;657d	19 	. 	 (flow from: 9628)
 l657eh:
-	ld a,(hl)			;657e	7e 	~ 
+	ld a,(hl)			;657e	7e 	~ 	 (flow from: 0052 657d 6586 6591)
 l657fh:
-	cp 001h		;657f	fe 01 	. . 
-	jr nz,l6588h		;6581	20 05 	  . 
-	call sub_9623h		;6583	cd 23 96 	. # . 
-	jr l657eh		;6586	18 f6 	. . 
+	cp 001h		;657f	fe 01 	. . 	 (flow from: 0052 6578 657e)
+	jr nz,l6588h		;6581	20 05 	  . 	 (flow from: 0052 657f)
+	call sub_9623h		;6583	cd 23 96 	. # . 	 (flow from: 6581)
+	jr l657eh		;6586	18 f6 	. . 	 (flow from: 0052 9628)
 l6588h:
-	cp 005h		;6588	fe 05 	. . 
-	ret nz			;658a	c0 	. 
-	call sub_9623h		;658b	cd 23 96 	. # . 
-	inc hl			;658e	23 	# 
-	inc hl			;658f	23 	# 
-	inc hl			;6590	23 	# 
-	jr l657eh		;6591	18 eb 	. . 
+	cp 005h		;6588	fe 05 	. . 	 (flow from: 0052 6581)
+	ret nz			;658a	c0 	. 	 (flow from: 0052 6588)
+	call sub_9623h		;658b	cd 23 96 	. # . 	 (flow from: 658a)
+	inc hl			;658e	23 	# 	 (flow from: 9628)
+	inc hl			;658f	23 	# 	 (flow from: 658e)
+	inc hl			;6590	23 	# 	 (flow from: 658f)
+	jr l657eh		;6591	18 eb 	. . 	 (flow from: 6590)
 sub_6593h:
-	push de			;6593	d5 	. 
-	push af			;6594	f5 	. 
-	ld de,(0985bh)		;6595	ed 5b 5b 98 	. [ [ . 
-	ld hl,0ffffh		;6599	21 ff ff 	! . . 
-	or a			;659c	b7 	. 
-	sbc hl,de		;659d	ed 52 	. R 
-	jr nz,l65bdh		;659f	20 1c 	  . 
-	ld hl,(0985dh)		;65a1	2a 5d 98 	* ] . 
-	ld de,(0983bh)		;65a4	ed 5b 3b 98 	. [ ; . 
-	or a			;65a8	b7 	. 
-	sbc hl,de		;65a9	ed 52 	. R 
-	ex de,hl			;65ab	eb 	. 
-	jr c,l65cbh		;65ac	38 1d 	8 . 
-	call sub_6713h		;65ae	cd 13 67 	. . g 
-	ld de,(0985bh)		;65b1	ed 5b 5b 98 	. [ [ . 
-	ld hl,0ffffh		;65b5	21 ff ff 	! . . 
-	or a			;65b8	b7 	. 
-	sbc hl,de		;65b9	ed 52 	. R 
-	jr z,l65c8h		;65bb	28 0b 	( . 
+	push de			;6593	d5 	. 	 (flow from: 0052 64ea 650b 6caa 777a 778f 7a20 7dd4 7e49)
+	push af			;6594	f5 	. 	 (flow from: 6593)
+	ld de,(0985bh)		;6595	ed 5b 5b 98 	. [ [ . 	 (flow from: 0052 6594)
+	ld hl,0ffffh		;6599	21 ff ff 	! . . 	 (flow from: 0052 6595)
+	or a			;659c	b7 	. 	 (flow from: 6599)
+	sbc hl,de		;659d	ed 52 	. R 	 (flow from: 659c)
+	jr nz,l65bdh		;659f	20 1c 	  . 	 (flow from: 0052 659d)
+	ld hl,(0985dh)		;65a1	2a 5d 98 	* ] . 	 (flow from: 0052 659f)
+	ld de,(0983bh)		;65a4	ed 5b 3b 98 	. [ ; . 	 (flow from: 0052 65a1)
+	or a			;65a8	b7 	. 	 (flow from: 65a4)
+	sbc hl,de		;65a9	ed 52 	. R 	 (flow from: 65a8)
+	ex de,hl			;65ab	eb 	. 	 (flow from: 0052 65a9)
+	jr c,l65cbh		;65ac	38 1d 	8 . 	 (flow from: 65ab)
+	call sub_6713h		;65ae	cd 13 67 	. . g 	 (flow from: 65ac)
+	ld de,(0985bh)		;65b1	ed 5b 5b 98 	. [ [ . 	 (flow from: 688b)
+	ld hl,0ffffh		;65b5	21 ff ff 	! . . 	 (flow from: 65b1)
+	or a			;65b8	b7 	. 	 (flow from: 65b5)
+	sbc hl,de		;65b9	ed 52 	. R 	 (flow from: 65b8)
+	jr z,l65c8h		;65bb	28 0b 	( . 	 (flow from: 65b9)
 l65bdh:
-	ex de,hl			;65bd	eb 	. 
-	push hl			;65be	e5 	. 
-	call sub_9623h		;65bf	cd 23 96 	. # . 
-	ld (0985bh),hl		;65c2	22 5b 98 	" [ . 
-	pop hl			;65c5	e1 	. 
-	jr l65deh		;65c6	18 16 	. . 
+	ex de,hl			;65bd	eb 	. 	 (flow from: 659f 65bb)
+	push hl			;65be	e5 	. 	 (flow from: 65bd)
+	call sub_9623h		;65bf	cd 23 96 	. # . 	 (flow from: 0052 65be)
+	ld (0985bh),hl		;65c2	22 5b 98 	" [ . 	 (flow from: 9628)
+	pop hl			;65c5	e1 	. 	 (flow from: 65c2)
+	jr l65deh		;65c6	18 16 	. . 	 (flow from: 0052 65c5)
 l65c8h:
 	ld hl,(0983bh)		;65c8	2a 3b 98 	* ; . 
 l65cbh:
-	ld de,0fffah		;65cb	11 fa ff 	. . . 
-	add hl,de			;65ce	19 	. 
-	ld de,(0984bh)		;65cf	ed 5b 4b 98 	. [ K . 
-	push hl			;65d3	e5 	. 
-	or a			;65d4	b7 	. 
-	sbc hl,de		;65d5	ed 52 	. R 
-	pop hl			;65d7	e1 	. 
-	jp c,l626ch		;65d8	da 6c 62 	. l b 
-	ld (0983bh),hl		;65db	22 3b 98 	" ; . 
+	ld de,0fffah		;65cb	11 fa ff 	. . . 	 (flow from: 65ac)
+	add hl,de			;65ce	19 	. 	 (flow from: 65cb)
+	ld de,(0984bh)		;65cf	ed 5b 4b 98 	. [ K . 	 (flow from: 65ce)
+	push hl			;65d3	e5 	. 	 (flow from: 65cf)
+	or a			;65d4	b7 	. 	 (flow from: 0052 65d3)
+	sbc hl,de		;65d5	ed 52 	. R 	 (flow from: 65d4)
+	pop hl			;65d7	e1 	. 	 (flow from: 65d5)
+	jp c,l626ch		;65d8	da 6c 62 	. l b 	 (flow from: 0052 65d7)
+	ld (0983bh),hl		;65db	22 3b 98 	" ; . 	 (flow from: 65d8)
 l65deh:
-	ld (hl),010h		;65de	36 10 	6 . 
-	inc hl			;65e0	23 	# 
-	inc hl			;65e1	23 	# 
-	inc hl			;65e2	23 	# 
-	ld (hl),010h		;65e3	36 10 	6 . 
-	dec hl			;65e5	2b 	+ 
-	dec hl			;65e6	2b 	+ 
-	dec hl			;65e7	2b 	+ 
-	pop af			;65e8	f1 	. 
-	pop de			;65e9	d1 	. 
-	ret			;65ea	c9 	. 
+	ld (hl),010h		;65de	36 10 	6 . 	 (flow from: 65c6 65db)
+	inc hl			;65e0	23 	# 	 (flow from: 65de)
+	inc hl			;65e1	23 	# 	 (flow from: 0052 65e0)
+	inc hl			;65e2	23 	# 	 (flow from: 65e1)
+	ld (hl),010h		;65e3	36 10 	6 . 	 (flow from: 65e2)
+	dec hl			;65e5	2b 	+ 	 (flow from: 0052 65e3)
+	dec hl			;65e6	2b 	+ 	 (flow from: 0052 65e5)
+	dec hl			;65e7	2b 	+ 	 (flow from: 65e6)
+	pop af			;65e8	f1 	. 	 (flow from: 65e7)
+	pop de			;65e9	d1 	. 	 (flow from: 0052 65e8)
+	ret			;65ea	c9 	. 	 (flow from: 65e9)
 sub_65ebh:
-	ex de,hl			;65eb	eb 	. 
-	call sub_9623h		;65ec	cd 23 96 	. # . 
-	ex de,hl			;65ef	eb 	. 
-	ret			;65f0	c9 	. 
+	ex de,hl			;65eb	eb 	. 	 (flow from: 649c)
+	call sub_9623h		;65ec	cd 23 96 	. # . 	 (flow from: 65eb)
+	ex de,hl			;65ef	eb 	. 	 (flow from: 0052 9628)
+	ret			;65f0	c9 	. 	 (flow from: 65ef)
 sub_65f1h:
-	push hl			;65f1	e5 	. 
-	or a			;65f2	b7 	. 
-	sbc hl,de		;65f3	ed 52 	. R 
-	pop hl			;65f5	e1 	. 
-	ret			;65f6	c9 	. 
+	push hl			;65f1	e5 	. 	 (flow from: 6157 6346 644c 654d 679a 67dc 6b2f 7687 7e7d)
+	or a			;65f2	b7 	. 	 (flow from: 65f1)
+	sbc hl,de		;65f3	ed 52 	. R 	 (flow from: 65f2)
+	pop hl			;65f5	e1 	. 	 (flow from: 0052 65f3)
+	ret			;65f6	c9 	. 	 (flow from: 65f5)
 l65f7h:
-	ld de,00006h		;65f7	11 06 00 	. . . 
-	ld b,008h		;65fa	06 08 	. . 
-	ld hl,09807h		;65fc	21 07 98 	! . . 
+	ld de,00006h		;65f7	11 06 00 	. . . 	 (flow from: 69a2 6c4f 6f70 75e5 76c4 7736 948a 9546)
+	ld b,008h		;65fa	06 08 	. . 	 (flow from: 65f7)
+	ld hl,09807h		;65fc	21 07 98 	! . . 	 (flow from: 65fa)
 l65ffh:
-	ld (hl),0ffh		;65ff	36 ff 	6 . 
-	add hl,de			;6601	19 	. 
-	djnz l65ffh		;6602	10 fb 	. . 
-	push ix		;6604	dd e5 	. . 
-	ld ix,(09843h)		;6606	dd 2a 43 98 	. * C . 
-	exx			;660a	d9 	. 
-	ld e,(ix+00ah)		;660b	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;660e	dd 56 0b 	. V . 
-	ld (09853h),de		;6611	ed 53 53 98 	. S S . 
-	ld ix,09807h		;6615	dd 21 07 98 	. ! . . 
-	ld (09861h),ix		;6619	dd 22 61 98 	. " a . 
-	pop ix		;661d	dd e1 	. . 
+	ld (hl),0ffh		;65ff	36 ff 	6 . 	 (flow from: 0052 65fc 6602)
+	add hl,de			;6601	19 	. 	 (flow from: 65ff)
+	djnz l65ffh		;6602	10 fb 	. . 	 (flow from: 6601)
+	push ix		;6604	dd e5 	. . 	 (flow from: 6602)
+	ld ix,(09843h)		;6606	dd 2a 43 98 	. * C . 	 (flow from: 6604)
+	exx			;660a	d9 	. 	 (flow from: 6606)
+	ld e,(ix+00ah)		;660b	dd 5e 0a 	. ^ . 	 (flow from: 660a)
+	ld d,(ix+00bh)		;660e	dd 56 0b 	. V . 	 (flow from: 0052 660b)
+	ld (09853h),de		;6611	ed 53 53 98 	. S S . 	 (flow from: 660e)
+	ld ix,09807h		;6615	dd 21 07 98 	. ! . . 	 (flow from: 6611)
+	ld (09861h),ix		;6619	dd 22 61 98 	. " a . 	 (flow from: 6615)
+	pop ix		;661d	dd e1 	. . 	 (flow from: 6619)
 l661fh:
-	ld hl,(0984fh)		;661f	2a 4f 98 	* O . 
-	call sub_6575h		;6622	cd 75 65 	. u e 
-	cp 010h		;6625	fe 10 	. . 
-	jr nz,l667ah		;6627	20 51 	  Q 
-	ld a,(ix+000h)		;6629	dd 7e 00 	. ~ . 
-	cp 0ffh		;662c	fe ff 	. . 
-	jp z,l6701h		;662e	ca 01 67 	. . g 
-	ld e,a			;6631	5f 	_ 
-	ld d,000h		;6632	16 00 	. . 
-	ld hl,l663dh		;6634	21 3d 66 	! = f 
-	push hl			;6637	e5 	. 
-	push ix		;6638	dd e5 	. . 
-	pop hl			;663a	e1 	. 
-	add hl,de			;663b	19 	. 
-	jp (hl)			;663c	e9 	. 
+	ld hl,(0984fh)		;661f	2a 4f 98 	* O . 	 (flow from: 661d 66cb)
+	call sub_6575h		;6622	cd 75 65 	. u e 	 (flow from: 661f)
+	cp 010h		;6625	fe 10 	. . 	 (flow from: 658a)
+	jr nz,l667ah		;6627	20 51 	  Q 	 (flow from: 6625)
+	ld a,(ix+000h)		;6629	dd 7e 00 	. ~ . 	 (flow from: 6627)
+	cp 0ffh		;662c	fe ff 	. . 	 (flow from: 6629)
+	jp z,l6701h		;662e	ca 01 67 	. . g 	 (flow from: 662c)
+	ld e,a			;6631	5f 	_ 	 (flow from: 662e)
+	ld d,000h		;6632	16 00 	. . 	 (flow from: 6631)
+	ld hl,l663dh		;6634	21 3d 66 	! = f 	 (flow from: 6632)
+	push hl			;6637	e5 	. 	 (flow from: 6634)
+	push ix		;6638	dd e5 	. . 	 (flow from: 6637)
+	pop hl			;663a	e1 	. 	 (flow from: 6638)
+	add hl,de			;663b	19 	. 	 (flow from: 0052 663a)
+	jp (hl)			;663c	e9 	. 	 (flow from: 663b)
 l663dh:
-	ret nz			;663d	c0 	. 
-	ld de,00006h		;663e	11 06 00 	. . . 
-	exx			;6641	d9 	. 
-	ld b,008h		;6642	06 08 	. . 
-	ld ix,09807h		;6644	dd 21 07 98 	. ! . . 
+	ret nz			;663d	c0 	. 	 (flow from: 69fe 6c79 6c94 6ceb 6fa7 75f3 7609 76dd 77b3 9407 957d)
+	ld de,00006h		;663e	11 06 00 	. . . 	 (flow from: 663d)
+	exx			;6641	d9 	. 	 (flow from: 663e)
+	ld b,008h		;6642	06 08 	. . 	 (flow from: 6641)
+	ld ix,09807h		;6644	dd 21 07 98 	. ! . . 	 (flow from: 6642)
 l6648h:
-	ld a,(ix+000h)		;6648	dd 7e 00 	. ~ . 
-	cp 0ffh		;664b	fe ff 	. . 
-	jr z,l6673h		;664d	28 24 	( $ 
-	ld e,(ix+001h)		;664f	dd 5e 01 	. ^ . 
-	ld d,(ix+002h)		;6652	dd 56 02 	. V . 
-	ld l,(ix+003h)		;6655	dd 6e 03 	. n . 
-	ld h,(ix+004h)		;6658	dd 66 04 	. f . 
-	cp 000h		;665b	fe 00 	. . 
-	jr z,l6673h		;665d	28 14 	( . 
-	ld a,(hl)			;665f	7e 	~ 
-	cp 000h		;6660	fe 00 	. . 
-	jp nz,l6290h		;6662	c2 90 62 	. . b 
-	ld a,(ix+000h)		;6665	dd 7e 00 	. ~ . 
-	ld (hl),a			;6668	77 	w 
-	inc hl			;6669	23 	# 
-	ld (hl),e			;666a	73 	s 
-	inc hl			;666b	23 	# 
-	ld (hl),d			;666c	72 	r 
-	dec hl			;666d	2b 	+ 
-	dec hl			;666e	2b 	+ 
-	ex de,hl			;666f	eb 	. 
-	call l64bdh		;6670	cd bd 64 	. . d 
+	ld a,(ix+000h)		;6648	dd 7e 00 	. ~ . 	 (flow from: 6644 6677)
+	cp 0ffh		;664b	fe ff 	. . 	 (flow from: 6648)
+	jr z,l6673h		;664d	28 24 	( $ 	 (flow from: 664b)
+	ld e,(ix+001h)		;664f	dd 5e 01 	. ^ . 	 (flow from: 664d)
+	ld d,(ix+002h)		;6652	dd 56 02 	. V . 	 (flow from: 664f)
+	ld l,(ix+003h)		;6655	dd 6e 03 	. n . 	 (flow from: 6652)
+	ld h,(ix+004h)		;6658	dd 66 04 	. f . 	 (flow from: 6655)
+	cp 000h		;665b	fe 00 	. . 	 (flow from: 6658)
+	jr z,l6673h		;665d	28 14 	( . 	 (flow from: 665b)
+	ld a,(hl)			;665f	7e 	~ 	 (flow from: 665d)
+	cp 000h		;6660	fe 00 	. . 	 (flow from: 665f)
+	jp nz,l6290h		;6662	c2 90 62 	. . b 	 (flow from: 6660)
+	ld a,(ix+000h)		;6665	dd 7e 00 	. ~ . 	 (flow from: 6662)
+	ld (hl),a			;6668	77 	w 	 (flow from: 0052 6665)
+	inc hl			;6669	23 	# 	 (flow from: 6668)
+	ld (hl),e			;666a	73 	s 	 (flow from: 6669)
+	inc hl			;666b	23 	# 	 (flow from: 666a)
+	ld (hl),d			;666c	72 	r 	 (flow from: 666b)
+	dec hl			;666d	2b 	+ 	 (flow from: 666c)
+	dec hl			;666e	2b 	+ 	 (flow from: 666d)
+	ex de,hl			;666f	eb 	. 	 (flow from: 666e)
+	call l64bdh		;6670	cd bd 64 	. . d 	 (flow from: 666f)
 l6673h:
-	exx			;6673	d9 	. 
-	add ix,de		;6674	dd 19 	. . 
-	exx			;6676	d9 	. 
-	djnz l6648h		;6677	10 cf 	. . 
-	ret			;6679	c9 	. 
+	exx			;6673	d9 	. 	 (flow from: 6504 664d)
+	add ix,de		;6674	dd 19 	. . 	 (flow from: 6673)
+	exx			;6676	d9 	. 	 (flow from: 6674)
+	djnz l6648h		;6677	10 cf 	. . 	 (flow from: 6676)
+	ret			;6679	c9 	. 	 (flow from: 6677)
 l667ah:
-	cp 003h		;667a	fe 03 	. . 
-	jp nz,l6290h		;667c	c2 90 62 	. . b 
-	call sub_9623h		;667f	cd 23 96 	. # . 
-	inc hl			;6682	23 	# 
-	inc hl			;6683	23 	# 
-	inc hl			;6684	23 	# 
-	ld (0984fh),hl		;6685	22 4f 98 	" O . 
-	dec hl			;6688	2b 	+ 
-	dec hl			;6689	2b 	+ 
-	dec hl			;668a	2b 	+ 
-	call sub_6575h		;668b	cd 75 65 	. u e 
-	ld b,a			;668e	47 	G 
-	cp 000h		;668f	fe 00 	. . 
-	jr nz,l66ceh		;6691	20 3b 	  ; 
-	ld a,(ix+004h)		;6693	dd 7e 04 	. ~ . 
-	cp 0ffh		;6696	fe ff 	. . 
-	jp z,l6290h		;6698	ca 90 62 	. . b 
-	push ix		;669b	dd e5 	. . 
-	ld ix,(09861h)		;669d	dd 2a 61 98 	. * a . 
-	ld (ix+000h),000h		;66a1	dd 36 00 00 	. 6 . . 
-	ld (ix+001h),l		;66a5	dd 75 01 	. u . 
-	ld (ix+002h),h		;66a8	dd 74 02 	. t . 
-	pop ix		;66ab	dd e1 	. . 
+	cp 003h		;667a	fe 03 	. . 	 (flow from: 6627)
+	jp nz,l6290h		;667c	c2 90 62 	. . b 	 (flow from: 667a)
+	call sub_9623h		;667f	cd 23 96 	. # . 	 (flow from: 667c)
+	inc hl			;6682	23 	# 	 (flow from: 9628)
+	inc hl			;6683	23 	# 	 (flow from: 6682)
+	inc hl			;6684	23 	# 	 (flow from: 0052 6683)
+	ld (0984fh),hl		;6685	22 4f 98 	" O . 	 (flow from: 6684)
+	dec hl			;6688	2b 	+ 	 (flow from: 6685)
+	dec hl			;6689	2b 	+ 	 (flow from: 6688)
+	dec hl			;668a	2b 	+ 	 (flow from: 6689)
+	call sub_6575h		;668b	cd 75 65 	. u e 	 (flow from: 668a)
+	ld b,a			;668e	47 	G 	 (flow from: 658a)
+	cp 000h		;668f	fe 00 	. . 	 (flow from: 668e)
+	jr nz,l66ceh		;6691	20 3b 	  ; 	 (flow from: 668f)
+	ld a,(ix+004h)		;6693	dd 7e 04 	. ~ . 	 (flow from: 6691)
+	cp 0ffh		;6696	fe ff 	. . 	 (flow from: 6693)
+	jp z,l6290h		;6698	ca 90 62 	. . b 	 (flow from: 6696)
+	push ix		;669b	dd e5 	. . 	 (flow from: 6698)
+	ld ix,(09861h)		;669d	dd 2a 61 98 	. * a . 	 (flow from: 669b)
+	ld (ix+000h),000h		;66a1	dd 36 00 00 	. 6 . . 	 (flow from: 669d)
+	ld (ix+001h),l		;66a5	dd 75 01 	. u . 	 (flow from: 66a1)
+	ld (ix+002h),h		;66a8	dd 74 02 	. t . 	 (flow from: 66a5)
+	pop ix		;66ab	dd e1 	. . 	 (flow from: 66a8)
 l66adh:
-	push ix		;66ad	dd e5 	. . 
-	ld ix,(09861h)		;66af	dd 2a 61 98 	. * a . 
-	ld (ix+003h),l		;66b3	dd 75 03 	. u . 
-	ld (ix+004h),h		;66b6	dd 74 04 	. t . 
-	ld (ix+005h),b		;66b9	dd 70 05 	. p . 
-	ld c,a			;66bc	4f 	O 
-	ld b,000h		;66bd	06 00 	. . 
-	exx			;66bf	d9 	. 
-	add ix,de		;66c0	dd 19 	. . 
-	ld (09861h),ix		;66c2	dd 22 61 98 	. " a . 
-	pop ix		;66c6	dd e1 	. . 
-	exx			;66c8	d9 	. 
-	add ix,bc		;66c9	dd 09 	. . 
-	jp l661fh		;66cb	c3 1f 66 	. . f 
+	push ix		;66ad	dd e5 	. . 	 (flow from: 66ab 66ef 66ff)
+	ld ix,(09861h)		;66af	dd 2a 61 98 	. * a . 	 (flow from: 66ad)
+	ld (ix+003h),l		;66b3	dd 75 03 	. u . 	 (flow from: 66af)
+	ld (ix+004h),h		;66b6	dd 74 04 	. t . 	 (flow from: 66b3)
+	ld (ix+005h),b		;66b9	dd 70 05 	. p . 	 (flow from: 66b6)
+	ld c,a			;66bc	4f 	O 	 (flow from: 66b9)
+	ld b,000h		;66bd	06 00 	. . 	 (flow from: 66bc)
+	exx			;66bf	d9 	. 	 (flow from: 66bd)
+	add ix,de		;66c0	dd 19 	. . 	 (flow from: 66bf)
+	ld (09861h),ix		;66c2	dd 22 61 98 	. " a . 	 (flow from: 66c0)
+	pop ix		;66c6	dd e1 	. . 	 (flow from: 66c2)
+	exx			;66c8	d9 	. 	 (flow from: 66c6)
+	add ix,bc		;66c9	dd 09 	. . 	 (flow from: 66c8)
+	jp l661fh		;66cb	c3 1f 66 	. . f 	 (flow from: 66c9)
 l66ceh:
-	cp 00ah		;66ce	fe 0a 	. . 
-	jr z,l66d6h		;66d0	28 04 	( . 
-	cp 004h		;66d2	fe 04 	. . 
-	jr nz,l66dfh		;66d4	20 09 	  . 
+	cp 00ah		;66ce	fe 0a 	. . 	 (flow from: 6691)
+	jr z,l66d6h		;66d0	28 04 	( . 	 (flow from: 66ce)
+	cp 004h		;66d2	fe 04 	. . 	 (flow from: 66d0)
+	jr nz,l66dfh		;66d4	20 09 	  . 	 (flow from: 0052 66d2)
 l66d6h:
 	ld a,(ix+001h)		;66d6	dd 7e 01 	. ~ . 
 	cp 0ffh		;66d9	fe ff 	. . 
 	jr z,l6701h		;66db	28 24 	( $ 
 	jr l66eah		;66dd	18 0b 	. . 
 l66dfh:
-	cp 008h		;66df	fe 08 	. . 
-	jr nz,l66f1h		;66e1	20 0e 	  . 
-	ld a,(ix+002h)		;66e3	dd 7e 02 	. ~ . 
-	cp 0ffh		;66e6	fe ff 	. . 
-	jr z,l6701h		;66e8	28 17 	( . 
+	cp 008h		;66df	fe 08 	. . 	 (flow from: 66d4)
+	jr nz,l66f1h		;66e1	20 0e 	  . 	 (flow from: 66df)
+	ld a,(ix+002h)		;66e3	dd 7e 02 	. ~ . 	 (flow from: 66e1)
+	cp 0ffh		;66e6	fe ff 	. . 	 (flow from: 66e3)
+	jr z,l6701h		;66e8	28 17 	( . 	 (flow from: 66e6)
 l66eah:
-	push af			;66ea	f5 	. 
-	call sub_9623h		;66eb	cd 23 96 	. # . 
-	pop af			;66ee	f1 	. 
-	jr l66adh		;66ef	18 bc 	. . 
+	push af			;66ea	f5 	. 	 (flow from: 66e8)
+	call sub_9623h		;66eb	cd 23 96 	. # . 	 (flow from: 66ea)
+	pop af			;66ee	f1 	. 	 (flow from: 9628)
+	jr l66adh		;66ef	18 bc 	. . 	 (flow from: 66ee)
 l66f1h:
-	cp 010h		;66f1	fe 10 	. . 
-	jr z,l66fah		;66f3	28 05 	( . 
-	cp 003h		;66f5	fe 03 	. . 
-	call nz,sub_6259h		;66f7	c4 59 62 	. Y b 
+	cp 010h		;66f1	fe 10 	. . 	 (flow from: 66e1)
+	jr z,l66fah		;66f3	28 05 	( . 	 (flow from: 66f1)
+	cp 003h		;66f5	fe 03 	. . 	 (flow from: 66f3)
+	call nz,sub_6259h		;66f7	c4 59 62 	. Y b 	 (flow from: 66f5)
 l66fah:
-	ld a,(ix+003h)		;66fa	dd 7e 03 	. ~ . 
-	cp 0ffh		;66fd	fe ff 	. . 
-	jr nz,l66adh		;66ff	20 ac 	  . 
+	ld a,(ix+003h)		;66fa	dd 7e 03 	. ~ . 	 (flow from: 66f7)
+	cp 0ffh		;66fd	fe ff 	. . 	 (flow from: 66fa)
+	jr nz,l66adh		;66ff	20 ac 	  . 	 (flow from: 66fd)
 l6701h:
 	push ix		;6701	dd e5 	. . 
 	pop hl			;6703	e1 	. 
@@ -1036,83 +1036,83 @@ l6708h:
 	or a			;6711	b7 	. 
 	ret			;6712	c9 	. 
 sub_6713h:
-	push af			;6713	f5 	. 
-	push hl			;6714	e5 	. 
-	push de			;6715	d5 	. 
-	push bc			;6716	c5 	. 
-	push ix		;6717	dd e5 	. . 
-	ld ix,(0983dh)		;6719	dd 2a 3d 98 	. * = . 
+	push af			;6713	f5 	. 	 (flow from: 65ae 93e6)
+	push hl			;6714	e5 	. 	 (flow from: 6713)
+	push de			;6715	d5 	. 	 (flow from: 6714)
+	push bc			;6716	c5 	. 	 (flow from: 6715)
+	push ix		;6717	dd e5 	. . 	 (flow from: 6716)
+	ld ix,(0983dh)		;6719	dd 2a 3d 98 	. * = . 	 (flow from: 6717)
 l671dh:
-	ld e,(ix+00ah)		;671d	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;6720	dd 56 0b 	. V . 
-	push ix		;6723	dd e5 	. . 
-	pop hl			;6725	e1 	. 
-	or a			;6726	b7 	. 
-	sbc hl,de		;6727	ed 52 	. R 
-	jr z,l6739h		;6729	28 0e 	( . 
-	ld b,l			;672b	45 	E 
-	ex de,hl			;672c	eb 	. 
+	ld e,(ix+00ah)		;671d	dd 5e 0a 	. ^ . 	 (flow from: 6719 6750)
+	ld d,(ix+00bh)		;6720	dd 56 0b 	. V . 	 (flow from: 671d)
+	push ix		;6723	dd e5 	. . 	 (flow from: 6720)
+	pop hl			;6725	e1 	. 	 (flow from: 6723)
+	or a			;6726	b7 	. 	 (flow from: 6725)
+	sbc hl,de		;6727	ed 52 	. R 	 (flow from: 6726)
+	jr z,l6739h		;6729	28 0e 	( . 	 (flow from: 6727)
+	ld b,l			;672b	45 	E 	 (flow from: 6729)
+	ex de,hl			;672c	eb 	. 	 (flow from: 672b)
 l672dh:
-	push bc			;672d	c5 	. 
-	call sub_688ch		;672e	cd 8c 68 	. . h 
-	pop bc			;6731	c1 	. 
-	inc hl			;6732	23 	# 
-	inc hl			;6733	23 	# 
-	inc hl			;6734	23 	# 
-	dec b			;6735	05 	. 
-	dec b			;6736	05 	. 
-	djnz l672dh		;6737	10 f4 	. . 
+	push bc			;672d	c5 	. 	 (flow from: 672c 6737)
+	call sub_688ch		;672e	cd 8c 68 	. . h 	 (flow from: 672d)
+	pop bc			;6731	c1 	. 	 (flow from: 68cf)
+	inc hl			;6732	23 	# 	 (flow from: 6731)
+	inc hl			;6733	23 	# 	 (flow from: 6732)
+	inc hl			;6734	23 	# 	 (flow from: 6733)
+	dec b			;6735	05 	. 	 (flow from: 6734)
+	dec b			;6736	05 	. 	 (flow from: 6735)
+	djnz l672dh		;6737	10 f4 	. . 	 (flow from: 6736)
 l6739h:
-	push ix		;6739	dd e5 	. . 
-	pop de			;673b	d1 	. 
-	ld hl,(0983fh)		;673c	2a 3f 98 	* ? . 
-	or a			;673f	b7 	. 
-	sbc hl,de		;6740	ed 52 	. R 
-	jr z,l6752h		;6742	28 0e 	( . 
-	ld e,(ix+00ah)		;6744	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;6747	dd 56 0b 	. V . 
-	ld ix,0fff4h		;674a	dd 21 f4 ff 	. ! . . 
-	add ix,de		;674e	dd 19 	. . 
-	jr l671dh		;6750	18 cb 	. . 
+	push ix		;6739	dd e5 	. . 	 (flow from: 6737)
+	pop de			;673b	d1 	. 	 (flow from: 6739)
+	ld hl,(0983fh)		;673c	2a 3f 98 	* ? . 	 (flow from: 673b)
+	or a			;673f	b7 	. 	 (flow from: 673c)
+	sbc hl,de		;6740	ed 52 	. R 	 (flow from: 673f)
+	jr z,l6752h		;6742	28 0e 	( . 	 (flow from: 6740)
+	ld e,(ix+00ah)		;6744	dd 5e 0a 	. ^ . 	 (flow from: 6742)
+	ld d,(ix+00bh)		;6747	dd 56 0b 	. V . 	 (flow from: 6744)
+	ld ix,0fff4h		;674a	dd 21 f4 ff 	. ! . . 	 (flow from: 6747)
+	add ix,de		;674e	dd 19 	. . 	 (flow from: 674a)
+	jr l671dh		;6750	18 cb 	. . 	 (flow from: 674e)
 l6752h:
-	ld hl,(09845h)		;6752	2a 45 98 	* E . 
-	call sub_688ch		;6755	cd 8c 68 	. . h 
-	ld hl,(0984dh)		;6758	2a 4d 98 	* M . 
-	call sub_688ch		;675b	cd 8c 68 	. . h 
-	ld hl,09b19h		;675e	21 19 9b 	! . . 
-	call sub_688ch		;6761	cd 8c 68 	. . h 
-	ld hl,l6962h		;6764	21 62 69 	! b i 
-	ld (09801h),hl		;6767	22 01 98 	" . . 
-	ld hl,09a93h		;676a	21 93 9a 	! . . 
-	call sub_694ah		;676d	cd 4a 69 	. J i 
-	ld hl,09a96h		;6770	21 96 9a 	! . . 
-	call sub_694ah		;6773	cd 4a 69 	. J i 
-	ld hl,(09a8eh)		;6776	2a 8e 9a 	* . . 
-	call l6962h		;6779	cd 62 69 	. b i 
-	ld b,008h		;677c	06 08 	. . 
-	ld de,00006h		;677e	11 06 00 	. . . 
-	ld hl,09807h		;6781	21 07 98 	! . . 
+	ld hl,(09845h)		;6752	2a 45 98 	* E . 	 (flow from: 6742)
+	call sub_688ch		;6755	cd 8c 68 	. . h 	 (flow from: 0052 6752)
+	ld hl,(0984dh)		;6758	2a 4d 98 	* M . 	 (flow from: 68cf)
+	call sub_688ch		;675b	cd 8c 68 	. . h 	 (flow from: 6758)
+	ld hl,09b19h		;675e	21 19 9b 	! . . 	 (flow from: 68cf)
+	call sub_688ch		;6761	cd 8c 68 	. . h 	 (flow from: 675e)
+	ld hl,l6962h		;6764	21 62 69 	! b i 	 (flow from: 68cf)
+	ld (09801h),hl		;6767	22 01 98 	" . . 	 (flow from: 6764)
+	ld hl,09a93h		;676a	21 93 9a 	! . . 	 (flow from: 6767)
+	call sub_694ah		;676d	cd 4a 69 	. J i 	 (flow from: 676a)
+	ld hl,09a96h		;6770	21 96 9a 	! . . 	 (flow from: 694f)
+	call sub_694ah		;6773	cd 4a 69 	. J i 	 (flow from: 6770)
+	ld hl,(09a8eh)		;6776	2a 8e 9a 	* . . 	 (flow from: 694f)
+	call l6962h		;6779	cd 62 69 	. b i 	 (flow from: 6776)
+	ld b,008h		;677c	06 08 	. . 	 (flow from: 68cf 6971)
+	ld de,00006h		;677e	11 06 00 	. . . 	 (flow from: 677c)
+	ld hl,09807h		;6781	21 07 98 	! . . 	 (flow from: 677e)
 l6784h:
-	ld a,(hl)			;6784	7e 	~ 
-	cp 0ffh		;6785	fe ff 	. . 
-	jr z,l678eh		;6787	28 05 	( . 
-	push bc			;6789	c5 	. 
-	call sub_688ch		;678a	cd 8c 68 	. . h 
-	pop bc			;678d	c1 	. 
+	ld a,(hl)			;6784	7e 	~ 	 (flow from: 6781 678f)
+	cp 0ffh		;6785	fe ff 	. . 	 (flow from: 6784)
+	jr z,l678eh		;6787	28 05 	( . 	 (flow from: 6785)
+	push bc			;6789	c5 	. 	 (flow from: 6787)
+	call sub_688ch		;678a	cd 8c 68 	. . h 	 (flow from: 6789)
+	pop bc			;678d	c1 	. 	 (flow from: 68cf)
 l678eh:
-	add hl,de			;678e	19 	. 
-	djnz l6784h		;678f	10 f3 	. . 
-	ld hl,(09849h)		;6791	2a 49 98 	* I . 
-	ld bc,09849h		;6794	01 49 98 	. I . 
-	ld de,l849dh		;6797	11 9d 84 	. . . 
+	add hl,de			;678e	19 	. 	 (flow from: 6787 678d)
+	djnz l6784h		;678f	10 f3 	. . 	 (flow from: 678e)
+	ld hl,(09849h)		;6791	2a 49 98 	* I . 	 (flow from: 678f)
+	ld bc,09849h		;6794	01 49 98 	. I . 	 (flow from: 6791)
+	ld de,l849dh		;6797	11 9d 84 	. . . 	 (flow from: 6794)
 l679ah:
-	call sub_65f1h		;679a	cd f1 65 	. . e 
-	jr z,l67d5h		;679d	28 36 	( 6 
-	ld a,(hl)			;679f	7e 	~ 
-	cp 010h		;67a0	fe 10 	. . 
-	jr z,l67bah		;67a2	28 16 	( . 
-	cp 00ch		;67a4	fe 0c 	. . 
-	jr z,l67c8h		;67a6	28 20 	(   
+	call sub_65f1h		;679a	cd f1 65 	. . e 	 (flow from: 6797 67d3)
+	jr z,l67d5h		;679d	28 36 	( 6 	 (flow from: 0052 65f6)
+	ld a,(hl)			;679f	7e 	~ 	 (flow from: 679d)
+	cp 010h		;67a0	fe 10 	. . 	 (flow from: 679f)
+	jr z,l67bah		;67a2	28 16 	( . 	 (flow from: 67a0)
+	cp 00ch		;67a4	fe 0c 	. . 	 (flow from: 67a2)
+	jr z,l67c8h		;67a6	28 20 	(   	 (flow from: 67a4)
 	cp 001h		;67a8	fe 01 	. . 
 	jr z,l67b1h		;67aa	28 05 	( . 
 	cp 005h		;67ac	fe 05 	. . 
@@ -1136,158 +1136,158 @@ l67bah:
 	dec bc			;67c5	0b 	. 
 	jr l679ah		;67c6	18 d2 	. . 
 l67c8h:
-	set 7,(hl)		;67c8	cb fe 	. . 
-	inc hl			;67ca	23 	# 
-	inc hl			;67cb	23 	# 
-	inc hl			;67cc	23 	# 
-	ld b,h			;67cd	44 	D 
-	ld c,l			;67ce	4d 	M 
-	inc bc			;67cf	03 	. 
-	call sub_9623h		;67d0	cd 23 96 	. # . 
-	jr l679ah		;67d3	18 c5 	. . 
+	set 7,(hl)		;67c8	cb fe 	. . 	 (flow from: 67a6)
+	inc hl			;67ca	23 	# 	 (flow from: 67c8)
+	inc hl			;67cb	23 	# 	 (flow from: 67ca)
+	inc hl			;67cc	23 	# 	 (flow from: 67cb)
+	ld b,h			;67cd	44 	D 	 (flow from: 67cc)
+	ld c,l			;67ce	4d 	M 	 (flow from: 67cd)
+	inc bc			;67cf	03 	. 	 (flow from: 67ce)
+	call sub_9623h		;67d0	cd 23 96 	. # . 	 (flow from: 67cf)
+	jr l679ah		;67d3	18 c5 	. . 	 (flow from: 9628)
 l67d5h:
-	ld de,(0983fh)		;67d5	ed 5b 3f 98 	. [ ? . 
-	ld hl,(0983dh)		;67d9	2a 3d 98 	* = . 
+	ld de,(0983fh)		;67d5	ed 5b 3f 98 	. [ ? . 	 (flow from: 679d)
+	ld hl,(0983dh)		;67d9	2a 3d 98 	* = . 	 (flow from: 67d5)
 l67dch:
-	call sub_65f1h		;67dc	cd f1 65 	. . e 
-	jr z,l6812h		;67df	28 31 	( 1 
-	push hl			;67e1	e5 	. 
-	pop ix		;67e2	dd e1 	. . 
-	ld l,(ix+008h)		;67e4	dd 6e 08 	. n . 
-	ld h,(ix+009h)		;67e7	dd 66 09 	. f . 
-	ld bc,l849dh		;67ea	01 9d 84 	. . . 
+	call sub_65f1h		;67dc	cd f1 65 	. . e 	 (flow from: 67d9 6810)
+	jr z,l6812h		;67df	28 31 	( 1 	 (flow from: 65f6)
+	push hl			;67e1	e5 	. 	 (flow from: 67df)
+	pop ix		;67e2	dd e1 	. . 	 (flow from: 67e1)
+	ld l,(ix+008h)		;67e4	dd 6e 08 	. n . 	 (flow from: 67e2)
+	ld h,(ix+009h)		;67e7	dd 66 09 	. f . 	 (flow from: 67e4)
+	ld bc,l849dh		;67ea	01 9d 84 	. . . 	 (flow from: 67e7)
 l67edh:
-	push hl			;67ed	e5 	. 
-	or a			;67ee	b7 	. 
-	sbc hl,bc		;67ef	ed 42 	. B 
-	pop hl			;67f1	e1 	. 
-	jr z,l6800h		;67f2	28 0c 	( . 
-	bit 7,(hl)		;67f4	cb 7e 	. ~ 
-	jr nz,l6800h		;67f6	20 08 	  . 
+	push hl			;67ed	e5 	. 	 (flow from: 67ea)
+	or a			;67ee	b7 	. 	 (flow from: 67ed)
+	sbc hl,bc		;67ef	ed 42 	. B 	 (flow from: 67ee)
+	pop hl			;67f1	e1 	. 	 (flow from: 67ef)
+	jr z,l6800h		;67f2	28 0c 	( . 	 (flow from: 67f1)
+	bit 7,(hl)		;67f4	cb 7e 	. ~ 	 (flow from: 67f2)
+	jr nz,l6800h		;67f6	20 08 	  . 	 (flow from: 67f4)
 	inc hl			;67f8	23 	# 
 	inc hl			;67f9	23 	# 
 	inc hl			;67fa	23 	# 
 	call sub_9623h		;67fb	cd 23 96 	. # . 
 	jr l67edh		;67fe	18 ed 	. . 
 l6800h:
-	ld (ix+008h),l		;6800	dd 75 08 	. u . 
-	ld (ix+009h),h		;6803	dd 74 09 	. t . 
-	ld c,(ix+00ah)		;6806	dd 4e 0a 	. N . 
-	ld b,(ix+00bh)		;6809	dd 46 0b 	. F . 
-	ld hl,0fff4h		;680c	21 f4 ff 	! . . 
-	add hl,bc			;680f	09 	. 
-	jr l67dch		;6810	18 ca 	. . 
+	ld (ix+008h),l		;6800	dd 75 08 	. u . 	 (flow from: 67f6)
+	ld (ix+009h),h		;6803	dd 74 09 	. t . 	 (flow from: 6800)
+	ld c,(ix+00ah)		;6806	dd 4e 0a 	. N . 	 (flow from: 6803)
+	ld b,(ix+00bh)		;6809	dd 46 0b 	. F . 	 (flow from: 6806)
+	ld hl,0fff4h		;680c	21 f4 ff 	! . . 	 (flow from: 6809)
+	add hl,bc			;680f	09 	. 	 (flow from: 680c)
+	jr l67dch		;6810	18 ca 	. . 	 (flow from: 680f)
 l6812h:
-	call sub_68e9h		;6812	cd e9 68 	. . h 
-	ld hl,(0983bh)		;6815	2a 3b 98 	* ; . 
-	ld de,00006h		;6818	11 06 00 	. . . 
+	call sub_68e9h		;6812	cd e9 68 	. . h 	 (flow from: 67df)
+	ld hl,(0983bh)		;6815	2a 3b 98 	* ; . 	 (flow from: 6949)
+	ld de,00006h		;6818	11 06 00 	. . . 	 (flow from: 6815)
 l681bh:
-	bit 7,(hl)		;681b	cb 7e 	. ~ 
-	jr nz,l6822h		;681d	20 03 	  . 
-	add hl,de			;681f	19 	. 
-	jr l681bh		;6820	18 f9 	. . 
+	bit 7,(hl)		;681b	cb 7e 	. ~ 	 (flow from: 6818 6820)
+	jr nz,l6822h		;681d	20 03 	  . 	 (flow from: 681b)
+	add hl,de			;681f	19 	. 	 (flow from: 681d)
+	jr l681bh		;6820	18 f9 	. . 	 (flow from: 681f)
 l6822h:
-	ld (0983bh),hl		;6822	22 3b 98 	" ; . 
-	ex de,hl			;6825	eb 	. 
-	ld hl,(09839h)		;6826	2a 39 98 	* 9 . 
-	ld bc,0985bh		;6829	01 5b 98 	. [ . 
-	exx			;682c	d9 	. 
-	push de			;682d	d5 	. 
-	push hl			;682e	e5 	. 
-	ld de,00006h		;682f	11 06 00 	. . . 
-	ld hl,00000h		;6832	21 00 00 	! . . 
-	exx			;6835	d9 	. 
+	ld (0983bh),hl		;6822	22 3b 98 	" ; . 	 (flow from: 681d)
+	ex de,hl			;6825	eb 	. 	 (flow from: 6822)
+	ld hl,(09839h)		;6826	2a 39 98 	* 9 . 	 (flow from: 6825)
+	ld bc,0985bh		;6829	01 5b 98 	. [ . 	 (flow from: 6826)
+	exx			;682c	d9 	. 	 (flow from: 6829)
+	push de			;682d	d5 	. 	 (flow from: 682c)
+	push hl			;682e	e5 	. 	 (flow from: 682d)
+	ld de,00006h		;682f	11 06 00 	. . . 	 (flow from: 682e)
+	ld hl,00000h		;6832	21 00 00 	! . . 	 (flow from: 682f)
+	exx			;6835	d9 	. 	 (flow from: 6832)
 l6836h:
-	dec hl			;6836	2b 	+ 
-	dec hl			;6837	2b 	+ 
-	dec hl			;6838	2b 	+ 
-	dec hl			;6839	2b 	+ 
-	dec hl			;683a	2b 	+ 
-	dec hl			;683b	2b 	+ 
-	push hl			;683c	e5 	. 
-	or a			;683d	b7 	. 
-	sbc hl,de		;683e	ed 52 	. R 
-	pop hl			;6840	e1 	. 
-	jr c,l6856h		;6841	38 13 	8 . 
-	bit 7,(hl)		;6843	cb 7e 	. ~ 
-	res 7,(hl)		;6845	cb be 	. . 
-	jr nz,l6836h		;6847	20 ed 	  . 
-	ld a,l			;6849	7d 	} 
-	ld (bc),a			;684a	02 	. 
-	ld a,h			;684b	7c 	| 
-	inc bc			;684c	03 	. 
-	ld (bc),a			;684d	02 	. 
-	ld b,h			;684e	44 	D 
-	ld c,l			;684f	4d 	M 
-	inc bc			;6850	03 	. 
-	exx			;6851	d9 	. 
-	add hl,de			;6852	19 	. 
-	exx			;6853	d9 	. 
-	jr l6836h		;6854	18 e0 	. . 
+	dec hl			;6836	2b 	+ 	 (flow from: 0052 6835 6847 6854)
+	dec hl			;6837	2b 	+ 	 (flow from: 0052 6836)
+	dec hl			;6838	2b 	+ 	 (flow from: 0052 6837)
+	dec hl			;6839	2b 	+ 	 (flow from: 0052 6838)
+	dec hl			;683a	2b 	+ 	 (flow from: 0052 6839)
+	dec hl			;683b	2b 	+ 	 (flow from: 0052 683a)
+	push hl			;683c	e5 	. 	 (flow from: 0052 683b)
+	or a			;683d	b7 	. 	 (flow from: 683c 684sh)
+	sbc hl,de		;683e	ed 52 	. R 	 (flow from: 683d)
+	pop hl			;6840	e1 	. 	 (flow from: 0052 683e)
+	jr c,l6856h		;6841	38 13 	8 . 	 (flow from: 0052 6840)
+	bit 7,(hl)		;6843	cb 7e 	. ~ 	 (flow from: 0052 6841)
+	res 7,(hl)		;6845	cb be 	. . 	 (flow from: 0052 6843)
+	jr nz,l6836h		;6847	20 ed 	  . 	 (flow from: 0052 6845)
+	ld a,l			;6849	7d 	} 	 (flow from: 6847)
+	ld (bc),a			;684a	02 	. 	 (flow from: 6849)
+	ld a,h			;684b	7c 	| 	 (flow from: 0052 684a)
+	inc bc			;684c	03 	. 	 (flow from: 684b)
+	ld (bc),a			;684d	02 	. 	 (flow from: 684c)
+	ld b,h			;684e	44 	D 	 (flow from: 684d)
+	ld c,l			;684f	4d 	M 	 (flow from: 684e)
+	inc bc			;6850	03 	. 	 (flow from: 684f)
+	exx			;6851	d9 	. 	 (flow from: 6850)
+	add hl,de			;6852	19 	. 	 (flow from: 6851)
+	exx			;6853	d9 	. 	 (flow from: 0052 6852)
+	jr l6836h		;6854	18 e0 	. . 	 (flow from: 6853)
 l6856h:
-	ld a,0ffh		;6856	3e ff 	> . 
-	ld (bc),a			;6858	02 	. 
-	inc bc			;6859	03 	. 
-	ld (bc),a			;685a	02 	. 
-	exx			;685b	d9 	. 
-	push hl			;685c	e5 	. 
-	ld hl,(0983bh)		;685d	2a 3b 98 	* ; . 
-	ld de,(0984bh)		;6860	ed 5b 4b 98 	. [ K . 
-	or a			;6864	b7 	. 
-	sbc hl,de		;6865	ed 52 	. R 
-	pop de			;6867	d1 	. 
-	add hl,de			;6868	19 	. 
-	ld (0985fh),hl		;6869	22 5f 98 	" _ . 
-	ld d,h			;686c	54 	T 
-	ld e,l			;686d	5d 	] 
-	srl h		;686e	cb 3c 	. < 
-	rr l		;6870	cb 1d 	. . 
-	srl h		;6872	cb 3c 	. < 
-	rr l		;6874	cb 1d 	. . 
-	ex de,hl			;6876	eb 	. 
-	or a			;6877	b7 	. 
-	sbc hl,de		;6878	ed 52 	. R 
-	ld de,(0984bh)		;687a	ed 5b 4b 98 	. [ K . 
-	add hl,de			;687e	19 	. 
-	ld (0985dh),hl		;687f	22 5d 98 	" ] . 
-	pop hl			;6882	e1 	. 
-	pop de			;6883	d1 	. 
-	exx			;6884	d9 	. 
-	pop ix		;6885	dd e1 	. . 
-	pop bc			;6887	c1 	. 
-	pop de			;6888	d1 	. 
-	pop hl			;6889	e1 	. 
-	pop af			;688a	f1 	. 
-	ret			;688b	c9 	. 
+	ld a,0ffh		;6856	3e ff 	> . 	 (flow from: 6841)
+	ld (bc),a			;6858	02 	. 	 (flow from: 6856)
+	inc bc			;6859	03 	. 	 (flow from: 6858)
+	ld (bc),a			;685a	02 	. 	 (flow from: 6859)
+	exx			;685b	d9 	. 	 (flow from: 685a)
+	push hl			;685c	e5 	. 	 (flow from: 685b)
+	ld hl,(0983bh)		;685d	2a 3b 98 	* ; . 	 (flow from: 685c)
+	ld de,(0984bh)		;6860	ed 5b 4b 98 	. [ K . 	 (flow from: 685d)
+	or a			;6864	b7 	. 	 (flow from: 6860)
+	sbc hl,de		;6865	ed 52 	. R 	 (flow from: 6864)
+	pop de			;6867	d1 	. 	 (flow from: 6865)
+	add hl,de			;6868	19 	. 	 (flow from: 6867)
+	ld (0985fh),hl		;6869	22 5f 98 	" _ . 	 (flow from: 6868)
+	ld d,h			;686c	54 	T 	 (flow from: 6869)
+	ld e,l			;686d	5d 	] 	 (flow from: 686c)
+	srl h		;686e	cb 3c 	. < 	 (flow from: 686d)
+	rr l		;6870	cb 1d 	. . 	 (flow from: 686e)
+	srl h		;6872	cb 3c 	. < 	 (flow from: 6870)
+	rr l		;6874	cb 1d 	. . 	 (flow from: 6872)
+	ex de,hl			;6876	eb 	. 	 (flow from: 6874)
+	or a			;6877	b7 	. 	 (flow from: 6876)
+	sbc hl,de		;6878	ed 52 	. R 	 (flow from: 6877)
+	ld de,(0984bh)		;687a	ed 5b 4b 98 	. [ K . 	 (flow from: 6878)
+	add hl,de			;687e	19 	. 	 (flow from: 687a)
+	ld (0985dh),hl		;687f	22 5d 98 	" ] . 	 (flow from: 687e)
+	pop hl			;6882	e1 	. 	 (flow from: 687f)
+	pop de			;6883	d1 	. 	 (flow from: 6882)
+	exx			;6884	d9 	. 	 (flow from: 6883)
+	pop ix		;6885	dd e1 	. . 	 (flow from: 6884)
+	pop bc			;6887	c1 	. 	 (flow from: 6885)
+	pop de			;6888	d1 	. 	 (flow from: 6887)
+	pop hl			;6889	e1 	. 	 (flow from: 6888)
+	pop af			;688a	f1 	. 	 (flow from: 6889)
+	ret			;688b	c9 	. 	 (flow from: 688a)
 sub_688ch:
-	ld b,001h		;688c	06 01 	. . 
-	push hl			;688e	e5 	. 
+	ld b,001h		;688c	06 01 	. . 	 (flow from: 672e 6755 675b 6761 678a 696c 6976 6989)
+	push hl			;688e	e5 	. 	 (flow from: 688c)
 l688fh:
-	ld a,(hl)			;688f	7e 	~ 
-	res 7,a		;6890	cb bf 	. . 
-	bit 0,a		;6892	cb 47 	. G 
-	jr z,l68abh		;6894	28 15 	( . 
-	call sub_9623h		;6896	cd 23 96 	. # . 
-	bit 7,(hl)		;6899	cb 7e 	. ~ 
-	jr nz,l68cdh		;689b	20 30 	  0 
-	call sub_68d5h		;689d	cd d5 68 	. . h 
-	jr c,l68cdh		;68a0	38 2b 	8 + 
-	set 7,(hl)		;68a2	cb fe 	. . 
-	push hl			;68a4	e5 	. 
-	inc b			;68a5	04 	. 
-	call z,sub_6259h		;68a6	cc 59 62 	. Y b 
-	jr l688fh		;68a9	18 e4 	. . 
+	ld a,(hl)			;688f	7e 	~ 	 (flow from: 0052 688e 68a9 68d3)
+	res 7,a		;6890	cb bf 	. . 	 (flow from: 0052 688f)
+	bit 0,a		;6892	cb 47 	. G 	 (flow from: 0052 6890)
+	jr z,l68abh		;6894	28 15 	( . 	 (flow from: 6892)
+	call sub_9623h		;6896	cd 23 96 	. # . 	 (flow from: 0052 6894)
+	bit 7,(hl)		;6899	cb 7e 	. ~ 	 (flow from: 0052 9628)
+	jr nz,l68cdh		;689b	20 30 	  0 	 (flow from: 0052 6899)
+	call sub_68d5h		;689d	cd d5 68 	. . h 	 (flow from: 0052 689b)
+	jr c,l68cdh		;68a0	38 2b 	8 + 	 (flow from: 0052 68e8)
+	set 7,(hl)		;68a2	cb fe 	. . 	 (flow from: 0052 68a0)
+	push hl			;68a4	e5 	. 	 (flow from: 0052 68a2)
+	inc b			;68a5	04 	. 	 (flow from: 0052 68a4)
+	call z,sub_6259h		;68a6	cc 59 62 	. Y b 	 (flow from: 68a5)
+	jr l688fh		;68a9	18 e4 	. . 	 (flow from: 0052 68a6)
 l68abh:
-	cp 008h		;68ab	fe 08 	. . 
-	jr nz,l68bbh		;68ad	20 0c 	  . 
-	call sub_9623h		;68af	cd 23 96 	. # . 
-	call sub_7653h		;68b2	cd 53 76 	. S v 
-	jr nz,l68cdh		;68b5	20 16 	  . 
-	set 7,(hl)		;68b7	cb fe 	. . 
-	jr l68cdh		;68b9	18 12 	. . 
+	cp 008h		;68ab	fe 08 	. . 	 (flow from: 6894)
+	jr nz,l68bbh		;68ad	20 0c 	  . 	 (flow from: 68ab)
+	call sub_9623h		;68af	cd 23 96 	. # . 	 (flow from: 68ad)
+	call sub_7653h		;68b2	cd 53 76 	. S v 	 (flow from: 9628)
+	jr nz,l68cdh		;68b5	20 16 	  . 	 (flow from: 0052 7662)
+	set 7,(hl)		;68b7	cb fe 	. . 	 (flow from: 68b5)
+	jr l68cdh		;68b9	18 12 	. . 	 (flow from: 0052 68b7)
 l68bbh:
-	cp 00ah		;68bb	fe 0a 	. . 
-	jr nz,l68cdh		;68bd	20 0e 	  . 
+	cp 00ah		;68bb	fe 0a 	. . 	 (flow from: 0052 68ad)
+	jr nz,l68cdh		;68bd	20 0e 	  . 	 (flow from: 0052 68bb)
 	call sub_9623h		;68bf	cd 23 96 	. # . 
 	bit 7,(hl)		;68c2	cb 7e 	. ~ 
 	jr nz,l68cdh		;68c4	20 07 	  . 
@@ -1295,53 +1295,53 @@ l68bbh:
 	jr c,l68cdh		;68c9	38 02 	8 . 
 	set 7,(hl)		;68cb	cb fe 	. . 
 l68cdh:
-	dec b			;68cd	05 	. 
-	pop hl			;68ce	e1 	. 
-	ret z			;68cf	c8 	. 
-	inc hl			;68d0	23 	# 
-	inc hl			;68d1	23 	# 
-	inc hl			;68d2	23 	# 
-	jr l688fh		;68d3	18 ba 	. . 
+	dec b			;68cd	05 	. 	 (flow from: 689b 68a0 68b5 68b9 68bd)
+	pop hl			;68ce	e1 	. 	 (flow from: 68cd)
+	ret z			;68cf	c8 	. 	 (flow from: 0052 68ce)
+	inc hl			;68d0	23 	# 	 (flow from: 0052 68cf)
+	inc hl			;68d1	23 	# 	 (flow from: 68d0)
+	inc hl			;68d2	23 	# 	 (flow from: 0052 68d1)
+	jr l688fh		;68d3	18 ba 	. . 	 (flow from: 68d2)
 sub_68d5h:
-	push de			;68d5	d5 	. 
-	ex de,hl			;68d6	eb 	. 
-	ld hl,(0984bh)		;68d7	2a 4b 98 	* K . 
-	scf			;68da	37 	7 
-	sbc hl,de		;68db	ed 52 	. R 
-	ccf			;68dd	3f 	? 
-	jr c,l68e6h		;68de	38 06 	8 . 
-	ld hl,(09839h)		;68e0	2a 39 98 	* 9 . 
-	or a			;68e3	b7 	. 
-	sbc hl,de		;68e4	ed 52 	. R 
+	push de			;68d5	d5 	. 	 (flow from: 0052 6553 689d)
+	ex de,hl			;68d6	eb 	. 	 (flow from: 0052 68d5)
+	ld hl,(0984bh)		;68d7	2a 4b 98 	* K . 	 (flow from: 0052 68cf 68d6)
+	scf			;68da	37 	7 	 (flow from: 68d7)
+	sbc hl,de		;68db	ed 52 	. R 	 (flow from: 0052 68da)
+	ccf			;68dd	3f 	? 	 (flow from: 0052 68db)
+	jr c,l68e6h		;68de	38 06 	8 . 	 (flow from: 0052 68dd)
+	ld hl,(09839h)		;68e0	2a 39 98 	* 9 . 	 (flow from: 0052 68de)
+	or a			;68e3	b7 	. 	 (flow from: 0052 68e0)
+	sbc hl,de		;68e4	ed 52 	. R 	 (flow from: 0052 68e3)
 l68e6h:
-	ex de,hl			;68e6	eb 	. 
-	pop de			;68e7	d1 	. 
-	ret			;68e8	c9 	. 
+	ex de,hl			;68e6	eb 	. 	 (flow from: 0052 68de 68e4)
+	pop de			;68e7	d1 	. 	 (flow from: 68e6)
+	ret			;68e8	c9 	. 	 (flow from: 0052 68e7)
 sub_68e9h:
-	ld hl,09a93h		;68e9	21 93 9a 	! . . 
-	call sub_68f2h		;68ec	cd f2 68 	. . h 
-	ld hl,09a96h		;68ef	21 96 9a 	! . . 
+	ld hl,09a93h		;68e9	21 93 9a 	! . . 	 (flow from: 6812)
+	call sub_68f2h		;68ec	cd f2 68 	. . h 	 (flow from: 68e9)
+	ld hl,09a96h		;68ef	21 96 9a 	! . . 	 (flow from: 6949)
 sub_68f2h:
-	ld a,(hl)			;68f2	7e 	~ 
-	cp 003h		;68f3	fe 03 	. . 
-	jr nz,l6944h		;68f5	20 4d 	  M 
-	push hl			;68f7	e5 	. 
-	call sub_9623h		;68f8	cd 23 96 	. # . 
-	push hl			;68fb	e5 	. 
-	ld a,(hl)			;68fc	7e 	~ 
-	res 7,a		;68fd	cb bf 	. . 
-	cp 010h		;68ff	fe 10 	. . 
-	jr z,l693dh		;6901	28 3a 	( : 
-	cp 008h		;6903	fe 08 	. . 
-	call nz,sub_6259h		;6905	c4 59 62 	. Y b 
-	call sub_9623h		;6908	cd 23 96 	. # . 
-	ld a,(hl)			;690b	7e 	~ 
-	bit 7,a		;690c	cb 7f 	.  
-	res 7,a		;690e	cb bf 	. . 
-	ld (hl),a			;6910	77 	w 
-	jr nz,l692ah		;6911	20 17 	  . 
-	cp 010h		;6913	fe 10 	. . 
-	jr nz,l692ah		;6915	20 13 	  . 
+	ld a,(hl)			;68f2	7e 	~ 	 (flow from: 68ec 68ef 693a 6942)
+	cp 003h		;68f3	fe 03 	. . 	 (flow from: 0052 68f2)
+	jr nz,l6944h		;68f5	20 4d 	  M 	 (flow from: 68f3)
+	push hl			;68f7	e5 	. 	 (flow from: 68f5)
+	call sub_9623h		;68f8	cd 23 96 	. # . 	 (flow from: 68f7)
+	push hl			;68fb	e5 	. 	 (flow from: 9628)
+	ld a,(hl)			;68fc	7e 	~ 	 (flow from: 68fb)
+	res 7,a		;68fd	cb bf 	. . 	 (flow from: 68fc)
+	cp 010h		;68ff	fe 10 	. . 	 (flow from: 68fd)
+	jr z,l693dh		;6901	28 3a 	( : 	 (flow from: 68ff)
+	cp 008h		;6903	fe 08 	. . 	 (flow from: 6901)
+	call nz,sub_6259h		;6905	c4 59 62 	. Y b 	 (flow from: 6903)
+	call sub_9623h		;6908	cd 23 96 	. # . 	 (flow from: 6905)
+	ld a,(hl)			;690b	7e 	~ 	 (flow from: 9628)
+	bit 7,a		;690c	cb 7f 	.  	 (flow from: 690b)
+	res 7,a		;690e	cb bf 	. . 	 (flow from: 690c)
+	ld (hl),a			;6910	77 	w 	 (flow from: 690e)
+	jr nz,l692ah		;6911	20 17 	  . 	 (flow from: 6910)
+	cp 010h		;6913	fe 10 	. . 	 (flow from: 6911)
+	jr nz,l692ah		;6915	20 13 	  . 	 (flow from: 6913)
 	call sub_7b31h		;6917	cd 31 7b 	. 1 { 
 	pop hl			;691a	e1 	. 
 	res 7,(hl)		;691b	cb be 	. . 
@@ -1355,72 +1355,72 @@ sub_68f2h:
 	pop hl			;6927	e1 	. 
 	jr sub_68f2h		;6928	18 c8 	. . 
 l692ah:
-	cp 007h		;692a	fe 07 	. . 
-	jr nz,l693dh		;692c	20 0f 	  . 
-	call sub_9623h		;692e	cd 23 96 	. # . 
-	inc hl			;6931	23 	# 
-	inc hl			;6932	23 	# 
-	inc hl			;6933	23 	# 
-	call sub_9623h		;6934	cd 23 96 	. # . 
-	inc hl			;6937	23 	# 
-	inc hl			;6938	23 	# 
-	inc hl			;6939	23 	# 
-	call sub_68f2h		;693a	cd f2 68 	. . h 
+	cp 007h		;692a	fe 07 	. . 	 (flow from: 6911 6915)
+	jr nz,l693dh		;692c	20 0f 	  . 	 (flow from: 692a)
+	call sub_9623h		;692e	cd 23 96 	. # . 	 (flow from: 692c)
+	inc hl			;6931	23 	# 	 (flow from: 9628)
+	inc hl			;6932	23 	# 	 (flow from: 6931)
+	inc hl			;6933	23 	# 	 (flow from: 6932)
+	call sub_9623h		;6934	cd 23 96 	. # . 	 (flow from: 6933)
+	inc hl			;6937	23 	# 	 (flow from: 9628)
+	inc hl			;6938	23 	# 	 (flow from: 6937)
+	inc hl			;6939	23 	# 	 (flow from: 6938)
+	call sub_68f2h		;693a	cd f2 68 	. . h 	 (flow from: 6939)
 l693dh:
-	pop hl			;693d	e1 	. 
-	pop af			;693e	f1 	. 
-	inc hl			;693f	23 	# 
-	inc hl			;6940	23 	# 
-	inc hl			;6941	23 	# 
-	jr sub_68f2h		;6942	18 ae 	. . 
+	pop hl			;693d	e1 	. 	 (flow from: 692c 6949)
+	pop af			;693e	f1 	. 	 (flow from: 693d)
+	inc hl			;693f	23 	# 	 (flow from: 693e)
+	inc hl			;6940	23 	# 	 (flow from: 0052 693f)
+	inc hl			;6941	23 	# 	 (flow from: 6940)
+	jr sub_68f2h		;6942	18 ae 	. . 	 (flow from: 6941)
 l6944h:
-	cp 010h		;6944	fe 10 	. . 
-	call nz,sub_6259h		;6946	c4 59 62 	. Y b 
-	ret			;6949	c9 	. 
+	cp 010h		;6944	fe 10 	. . 	 (flow from: 68f5)
+	call nz,sub_6259h		;6946	c4 59 62 	. Y b 	 (flow from: 6944)
+	ret			;6949	c9 	. 	 (flow from: 6946)
 sub_694ah:
-	ld a,(hl)			;694a	7e 	~ 
-	res 7,a		;694b	cb bf 	. . 
-	cp 010h		;694d	fe 10 	. . 
-	ret z			;694f	c8 	. 
-	cp 003h		;6950	fe 03 	. . 
-	call nz,sub_6259h		;6952	c4 59 62 	. Y b 
-	call sub_9623h		;6955	cd 23 96 	. # . 
-	push hl			;6958	e5 	. 
-	call 09800h		;6959	cd 00 98 	. . . 
-	pop hl			;695c	e1 	. 
-	inc hl			;695d	23 	# 
-	inc hl			;695e	23 	# 
-	inc hl			;695f	23 	# 
-	jr sub_694ah		;6960	18 e8 	. . 
+	ld a,(hl)			;694a	7e 	~ 	 (flow from: 676d 6773 6960 6990 77af)
+	res 7,a		;694b	cb bf 	. . 	 (flow from: 694a)
+	cp 010h		;694d	fe 10 	. . 	 (flow from: 694b)
+	ret z			;694f	c8 	. 	 (flow from: 694d)
+	cp 003h		;6950	fe 03 	. . 	 (flow from: 694f)
+	call nz,sub_6259h		;6952	c4 59 62 	. Y b 	 (flow from: 0052 6950)
+	call sub_9623h		;6955	cd 23 96 	. # . 	 (flow from: 6952)
+	push hl			;6958	e5 	. 	 (flow from: 9628)
+	call 09800h		;6959	cd 00 98 	. . . 	 (flow from: 6958)
+	pop hl			;695c	e1 	. 	 (flow from: 68cf 694f 6971 77f4)
+	inc hl			;695d	23 	# 	 (flow from: 695c)
+	inc hl			;695e	23 	# 	 (flow from: 695d)
+	inc hl			;695f	23 	# 	 (flow from: 695e)
+	jr sub_694ah		;6960	18 e8 	. . 	 (flow from: 695f)
 l6962h:
-	set 7,(hl)		;6962	cb fe 	. . 
-	call sub_9623h		;6964	cd 23 96 	. # . 
-	ld a,(hl)			;6967	7e 	~ 
-	res 7,a		;6968	cb bf 	. . 
-	cp 003h		;696a	fe 03 	. . 
-	jp z,sub_688ch		;696c	ca 8c 68 	. . h 
-	cp 007h		;696f	fe 07 	. . 
-	ret nz			;6971	c0 	. 
-	call sub_9623h		;6972	cd 23 96 	. # . 
-	push hl			;6975	e5 	. 
-	call sub_688ch		;6976	cd 8c 68 	. . h 
-	pop hl			;6979	e1 	. 
-	set 7,(hl)		;697a	cb fe 	. . 
-	inc hl			;697c	23 	# 
-	inc hl			;697d	23 	# 
-	inc hl			;697e	23 	# 
-	ld a,(hl)			;697f	7e 	~ 
-	cp 003h		;6980	fe 03 	. . 
-	ret nz			;6982	c0 	. 
-	call sub_9623h		;6983	cd 23 96 	. # . 
-	set 7,(hl)		;6986	cb fe 	. . 
-	push hl			;6988	e5 	. 
-	call sub_688ch		;6989	cd 8c 68 	. . h 
-	pop hl			;698c	e1 	. 
-	inc hl			;698d	23 	# 
-	inc hl			;698e	23 	# 
-	inc hl			;698f	23 	# 
-	jp sub_694ah		;6990	c3 4a 69 	. J i 
+	set 7,(hl)		;6962	cb fe 	. . 	 (flow from: 6779 9800)
+	call sub_9623h		;6964	cd 23 96 	. # . 	 (flow from: 6962)
+	ld a,(hl)			;6967	7e 	~ 	 (flow from: 9628)
+	res 7,a		;6968	cb bf 	. . 	 (flow from: 6967)
+	cp 003h		;696a	fe 03 	. . 	 (flow from: 6968)
+	jp z,sub_688ch		;696c	ca 8c 68 	. . h 	 (flow from: 696a)
+	cp 007h		;696f	fe 07 	. . 	 (flow from: 696c)
+	ret nz			;6971	c0 	. 	 (flow from: 696f)
+	call sub_9623h		;6972	cd 23 96 	. # . 	 (flow from: 6971)
+	push hl			;6975	e5 	. 	 (flow from: 9628)
+	call sub_688ch		;6976	cd 8c 68 	. . h 	 (flow from: 6975)
+	pop hl			;6979	e1 	. 	 (flow from: 68cf)
+	set 7,(hl)		;697a	cb fe 	. . 	 (flow from: 6979)
+	inc hl			;697c	23 	# 	 (flow from: 697a)
+	inc hl			;697d	23 	# 	 (flow from: 697c)
+	inc hl			;697e	23 	# 	 (flow from: 697d)
+	ld a,(hl)			;697f	7e 	~ 	 (flow from: 697e)
+	cp 003h		;6980	fe 03 	. . 	 (flow from: 697f)
+	ret nz			;6982	c0 	. 	 (flow from: 6980)
+	call sub_9623h		;6983	cd 23 96 	. # . 	 (flow from: 6982)
+	set 7,(hl)		;6986	cb fe 	. . 	 (flow from: 9628)
+	push hl			;6988	e5 	. 	 (flow from: 6986)
+	call sub_688ch		;6989	cd 8c 68 	. . h 	 (flow from: 6988)
+	pop hl			;698c	e1 	. 	 (flow from: 68cf)
+	inc hl			;698d	23 	# 	 (flow from: 698c)
+	inc hl			;698e	23 	# 	 (flow from: 698d)
+	inc hl			;698f	23 	# 	 (flow from: 698e)
+	jp sub_694ah		;6990	c3 4a 69 	. J i 	 (flow from: 698f)
 	ex af,af'			;6993	08 	. 
 	sbc a,c			;6994	99 	. 
 	ld l,c			;6995	69 	i 
@@ -1432,8 +1432,8 @@ l6962h:
 	ld l,c			;699b	69 	i 
 	ld d,a			;699c	57 	W 
 	rst 38h			;699d	ff 	. 
-	ld ix,l69a5h		;699e	dd 21 a5 69 	. ! . i 
-	jp l65f7h		;69a2	c3 f7 65 	. . e 
+	ld ix,l69a5h		;699e	dd 21 a5 69 	. ! . i 	 (flow from: 60bb)
+	jp l65f7h		;69a2	c3 f7 65 	. . e 	 (flow from: 699e)
 l69a5h:
 	rst 38h			;69a5	ff 	. 
 	rst 38h			;69a6	ff 	. 
@@ -1450,11 +1450,11 @@ l69a5h:
 	rst 38h			;69b1	ff 	. 
 	rst 38h			;69b2	ff 	. 
 	rst 38h			;69b3	ff 	. 
-	ld hl,(0980ah)		;69b4	2a 0a 98 	* . . 
-	ld a,000h		;69b7	3e 00 	> . 
-	call sub_718fh		;69b9	cd 8f 71 	. . q 
-	ret nz			;69bc	c0 	. 
-	jr l69edh		;69bd	18 2e 	. . 
+	ld hl,(0980ah)		;69b4	2a 0a 98 	* . . 	 (flow from: 663c)
+	ld a,000h		;69b7	3e 00 	> . 	 (flow from: 69b4)
+	call sub_718fh		;69b9	cd 8f 71 	. . q 	 (flow from: 69b7)
+	ret nz			;69bc	c0 	. 	 (flow from: 71a1)
+	jr l69edh		;69bd	18 2e 	. . 	 (flow from: 69bc)
 	ex af,af'			;69bf	08 	. 
 	push bc			;69c0	c5 	. 
 	ld l,c			;69c1	69 	i 
@@ -1496,50 +1496,50 @@ l69d5h:
 	call sub_718fh		;69e9	cd 8f 71 	. . q 
 	ret nz			;69ec	c0 	. 
 l69edh:
-	ld hl,0ffffh		;69ed	21 ff ff 	! . . 
-	ld (0986fh),hl		;69f0	22 6f 98 	" o . 
-	ld hl,(09810h)		;69f3	2a 10 98 	* . . 
-	call sub_6a04h		;69f6	cd 04 6a 	. . j 
-	ret nz			;69f9	c0 	. 
-	ld a,(0986eh)		;69fa	3a 6e 98 	: n . 
-	or a			;69fd	b7 	. 
-	ret z			;69fe	c8 	. 
+	ld hl,0ffffh		;69ed	21 ff ff 	! . . 	 (flow from: 69bd)
+	ld (0986fh),hl		;69f0	22 6f 98 	" o . 	 (flow from: 69ed)
+	ld hl,(09810h)		;69f3	2a 10 98 	* . . 	 (flow from: 69f0)
+	call sub_6a04h		;69f6	cd 04 6a 	. . j 	 (flow from: 69f3)
+	ret nz			;69f9	c0 	. 	 (flow from: 6a35)
+	ld a,(0986eh)		;69fa	3a 6e 98 	: n . 	 (flow from: 69f9)
+	or a			;69fd	b7 	. 	 (flow from: 69fa)
+	ret z			;69fe	c8 	. 	 (flow from: 69fd)
 	call sub_7081h		;69ff	cd 81 70 	. . p 
 	cp a			;6a02	bf 	. 
 	ret			;6a03	c9 	. 
 sub_6a04h:
-	ld ix,(09843h)		;6a04	dd 2a 43 98 	. * C . 
-	ld e,(ix+00ah)		;6a08	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;6a0b	dd 56 0b 	. V . 
-	call sub_6575h		;6a0e	cd 75 65 	. u e 
-	ld b,000h		;6a11	06 00 	. . 
-	cp 010h		;6a13	fe 10 	. . 
-	ret z			;6a15	c8 	. 
-	cp 003h		;6a16	fe 03 	. . 
-	jr nz,l6a3bh		;6a18	20 21 	  ! 
+	ld ix,(09843h)		;6a04	dd 2a 43 98 	. * C . 	 (flow from: 69f6)
+	ld e,(ix+00ah)		;6a08	dd 5e 0a 	. ^ . 	 (flow from: 6a04)
+	ld d,(ix+00bh)		;6a0b	dd 56 0b 	. V . 	 (flow from: 6a08)
+	call sub_6575h		;6a0e	cd 75 65 	. u e 	 (flow from: 6a0b)
+	ld b,000h		;6a11	06 00 	. . 	 (flow from: 658a)
+	cp 010h		;6a13	fe 10 	. . 	 (flow from: 6a11)
+	ret z			;6a15	c8 	. 	 (flow from: 6a13)
+	cp 003h		;6a16	fe 03 	. . 	 (flow from: 6a15)
+	jr nz,l6a3bh		;6a18	20 21 	  ! 	 (flow from: 6a16)
 l6a1ah:
-	call sub_9623h		;6a1a	cd 23 96 	. # . 
-	push hl			;6a1d	e5 	. 
-	call l6a3bh		;6a1e	cd 3b 6a 	. ; j 
-	pop hl			;6a21	e1 	. 
-	inc hl			;6a22	23 	# 
-	inc hl			;6a23	23 	# 
-	inc hl			;6a24	23 	# 
-	call sub_6575h		;6a25	cd 75 65 	. u e 
-	cp 003h		;6a28	fe 03 	. . 
-	jr nz,l6a33h		;6a2a	20 07 	  . 
+	call sub_9623h		;6a1a	cd 23 96 	. # . 	 (flow from: 6a18)
+	push hl			;6a1d	e5 	. 	 (flow from: 9628)
+	call l6a3bh		;6a1e	cd 3b 6a 	. ; j 	 (flow from: 6a1d)
+	pop hl			;6a21	e1 	. 	 (flow from: 6be3)
+	inc hl			;6a22	23 	# 	 (flow from: 6a21)
+	inc hl			;6a23	23 	# 	 (flow from: 6a22)
+	inc hl			;6a24	23 	# 	 (flow from: 6a23)
+	call sub_6575h		;6a25	cd 75 65 	. u e 	 (flow from: 6a24)
+	cp 003h		;6a28	fe 03 	. . 	 (flow from: 658a)
+	jr nz,l6a33h		;6a2a	20 07 	  . 	 (flow from: 6a28)
 	ld a,020h		;6a2c	3e 20 	>   
 	call 0986bh		;6a2e	cd 6b 98 	. k . 
 	jr l6a1ah		;6a31	18 e7 	. . 
 l6a33h:
-	cp 010h		;6a33	fe 10 	. . 
-	ret z			;6a35	c8 	. 
+	cp 010h		;6a33	fe 10 	. . 	 (flow from: 6a2a)
+	ret z			;6a35	c8 	. 	 (flow from: 6a33)
 	ld a,07ch		;6a36	3e 7c 	> | 
 	call 0986bh		;6a38	cd 6b 98 	. k . 
 l6a3bh:
-	call sub_6575h		;6a3b	cd 75 65 	. u e 
-	cp 003h		;6a3e	fe 03 	. . 
-	jr nz,l6a53h		;6a40	20 11 	  . 
+	call sub_6575h		;6a3b	cd 75 65 	. u e 	 (flow from: 6a1e)
+	cp 003h		;6a3e	fe 03 	. . 	 (flow from: 658a)
+	jr nz,l6a53h		;6a40	20 11 	  . 	 (flow from: 6a3e)
 	ld a,028h		;6a42	3e 28 	> ( 
 	call 0986bh		;6a44	cd 6b 98 	. k . 
 	inc b			;6a47	04 	. 
@@ -1550,18 +1550,18 @@ l6a3bh:
 	cp a			;6a51	bf 	. 
 	ret			;6a52	c9 	. 
 l6a53h:
-	cp 004h		;6a53	fe 04 	. . 
-	jr nz,l6a5dh		;6a55	20 06 	  . 
+	cp 004h		;6a53	fe 04 	. . 	 (flow from: 6a40)
+	jr nz,l6a5dh		;6a55	20 06 	  . 	 (flow from: 6a53)
 	call sub_9623h		;6a57	cd 23 96 	. # . 
 	jp l6b0eh		;6a5a	c3 0e 6b 	. . k 
 l6a5dh:
-	cp 00ah		;6a5d	fe 0a 	. . 
-	jr nz,l6a67h		;6a5f	20 06 	  . 
+	cp 00ah		;6a5d	fe 0a 	. . 	 (flow from: 6a55)
+	jr nz,l6a67h		;6a5f	20 06 	  . 	 (flow from: 6a5d)
 	call sub_9623h		;6a61	cd 23 96 	. # . 
 	jp l6b56h		;6a64	c3 56 6b 	. V k 
 l6a67h:
-	cp 010h		;6a67	fe 10 	. . 
-	jr nz,l6a77h		;6a69	20 0c 	  . 
+	cp 010h		;6a67	fe 10 	. . 	 (flow from: 6a5f)
+	jr nz,l6a77h		;6a69	20 0c 	  . 	 (flow from: 6a67)
 	ld a,028h		;6a6b	3e 28 	> ( 
 	call 0986bh		;6a6d	cd 6b 98 	. k . 
 	ld a,029h		;6a70	3e 29 	> ) 
@@ -1569,13 +1569,13 @@ l6a67h:
 	cp a			;6a75	bf 	. 
 	ret			;6a76	c9 	. 
 l6a77h:
-	cp 008h		;6a77	fe 08 	. . 
-	jr nz,l6a84h		;6a79	20 09 	  . 
-	call sub_9623h		;6a7b	cd 23 96 	. # . 
-	inc hl			;6a7e	23 	# 
-	inc hl			;6a7f	23 	# 
-	inc hl			;6a80	23 	# 
-	jp l6babh		;6a81	c3 ab 6b 	. . k 
+	cp 008h		;6a77	fe 08 	. . 	 (flow from: 6a69)
+	jr nz,l6a84h		;6a79	20 09 	  . 	 (flow from: 6a77)
+	call sub_9623h		;6a7b	cd 23 96 	. # . 	 (flow from: 6a79)
+	inc hl			;6a7e	23 	# 	 (flow from: 9628)
+	inc hl			;6a7f	23 	# 	 (flow from: 6a7e)
+	inc hl			;6a80	23 	# 	 (flow from: 6a7f)
+	jp l6babh		;6a81	c3 ab 6b 	. . k 	 (flow from: 6a80)
 l6a84h:
 	cp 000h		;6a84	fe 00 	. . 
 	call nz,sub_6259h		;6a86	c4 59 62 	. Y b 
@@ -1683,46 +1683,46 @@ l6b20h:
 	pop hl			;6b24	e1 	. 
 	ret			;6b25	c9 	. 
 sub_6b26h:
-	push hl			;6b26	e5 	. 
-	push af			;6b27	f5 	. 
-	push de			;6b28	d5 	. 
-	push bc			;6b29	c5 	. 
-	ld de,0000ah		;6b2a	11 0a 00 	. . . 
-	ld b,000h		;6b2d	06 00 	. . 
+	push hl			;6b26	e5 	. 	 (flow from: 969e)
+	push af			;6b27	f5 	. 	 (flow from: 6b26)
+	push de			;6b28	d5 	. 	 (flow from: 6b27)
+	push bc			;6b29	c5 	. 	 (flow from: 6b28)
+	ld de,0000ah		;6b2a	11 0a 00 	. . . 	 (flow from: 6b29)
+	ld b,000h		;6b2d	06 00 	. . 	 (flow from: 6b2a)
 l6b2fh:
-	call sub_65f1h		;6b2f	cd f1 65 	. . e 
-	jr c,l6b48h		;6b32	38 14 	8 . 
-	xor a			;6b34	af 	. 
-	push bc			;6b35	c5 	. 
-	ld b,010h		;6b36	06 10 	. . 
+	call sub_65f1h		;6b2f	cd f1 65 	. . e 	 (flow from: 6b2d 6b46)
+	jr c,l6b48h		;6b32	38 14 	8 . 	 (flow from: 65f6)
+	xor a			;6b34	af 	. 	 (flow from: 6b32)
+	push bc			;6b35	c5 	. 	 (flow from: 6b34)
+	ld b,010h		;6b36	06 10 	. . 	 (flow from: 6b35)
 l6b38h:
-	add hl,hl			;6b38	29 	) 
-	rla			;6b39	17 	. 
-	sub e			;6b3a	93 	. 
-	jr c,l6b40h		;6b3b	38 03 	8 . 
-	inc hl			;6b3d	23 	# 
-	jr l6b41h		;6b3e	18 01 	. . 
+	add hl,hl			;6b38	29 	) 	 (flow from: 6b36 6b41)
+	rla			;6b39	17 	. 	 (flow from: 6b38)
+	sub e			;6b3a	93 	. 	 (flow from: 6b39)
+	jr c,l6b40h		;6b3b	38 03 	8 . 	 (flow from: 6b3a)
+	inc hl			;6b3d	23 	# 	 (flow from: 6b3b)
+	jr l6b41h		;6b3e	18 01 	. . 	 (flow from: 6b3d)
 l6b40h:
-	add a,e			;6b40	83 	. 
+	add a,e			;6b40	83 	. 	 (flow from: 6b3b)
 l6b41h:
-	djnz l6b38h		;6b41	10 f5 	. . 
-	pop bc			;6b43	c1 	. 
-	push af			;6b44	f5 	. 
-	inc b			;6b45	04 	. 
-	jr l6b2fh		;6b46	18 e7 	. . 
+	djnz l6b38h		;6b41	10 f5 	. . 	 (flow from: 6b3e 6b40)
+	pop bc			;6b43	c1 	. 	 (flow from: 6b41)
+	push af			;6b44	f5 	. 	 (flow from: 6b43)
+	inc b			;6b45	04 	. 	 (flow from: 6b44)
+	jr l6b2fh		;6b46	18 e7 	. . 	 (flow from: 6b45)
 l6b48h:
-	ld a,l			;6b48	7d 	} 
-	push af			;6b49	f5 	. 
-	inc b			;6b4a	04 	. 
+	ld a,l			;6b48	7d 	} 	 (flow from: 6b32)
+	push af			;6b49	f5 	. 	 (flow from: 6b48)
+	inc b			;6b4a	04 	. 	 (flow from: 6b49)
 l6b4bh:
-	pop af			;6b4b	f1 	. 
-	call sub_6ba6h		;6b4c	cd a6 6b 	. . k 
-	djnz l6b4bh		;6b4f	10 fa 	. . 
-	pop bc			;6b51	c1 	. 
-	pop de			;6b52	d1 	. 
-	pop af			;6b53	f1 	. 
-	pop hl			;6b54	e1 	. 
-	ret			;6b55	c9 	. 
+	pop af			;6b4b	f1 	. 	 (flow from: 6b4a 6b4f)
+	call sub_6ba6h		;6b4c	cd a6 6b 	. . k 	 (flow from: 6b4b)
+	djnz l6b4bh		;6b4f	10 fa 	. . 	 (flow from: 734b)
+	pop bc			;6b51	c1 	. 	 (flow from: 6b4f)
+	pop de			;6b52	d1 	. 	 (flow from: 6b51)
+	pop af			;6b53	f1 	. 	 (flow from: 6b52)
+	pop hl			;6b54	e1 	. 	 (flow from: 6b53)
+	ret			;6b55	c9 	. 	 (flow from: 6b54)
 l6b56h:
 	push hl			;6b56	e5 	. 
 	push de			;6b57	d5 	. 
@@ -1777,13 +1777,13 @@ sub_6ba4h:
 	inc hl			;6ba4	23 	# 
 	ld a,(hl)			;6ba5	7e 	~ 
 sub_6ba6h:
-	or 030h		;6ba6	f6 30 	. 0 
-	jp 0986bh		;6ba8	c3 6b 98 	. k . 
+	or 030h		;6ba6	f6 30 	. 0 	 (flow from: 6b4c)
+	jp 0986bh		;6ba8	c3 6b 98 	. k . 	 (flow from: 6ba6)
 l6babh:
-	ld a,(0986eh)		;6bab	3a 6e 98 	: n . 
-	or a			;6bae	b7 	. 
-	call nz,sub_6beah		;6baf	c4 ea 6b 	. . k 
-	jr z,l6be0h		;6bb2	28 2c 	( , 
+	ld a,(0986eh)		;6bab	3a 6e 98 	: n . 	 (flow from: 6a81)
+	or a			;6bae	b7 	. 	 (flow from: 6bab)
+	call nz,sub_6beah		;6baf	c4 ea 6b 	. . k 	 (flow from: 6bae)
+	jr z,l6be0h		;6bb2	28 2c 	( , 	 (flow from: 6baf)
 	ld a,022h		;6bb4	3e 22 	> " 
 	call 0986bh		;6bb6	cd 6b 98 	. k . 
 l6bb9h:
@@ -1812,12 +1812,12 @@ l6bdbh:
 	ld a,022h		;6bdb	3e 22 	> " 
 	jp 0986bh		;6bdd	c3 6b 98 	. k . 
 l6be0h:
-	ld a,(hl)			;6be0	7e 	~ 
-	cp 0ffh		;6be1	fe ff 	. . 
-	ret z			;6be3	c8 	. 
-	call 0986bh		;6be4	cd 6b 98 	. k . 
-	inc hl			;6be7	23 	# 
-	jr l6be0h		;6be8	18 f6 	. . 
+	ld a,(hl)			;6be0	7e 	~ 	 (flow from: 6bb2 6be8)
+	cp 0ffh		;6be1	fe ff 	. . 	 (flow from: 6be0)
+	ret z			;6be3	c8 	. 	 (flow from: 6be1)
+	call 0986bh		;6be4	cd 6b 98 	. k . 	 (flow from: 6be3)
+	inc hl			;6be7	23 	# 	 (flow from: 734b)
+	jr l6be0h		;6be8	18 f6 	. . 	 (flow from: 6be7)
 sub_6beah:
 	push hl			;6bea	e5 	. 
 	push bc			;6beb	c5 	. 
@@ -1898,8 +1898,8 @@ READ_string_start:
 	defb 044h		;6c49	44 	D 
 READ_string_end:
 	rst 38h			;6c4a	ff 	. 
-	ld ix,l6c52h		;6c4b	dd 21 52 6c 	. ! R l 
-	jp l65f7h		;6c4f	c3 f7 65 	. . e 
+	ld ix,l6c52h		;6c4b	dd 21 52 6c 	. ! R l 	 (flow from: 60bb)
+	jp l65f7h		;6c4f	c3 f7 65 	. . e 	 (flow from: 6c4b)
 l6c52h:
 	rst 38h			;6c52	ff 	. 
 	rst 38h			;6c53	ff 	. 
@@ -1916,98 +1916,98 @@ l6c52h:
 	rst 38h			;6c5e	ff 	. 
 	rst 38h			;6c5f	ff 	. 
 	rst 38h			;6c60	ff 	. 
-	ld hl,(0980ah)		;6c61	2a 0a 98 	* . . 
-	call sub_71d4h		;6c64	cd d4 71 	. . q 
-	ret nz			;6c67	c0 	. 
-	ld a,0ffh		;6c68	3e ff 	> . 
-	ld (09870h),a		;6c6a	32 70 98 	2 p . 
+	ld hl,(0980ah)		;6c61	2a 0a 98 	* . . 	 (flow from: 663c)
+	call sub_71d4h		;6c64	cd d4 71 	. . q 	 (flow from: 0052 6c61)
+	ret nz			;6c67	c0 	. 	 (flow from: 71ef 7224)
+	ld a,0ffh		;6c68	3e ff 	> . 	 (flow from: 6c67)
+	ld (09870h),a		;6c6a	32 70 98 	2 p . 	 (flow from: 6c68)
 l6c6dh:
-	ld de,0980dh		;6c6d	11 0d 98 	. . . 
-	ld (09863h),sp		;6c70	ed 73 63 98 	. s c . 
-	ld b,000h		;6c74	06 00 	. . 
+	ld de,0980dh		;6c6d	11 0d 98 	. . . 	 (flow from: 6c6a)
+	ld (09863h),sp		;6c70	ed 73 63 98 	. s c . 	 (flow from: 6c6d)
+	ld b,000h		;6c74	06 00 	. . 	 (flow from: 6c70)
 sub_6c76h:
-	call sub_6d84h		;6c76	cd 84 6d 	. . m 
-	ret nz			;6c79	c0 	. 
+	call sub_6d84h		;6c76	cd 84 6d 	. . m 	 (flow from: 6c74 6c99)
+	ret nz			;6c79	c0 	. 	 (flow from: 6d87 6d94 6dcf)
 sub_6c7ah:
-	cp 028h		;6c7a	fe 28 	. ( 
-	jr nz,l6cc3h		;6c7c	20 45 	  E 
-	inc b			;6c7e	04 	. 
+	cp 028h		;6c7a	fe 28 	. ( 	 (flow from: 0052 6c79 6cb9)
+	jr nz,l6cc3h		;6c7c	20 45 	  E 	 (flow from: 6c7a)
+	inc b			;6c7e	04 	. 	 (flow from: 6c7c)
 l6c7fh:
-	call sub_6d84h		;6c7f	cd 84 6d 	. . m 
-	ret nz			;6c82	c0 	. 
-	cp 029h		;6c83	fe 29 	. ) 
-	jr nz,l6c95h		;6c85	20 0e 	  . 
-	dec b			;6c87	05 	. 
-	ld a,010h		;6c88	3e 10 	> . 
-	ld (de),a			;6c8a	12 	. 
-	ld a,0ffh		;6c8b	3e ff 	> . 
-	inc de			;6c8d	13 	. 
-	ld (de),a			;6c8e	12 	. 
-	inc de			;6c8f	13 	. 
-	ld (de),a			;6c90	12 	. 
-	dec de			;6c91	1b 	. 
-	dec de			;6c92	1b 	. 
-	cp a			;6c93	bf 	. 
-	ret			;6c94	c9 	. 
+	call sub_6d84h		;6c7f	cd 84 6d 	. . m 	 (flow from: 6c7e 6cc1)
+	ret nz			;6c82	c0 	. 	 (flow from: 6d94 6dcf 6dd9 6e0f 6ed6)
+	cp 029h		;6c83	fe 29 	. ) 	 (flow from: 0052 6c82)
+	jr nz,l6c95h		;6c85	20 0e 	  . 	 (flow from: 6c83)
+	dec b			;6c87	05 	. 	 (flow from: 6c85)
+	ld a,010h		;6c88	3e 10 	> . 	 (flow from: 6c87)
+	ld (de),a			;6c8a	12 	. 	 (flow from: 6c88)
+	ld a,0ffh		;6c8b	3e ff 	> . 	 (flow from: 6c8a)
+	inc de			;6c8d	13 	. 	 (flow from: 6c8b)
+	ld (de),a			;6c8e	12 	. 	 (flow from: 6c8d)
+	inc de			;6c8f	13 	. 	 (flow from: 6c8e)
+	ld (de),a			;6c90	12 	. 	 (flow from: 6c8f)
+	dec de			;6c91	1b 	. 	 (flow from: 6c90)
+	dec de			;6c92	1b 	. 	 (flow from: 6c91)
+	cp a			;6c93	bf 	. 	 (flow from: 6c92)
+	ret			;6c94	c9 	. 	 (flow from: 6c93)
 l6c95h:
-	cp 07ch		;6c95	fe 7c 	. | 
-	jr nz,l6ca9h		;6c97	20 10 	  . 
-	call sub_6c76h		;6c99	cd 76 6c 	. v l 
-	ret nz			;6c9c	c0 	. 
-	call sub_6d84h		;6c9d	cd 84 6d 	. . m 
-	ret nz			;6ca0	c0 	. 
-	cp 029h		;6ca1	fe 29 	. ) 
-	jp nz,l6cech		;6ca3	c2 ec 6c 	. . l 
-	dec b			;6ca6	05 	. 
-	cp a			;6ca7	bf 	. 
-	ret			;6ca8	c9 	. 
+	cp 07ch		;6c95	fe 7c 	. | 	 (flow from: 0052 6c85)
+	jr nz,l6ca9h		;6c97	20 10 	  . 	 (flow from: 6c95)
+	call sub_6c76h		;6c99	cd 76 6c 	. v l 	 (flow from: 6c97)
+	ret nz			;6c9c	c0 	. 	 (flow from: 6ceb)
+	call sub_6d84h		;6c9d	cd 84 6d 	. . m 	 (flow from: 6c9c)
+	ret nz			;6ca0	c0 	. 	 (flow from: 6d94)
+	cp 029h		;6ca1	fe 29 	. ) 	 (flow from: 6ca0)
+	jp nz,l6cech		;6ca3	c2 ec 6c 	. . l 	 (flow from: 6ca1)
+	dec b			;6ca6	05 	. 	 (flow from: 6ca3)
+	cp a			;6ca7	bf 	. 	 (flow from: 6ca6)
+	ret			;6ca8	c9 	. 	 (flow from: 6ca7)
 l6ca9h:
-	push hl			;6ca9	e5 	. 
-	call sub_6593h		;6caa	cd 93 65 	. . e 
-	push af			;6cad	f5 	. 
-	ld a,003h		;6cae	3e 03 	> . 
-	ld (de),a			;6cb0	12 	. 
-	pop af			;6cb1	f1 	. 
-	ex de,hl			;6cb2	eb 	. 
-	inc hl			;6cb3	23 	# 
-	ld (hl),e			;6cb4	73 	s 
-	inc hl			;6cb5	23 	# 
-	ld (hl),d			;6cb6	72 	r 
-	pop hl			;6cb7	e1 	. 
-	push de			;6cb8	d5 	. 
-	call sub_6c7ah		;6cb9	cd 7a 6c 	. z l 
-	pop de			;6cbc	d1 	. 
-	ret nz			;6cbd	c0 	. 
-	inc de			;6cbe	13 	. 
-	inc de			;6cbf	13 	. 
-	inc de			;6cc0	13 	. 
-	jr l6c7fh		;6cc1	18 bc 	. . 
+	push hl			;6ca9	e5 	. 	 (flow from: 0052 6c97)
+	call sub_6593h		;6caa	cd 93 65 	. . e 	 (flow from: 6ca9)
+	push af			;6cad	f5 	. 	 (flow from: 65ea)
+	ld a,003h		;6cae	3e 03 	> . 	 (flow from: 6cad)
+	ld (de),a			;6cb0	12 	. 	 (flow from: 6cae)
+	pop af			;6cb1	f1 	. 	 (flow from: 6cb0)
+	ex de,hl			;6cb2	eb 	. 	 (flow from: 0052 6cb1)
+	inc hl			;6cb3	23 	# 	 (flow from: 0052 6cb2)
+	ld (hl),e			;6cb4	73 	s 	 (flow from: 6cb3)
+	inc hl			;6cb5	23 	# 	 (flow from: 6cb4)
+	ld (hl),d			;6cb6	72 	r 	 (flow from: 6cb5)
+	pop hl			;6cb7	e1 	. 	 (flow from: 6cb6)
+	push de			;6cb8	d5 	. 	 (flow from: 6cb7)
+	call sub_6c7ah		;6cb9	cd 7a 6c 	. z l 	 (flow from: 0052 6cb8)
+	pop de			;6cbc	d1 	. 	 (flow from: 0052 6c94 6ca8 6ceb)
+	ret nz			;6cbd	c0 	. 	 (flow from: 6cbc)
+	inc de			;6cbe	13 	. 	 (flow from: 6cbd)
+	inc de			;6cbf	13 	. 	 (flow from: 6cbe)
+	inc de			;6cc0	13 	. 	 (flow from: 0052 6cbf)
+	jr l6c7fh		;6cc1	18 bc 	. . 	 (flow from: 0052 6cc0)
 l6cc3h:
-	cp 029h		;6cc3	fe 29 	. ) 
-	jp z,l6cech		;6cc5	ca ec 6c 	. . l 
-	cp 003h		;6cc8	fe 03 	. . 
-	jr nz,l6cd9h		;6cca	20 0d 	  . 
-	call sub_6d19h		;6ccc	cd 19 6d 	. . m 
-	jr nz,l6ce1h		;6ccf	20 10 	  . 
-	ld (ix-080h),e		;6cd1	dd 73 80 	. s . 
-	ld (ix-07fh),d		;6cd4	dd 72 81 	. r . 
-	jr l6ce4h		;6cd7	18 0b 	. . 
+	cp 029h		;6cc3	fe 29 	. ) 	 (flow from: 6c7c)
+	jp z,l6cech		;6cc5	ca ec 6c 	. . l 	 (flow from: 6cc3)
+	cp 003h		;6cc8	fe 03 	. . 	 (flow from: 6cc5)
+	jr nz,l6cd9h		;6cca	20 0d 	  . 	 (flow from: 6cc8)
+	call sub_6d19h		;6ccc	cd 19 6d 	. . m 	 (flow from: 6cca)
+	jr nz,l6ce1h		;6ccf	20 10 	  . 	 (flow from: 0052 6d25 6d76 6d83)
+	ld (ix-080h),e		;6cd1	dd 73 80 	. s . 	 (flow from: 0052 6ccf)
+	ld (ix-07fh),d		;6cd4	dd 72 81 	. r . 	 (flow from: 6cd1)
+	jr l6ce4h		;6cd7	18 0b 	. . 	 (flow from: 6cd4)
 l6cd9h:
-	cp 004h		;6cd9	fe 04 	. . 
-	jr z,l6ce4h		;6cdb	28 07 	( . 
-	cp 00ah		;6cdd	fe 0a 	. . 
-	jr z,l6ce4h		;6cdf	28 03 	( . 
+	cp 004h		;6cd9	fe 04 	. . 	 (flow from: 6cca)
+	jr z,l6ce4h		;6cdb	28 07 	( . 	 (flow from: 6cd9)
+	cp 00ah		;6cdd	fe 0a 	. . 	 (flow from: 6cdb)
+	jr z,l6ce4h		;6cdf	28 03 	( . 	 (flow from: 6cdd)
 l6ce1h:
-	call sub_79e6h		;6ce1	cd e6 79 	. . y 
+	call sub_79e6h		;6ce1	cd e6 79 	. . y 	 (flow from: 6ccf 6cdf)
 l6ce4h:
-	ld (de),a			;6ce4	12 	. 
-	inc de			;6ce5	13 	. 
-	ex de,hl			;6ce6	eb 	. 
-	ld (hl),e			;6ce7	73 	s 
-	inc hl			;6ce8	23 	# 
-	ld (hl),d			;6ce9	72 	r 
-	cp a			;6cea	bf 	. 
-	ret			;6ceb	c9 	. 
+	ld (de),a			;6ce4	12 	. 	 (flow from: 6cd7 6cdb 7a80)
+	inc de			;6ce5	13 	. 	 (flow from: 6ce4)
+	ex de,hl			;6ce6	eb 	. 	 (flow from: 0052 6ce5)
+	ld (hl),e			;6ce7	73 	s 	 (flow from: 6ce6)
+	inc hl			;6ce8	23 	# 	 (flow from: 6ce7)
+	ld (hl),d			;6ce9	72 	r 	 (flow from: 6ce8)
+	cp a			;6cea	bf 	. 	 (flow from: 6ce9)
+	ret			;6ceb	c9 	. 	 (flow from: 6cea)
 l6cech:
 	ld sp,(09863h)		;6cec	ed 7b 63 98 	. { c . 
 	call sub_7296h		;6cf0	cd 96 72 	. . r 
@@ -2022,175 +2022,175 @@ l6cech:
 	nop			;6d01	00 	. 
 	jp sub_6c76h		;6d02	c3 76 6c 	. v l 
 sub_6d05h:
-	ld c,010h		;6d05	0e 10 	. . 
-	bit 7,a		;6d07	cb 7f 	.  
-	ret nz			;6d09	c0 	. 
-	push hl			;6d0a	e5 	. 
-	push de			;6d0b	d5 	. 
-	ld de,l710dh+1		;6d0c	11 0e 71 	. . q 
-	ld l,a			;6d0f	6f 	o 
-	res 7,l		;6d10	cb bd 	. . 
-	ld h,000h		;6d12	26 00 	& . 
-	add hl,de			;6d14	19 	. 
-	ld c,(hl)			;6d15	4e 	N 
-	pop de			;6d16	d1 	. 
-	pop hl			;6d17	e1 	. 
-	ret			;6d18	c9 	. 
+	ld c,010h		;6d05	0e 10 	. . 	 (flow from: 0052 6d1d 6d88 6da2 6e3c 6edf)
+	bit 7,a		;6d07	cb 7f 	.  	 (flow from: 6d05)
+	ret nz			;6d09	c0 	. 	 (flow from: 0052 6d07)
+	push hl			;6d0a	e5 	. 	 (flow from: 0052 6d09)
+	push de			;6d0b	d5 	. 	 (flow from: 0052 6d0a)
+	ld de,l710dh+1		;6d0c	11 0e 71 	. . q 	 (flow from: 6d0b)
+	ld l,a			;6d0f	6f 	o 	 (flow from: 0052 6d0c)
+	res 7,l		;6d10	cb bd 	. . 	 (flow from: 6d0f)
+	ld h,000h		;6d12	26 00 	& . 	 (flow from: 6d10)
+	add hl,de			;6d14	19 	. 	 (flow from: 0052 6d12)
+	ld c,(hl)			;6d15	4e 	N 	 (flow from: 0052 6d14)
+	pop de			;6d16	d1 	. 	 (flow from: 6d15)
+	pop hl			;6d17	e1 	. 	 (flow from: 0052 6d16)
+	ret			;6d18	c9 	. 	 (flow from: 0052 6d17 95ef)
 sub_6d19h:
-	ld hl,09ca5h		;6d19	21 a5 9c 	! . . 
-	ld a,(hl)			;6d1c	7e 	~ 
-	call sub_6d05h		;6d1d	cd 05 6d 	. . m 
-	bit 6,c		;6d20	cb 71 	. q 
-	jr nz,l6d26h		;6d22	20 02 	  . 
-	or a			;6d24	b7 	. 
-	ret			;6d25	c9 	. 
+	ld hl,09ca5h		;6d19	21 a5 9c 	! . . 	 (flow from: 6ccc)
+	ld a,(hl)			;6d1c	7e 	~ 	 (flow from: 6d19)
+	call sub_6d05h		;6d1d	cd 05 6d 	. . m 	 (flow from: 6d1c)
+	bit 6,c		;6d20	cb 71 	. q 	 (flow from: 0052 6d18)
+	jr nz,l6d26h		;6d22	20 02 	  . 	 (flow from: 6d20)
+	or a			;6d24	b7 	. 	 (flow from: 6d22)
+	ret			;6d25	c9 	. 	 (flow from: 6d24)
 l6d26h:
-	push bc			;6d26	c5 	. 
-	ld c,000h		;6d27	0e 00 	. . 
-	ld b,a			;6d29	47 	G 
+	push bc			;6d26	c5 	. 	 (flow from: 6d22)
+	ld c,000h		;6d27	0e 00 	. . 	 (flow from: 6d26)
+	ld b,a			;6d29	47 	G 	 (flow from: 6d27)
 l6d2ah:
-	inc hl			;6d2a	23 	# 
-	ld a,(hl)			;6d2b	7e 	~ 
-	cp 0feh		;6d2c	fe fe 	. . 
-	jr z,l6d48h		;6d2e	28 18 	( . 
-	cp 030h		;6d30	fe 30 	. 0 
-	jr c,l6d82h		;6d32	38 4e 	8 N 
-	cp 03ah		;6d34	fe 3a 	. : 
-	jr c,l6d3bh		;6d36	38 03 	8 . 
-	or a			;6d38	b7 	. 
-	jr l6d82h		;6d39	18 47 	. G 
+	inc hl			;6d2a	23 	# 	 (flow from: 6d29 6d46)
+	ld a,(hl)			;6d2b	7e 	~ 	 (flow from: 6d2a)
+	cp 0feh		;6d2c	fe fe 	. . 	 (flow from: 6d2b)
+	jr z,l6d48h		;6d2e	28 18 	( . 	 (flow from: 6d2c)
+	cp 030h		;6d30	fe 30 	. 0 	 (flow from: 6d2e)
+	jr c,l6d82h		;6d32	38 4e 	8 N 	 (flow from: 6d30)
+	cp 03ah		;6d34	fe 3a 	. : 	 (flow from: 6d32)
+	jr c,l6d3bh		;6d36	38 03 	8 . 	 (flow from: 6d34)
+	or a			;6d38	b7 	. 	 (flow from: 6d36)
+	jr l6d82h		;6d39	18 47 	. G 	 (flow from: 6d38)
 l6d3bh:
-	and 00fh		;6d3b	e6 0f 	. . 
-	sla c		;6d3d	cb 21 	. ! 
-	add a,c			;6d3f	81 	. 
-	sla c		;6d40	cb 21 	. ! 
-	sla c		;6d42	cb 21 	. ! 
-	add a,c			;6d44	81 	. 
-	ld c,a			;6d45	4f 	O 
-	jr l6d2ah		;6d46	18 e2 	. . 
+	and 00fh		;6d3b	e6 0f 	. . 	 (flow from: 6d36)
+	sla c		;6d3d	cb 21 	. ! 	 (flow from: 6d3b)
+	add a,c			;6d3f	81 	. 	 (flow from: 6d3d)
+	sla c		;6d40	cb 21 	. ! 	 (flow from: 6d3f)
+	sla c		;6d42	cb 21 	. ! 	 (flow from: 6d40)
+	add a,c			;6d44	81 	. 	 (flow from: 6d42)
+	ld c,a			;6d45	4f 	O 	 (flow from: 6d44)
+	jr l6d2ah		;6d46	18 e2 	. . 	 (flow from: 6d45)
 l6d48h:
-	xor a			;6d48	af 	. 
-	ld ix,098efh		;6d49	dd 21 ef 98 	. ! . . 
+	xor a			;6d48	af 	. 	 (flow from: 6d2e)
+	ld ix,098efh		;6d49	dd 21 ef 98 	. ! . . 	 (flow from: 6d48)
 l6d4dh:
-	ld a,(ix-07fh)		;6d4d	dd 7e 81 	. ~ . 
-	cp 0ffh		;6d50	fe ff 	. . 
-	jr z,l6d77h		;6d52	28 23 	( # 
-	ld l,(ix+000h)		;6d54	dd 6e 00 	. n . 
-	ld h,(ix+001h)		;6d57	dd 66 01 	. f . 
-	or a			;6d5a	b7 	. 
-	sbc hl,bc		;6d5b	ed 42 	. B 
-	jr z,l6d65h		;6d5d	28 06 	( . 
-	inc ix		;6d5f	dd 23 	. # 
-	inc ix		;6d61	dd 23 	. # 
-	jr l6d4dh		;6d63	18 e8 	. . 
+	ld a,(ix-07fh)		;6d4d	dd 7e 81 	. ~ . 	 (flow from: 0052 6d49 6d63)
+	cp 0ffh		;6d50	fe ff 	. . 	 (flow from: 6d4d)
+	jr z,l6d77h		;6d52	28 23 	( # 	 (flow from: 6d50)
+	ld l,(ix+000h)		;6d54	dd 6e 00 	. n . 	 (flow from: 6d52)
+	ld h,(ix+001h)		;6d57	dd 66 01 	. f . 	 (flow from: 6d54)
+	or a			;6d5a	b7 	. 	 (flow from: 0052 6d57)
+	sbc hl,bc		;6d5b	ed 42 	. B 	 (flow from: 6d5a)
+	jr z,l6d65h		;6d5d	28 06 	( . 	 (flow from: 6d5b)
+	inc ix		;6d5f	dd 23 	. # 	 (flow from: 6d5d)
+	inc ix		;6d61	dd 23 	. # 	 (flow from: 6d5f)
+	jr l6d4dh		;6d63	18 e8 	. . 	 (flow from: 6d61)
 l6d65h:
-	ld l,(ix-080h)		;6d65	dd 6e 80 	. n . 
-	ld h,a			;6d68	67 	g 
-	bit 0,l		;6d69	cb 45 	. E 
-	ld a,001h		;6d6b	3e 01 	> . 
-	jr z,l6d74h		;6d6d	28 05 	( . 
-	dec hl			;6d6f	2b 	+ 
-	dec hl			;6d70	2b 	+ 
-	dec hl			;6d71	2b 	+ 
-	ld a,005h		;6d72	3e 05 	> . 
+	ld l,(ix-080h)		;6d65	dd 6e 80 	. n . 	 (flow from: 6d5d)
+	ld h,a			;6d68	67 	g 	 (flow from: 6d65)
+	bit 0,l		;6d69	cb 45 	. E 	 (flow from: 6d68)
+	ld a,001h		;6d6b	3e 01 	> . 	 (flow from: 6d69)
+	jr z,l6d74h		;6d6d	28 05 	( . 	 (flow from: 6d6b)
+	dec hl			;6d6f	2b 	+ 	 (flow from: 0052 6d6d)
+	dec hl			;6d70	2b 	+ 	 (flow from: 6d6f)
+	dec hl			;6d71	2b 	+ 	 (flow from: 6d70)
+	ld a,005h		;6d72	3e 05 	> . 	 (flow from: 6d71)
 l6d74h:
-	pop bc			;6d74	c1 	. 
-	cp a			;6d75	bf 	. 
-	ret			;6d76	c9 	. 
+	pop bc			;6d74	c1 	. 	 (flow from: 6d6d 6d72)
+	cp a			;6d75	bf 	. 	 (flow from: 6d74)
+	ret			;6d76	c9 	. 	 (flow from: 6d75)
 l6d77h:
-	ld (ix+000h),c		;6d77	dd 71 00 	. q . 
-	ld (ix+001h),b		;6d7a	dd 70 01 	. p . 
-	ld (ix-07dh),a		;6d7d	dd 77 83 	. w . 
-	ld a,000h		;6d80	3e 00 	> . 
+	ld (ix+000h),c		;6d77	dd 71 00 	. q . 	 (flow from: 0052 6d52)
+	ld (ix+001h),b		;6d7a	dd 70 01 	. p . 	 (flow from: 6d77)
+	ld (ix-07dh),a		;6d7d	dd 77 83 	. w . 	 (flow from: 6d7a)
+	ld a,000h		;6d80	3e 00 	> . 	 (flow from: 0052 6d7d)
 l6d82h:
-	pop bc			;6d82	c1 	. 
-	ret			;6d83	c9 	. 
+	pop bc			;6d82	c1 	. 	 (flow from: 6d39 6d80)
+	ret			;6d83	c9 	. 	 (flow from: 6d82)
 sub_6d84h:
-	call 09865h		;6d84	cd 65 98 	. e . 
-	ret nz			;6d87	c0 	. 
-	call sub_6d05h		;6d88	cd 05 6d 	. . m 
-	bit 5,c		;6d8b	cb 69 	. i 
-	jr nz,sub_6d84h		;6d8d	20 f5 	  . 
-	bit 2,c		;6d8f	cb 51 	. Q 
-	jr z,l6d95h		;6d91	28 02 	( . 
-	cp a			;6d93	bf 	. 
-	ret			;6d94	c9 	. 
+	call 09865h		;6d84	cd 65 98 	. e . 	 (flow from: 6c76 6c7f 6c9d 6d8d)
+	ret nz			;6d87	c0 	. 	 (flow from: 7427 9619)
+	call sub_6d05h		;6d88	cd 05 6d 	. . m 	 (flow from: 0052 6d87)
+	bit 5,c		;6d8b	cb 69 	. i 	 (flow from: 6d18)
+	jr nz,sub_6d84h		;6d8d	20 f5 	  . 	 (flow from: 0052 6d8b)
+	bit 2,c		;6d8f	cb 51 	. Q 	 (flow from: 6d8d)
+	jr z,l6d95h		;6d91	28 02 	( . 	 (flow from: 6d8f)
+	cp a			;6d93	bf 	. 	 (flow from: 6d91)
+	ret			;6d94	c9 	. 	 (flow from: 6d93)
 l6d95h:
-	bit 7,c		;6d95	cb 79 	. y 
-	jr z,l6db8h		;6d97	28 1f 	( . 
-	push af			;6d99	f5 	. 
-	call 09865h		;6d9a	cd 65 98 	. e . 
-	jr z,l6da1h		;6d9d	28 02 	( . 
+	bit 7,c		;6d95	cb 79 	. y 	 (flow from: 6d91)
+	jr z,l6db8h		;6d97	28 1f 	( . 	 (flow from: 6d95)
+	push af			;6d99	f5 	. 	 (flow from: 6d97)
+	call 09865h		;6d9a	cd 65 98 	. e . 	 (flow from: 6d99)
+	jr z,l6da1h		;6d9d	28 02 	( . 	 (flow from: 9619)
 	pop af			;6d9f	f1 	. 
 	ret			;6da0	c9 	. 
 l6da1h:
-	push bc			;6da1	c5 	. 
-	call sub_6d05h		;6da2	cd 05 6d 	. . m 
-	bit 1,c		;6da5	cb 49 	. I 
-	pop bc			;6da7	c1 	. 
-	jr z,l6db4h		;6da8	28 0a 	( . 
-	inc sp			;6daa	33 	3 
-	inc sp			;6dab	33 	3 
-	call 09868h		;6dac	cd 68 98 	. h . 
-	ld a,008h		;6daf	3e 08 	> . 
-	jp l6e1fh		;6db1	c3 1f 6e 	. . n 
+	push bc			;6da1	c5 	. 	 (flow from: 6d9d)
+	call sub_6d05h		;6da2	cd 05 6d 	. . m 	 (flow from: 6da1)
+	bit 1,c		;6da5	cb 49 	. I 	 (flow from: 6d18)
+	pop bc			;6da7	c1 	. 	 (flow from: 6da5)
+	jr z,l6db4h		;6da8	28 0a 	( . 	 (flow from: 6da7)
+	inc sp			;6daa	33 	3 	 (flow from: 6da8)
+	inc sp			;6dab	33 	3 	 (flow from: 6daa)
+	call 09868h		;6dac	cd 68 98 	. h . 	 (flow from: 6dab)
+	ld a,008h		;6daf	3e 08 	> . 	 (flow from: 9622)
+	jp l6e1fh		;6db1	c3 1f 6e 	. . n 	 (flow from: 6daf)
 l6db4h:
 	call 09868h		;6db4	cd 68 98 	. h . 
 	pop af			;6db7	f1 	. 
 l6db8h:
-	bit 1,c		;6db8	cb 49 	. I 
-	jr z,l6dc4h		;6dba	28 08 	( . 
-	call 09868h		;6dbc	cd 68 98 	. h . 
-	ld a,000h		;6dbf	3e 00 	> . 
-	jp l6e1fh		;6dc1	c3 1f 6e 	. . n 
+	bit 1,c		;6db8	cb 49 	. I 	 (flow from: 6d97)
+	jr z,l6dc4h		;6dba	28 08 	( . 	 (flow from: 6db8)
+	call 09868h		;6dbc	cd 68 98 	. h . 	 (flow from: 6dba)
+	ld a,000h		;6dbf	3e 00 	> . 	 (flow from: 9622)
+	jp l6e1fh		;6dc1	c3 1f 6e 	. . n 	 (flow from: 6dbf)
 l6dc4h:
-	bit 0,c		;6dc4	cb 41 	. A 
-	jr z,l6dd0h		;6dc6	28 08 	( . 
-	set 1,c		;6dc8	cb c9 	. . 
-	call sub_6ed7h		;6dca	cd d7 6e 	. . n 
-	ld a,003h		;6dcd	3e 03 	> . 
-	ret			;6dcf	c9 	. 
+	bit 0,c		;6dc4	cb 41 	. A 	 (flow from: 6dba)
+	jr z,l6dd0h		;6dc6	28 08 	( . 	 (flow from: 6dc4)
+	set 1,c		;6dc8	cb c9 	. . 	 (flow from: 0052 6dc6)
+	call sub_6ed7h		;6dca	cd d7 6e 	. . n 	 (flow from: 6dc8)
+	ld a,003h		;6dcd	3e 03 	> . 	 (flow from: 6f03)
+	ret			;6dcf	c9 	. 	 (flow from: 6dcd)
 l6dd0h:
-	bit 3,c		;6dd0	cb 59 	. Y 
-	jr z,l6ddah		;6dd2	28 06 	( . 
-	call sub_6ed7h		;6dd4	cd d7 6e 	. . n 
-	ld a,002h		;6dd7	3e 02 	> . 
-	ret			;6dd9	c9 	. 
+	bit 3,c		;6dd0	cb 59 	. Y 	 (flow from: 6dc6)
+	jr z,l6ddah		;6dd2	28 06 	( . 	 (flow from: 6dd0)
+	call sub_6ed7h		;6dd4	cd d7 6e 	. . n 	 (flow from: 6dd2)
+	ld a,002h		;6dd7	3e 02 	> . 	 (flow from: 6f03)
+	ret			;6dd9	c9 	. 	 (flow from: 6dd7)
 l6ddah:
-	cp 022h		;6dda	fe 22 	. " 
-	jr nz,l6e10h		;6ddc	20 32 	  2 
-	ld hl,09ca5h		;6dde	21 a5 9c 	! . . 
-	push de			;6de1	d5 	. 
-	ld d,03ch		;6de2	16 3c 	. < 
+	cp 022h		;6dda	fe 22 	. " 	 (flow from: 6dd2)
+	jr nz,l6e10h		;6ddc	20 32 	  2 	 (flow from: 6dda)
+	ld hl,09ca5h		;6dde	21 a5 9c 	! . . 	 (flow from: 6ddc)
+	push de			;6de1	d5 	. 	 (flow from: 6dde)
+	ld d,03ch		;6de2	16 3c 	. < 	 (flow from: 6de1)
 l6de4h:
-	call 09865h		;6de4	cd 65 98 	. e . 
-	jr nz,l6e0eh		;6de7	20 25 	  % 
-	cp 022h		;6de9	fe 22 	. " 
-	jr z,l6e09h		;6deb	28 1c 	( . 
-	cp 040h		;6ded	fe 40 	. @ 
-	jr nz,l6e00h		;6def	20 0f 	  . 
-	call 09865h		;6df1	cd 65 98 	. e . 
-	jr nz,l6e0eh		;6df4	20 18 	  . 
-	cp 041h		;6df6	fe 41 	. A 
-	jr c,l6e00h		;6df8	38 06 	8 . 
-	cp 060h		;6dfa	fe 60 	. ` 
-	jr nc,l6e00h		;6dfc	30 02 	0 . 
-	sub 040h		;6dfe	d6 40 	. @ 
+	call 09865h		;6de4	cd 65 98 	. e . 	 (flow from: 0052 6de2 6e07)
+	jr nz,l6e0eh		;6de7	20 25 	  % 	 (flow from: 9619)
+	cp 022h		;6de9	fe 22 	. " 	 (flow from: 6de7)
+	jr z,l6e09h		;6deb	28 1c 	( . 	 (flow from: 6de9)
+	cp 040h		;6ded	fe 40 	. @ 	 (flow from: 6deb)
+	jr nz,l6e00h		;6def	20 0f 	  . 	 (flow from: 6ded)
+	call 09865h		;6df1	cd 65 98 	. e . 	 (flow from: 6def)
+	jr nz,l6e0eh		;6df4	20 18 	  . 	 (flow from: 9619)
+	cp 041h		;6df6	fe 41 	. A 	 (flow from: 6df4)
+	jr c,l6e00h		;6df8	38 06 	8 . 	 (flow from: 6df6)
+	cp 060h		;6dfa	fe 60 	. ` 	 (flow from: 6df8)
+	jr nc,l6e00h		;6dfc	30 02 	0 . 	 (flow from: 6dfa)
+	sub 040h		;6dfe	d6 40 	. @ 	 (flow from: 6dfc)
 l6e00h:
-	inc d			;6e00	14 	. 
-	dec d			;6e01	15 	. 
-	jr z,l6de4h		;6e02	28 e0 	( . 
-	ld (hl),a			;6e04	77 	w 
-	dec d			;6e05	15 	. 
-	inc hl			;6e06	23 	# 
-	jr l6de4h		;6e07	18 db 	. . 
+	inc d			;6e00	14 	. 	 (flow from: 6def 6dfe)
+	dec d			;6e01	15 	. 	 (flow from: 0052 6e00)
+	jr z,l6de4h		;6e02	28 e0 	( . 	 (flow from: 0052 6e01)
+	ld (hl),a			;6e04	77 	w 	 (flow from: 0052 6e02)
+	dec d			;6e05	15 	. 	 (flow from: 6e04)
+	inc hl			;6e06	23 	# 	 (flow from: 6e05)
+	jr l6de4h		;6e07	18 db 	. . 	 (flow from: 6e06)
 l6e09h:
-	ld (hl),0feh		;6e09	36 fe 	6 . 
-	ld a,005h		;6e0b	3e 05 	> . 
-	cp a			;6e0d	bf 	. 
+	ld (hl),0feh		;6e09	36 fe 	6 . 	 (flow from: 6deb)
+	ld a,005h		;6e0b	3e 05 	> . 	 (flow from: 6e09)
+	cp a			;6e0d	bf 	. 	 (flow from: 6e0b)
 l6e0eh:
-	pop de			;6e0e	d1 	. 
-	ret			;6e0f	c9 	. 
+	pop de			;6e0e	d1 	. 	 (flow from: 6e0d)
+	ret			;6e0f	c9 	. 	 (flow from: 6e0e)
 l6e10h:
 	bit 4,c		;6e10	cb 61 	. a 
 	jp z,sub_6d84h		;6e12	ca 84 6d 	. . m 
@@ -2201,44 +2201,44 @@ l6e10h:
 	cp a			;6e1d	bf 	. 
 	ret			;6e1e	c9 	. 
 l6e1fh:
-	push de			;6e1f	d5 	. 
-	push bc			;6e20	c5 	. 
-	ld hl,09b31h		;6e21	21 31 9b 	! 1 . 
-	ld b,012h		;6e24	06 12 	. . 
+	push de			;6e1f	d5 	. 	 (flow from: 6db1 6dc1)
+	push bc			;6e20	c5 	. 	 (flow from: 6e1f)
+	ld hl,09b31h		;6e21	21 31 9b 	! 1 . 	 (flow from: 6e20)
+	ld b,012h		;6e24	06 12 	. . 	 (flow from: 6e21)
 l6e26h:
-	ld (hl),000h		;6e26	36 00 	6 . 
-	dec hl			;6e28	2b 	+ 
-	djnz l6e26h		;6e29	10 fb 	. . 
-	ld (hl),a			;6e2b	77 	w 
-	inc hl			;6e2c	23 	# 
-	inc hl			;6e2d	23 	# 
-	ld b,009h		;6e2e	06 09 	. . 
-	ld e,000h		;6e30	1e 00 	. . 
+	ld (hl),000h		;6e26	36 00 	6 . 	 (flow from: 0052 6e24 6e29)
+	dec hl			;6e28	2b 	+ 	 (flow from: 0052 6e26)
+	djnz l6e26h		;6e29	10 fb 	. . 	 (flow from: 6e28)
+	ld (hl),a			;6e2b	77 	w 	 (flow from: 6e29)
+	inc hl			;6e2c	23 	# 	 (flow from: 6e2b)
+	inc hl			;6e2d	23 	# 	 (flow from: 6e2c)
+	ld b,009h		;6e2e	06 09 	. . 	 (flow from: 6e2d)
+	ld e,000h		;6e30	1e 00 	. . 	 (flow from: 6e2e)
 l6e32h:
-	call 09865h		;6e32	cd 65 98 	. e . 
-	jp nz,l6ed4h		;6e35	c2 d4 6e 	. . n 
-	cp 030h		;6e38	fe 30 	. 0 
-	jr z,l6e32h		;6e3a	28 f6 	( . 
+	call 09865h		;6e32	cd 65 98 	. e . 	 (flow from: 6e30 6e3a)
+	jp nz,l6ed4h		;6e35	c2 d4 6e 	. . n 	 (flow from: 9619)
+	cp 030h		;6e38	fe 30 	. 0 	 (flow from: 6e35)
+	jr z,l6e32h		;6e3a	28 f6 	( . 	 (flow from: 6e38)
 l6e3ch:
-	call sub_6d05h		;6e3c	cd 05 6d 	. . m 
-	bit 1,c		;6e3f	cb 49 	. I 
-	jr z,l6e56h		;6e41	28 13 	( . 
-	inc e			;6e43	1c 	. 
-	dec b			;6e44	05 	. 
-	jr nz,l6e4ah		;6e45	20 03 	  . 
+	call sub_6d05h		;6e3c	cd 05 6d 	. . m 	 (flow from: 6e3a 6e54)
+	bit 1,c		;6e3f	cb 49 	. I 	 (flow from: 6d18)
+	jr z,l6e56h		;6e41	28 13 	( . 	 (flow from: 6e3f)
+	inc e			;6e43	1c 	. 	 (flow from: 6e41)
+	dec b			;6e44	05 	. 	 (flow from: 6e43)
+	jr nz,l6e4ah		;6e45	20 03 	  . 	 (flow from: 6e44)
 	inc b			;6e47	04 	. 
 	jr l6e4eh		;6e48	18 04 	. . 
 l6e4ah:
-	inc hl			;6e4a	23 	# 
-	and 00fh		;6e4b	e6 0f 	. . 
-	ld (hl),a			;6e4d	77 	w 
+	inc hl			;6e4a	23 	# 	 (flow from: 6e45)
+	and 00fh		;6e4b	e6 0f 	. . 	 (flow from: 6e4a)
+	ld (hl),a			;6e4d	77 	w 	 (flow from: 6e4b)
 l6e4eh:
-	call 09865h		;6e4e	cd 65 98 	. e . 
-	jp nz,l6ed4h		;6e51	c2 d4 6e 	. . n 
-	jr l6e3ch		;6e54	18 e6 	. . 
+	call 09865h		;6e4e	cd 65 98 	. e . 	 (flow from: 6e4d)
+	jp nz,l6ed4h		;6e51	c2 d4 6e 	. . n 	 (flow from: 9619)
+	jr l6e3ch		;6e54	18 e6 	. . 	 (flow from: 6e51)
 l6e56h:
-	cp 02eh		;6e56	fe 2e 	. . 
-	jr nz,l6eb1h		;6e58	20 57 	  W 
+	cp 02eh		;6e56	fe 2e 	. . 	 (flow from: 6e41)
+	jr nz,l6eb1h		;6e58	20 57 	  W 	 (flow from: 6e56)
 l6e5ah:
 	call 09865h		;6e5a	cd 65 98 	. e . 
 	jr nz,l6ed4h		;6e5d	20 75 	  u 
@@ -2297,17 +2297,17 @@ l6eaeh:
 	ld e,a			;6eaf	5f 	_ 
 	pop af			;6eb0	f1 	. 
 l6eb1h:
-	call 09868h		;6eb1	cd 68 98 	. h . 
-	ld a,e			;6eb4	7b 	{ 
-	add a,080h		;6eb5	c6 80 	. . 
-	ld (09b20h),a		;6eb7	32 20 9b 	2   . 
-	ld hl,09b1fh		;6eba	21 1f 9b 	! . . 
-	call sub_8e7dh		;6ebd	cd 7d 8e 	. } . 
-	call sub_90bch		;6ec0	cd bc 90 	. . . 
-	jr nz,l6ecah		;6ec3	20 05 	  . 
-	ex de,hl			;6ec5	eb 	. 
-	ld a,004h		;6ec6	3e 04 	> . 
-	jr l6ed4h		;6ec8	18 0a 	. . 
+	call 09868h		;6eb1	cd 68 98 	. h . 	 (flow from: 6e58)
+	ld a,e			;6eb4	7b 	{ 	 (flow from: 9622)
+	add a,080h		;6eb5	c6 80 	. . 	 (flow from: 6eb4)
+	ld (09b20h),a		;6eb7	32 20 9b 	2   . 	 (flow from: 6eb5)
+	ld hl,09b1fh		;6eba	21 1f 9b 	! . . 	 (flow from: 6eb7)
+	call sub_8e7dh		;6ebd	cd 7d 8e 	. } . 	 (flow from: 6eba)
+	call sub_90bch		;6ec0	cd bc 90 	. . . 	 (flow from: 8ec7)
+	jr nz,l6ecah		;6ec3	20 05 	  . 	 (flow from: 9116)
+	ex de,hl			;6ec5	eb 	. 	 (flow from: 6ec3)
+	ld a,004h		;6ec6	3e 04 	> . 	 (flow from: 6ec5)
+	jr l6ed4h		;6ec8	18 0a 	. . 	 (flow from: 6ec6)
 l6ecah:
 	ex de,hl			;6eca	eb 	. 
 	call sub_6593h		;6ecb	cd 93 65 	. . e 
@@ -2315,44 +2315,44 @@ l6ecah:
 	cp a			;6ed1	bf 	. 
 	ld a,00ah		;6ed2	3e 0a 	> . 
 l6ed4h:
-	pop bc			;6ed4	c1 	. 
-	pop de			;6ed5	d1 	. 
-	ret			;6ed6	c9 	. 
+	pop bc			;6ed4	c1 	. 	 (flow from: 6ec8)
+	pop de			;6ed5	d1 	. 	 (flow from: 6ed4)
+	ret			;6ed6	c9 	. 	 (flow from: 6ed5)
 sub_6ed7h:
-	ld hl,09ca5h		;6ed7	21 a5 9c 	! . . 
-	push de			;6eda	d5 	. 
-	push bc			;6edb	c5 	. 
-	ld d,03ch		;6edc	16 3c 	. < 
-	ld b,c			;6ede	41 	A 
+	ld hl,09ca5h		;6ed7	21 a5 9c 	! . . 	 (flow from: 0052 6dca 6dd4)
+	push de			;6eda	d5 	. 	 (flow from: 6ed7)
+	push bc			;6edb	c5 	. 	 (flow from: 6eda)
+	ld d,03ch		;6edc	16 3c 	. < 	 (flow from: 6edb)
+	ld b,c			;6ede	41 	A 	 (flow from: 6edc)
 l6edfh:
-	call sub_6d05h		;6edf	cd 05 6d 	. . m 
-	push af			;6ee2	f5 	. 
-	ld a,c			;6ee3	79 	y 
-	and b			;6ee4	a0 	. 
-	jr z,l6efah		;6ee5	28 13 	( . 
-	pop af			;6ee7	f1 	. 
-	inc d			;6ee8	14 	. 
-	dec d			;6ee9	15 	. 
-	jr z,l6eefh		;6eea	28 03 	( . 
-	ld (hl),a			;6eec	77 	w 
-	inc hl			;6eed	23 	# 
-	dec d			;6eee	15 	. 
+	call sub_6d05h		;6edf	cd 05 6d 	. . m 	 (flow from: 6ede 6ef8)
+	push af			;6ee2	f5 	. 	 (flow from: 6d18)
+	ld a,c			;6ee3	79 	y 	 (flow from: 6ee2)
+	and b			;6ee4	a0 	. 	 (flow from: 6ee3)
+	jr z,l6efah		;6ee5	28 13 	( . 	 (flow from: 0052 6ee4)
+	pop af			;6ee7	f1 	. 	 (flow from: 6ee5)
+	inc d			;6ee8	14 	. 	 (flow from: 0052 6ee7)
+	dec d			;6ee9	15 	. 	 (flow from: 6ee8)
+	jr z,l6eefh		;6eea	28 03 	( . 	 (flow from: 6ee9)
+	ld (hl),a			;6eec	77 	w 	 (flow from: 0052 6eea)
+	inc hl			;6eed	23 	# 	 (flow from: 0052 6eec)
+	dec d			;6eee	15 	. 	 (flow from: 6eed)
 l6eefh:
-	push bc			;6eef	c5 	. 
-	ld b,000h		;6ef0	06 00 	. . 
-	call 09865h		;6ef2	cd 65 98 	. e . 
-	pop bc			;6ef5	c1 	. 
-	jr nz,l6f01h		;6ef6	20 09 	  . 
-	jr l6edfh		;6ef8	18 e5 	. . 
+	push bc			;6eef	c5 	. 	 (flow from: 6eee)
+	ld b,000h		;6ef0	06 00 	. . 	 (flow from: 0052 6eef)
+	call 09865h		;6ef2	cd 65 98 	. e . 	 (flow from: 6ef0)
+	pop bc			;6ef5	c1 	. 	 (flow from: 0052 7427 9619)
+	jr nz,l6f01h		;6ef6	20 09 	  . 	 (flow from: 0052 6ef5)
+	jr l6edfh		;6ef8	18 e5 	. . 	 (flow from: 6ef6)
 l6efah:
-	pop af			;6efa	f1 	. 
-	call 09868h		;6efb	cd 68 98 	. h . 
-	ld (hl),0feh		;6efe	36 fe 	6 . 
-	cp a			;6f00	bf 	. 
+	pop af			;6efa	f1 	. 	 (flow from: 6ee5)
+	call 09868h		;6efb	cd 68 98 	. h . 	 (flow from: 6efa)
+	ld (hl),0feh		;6efe	36 fe 	6 . 	 (flow from: 742e 9622)
+	cp a			;6f00	bf 	. 	 (flow from: 6efe)
 l6f01h:
-	pop bc			;6f01	c1 	. 
-	pop de			;6f02	d1 	. 
-	ret			;6f03	c9 	. 
+	pop bc			;6f01	c1 	. 	 (flow from: 6f00)
+	pop de			;6f02	d1 	. 	 (flow from: 6f01)
+	ret			;6f03	c9 	. 	 (flow from: 0052 6f02)
 	ex af,af'			;6f04	08 	. 
 	ld a,(bc)			;6f05	0a 	. 
 	ld l,a			;6f06	6f 	o 
@@ -2438,8 +2438,8 @@ LISTP_string_start:
 	defb 050h		;6f6a	50 	P 
 LISTP_string_end:
 	rst 38h			;6f6b	ff 	. 
-	ld ix,l6f73h		;6f6c	dd 21 73 6f 	. ! s o 
-	jp l65f7h		;6f70	c3 f7 65 	. . e 
+	ld ix,l6f73h		;6f6c	dd 21 73 6f 	. ! s o 	 (flow from: 60bb)
+	jp l65f7h		;6f70	c3 f7 65 	. . e 	 (flow from: 6f6c)
 l6f73h:
 	rst 38h			;6f73	ff 	. 
 	rst 38h			;6f74	ff 	. 
@@ -2461,42 +2461,42 @@ l6f73h:
 	rst 38h			;6f84	ff 	. 
 	rst 38h			;6f85	ff 	. 
 	rst 38h			;6f86	ff 	. 
-	ld hl,(0980ah)		;6f87	2a 0a 98 	* . . 
-	ld a,001h		;6f8a	3e 01 	> . 
-	call sub_718fh		;6f8c	cd 8f 71 	. . q 
-	ret nz			;6f8f	c0 	. 
-	ld hl,(09a8eh)		;6f90	2a 8e 9a 	* . . 
-	call sub_9623h		;6f93	cd 23 96 	. # . 
-	push hl			;6f96	e5 	. 
-	call sub_6fa4h		;6f97	cd a4 6f 	. . o 
-	pop hl			;6f9a	e1 	. 
-	inc hl			;6f9b	23 	# 
-	inc hl			;6f9c	23 	# 
-	inc hl			;6f9d	23 	# 
-	call sub_9623h		;6f9e	cd 23 96 	. # . 
-	inc hl			;6fa1	23 	# 
-	inc hl			;6fa2	23 	# 
-	inc hl			;6fa3	23 	# 
+	ld hl,(0980ah)		;6f87	2a 0a 98 	* . . 	 (flow from: 663c)
+	ld a,001h		;6f8a	3e 01 	> . 	 (flow from: 6f87)
+	call sub_718fh		;6f8c	cd 8f 71 	. . q 	 (flow from: 6f8a)
+	ret nz			;6f8f	c0 	. 	 (flow from: 71a1)
+	ld hl,(09a8eh)		;6f90	2a 8e 9a 	* . . 	 (flow from: 6f8f)
+	call sub_9623h		;6f93	cd 23 96 	. # . 	 (flow from: 6f90)
+	push hl			;6f96	e5 	. 	 (flow from: 9628)
+	call sub_6fa4h		;6f97	cd a4 6f 	. . o 	 (flow from: 6f96)
+	pop hl			;6f9a	e1 	. 	 (flow from: 6fa7)
+	inc hl			;6f9b	23 	# 	 (flow from: 6f9a)
+	inc hl			;6f9c	23 	# 	 (flow from: 6f9b)
+	inc hl			;6f9d	23 	# 	 (flow from: 6f9c)
+	call sub_9623h		;6f9e	cd 23 96 	. # . 	 (flow from: 6f9d)
+	inc hl			;6fa1	23 	# 	 (flow from: 9628)
+	inc hl			;6fa2	23 	# 	 (flow from: 6fa1)
+	inc hl			;6fa3	23 	# 	 (flow from: 6fa2)
 sub_6fa4h:
-	ld a,(hl)			;6fa4	7e 	~ 
-	cp 010h		;6fa5	fe 10 	. . 
-	ret z			;6fa7	c8 	. 
-	cp 003h		;6fa8	fe 03 	. . 
-	ret nz			;6faa	c0 	. 
-	call sub_9623h		;6fab	cd 23 96 	. # . 
-	ld a,(hl)			;6fae	7e 	~ 
-	cp 008h		;6faf	fe 08 	. . 
-	jr nz,l6fbeh		;6fb1	20 0b 	  . 
-	push hl			;6fb3	e5 	. 
-	call sub_9623h		;6fb4	cd 23 96 	. # . 
-	ld (09810h),hl		;6fb7	22 10 98 	" . . 
-	call sub_702fh		;6fba	cd 2f 70 	. / p 
-	pop hl			;6fbd	e1 	. 
+	ld a,(hl)			;6fa4	7e 	~ 	 (flow from: 6f97 6fa3 6fc1)
+	cp 010h		;6fa5	fe 10 	. . 	 (flow from: 6fa4)
+	ret z			;6fa7	c8 	. 	 (flow from: 6fa5)
+	cp 003h		;6fa8	fe 03 	. . 	 (flow from: 6fa7)
+	ret nz			;6faa	c0 	. 	 (flow from: 6fa8)
+	call sub_9623h		;6fab	cd 23 96 	. # . 	 (flow from: 6faa)
+	ld a,(hl)			;6fae	7e 	~ 	 (flow from: 9628)
+	cp 008h		;6faf	fe 08 	. . 	 (flow from: 6fae)
+	jr nz,l6fbeh		;6fb1	20 0b 	  . 	 (flow from: 6faf)
+	push hl			;6fb3	e5 	. 	 (flow from: 6fb1)
+	call sub_9623h		;6fb4	cd 23 96 	. # . 	 (flow from: 6fb3)
+	ld (09810h),hl		;6fb7	22 10 98 	" . . 	 (flow from: 9628)
+	call sub_702fh		;6fba	cd 2f 70 	. / p 	 (flow from: 6fb7)
+	pop hl			;6fbd	e1 	. 	 (flow from: 7032 7035)
 l6fbeh:
-	inc hl			;6fbe	23 	# 
-	inc hl			;6fbf	23 	# 
-	inc hl			;6fc0	23 	# 
-	jr sub_6fa4h		;6fc1	18 e1 	. . 
+	inc hl			;6fbe	23 	# 	 (flow from: 6fbd)
+	inc hl			;6fbf	23 	# 	 (flow from: 6fbe)
+	inc hl			;6fc0	23 	# 	 (flow from: 6fbf)
+	jr sub_6fa4h		;6fc1	18 e1 	. . 	 (flow from: 6fc0)
 	ld hl,(0980ah)		;6fc3	2a 0a 98 	* . . 
 	ld a,001h		;6fc6	3e 01 	> . 
 	call sub_718fh		;6fc8	cd 8f 71 	. . q 
@@ -2555,11 +2555,11 @@ l7029h:
 l702eh:
 	ret			;702e	c9 	. 
 sub_702fh:
-	ld a,(hl)			;702f	7e 	~ 
-	cp 010h		;7030	fe 10 	. . 
-	ret z			;7032	c8 	. 
-	cp 003h		;7033	fe 03 	. . 
-	ret nz			;7035	c0 	. 
+	ld a,(hl)			;702f	7e 	~ 	 (flow from: 6fba)
+	cp 010h		;7030	fe 10 	. . 	 (flow from: 702f)
+	ret z			;7032	c8 	. 	 (flow from: 7030)
+	cp 003h		;7033	fe 03 	. . 	 (flow from: 7032)
+	ret nz			;7035	c0 	. 	 (flow from: 7033)
 	call sub_9623h		;7036	cd 23 96 	. # . 
 	push hl			;7039	e5 	. 
 	call sub_9623h		;703a	cd 23 96 	. # . 
@@ -2777,16 +2777,16 @@ l7175h:
 l718eh:
 	ccf			;718e	3f 	? 
 sub_718fh:
-	ld (0986eh),a		;718f	32 6e 98 	2 n . 
-	ex de,hl			;7192	eb 	. 
-	ld hl,l72abh		;7193	21 ab 72 	! . r 
-	or a			;7196	b7 	. 
-	sbc hl,de		;7197	ed 52 	. R 
-	jr nz,l71a2h		;7199	20 07 	  . 
-	ld hl,l72fah		;719b	21 fa 72 	! . r 
+	ld (0986eh),a		;718f	32 6e 98 	2 n . 	 (flow from: 69b9 6f8c)
+	ex de,hl			;7192	eb 	. 	 (flow from: 718f)
+	ld hl,l72abh		;7193	21 ab 72 	! . r 	 (flow from: 7192)
+	or a			;7196	b7 	. 	 (flow from: 7193)
+	sbc hl,de		;7197	ed 52 	. R 	 (flow from: 7196)
+	jr nz,l71a2h		;7199	20 07 	  . 	 (flow from: 7197)
+	ld hl,l72fah		;719b	21 fa 72 	! . r 	 (flow from: 7199)
 l719eh:
-	ld (0986ch),hl		;719e	22 6c 98 	" l . 
-	ret			;71a1	c9 	. 
+	ld (0986ch),hl		;719e	22 6c 98 	" l . 	 (flow from: 719b)
+	ret			;71a1	c9 	. 	 (flow from: 719e)
 l71a2h:
 	ld hl,l734ch		;71a2	21 4c 73 	! L s 
 	or a			;71a5	b7 	. 
@@ -2814,43 +2814,43 @@ l71bch:
 	ld hl,l9602h		;71cf	21 02 96 	! . . 
 	jr l719eh		;71d2	18 ca 	. . 
 sub_71d4h:
-	ex de,hl			;71d4	eb 	. 
-	ld hl,l72abh		;71d5	21 ab 72 	! . r 
-	or a			;71d8	b7 	. 
-	sbc hl,de		;71d9	ed 52 	. R 
-	jr nz,l71f0h		;71db	20 13 	  . 
-	ld hl,l73a8h		;71dd	21 a8 73 	! . s 
-	ld (09866h),hl		;71e0	22 66 98 	" f . 
-	ld hl,l7428h		;71e3	21 28 74 	! ( t 
-	ld (09869h),hl		;71e6	22 69 98 	" i . 
-	ld hl,l72fah		;71e9	21 fa 72 	! . r 
-	ld (0986ch),hl		;71ec	22 6c 98 	" l . 
-	ret			;71ef	c9 	. 
+	ex de,hl			;71d4	eb 	. 	 (flow from: 6c64)
+	ld hl,l72abh		;71d5	21 ab 72 	! . r 	 (flow from: 71d4)
+	or a			;71d8	b7 	. 	 (flow from: 71d5)
+	sbc hl,de		;71d9	ed 52 	. R 	 (flow from: 71d8)
+	jr nz,l71f0h		;71db	20 13 	  . 	 (flow from: 0052 71d9)
+	ld hl,l73a8h		;71dd	21 a8 73 	! . s 	 (flow from: 71db)
+	ld (09866h),hl		;71e0	22 66 98 	" f . 	 (flow from: 71dd)
+	ld hl,l7428h		;71e3	21 28 74 	! ( t 	 (flow from: 71e0)
+	ld (09869h),hl		;71e6	22 69 98 	" i . 	 (flow from: 71e3)
+	ld hl,l72fah		;71e9	21 fa 72 	! . r 	 (flow from: 71e6)
+	ld (0986ch),hl		;71ec	22 6c 98 	" l . 	 (flow from: 71e9)
+	ret			;71ef	c9 	. 	 (flow from: 71ec)
 l71f0h:
-	ld hl,l737ah		;71f0	21 7a 73 	! z s 
-	or a			;71f3	b7 	. 
-	sbc hl,de		;71f4	ed 52 	. R 
-	jr nz,l7205h		;71f6	20 0d 	  . 
+	ld hl,l737ah		;71f0	21 7a 73 	! z s 	 (flow from: 71db)
+	or a			;71f3	b7 	. 	 (flow from: 71f0)
+	sbc hl,de		;71f4	ed 52 	. R 	 (flow from: 71f3)
+	jr nz,l7205h		;71f6	20 0d 	  . 	 (flow from: 0052 71f4)
 	ld hl,l7382h		;71f8	21 82 73 	! . s 
 	ld (09866h),hl		;71fb	22 66 98 	" f . 
 	ld hl,l7397h		;71fe	21 97 73 	! . s 
 	ld (09869h),hl		;7201	22 69 98 	" i . 
 	ret			;7204	c9 	. 
 l7205h:
-	ex de,hl			;7205	eb 	. 
-	ld a,(hl)			;7206	7e 	~ 
-	cp 006h		;7207	fe 06 	. . 
-	jp nz,l6295h		;7209	c2 95 62 	. . b 
-	call sub_9623h		;720c	cd 23 96 	. # . 
-	ld (09b6dh),hl		;720f	22 6d 9b 	" m . 
-	ld a,(hl)			;7212	7e 	~ 
-	cp 001h		;7213	fe 01 	. . 
-	jp nz,l6295h		;7215	c2 95 62 	. . b 
-	ld hl,l960eh		;7218	21 0e 96 	! . . 
-	ld (09866h),hl		;721b	22 66 98 	" f . 
-	ld hl,l961ah		;721e	21 1a 96 	! . . 
-	ld (09869h),hl		;7221	22 69 98 	" i . 
-	ret			;7224	c9 	. 
+	ex de,hl			;7205	eb 	. 	 (flow from: 71f6)
+	ld a,(hl)			;7206	7e 	~ 	 (flow from: 7205)
+	cp 006h		;7207	fe 06 	. . 	 (flow from: 7206)
+	jp nz,l6295h		;7209	c2 95 62 	. . b 	 (flow from: 7207)
+	call sub_9623h		;720c	cd 23 96 	. # . 	 (flow from: 7209)
+	ld (09b6dh),hl		;720f	22 6d 9b 	" m . 	 (flow from: 9628)
+	ld a,(hl)			;7212	7e 	~ 	 (flow from: 720f)
+	cp 001h		;7213	fe 01 	. . 	 (flow from: 7212)
+	jp nz,l6295h		;7215	c2 95 62 	. . b 	 (flow from: 0052 7213)
+	ld hl,l960eh		;7218	21 0e 96 	! . . 	 (flow from: 7215)
+	ld (09866h),hl		;721b	22 66 98 	" f . 	 (flow from: 7218)
+	ld hl,l961ah		;721e	21 1a 96 	! . . 	 (flow from: 721b)
+	ld (09869h),hl		;7221	22 69 98 	" i . 	 (flow from: 721e)
+	ret			;7224	c9 	. 	 (flow from: 7221)
 	ex af,af'			;7225	08 	. 
 	xor e			;7226	ab 	. 
 	ld (hl),d			;7227	72 	r 
@@ -2930,20 +2930,20 @@ l726bh:
 	ld (09869h),hl		;7290	22 69 98 	" i . 
 	jp l6c6dh		;7293	c3 6d 6c 	. m l 
 sub_7296h:
-	ex (sp),hl			;7296	e3 	. 
-	push af			;7297	f5 	. 
-	call sub_72a1h		;7298	cd a1 72 	. . r 
-	call sub_72f8h		;729b	cd f8 72 	. . r 
-	pop af			;729e	f1 	. 
-	ex (sp),hl			;729f	e3 	. 
-	ret			;72a0	c9 	. 
+	ex (sp),hl			;7296	e3 	. 	 (flow from: 9629 96a1)
+	push af			;7297	f5 	. 	 (flow from: 7296)
+	call sub_72a1h		;7298	cd a1 72 	. . r 	 (flow from: 7297)
+	call sub_72f8h		;729b	cd f8 72 	. . r 	 (flow from: 72a4)
+	pop af			;729e	f1 	. 	 (flow from: 734b)
+	ex (sp),hl			;729f	e3 	. 	 (flow from: 729e)
+	ret			;72a0	c9 	. 	 (flow from: 729f)
 sub_72a1h:
-	ld a,(hl)			;72a1	7e 	~ 
-	and 07fh		;72a2	e6 7f 	.  
-	ret z			;72a4	c8 	. 
-	call l72fah		;72a5	cd fa 72 	. . r 
-	inc hl			;72a8	23 	# 
-	jr sub_72a1h		;72a9	18 f6 	. . 
+	ld a,(hl)			;72a1	7e 	~ 	 (flow from: 7298 72a9 7465)
+	and 07fh		;72a2	e6 7f 	.  	 (flow from: 72a1)
+	ret z			;72a4	c8 	. 	 (flow from: 72a2)
+	call l72fah		;72a5	cd fa 72 	. . r 	 (flow from: 72a4)
+	inc hl			;72a8	23 	# 	 (flow from: 734b)
+	jr sub_72a1h		;72a9	18 f6 	. . 	 (flow from: 72a8)
 l72abh:
 	ld b,0ffh		;72ab	06 ff 	. . 
 	rst 38h			;72ad	ff 	. 
@@ -2957,33 +2957,33 @@ CON__string_start:
 CON__string_end:
 	rst 38h			;72b2	ff 	. 
 sub_72b3h:
-	ld c,006h		;72b3	0e 06 	. . 
-	ld e,0ffh		;72b5	1e ff 	. . 
-	call sub_9176h		;72b7	cd 76 91 	. v . 
-	or a			;72ba	b7 	. 
-	ret nz			;72bb	c0 	. 
-	bit 3,(iy+002h)		;72bc	fd cb 02 5e 	. . . ^ 
-	ret z			;72c0	c8 	. 
+	ld c,006h		;72b3	0e 06 	. . 	 (flow from: 0052 72ee 7313 9177)
+	ld e,0ffh		;72b5	1e ff 	. . 	 (flow from: 0052 72b3)
+	call sub_9176h		;72b7	cd 76 91 	. v . 	 (flow from: 72b5)
+	or a			;72ba	b7 	. 	 (flow from: 0052 72f1 92c9)
+	ret nz			;72bb	c0 	. 	 (flow from: 0052 72ba)
+	bit 3,(iy+002h)		;72bc	fd cb 02 5e 	. . . ^ 	 (flow from: 0052 72bb)
+	ret z			;72c0	c8 	. 	 (flow from: 0052 72bc)
 sub_72c1h:
-	push bc			;72c1	c5 	. 
-	push de			;72c2	d5 	. 
-	push hl			;72c3	e5 	. 
-	call 018e8h		;72c4	cd e8 18 	. . . 
-	ld e,008h		;72c7	1e 08 	. . 
-	ld c,006h		;72c9	0e 06 	. . 
-	call sub_9176h		;72cb	cd 76 91 	. v . 
-	pop hl			;72ce	e1 	. 
-	pop de			;72cf	d1 	. 
-	pop bc			;72d0	c1 	. 
-	xor a			;72d1	af 	. 
-	ret			;72d2	c9 	. 
+	push bc			;72c1	c5 	. 	 (flow from: 7468 7551)
+	push de			;72c2	d5 	. 	 (flow from: 72c1)
+	push hl			;72c3	e5 	. 	 (flow from: 72c2)
+	call 018e8h		;72c4	cd e8 18 	. . . 	 (flow from: 72c3)
+	ld e,008h		;72c7	1e 08 	. . 	 (flow from: 190e)
+	ld c,006h		;72c9	0e 06 	. . 	 (flow from: 72c7)
+	call sub_9176h		;72cb	cd 76 91 	. v . 	 (flow from: 72c9)
+	pop hl			;72ce	e1 	. 	 (flow from: 92c9)
+	pop de			;72cf	d1 	. 	 (flow from: 72ce)
+	pop bc			;72d0	c1 	. 	 (flow from: 72cf)
+	xor a			;72d1	af 	. 	 (flow from: 72d0)
+	ret			;72d2	c9 	. 	 (flow from: 72d1)
 sub_72d3h:
-	push bc			;72d3	c5 	. 
-	push de			;72d4	d5 	. 
-	push hl			;72d5	e5 	. 
-	ld a,(09a73h)		;72d6	3a 73 9a 	: s . 
-	or a			;72d9	b7 	. 
-	jr z,l72eeh		;72da	28 12 	( . 
+	push bc			;72d3	c5 	. 	 (flow from: 746b)
+	push de			;72d4	d5 	. 	 (flow from: 72d3)
+	push hl			;72d5	e5 	. 	 (flow from: 72d4)
+	ld a,(09a73h)		;72d6	3a 73 9a 	: s . 	 (flow from: 72d5)
+	or a			;72d9	b7 	. 	 (flow from: 72d6)
+	jr z,l72eeh		;72da	28 12 	( . 	 (flow from: 72d9)
 	ld c,a			;72dc	4f 	O 
 	dec a			;72dd	3d 	= 
 	ld (09a73h),a		;72de	32 73 9a 	2 s . 
@@ -2994,37 +2994,37 @@ sub_72d3h:
 	ldir		;72ea	ed b0 	. . 
 	jr l72f4h		;72ec	18 06 	. . 
 l72eeh:
-	call sub_72b3h		;72ee	cd b3 72 	. . r 
-	or a			;72f1	b7 	. 
-	jr z,l72eeh		;72f2	28 fa 	( . 
+	call sub_72b3h		;72ee	cd b3 72 	. . r 	 (flow from: 72da 72f2)
+	or a			;72f1	b7 	. 	 (flow from: 72bb 72c0)
+	jr z,l72eeh		;72f2	28 fa 	( . 	 (flow from: 72f1 917b)
 l72f4h:
-	pop hl			;72f4	e1 	. 
-	pop de			;72f5	d1 	. 
-	pop bc			;72f6	c1 	. 
-	ret			;72f7	c9 	. 
+	pop hl			;72f4	e1 	. 	 (flow from: 72f2)
+	pop de			;72f5	d1 	. 	 (flow from: 72f4)
+	pop bc			;72f6	c1 	. 	 (flow from: 72f5)
+	ret			;72f7	c9 	. 	 (flow from: 72f6)
 sub_72f8h:
-	ld a,00dh		;72f8	3e 0d 	> . 
+	ld a,00dh		;72f8	3e 0d 	> . 	 (flow from: 729b 73ff)
 l72fah:
-	push de			;72fa	d5 	. 
-	push bc			;72fb	c5 	. 
-	push af			;72fc	f5 	. 
-	ld c,006h		;72fd	0e 06 	. . 
-	ld e,a			;72ff	5f 	_ 
-	call sub_9176h		;7300	cd 76 91 	. v . 
-	ld a,(0996fh)		;7303	3a 6f 99 	: o . 
-	or a			;7306	b7 	. 
-	jr z,l7313h		;7307	28 0a 	( . 
+	push de			;72fa	d5 	. 	 (flow from: 72a5 72f8 74bc 74ef 7531 7538 9579 986b)
+	push bc			;72fb	c5 	. 	 (flow from: 72fa)
+	push af			;72fc	f5 	. 	 (flow from: 72fb)
+	ld c,006h		;72fd	0e 06 	. . 	 (flow from: 72fc)
+	ld e,a			;72ff	5f 	_ 	 (flow from: 72fd)
+	call sub_9176h		;7300	cd 76 91 	. v . 	 (flow from: 72ff)
+	ld a,(0996fh)		;7303	3a 6f 99 	: o . 	 (flow from: 92c9)
+	or a			;7306	b7 	. 	 (flow from: 7303)
+	jr z,l7313h		;7307	28 0a 	( . 	 (flow from: 7306)
 	ld c,005h		;7309	0e 05 	. . 
 	call sub_9176h		;730b	cd 76 91 	. v . 
 	jr l7313h		;730e	18 03 	. . 
 sub_7310h:
-	push de			;7310	d5 	. 
-	push bc			;7311	c5 	. 
-	push af			;7312	f5 	. 
+	push de			;7310	d5 	. 	 (flow from: 0052 606a 9612)
+	push bc			;7311	c5 	. 	 (flow from: 7310)
+	push af			;7312	f5 	. 	 (flow from: 0052 7311)
 l7313h:
-	call sub_72b3h		;7313	cd b3 72 	. . r 
-	or a			;7316	b7 	. 
-	jr z,l7348h		;7317	28 2f 	( / 
+	call sub_72b3h		;7313	cd b3 72 	. . r 	 (flow from: 0052 7307 7312)
+	or a			;7316	b7 	. 	 (flow from: 0052 72c0)
+	jr z,l7348h		;7317	28 2f 	( / 	 (flow from: 0052 7316)
 	cp 018h		;7319	fe 18 	. . 
 	jp z,l6281h		;731b	ca 81 62 	. . b 
 	cp 0e2h		;731e	fe e2 	. . 
@@ -3052,10 +3052,10 @@ l7340h:
 	cp 018h		;7343	fe 18 	. . 
 	jp z,l6281h		;7345	ca 81 62 	. . b 
 l7348h:
-	pop af			;7348	f1 	. 
-	pop bc			;7349	c1 	. 
-	pop de			;734a	d1 	. 
-	ret			;734b	c9 	. 
+	pop af			;7348	f1 	. 	 (flow from: 0052 7317)
+	pop bc			;7349	c1 	. 	 (flow from: 7348)
+	pop de			;734a	d1 	. 	 (flow from: 0052 7349)
+	ret			;734b	c9 	. 	 (flow from: 0052 734a)
 l734ch:
 	ld b,0ffh		;734c	06 ff 	. . 
 	rst 38h			;734e	ff 	. 
@@ -3135,48 +3135,48 @@ sub_739bh:
 	ld (09970h),a		;73a4	32 70 99 	2 p . 
 	ret			;73a7	c9 	. 
 l73a8h:
-	push bc			;73a8	c5 	. 
-	push hl			;73a9	e5 	. 
-	push de			;73aa	d5 	. 
-	ld c,b			;73ab	48 	H 
+	push bc			;73a8	c5 	. 	 (flow from: 9865)
+	push hl			;73a9	e5 	. 	 (flow from: 73a8)
+	push de			;73aa	d5 	. 	 (flow from: 73a9)
+	ld c,b			;73ab	48 	H 	 (flow from: 73aa)
 l73ach:
-	ld a,(09972h)		;73ac	3a 72 99 	: r . 
-	ld b,a			;73af	47 	G 
-	ld a,(09971h)		;73b0	3a 71 99 	: q . 
-	cp b			;73b3	b8 	. 
-	jr nz,l7417h		;73b4	20 61 	  a 
-	ld a,(09970h)		;73b6	3a 70 99 	: p . 
-	push af			;73b9	f5 	. 
-	cp 05ah		;73ba	fe 5a 	. Z 
-	jr nz,l73c8h		;73bc	20 0a 	  . 
-	inc c			;73be	0c 	. 
-	dec c			;73bf	0d 	. 
-	jr z,l73c8h		;73c0	28 06 	( . 
+	ld a,(09972h)		;73ac	3a 72 99 	: r . 	 (flow from: 73ab 7415)
+	ld b,a			;73af	47 	G 	 (flow from: 73ac)
+	ld a,(09971h)		;73b0	3a 71 99 	: q . 	 (flow from: 73af)
+	cp b			;73b3	b8 	. 	 (flow from: 73b0)
+	jr nz,l7417h		;73b4	20 61 	  a 	 (flow from: 73b3)
+	ld a,(09970h)		;73b6	3a 70 99 	: p . 	 (flow from: 73b4)
+	push af			;73b9	f5 	. 	 (flow from: 73b6)
+	cp 05ah		;73ba	fe 5a 	. Z 	 (flow from: 73b9)
+	jr nz,l73c8h		;73bc	20 0a 	  . 	 (flow from: 73ba)
+	inc c			;73be	0c 	. 	 (flow from: 73bc)
+	dec c			;73bf	0d 	. 	 (flow from: 73be)
+	jr z,l73c8h		;73c0	28 06 	( . 	 (flow from: 73bf)
 	ld l,c			;73c2	69 	i 
 	ld h,000h		;73c3	26 00 	& . 
 	call l6b0eh		;73c5	cd 0e 6b 	. . k 
 l73c8h:
-	pop hl			;73c8	e1 	. 
-	push bc			;73c9	c5 	. 
-	ld de,09973h		;73ca	11 73 99 	. s . 
-	ld a,(09972h)		;73cd	3a 72 99 	: r . 
-	ld c,a			;73d0	4f 	O 
-	ld b,000h		;73d1	06 00 	. . 
-	ld a,h			;73d3	7c 	| 
+	pop hl			;73c8	e1 	. 	 (flow from: 73c0)
+	push bc			;73c9	c5 	. 	 (flow from: 73c8)
+	ld de,09973h		;73ca	11 73 99 	. s . 	 (flow from: 73c9)
+	ld a,(09972h)		;73cd	3a 72 99 	: r . 	 (flow from: 73ca)
+	ld c,a			;73d0	4f 	O 	 (flow from: 73cd)
+	ld b,000h		;73d1	06 00 	. . 	 (flow from: 73d0)
+	ld a,h			;73d3	7c 	| 	 (flow from: 73d1)
 l73d4h:
-	ld hl,l73f4h		;73d4	21 f4 73 	! . s 
-	push hl			;73d7	e5 	. 
-	ld hl,l742fh		;73d8	21 2f 74 	! / t 
+	ld hl,l73f4h		;73d4	21 f4 73 	! . s 	 (flow from: 73d3)
+	push hl			;73d7	e5 	. 	 (flow from: 73d4)
+	ld hl,l742fh		;73d8	21 2f 74 	! / t 	 (flow from: 73d7)
 l73dbh:
-	cp (hl)			;73db	be 	. 
-	jr nz,l73e4h		;73dc	20 06 	  . 
-	inc hl			;73de	23 	# 
-	ld a,(hl)			;73df	7e 	~ 
-	inc hl			;73e0	23 	# 
+	cp (hl)			;73db	be 	. 	 (flow from: 73d8)
+	jr nz,l73e4h		;73dc	20 06 	  . 	 (flow from: 73db)
+	inc hl			;73de	23 	# 	 (flow from: 73dc)
+	ld a,(hl)			;73df	7e 	~ 	 (flow from: 73de)
+	inc hl			;73e0	23 	# 	 (flow from: 73df)
 l73e1h:
-	ld h,(hl)			;73e1	66 	f 
-	ld l,a			;73e2	6f 	o 
-	jp (hl)			;73e3	e9 	. 
+	ld h,(hl)			;73e1	66 	f 	 (flow from: 73e0)
+	ld l,a			;73e2	6f 	o 	 (flow from: 73e1)
+	jp (hl)			;73e3	e9 	. 	 (flow from: 73e2)
 l73e4h:
 	push af			;73e4	f5 	. 
 	ld a,(hl)			;73e5	7e 	~ 
@@ -3196,39 +3196,39 @@ l73f4h:
 	call sub_6c34h		;73f7	cd 34 6c 	. 4 l 
 	jr l73d4h		;73fa	18 d8 	. . 
 l73fch:
-	call sub_7523h		;73fc	cd 23 75 	. # u 
-	call sub_72f8h		;73ff	cd f8 72 	. . r 
-	ld a,00dh		;7402	3e 0d 	> . 
-	ld (de),a			;7404	12 	. 
-	ld a,c			;7405	79 	y 
-	inc a			;7406	3c 	< 
-	ld (09972h),a		;7407	32 72 99 	2 r . 
-	xor a			;740a	af 	. 
-	ld (09971h),a		;740b	32 71 99 	2 q . 
-	ld a,05ah		;740e	3e 5a 	> Z 
-	ld (09970h),a		;7410	32 70 99 	2 p . 
-	pop hl			;7413	e1 	. 
-	pop bc			;7414	c1 	. 
-	jr l73ach		;7415	18 95 	. . 
+	call sub_7523h		;73fc	cd 23 75 	. # u 	 (flow from: 7470)
+	call sub_72f8h		;73ff	cd f8 72 	. . r 	 (flow from: 734b)
+	ld a,00dh		;7402	3e 0d 	> . 	 (flow from: 734b)
+	ld (de),a			;7404	12 	. 	 (flow from: 7402)
+	ld a,c			;7405	79 	y 	 (flow from: 7404)
+	inc a			;7406	3c 	< 	 (flow from: 7405)
+	ld (09972h),a		;7407	32 72 99 	2 r . 	 (flow from: 7406)
+	xor a			;740a	af 	. 	 (flow from: 7407)
+	ld (09971h),a		;740b	32 71 99 	2 q . 	 (flow from: 740a)
+	ld a,05ah		;740e	3e 5a 	> Z 	 (flow from: 740b)
+	ld (09970h),a		;7410	32 70 99 	2 p . 	 (flow from: 740e)
+	pop hl			;7413	e1 	. 	 (flow from: 7410)
+	pop bc			;7414	c1 	. 	 (flow from: 7413)
+	jr l73ach		;7415	18 95 	. . 	 (flow from: 7414)
 l7417h:
-	ld c,a			;7417	4f 	O 
-	inc a			;7418	3c 	< 
-	ld (09971h),a		;7419	32 71 99 	2 q . 
-	ld b,000h		;741c	06 00 	. . 
-	ld hl,09973h		;741e	21 73 99 	! s . 
-	add hl,bc			;7421	09 	. 
-	ld a,(hl)			;7422	7e 	~ 
-	pop de			;7423	d1 	. 
-	pop hl			;7424	e1 	. 
-	pop bc			;7425	c1 	. 
-	cp a			;7426	bf 	. 
-	ret			;7427	c9 	. 
+	ld c,a			;7417	4f 	O 	 (flow from: 73b4)
+	inc a			;7418	3c 	< 	 (flow from: 7417)
+	ld (09971h),a		;7419	32 71 99 	2 q . 	 (flow from: 7418)
+	ld b,000h		;741c	06 00 	. . 	 (flow from: 7419)
+	ld hl,09973h		;741e	21 73 99 	! s . 	 (flow from: 741c)
+	add hl,bc			;7421	09 	. 	 (flow from: 741e)
+	ld a,(hl)			;7422	7e 	~ 	 (flow from: 7421)
+	pop de			;7423	d1 	. 	 (flow from: 7422)
+	pop hl			;7424	e1 	. 	 (flow from: 7423)
+	pop bc			;7425	c1 	. 	 (flow from: 7424)
+	cp a			;7426	bf 	. 	 (flow from: 7425)
+	ret			;7427	c9 	. 	 (flow from: 7426)
 l7428h:
-	push hl			;7428	e5 	. 
-	ld hl,09971h		;7429	21 71 99 	! q . 
-	dec (hl)			;742c	35 	5 
-	pop hl			;742d	e1 	. 
-	ret			;742e	c9 	. 
+	push hl			;7428	e5 	. 	 (flow from: 9868)
+	ld hl,09971h		;7429	21 71 99 	! q . 	 (flow from: 7428)
+	dec (hl)			;742c	35 	5 	 (flow from: 7429)
+	pop hl			;742d	e1 	. 	 (flow from: 742c)
+	ret			;742e	c9 	. 	 (flow from: 742d)
 l742fh:
 	ld e,d			;742f	5a 	Z 
 	ld a,(bc)			;7430	0a 	. 
@@ -3264,37 +3264,37 @@ sub_745ah:
 	ld (0996fh),a		;745e	32 6f 99 	2 o . 
 	ret			;7461	c9 	. 
 l7462h:
-	ld hl,l74bah		;7462	21 ba 74 	! . t 
-	call sub_72a1h		;7465	cd a1 72 	. . r 
-	call sub_72c1h		;7468	cd c1 72 	. . r 
+	ld hl,l74bah		;7462	21 ba 74 	! . t 	 (flow from: 750b)
+	call sub_72a1h		;7465	cd a1 72 	. . r 	 (flow from: 7462)
+	call sub_72c1h		;7468	cd c1 72 	. . r 	 (flow from: 72a4)
 l746bh:
-	call sub_72d3h		;746b	cd d3 72 	. . r 
-	cp 00dh		;746e	fe 0d 	. . 
-	jp z,l73fch		;7470	ca fc 73 	. . s 
-	cp 00ch		;7473	fe 0c 	. . 
-	jr nz,l747ch		;7475	20 05 	  . 
-	call sub_74e1h		;7477	cd e1 74 	. . t 
-	jr l746bh		;747a	18 ef 	. . 
+	call sub_72d3h		;746b	cd d3 72 	. . r 	 (flow from: 72d2 747a 74b2)
+	cp 00dh		;746e	fe 0d 	. . 	 (flow from: 72f7)
+	jp z,l73fch		;7470	ca fc 73 	. . s 	 (flow from: 746e)
+	cp 00ch		;7473	fe 0c 	. . 	 (flow from: 7470)
+	jr nz,l747ch		;7475	20 05 	  . 	 (flow from: 7473)
+	call sub_74e1h		;7477	cd e1 74 	. . t 	 (flow from: 7475)
+	jr l746bh		;747a	18 ef 	. . 	 (flow from: 7509)
 l747ch:
-	cp 008h		;747c	fe 08 	. . 
-	jr nz,l7485h		;747e	20 05 	  . 
+	cp 008h		;747c	fe 08 	. . 	 (flow from: 7475)
+	jr nz,l7485h		;747e	20 05 	  . 	 (flow from: 747c)
 	call sub_7445h		;7480	cd 45 74 	. E t 
 	jr l746bh		;7483	18 e6 	. . 
 l7485h:
-	cp 0cch		;7485	fe cc 	. . 
-	jr nz,l748eh		;7487	20 05 	  . 
+	cp 0cch		;7485	fe cc 	. . 	 (flow from: 747e)
+	jr nz,l748eh		;7487	20 05 	  . 	 (flow from: 7485)
 	call sub_745ah		;7489	cd 5a 74 	. Z t 
 	jr l746bh		;748c	18 dd 	. . 
 l748eh:
-	cp 009h		;748e	fe 09 	. . 
-	jr nz,l7497h		;7490	20 05 	  . 
+	cp 009h		;748e	fe 09 	. . 	 (flow from: 7487)
+	jr nz,l7497h		;7490	20 05 	  . 	 (flow from: 748e)
 	call sub_7436h		;7492	cd 36 74 	. 6 t 
 	jr l746bh		;7495	18 d4 	. . 
 l7497h:
-	cp 018h		;7497	fe 18 	. . 
-	jp z,l6281h		;7499	ca 81 62 	. . b 
-	cp 020h		;749c	fe 20 	.   
-	jr nc,l74ach		;749e	30 0c 	0 . 
+	cp 018h		;7497	fe 18 	. . 	 (flow from: 7490)
+	jp z,l6281h		;7499	ca 81 62 	. . b 	 (flow from: 7497)
+	cp 020h		;749c	fe 20 	.   	 (flow from: 7499)
+	jr nc,l74ach		;749e	30 0c 	0 . 	 (flow from: 749c)
 	add a,040h		;74a0	c6 40 	. @ 
 	inc c			;74a2	0c 	. 
 	jr z,l74b4h		;74a3	28 0f 	( . 
@@ -3303,10 +3303,10 @@ l7497h:
 	call sub_74bch		;74a8	cd bc 74 	. . t 
 	pop af			;74ab	f1 	. 
 l74ach:
-	inc c			;74ac	0c 	. 
-	jr z,l74b4h		;74ad	28 05 	( . 
-	call sub_74bch		;74af	cd bc 74 	. . t 
-	jr l746bh		;74b2	18 b7 	. . 
+	inc c			;74ac	0c 	. 	 (flow from: 749e)
+	jr z,l74b4h		;74ad	28 05 	( . 	 (flow from: 74ac)
+	call sub_74bch		;74af	cd bc 74 	. . t 	 (flow from: 74ad)
+	jr l746bh		;74b2	18 b7 	. . 	 (flow from: 74e0)
 l74b4h:
 	dec c			;74b4	0d 	. 
 	call sub_7557h		;74b5	cd 57 75 	. W u 
@@ -3314,71 +3314,71 @@ l74b4h:
 l74bah:
 	ld l,000h		;74ba	2e 00 	. . 
 sub_74bch:
-	call l72fah		;74bc	cd fa 72 	. . r 
-	push de			;74bf	d5 	. 
-	push bc			;74c0	c5 	. 
-	push af			;74c1	f5 	. 
-	ld a,c			;74c2	79 	y 
-	sub b			;74c3	90 	. 
-	push af			;74c4	f5 	. 
-	add a,e			;74c5	83 	. 
-	ld l,a			;74c6	6f 	o 
-	jr nc,l74cah		;74c7	30 01 	0 . 
+	call l72fah		;74bc	cd fa 72 	. . r 	 (flow from: 74af)
+	push de			;74bf	d5 	. 	 (flow from: 734b)
+	push bc			;74c0	c5 	. 	 (flow from: 74bf)
+	push af			;74c1	f5 	. 	 (flow from: 74c0)
+	ld a,c			;74c2	79 	y 	 (flow from: 74c1)
+	sub b			;74c3	90 	. 	 (flow from: 74c2)
+	push af			;74c4	f5 	. 	 (flow from: 74c3)
+	add a,e			;74c5	83 	. 	 (flow from: 74c4)
+	ld l,a			;74c6	6f 	o 	 (flow from: 74c5)
+	jr nc,l74cah		;74c7	30 01 	0 . 	 (flow from: 74c6)
 	inc d			;74c9	14 	. 
 l74cah:
-	ld h,d			;74ca	62 	b 
-	ld e,l			;74cb	5d 	] 
-	dec hl			;74cc	2b 	+ 
-	pop af			;74cd	f1 	. 
-	ld c,a			;74ce	4f 	O 
-	ld b,000h		;74cf	06 00 	. . 
-	jr z,l74d5h		;74d1	28 02 	( . 
-	lddr		;74d3	ed b8 	. . 
+	ld h,d			;74ca	62 	b 	 (flow from: 74c7)
+	ld e,l			;74cb	5d 	] 	 (flow from: 74ca)
+	dec hl			;74cc	2b 	+ 	 (flow from: 74cb)
+	pop af			;74cd	f1 	. 	 (flow from: 74cc)
+	ld c,a			;74ce	4f 	O 	 (flow from: 74cd)
+	ld b,000h		;74cf	06 00 	. . 	 (flow from: 74ce)
+	jr z,l74d5h		;74d1	28 02 	( . 	 (flow from: 74cf)
+	lddr		;74d3	ed b8 	. . 	 (flow from: 74d1)
 l74d5h:
-	pop af			;74d5	f1 	. 
-	pop bc			;74d6	c1 	. 
-	pop de			;74d7	d1 	. 
-	ld (de),a			;74d8	12 	. 
-	inc de			;74d9	13 	. 
-	inc b			;74da	04 	. 
-	ld a,b			;74db	78 	x 
-	cp c			;74dc	b9 	. 
-	call sub_7534h		;74dd	cd 34 75 	. 4 u 
-	ret			;74e0	c9 	. 
+	pop af			;74d5	f1 	. 	 (flow from: 74d3)
+	pop bc			;74d6	c1 	. 	 (flow from: 74d5)
+	pop de			;74d7	d1 	. 	 (flow from: 74d6)
+	ld (de),a			;74d8	12 	. 	 (flow from: 74d7)
+	inc de			;74d9	13 	. 	 (flow from: 74d8)
+	inc b			;74da	04 	. 	 (flow from: 74d9)
+	ld a,b			;74db	78 	x 	 (flow from: 74da)
+	cp c			;74dc	b9 	. 	 (flow from: 74db)
+	call sub_7534h		;74dd	cd 34 75 	. 4 u 	 (flow from: 74dc)
+	ret			;74e0	c9 	. 	 (flow from: 7556)
 sub_74e1h:
-	ld a,b			;74e1	78 	x 
-	or a			;74e2	b7 	. 
-	jp z,sub_7557h		;74e3	ca 57 75 	. W u 
-	dec de			;74e6	1b 	. 
-	dec b			;74e7	05 	. 
-	call sub_74edh		;74e8	cd ed 74 	. . t 
-	jr l74f3h		;74eb	18 06 	. . 
+	ld a,b			;74e1	78 	x 	 (flow from: 7477)
+	or a			;74e2	b7 	. 	 (flow from: 74e1)
+	jp z,sub_7557h		;74e3	ca 57 75 	. W u 	 (flow from: 74e2)
+	dec de			;74e6	1b 	. 	 (flow from: 74e3)
+	dec b			;74e7	05 	. 	 (flow from: 74e6)
+	call sub_74edh		;74e8	cd ed 74 	. . t 	 (flow from: 74e7)
+	jr l74f3h		;74eb	18 06 	. . 	 (flow from: 74f2)
 sub_74edh:
-	ld a,008h		;74ed	3e 08 	> . 
-	call l72fah		;74ef	cd fa 72 	. . r 
-	ret			;74f2	c9 	. 
+	ld a,008h		;74ed	3e 08 	> . 	 (flow from: 74e8 7545 754c)
+	call l72fah		;74ef	cd fa 72 	. . r 	 (flow from: 74ed)
+	ret			;74f2	c9 	. 	 (flow from: 734b)
 l74f3h:
-	ld a,c			;74f3	79 	y 
-	sub b			;74f4	90 	. 
-	jr z,l7505h		;74f5	28 0e 	( . 
-	push hl			;74f7	e5 	. 
-	push de			;74f8	d5 	. 
-	push bc			;74f9	c5 	. 
-	ld c,a			;74fa	4f 	O 
-	ld b,000h		;74fb	06 00 	. . 
-	ld h,d			;74fd	62 	b 
-	ld l,e			;74fe	6b 	k 
-	inc hl			;74ff	23 	# 
-	ldir		;7500	ed b0 	. . 
-	pop bc			;7502	c1 	. 
-	pop de			;7503	d1 	. 
-	pop hl			;7504	e1 	. 
+	ld a,c			;74f3	79 	y 	 (flow from: 74eb)
+	sub b			;74f4	90 	. 	 (flow from: 74f3)
+	jr z,l7505h		;74f5	28 0e 	( . 	 (flow from: 74f4)
+	push hl			;74f7	e5 	. 	 (flow from: 74f5)
+	push de			;74f8	d5 	. 	 (flow from: 74f7)
+	push bc			;74f9	c5 	. 	 (flow from: 74f8)
+	ld c,a			;74fa	4f 	O 	 (flow from: 74f9)
+	ld b,000h		;74fb	06 00 	. . 	 (flow from: 74fa)
+	ld h,d			;74fd	62 	b 	 (flow from: 74fb)
+	ld l,e			;74fe	6b 	k 	 (flow from: 74fd)
+	inc hl			;74ff	23 	# 	 (flow from: 74fe)
+	ldir		;7500	ed b0 	. . 	 (flow from: 74ff)
+	pop bc			;7502	c1 	. 	 (flow from: 7500)
+	pop de			;7503	d1 	. 	 (flow from: 7502)
+	pop hl			;7504	e1 	. 	 (flow from: 7503)
 l7505h:
-	dec c			;7505	0d 	. 
-	call sub_7534h		;7506	cd 34 75 	. 4 u 
-	ret			;7509	c9 	. 
-	ld c,b			;750a	48 	H 
-	jp l7462h		;750b	c3 62 74 	. b t 
+	dec c			;7505	0d 	. 	 (flow from: 7504)
+	call sub_7534h		;7506	cd 34 75 	. 4 u 	 (flow from: 7505)
+	ret			;7509	c9 	. 	 (flow from: 7556)
+	ld c,b			;750a	48 	H 	 (flow from: 73e3)
+	jp l7462h		;750b	c3 62 74 	. b t 	 (flow from: 750a)
 	ld a,b			;750e	78 	x 
 	or b			;750f	b0 	. 
 	call nz,sub_72f8h		;7510	c4 f8 72 	. . r 
@@ -3389,42 +3389,42 @@ l7505h:
 	ld de,09973h		;751d	11 73 99 	. s . 
 	jp l746bh		;7520	c3 6b 74 	. k t 
 sub_7523h:
-	ld a,b			;7523	78 	x 
-	cp c			;7524	b9 	. 
-	jr z,l752fh		;7525	28 08 	( . 
+	ld a,b			;7523	78 	x 	 (flow from: 73fc 753b)
+	cp c			;7524	b9 	. 	 (flow from: 7523)
+	jr z,l752fh		;7525	28 08 	( . 	 (flow from: 7524)
 	ld a,(de)			;7527	1a 	. 
 	call l72fah		;7528	cd fa 72 	. . r 
 	inc b			;752b	04 	. 
 	inc de			;752c	13 	. 
 	jr sub_7523h		;752d	18 f4 	. . 
 l752fh:
-	ld a,020h		;752f	3e 20 	>   
-	jp l72fah		;7531	c3 fa 72 	. . r 
+	ld a,020h		;752f	3e 20 	>   	 (flow from: 7525)
+	jp l72fah		;7531	c3 fa 72 	. . r 	 (flow from: 752f)
 sub_7534h:
-	push de			;7534	d5 	. 
-	push bc			;7535	c5 	. 
-	ld a,020h		;7536	3e 20 	>   
-	call l72fah		;7538	cd fa 72 	. . r 
-	call sub_7523h		;753b	cd 23 75 	. # u 
-	pop bc			;753e	c1 	. 
-	ld a,c			;753f	79 	y 
-	sub b			;7540	90 	. 
-	inc a			;7541	3c 	< 
-	inc a			;7542	3c 	< 
-	push bc			;7543	c5 	. 
-	ld b,a			;7544	47 	G 
-	call sub_74edh		;7545	cd ed 74 	. . t 
+	push de			;7534	d5 	. 	 (flow from: 74dd 7506)
+	push bc			;7535	c5 	. 	 (flow from: 7534)
+	ld a,020h		;7536	3e 20 	>   	 (flow from: 7535)
+	call l72fah		;7538	cd fa 72 	. . r 	 (flow from: 7536)
+	call sub_7523h		;753b	cd 23 75 	. # u 	 (flow from: 734b)
+	pop bc			;753e	c1 	. 	 (flow from: 734b)
+	ld a,c			;753f	79 	y 	 (flow from: 753e)
+	sub b			;7540	90 	. 	 (flow from: 753f)
+	inc a			;7541	3c 	< 	 (flow from: 7540)
+	inc a			;7542	3c 	< 	 (flow from: 7541)
+	push bc			;7543	c5 	. 	 (flow from: 7542)
+	ld b,a			;7544	47 	G 	 (flow from: 7543)
+	call sub_74edh		;7545	cd ed 74 	. . t 	 (flow from: 7544)
 l7548h:
-	dec b			;7548	05 	. 
-	jr z,l7551h		;7549	28 06 	( . 
-	dec de			;754b	1b 	. 
-	call sub_74edh		;754c	cd ed 74 	. . t 
-	jr l7548h		;754f	18 f7 	. . 
+	dec b			;7548	05 	. 	 (flow from: 74f2 754f)
+	jr z,l7551h		;7549	28 06 	( . 	 (flow from: 7548)
+	dec de			;754b	1b 	. 	 (flow from: 7549)
+	call sub_74edh		;754c	cd ed 74 	. . t 	 (flow from: 754b)
+	jr l7548h		;754f	18 f7 	. . 	 (flow from: 74f2)
 l7551h:
-	call sub_72c1h		;7551	cd c1 72 	. . r 
-	pop bc			;7554	c1 	. 
-	pop de			;7555	d1 	. 
-	ret			;7556	c9 	. 
+	call sub_72c1h		;7551	cd c1 72 	. . r 	 (flow from: 7549)
+	pop bc			;7554	c1 	. 	 (flow from: 72d2)
+	pop de			;7555	d1 	. 	 (flow from: 7554)
+	ret			;7556	c9 	. 	 (flow from: 7555)
 sub_7557h:
 	ld a,0ceh		;7557	3e ce 	> . 
 	jp l72fah		;7559	c3 fa 72 	. . r 
@@ -3554,8 +3554,8 @@ CON_string_start:
 	defb 04eh		;75df	4e 	N 
 CON_string_end:
 	rst 38h			;75e0	ff 	. 
-	ld ix,l75e8h		;75e1	dd 21 e8 75 	. ! . u 
-	jp l65f7h		;75e5	c3 f7 65 	. . e 
+	ld ix,l75e8h		;75e1	dd 21 e8 75 	. ! . u 	 (flow from: 60bb)
+	jp l65f7h		;75e5	c3 f7 65 	. . e 	 (flow from: 75e1)
 l75e8h:
 	rst 38h			;75e8	ff 	. 
 	inc c			;75e9	0c 	. 
@@ -3567,8 +3567,8 @@ l75e8h:
 	rst 38h			;75ef	ff 	. 
 	rst 38h			;75f0	ff 	. 
 	rst 38h			;75f1	ff 	. 
-	cp a			;75f2	bf 	. 
-	ret			;75f3	c9 	. 
+	cp a			;75f2	bf 	. 	 (flow from: 663c)
+	ret			;75f3	c9 	. 	 (flow from: 75f2)
 	inc de			;75f4	13 	. 
 	rst 38h			;75f5	ff 	. 
 	rst 38h			;75f6	ff 	. 
@@ -3592,8 +3592,8 @@ FAIL_string_start:
 	defb 04ch		;7605	4c 	L 
 FAIL_string_end:
 	rst 38h			;7606	ff 	. 
-	or 001h		;7607	f6 01 	. . 
-	ret			;7609	c9 	. 
+	or 001h		;7607	f6 01 	. . 	 (flow from: 663c)
+	ret			;7609	c9 	. 	 (flow from: 7607)
 	ex af,af'			;760a	08 	. 
 	djnz $+120		;760b	10 76 	. v 
 	inc bc			;760d	03 	. 
@@ -3649,18 +3649,18 @@ sub_763bh:
 	call sub_9623h		;764f	cd 23 96 	. # . 
 	ret			;7652	c9 	. 
 sub_7653h:
-	push hl			;7653	e5 	. 
-	push de			;7654	d5 	. 
-	ex de,hl			;7655	eb 	. 
-	ld hl,09da5h		;7656	21 a5 9d 	! . . 
-	xor a			;7659	af 	. 
-	scf			;765a	37 	7 
-	sbc hl,de		;765b	ed 52 	. R 
-	rla			;765d	17 	. 
-	cp 001h		;765e	fe 01 	. . 
-	pop de			;7660	d1 	. 
-	pop hl			;7661	e1 	. 
-	ret			;7662	c9 	. 
+	push hl			;7653	e5 	. 	 (flow from: 68b2 7756 7d7f 94a4 955a)
+	push de			;7654	d5 	. 	 (flow from: 0052 7653)
+	ex de,hl			;7655	eb 	. 	 (flow from: 7654)
+	ld hl,09da5h		;7656	21 a5 9d 	! . . 	 (flow from: 7655)
+	xor a			;7659	af 	. 	 (flow from: 0052 7656)
+	scf			;765a	37 	7 	 (flow from: 7659)
+	sbc hl,de		;765b	ed 52 	. R 	 (flow from: 0052 765a)
+	rla			;765d	17 	. 	 (flow from: 0052 765b)
+	cp 001h		;765e	fe 01 	. . 	 (flow from: 765d)
+	pop de			;7660	d1 	. 	 (flow from: 0052 765e)
+	pop hl			;7661	e1 	. 	 (flow from: 7660)
+	ret			;7662	c9 	. 	 (flow from: 0052 7661)
 	ex af,af'			;7663	08 	. 
 	ld l,c			;7664	69 	i 
 	halt			;7665	76 	v 
@@ -3672,34 +3672,34 @@ sub_7653h:
 	halt			;766b	76 	v 
 	cpl			;766c	2f 	/ 
 	rst 38h			;766d	ff 	. 
-	ld ix,(09843h)		;766e	dd 2a 43 98 	. * C . 
-	ld l,(ix+006h)		;7672	dd 6e 06 	. n . 
-	ld h,(ix+007h)		;7675	dd 66 07 	. f . 
-	ld (09847h),hl		;7678	22 47 98 	" G . 
-	push hl			;767b	e5 	. 
-	pop ix		;767c	dd e1 	. . 
-	ld e,(ix+008h)		;767e	dd 5e 08 	. ^ . 
-	ld d,(ix+009h)		;7681	dd 56 09 	. V . 
-	ld hl,(09849h)		;7684	2a 49 98 	* I . 
+	ld ix,(09843h)		;766e	dd 2a 43 98 	. * C . 	 (flow from: 60bb)
+	ld l,(ix+006h)		;7672	dd 6e 06 	. n . 	 (flow from: 766e)
+	ld h,(ix+007h)		;7675	dd 66 07 	. f . 	 (flow from: 7672)
+	ld (09847h),hl		;7678	22 47 98 	" G . 	 (flow from: 7675)
+	push hl			;767b	e5 	. 	 (flow from: 7678)
+	pop ix		;767c	dd e1 	. . 	 (flow from: 767b)
+	ld e,(ix+008h)		;767e	dd 5e 08 	. ^ . 	 (flow from: 767c)
+	ld d,(ix+009h)		;7681	dd 56 09 	. V . 	 (flow from: 767e)
+	ld hl,(09849h)		;7684	2a 49 98 	* I . 	 (flow from: 7681)
 l7687h:
-	call sub_65f1h		;7687	cd f1 65 	. . e 
-	ret z			;768a	c8 	. 
-	ld a,(hl)			;768b	7e 	~ 
-	cp 00ch		;768c	fe 0c 	. . 
-	jr nz,l769ch		;768e	20 0c 	  . 
-	push hl			;7690	e5 	. 
-	call sub_9623h		;7691	cd 23 96 	. # . 
-	or a			;7694	b7 	. 
-	sbc hl,de		;7695	ed 52 	. R 
-	pop hl			;7697	e1 	. 
-	jr c,l769ch		;7698	38 02 	8 . 
-	ld (hl),010h		;769a	36 10 	6 . 
+	call sub_65f1h		;7687	cd f1 65 	. . e 	 (flow from: 7684 76a2)
+	ret z			;768a	c8 	. 	 (flow from: 65f6)
+	ld a,(hl)			;768b	7e 	~ 	 (flow from: 768a)
+	cp 00ch		;768c	fe 0c 	. . 	 (flow from: 768b)
+	jr nz,l769ch		;768e	20 0c 	  . 	 (flow from: 768c)
+	push hl			;7690	e5 	. 	 (flow from: 768e)
+	call sub_9623h		;7691	cd 23 96 	. # . 	 (flow from: 7690)
+	or a			;7694	b7 	. 	 (flow from: 9628)
+	sbc hl,de		;7695	ed 52 	. R 	 (flow from: 7694)
+	pop hl			;7697	e1 	. 	 (flow from: 7695)
+	jr c,l769ch		;7698	38 02 	8 . 	 (flow from: 7697)
+	ld (hl),010h		;769a	36 10 	6 . 	 (flow from: 7698)
 l769ch:
-	inc hl			;769c	23 	# 
-	inc hl			;769d	23 	# 
-	inc hl			;769e	23 	# 
-	call sub_9623h		;769f	cd 23 96 	. # . 
-	jr l7687h		;76a2	18 e3 	. . 
+	inc hl			;769c	23 	# 	 (flow from: 768e 7698 769a)
+	inc hl			;769d	23 	# 	 (flow from: 769c)
+	inc hl			;769e	23 	# 	 (flow from: 769d)
+	call sub_9623h		;769f	cd 23 96 	. # . 	 (flow from: 769e)
+	jr l7687h		;76a2	18 e3 	. . 	 (flow from: 9628)
 	ex af,af'			;76a4	08 	. 
 	xor d			;76a5	aa 	. 
 	halt			;76a6	76 	v 
@@ -3729,8 +3729,8 @@ CMOD_string_start:
 	defb 044h		;76be	44 	D 
 CMOD_string_end:
 	rst 38h			;76bf	ff 	. 
-	ld ix,l76c7h		;76c0	dd 21 c7 76 	. ! . v 
-	jp l65f7h		;76c4	c3 f7 65 	. . e 
+	ld ix,l76c7h		;76c0	dd 21 c7 76 	. ! . v 	 (flow from: 60bb)
+	jp l65f7h		;76c4	c3 f7 65 	. . e 	 (flow from: 76c0)
 l76c7h:
 	rst 38h			;76c7	ff 	. 
 	rst 38h			;76c8	ff 	. 
@@ -3742,12 +3742,12 @@ l76c7h:
 	rst 38h			;76ce	ff 	. 
 	rst 38h			;76cf	ff 	. 
 	rst 38h			;76d0	ff 	. 
-	ld hl,(09a8eh)		;76d1	2a 8e 9a 	* . . 
-	ld (09808h),hl		;76d4	22 08 98 	" . . 
-	ld a,008h		;76d7	3e 08 	> . 
-	ld (09807h),a		;76d9	32 07 98 	2 . . 
-	cp a			;76dc	bf 	. 
-	ret			;76dd	c9 	. 
+	ld hl,(09a8eh)		;76d1	2a 8e 9a 	* . . 	 (flow from: 663c)
+	ld (09808h),hl		;76d4	22 08 98 	" . . 	 (flow from: 76d1)
+	ld a,008h		;76d7	3e 08 	> . 	 (flow from: 76d4)
+	ld (09807h),a		;76d9	32 07 98 	2 . . 	 (flow from: 76d7)
+	cp a			;76dc	bf 	. 	 (flow from: 76d9)
+	ret			;76dd	c9 	. 	 (flow from: 76dc)
 	ex af,af'			;76de	08 	. 
 	call po,00376h		;76df	e4 76 03 	. v . 
 	inc hl			;76e2	23 	# 
@@ -3789,14 +3789,14 @@ l76f4h:
 	cp a			;7711	bf 	. 
 	ret			;7712	c9 	. 
 sub_7713h:
-	push hl			;7713	e5 	. 
-	ld de,(09a8eh)		;7714	ed 5b 8e 9a 	. [ . . 
-	ld hl,l8b10h		;7718	21 10 8b 	! . . 
-	or a			;771b	b7 	. 
-	sbc hl,de		;771c	ed 52 	. R 
-	jp nz,l78ceh		;771e	c2 ce 78 	. . x 
-	pop hl			;7721	e1 	. 
-	ret			;7722	c9 	. 
+	push hl			;7713	e5 	. 	 (flow from: 7773)
+	ld de,(09a8eh)		;7714	ed 5b 8e 9a 	. [ . . 	 (flow from: 7713)
+	ld hl,l8b10h		;7718	21 10 8b 	! . . 	 (flow from: 7714)
+	or a			;771b	b7 	. 	 (flow from: 7718)
+	sbc hl,de		;771c	ed 52 	. R 	 (flow from: 771b)
+	jp nz,l78ceh		;771e	c2 ce 78 	. . x 	 (flow from: 771c)
+	pop hl			;7721	e1 	. 	 (flow from: 771e)
+	ret			;7722	c9 	. 	 (flow from: 7721)
 	ex af,af'			;7723	08 	. 
 	add hl,hl			;7724	29 	) 
 	ld (hl),a			;7725	77 	w 
@@ -3815,8 +3815,8 @@ CRMOD_string_start:
 	defb 044h		;7730	44 	D 
 CRMOD_string_end:
 	rst 38h			;7731	ff 	. 
-	ld ix,l7739h		;7732	dd 21 39 77 	. ! 9 w 
-	jp l65f7h		;7736	c3 f7 65 	. . e 
+	ld ix,l7739h		;7732	dd 21 39 77 	. ! 9 w 	 (flow from: 60bb)
+	jp l65f7h		;7736	c3 f7 65 	. . e 	 (flow from: 7732)
 l7739h:
 	rst 38h			;7739	ff 	. 
 	rst 38h			;773a	ff 	. 
@@ -3838,105 +3838,105 @@ l7739h:
 	rst 38h			;774a	ff 	. 
 	rst 38h			;774b	ff 	. 
 	rst 38h			;774c	ff 	. 
-	ld hl,(0980ah)		;774d	2a 0a 98 	* . . 
-	ld a,(hl)			;7750	7e 	~ 
-	cp 010h		;7751	fe 10 	. . 
-	jp nz,l78ceh		;7753	c2 ce 78 	. . x 
-	call sub_7653h		;7756	cd 53 76 	. S v 
-	jp nz,l78ceh		;7759	c2 ce 78 	. . x 
-	push hl			;775c	e5 	. 
-	ld hl,(09a8eh)		;775d	2a 8e 9a 	* . . 
-	call sub_9623h		;7760	cd 23 96 	. # . 
-	inc hl			;7763	23 	# 
-	inc hl			;7764	23 	# 
-	inc hl			;7765	23 	# 
-	call sub_9623h		;7766	cd 23 96 	. # . 
-	ld (09a89h),hl		;7769	22 89 9a 	" . . 
-	inc hl			;776c	23 	# 
-	inc hl			;776d	23 	# 
-	inc hl			;776e	23 	# 
-	ld (09a8bh),hl		;776f	22 8b 9a 	" . . 
-	pop hl			;7772	e1 	. 
-	call sub_7713h		;7773	cd 13 77 	. . w 
-	ld (09a8eh),hl		;7776	22 8e 9a 	" . . 
-	ex de,hl			;7779	eb 	. 
-	call sub_6593h		;777a	cd 93 65 	. . e 
-	ld (09a91h),hl		;777d	22 91 9a 	" . . 
-	ex de,hl			;7780	eb 	. 
-	ld (hl),003h		;7781	36 03 	6 . 
-	inc hl			;7783	23 	# 
-	ld (hl),e			;7784	73 	s 
-	inc hl			;7785	23 	# 
-	ld (hl),d			;7786	72 	r 
-	ld hl,(09810h)		;7787	2a 10 98 	* . . 
-	ld bc,00003h		;778a	01 03 00 	. . . 
-	ldir		;778d	ed b0 	. . 
-	call sub_6593h		;778f	cd 93 65 	. . e 
-	ex de,hl			;7792	eb 	. 
-	ld (hl),003h		;7793	36 03 	6 . 
-	inc hl			;7795	23 	# 
-	ld (hl),e			;7796	73 	s 
-	inc hl			;7797	23 	# 
-	ld (hl),d			;7798	72 	r 
-	ld hl,(09a8eh)		;7799	2a 8e 9a 	* . . 
-	ld (hl),007h		;779c	36 07 	6 . 
-	ld hl,(09816h)		;779e	2a 16 98 	* . . 
-	ld bc,00003h		;77a1	01 03 00 	. . . 
-	ldir		;77a4	ed b0 	. . 
-	ld hl,l77b4h		;77a6	21 b4 77 	! . w 
-	ld (09801h),hl		;77a9	22 01 98 	" . . 
-	ld hl,(09810h)		;77ac	2a 10 98 	* . . 
-	call sub_694ah		;77af	cd 4a 69 	. J i 
-	cp a			;77b2	bf 	. 
-	ret			;77b3	c9 	. 
+	ld hl,(0980ah)		;774d	2a 0a 98 	* . . 	 (flow from: 663c)
+	ld a,(hl)			;7750	7e 	~ 	 (flow from: 774d)
+	cp 010h		;7751	fe 10 	. . 	 (flow from: 7750)
+	jp nz,l78ceh		;7753	c2 ce 78 	. . x 	 (flow from: 7751)
+	call sub_7653h		;7756	cd 53 76 	. S v 	 (flow from: 7753)
+	jp nz,l78ceh		;7759	c2 ce 78 	. . x 	 (flow from: 7662)
+	push hl			;775c	e5 	. 	 (flow from: 7759)
+	ld hl,(09a8eh)		;775d	2a 8e 9a 	* . . 	 (flow from: 775c)
+	call sub_9623h		;7760	cd 23 96 	. # . 	 (flow from: 775d)
+	inc hl			;7763	23 	# 	 (flow from: 9628)
+	inc hl			;7764	23 	# 	 (flow from: 7763)
+	inc hl			;7765	23 	# 	 (flow from: 7764)
+	call sub_9623h		;7766	cd 23 96 	. # . 	 (flow from: 7765)
+	ld (09a89h),hl		;7769	22 89 9a 	" . . 	 (flow from: 9628)
+	inc hl			;776c	23 	# 	 (flow from: 7769)
+	inc hl			;776d	23 	# 	 (flow from: 776c)
+	inc hl			;776e	23 	# 	 (flow from: 776d)
+	ld (09a8bh),hl		;776f	22 8b 9a 	" . . 	 (flow from: 776e)
+	pop hl			;7772	e1 	. 	 (flow from: 776f)
+	call sub_7713h		;7773	cd 13 77 	. . w 	 (flow from: 7772)
+	ld (09a8eh),hl		;7776	22 8e 9a 	" . . 	 (flow from: 7722)
+	ex de,hl			;7779	eb 	. 	 (flow from: 7776)
+	call sub_6593h		;777a	cd 93 65 	. . e 	 (flow from: 7779)
+	ld (09a91h),hl		;777d	22 91 9a 	" . . 	 (flow from: 65ea)
+	ex de,hl			;7780	eb 	. 	 (flow from: 777d)
+	ld (hl),003h		;7781	36 03 	6 . 	 (flow from: 7780)
+	inc hl			;7783	23 	# 	 (flow from: 7781)
+	ld (hl),e			;7784	73 	s 	 (flow from: 7783)
+	inc hl			;7785	23 	# 	 (flow from: 7784)
+	ld (hl),d			;7786	72 	r 	 (flow from: 7785)
+	ld hl,(09810h)		;7787	2a 10 98 	* . . 	 (flow from: 7786)
+	ld bc,00003h		;778a	01 03 00 	. . . 	 (flow from: 7787)
+	ldir		;778d	ed b0 	. . 	 (flow from: 778a 778d)
+	call sub_6593h		;778f	cd 93 65 	. . e 	 (flow from: 778d)
+	ex de,hl			;7792	eb 	. 	 (flow from: 65ea)
+	ld (hl),003h		;7793	36 03 	6 . 	 (flow from: 7792)
+	inc hl			;7795	23 	# 	 (flow from: 7793)
+	ld (hl),e			;7796	73 	s 	 (flow from: 7795)
+	inc hl			;7797	23 	# 	 (flow from: 7796)
+	ld (hl),d			;7798	72 	r 	 (flow from: 7797)
+	ld hl,(09a8eh)		;7799	2a 8e 9a 	* . . 	 (flow from: 7798)
+	ld (hl),007h		;779c	36 07 	6 . 	 (flow from: 7799)
+	ld hl,(09816h)		;779e	2a 16 98 	* . . 	 (flow from: 779c)
+	ld bc,00003h		;77a1	01 03 00 	. . . 	 (flow from: 779e)
+	ldir		;77a4	ed b0 	. . 	 (flow from: 77a1 77a4)
+	ld hl,l77b4h		;77a6	21 b4 77 	! . w 	 (flow from: 77a4)
+	ld (09801h),hl		;77a9	22 01 98 	" . . 	 (flow from: 77a6)
+	ld hl,(09810h)		;77ac	2a 10 98 	* . . 	 (flow from: 77a9)
+	call sub_694ah		;77af	cd 4a 69 	. J i 	 (flow from: 77ac)
+	cp a			;77b2	bf 	. 	 (flow from: 694f)
+	ret			;77b3	c9 	. 	 (flow from: 77b2)
 l77b4h:
-	call sub_9623h		;77b4	cd 23 96 	. # . 
-	ld a,(hl)			;77b7	7e 	~ 
-	cp 010h		;77b8	fe 10 	. . 
-	jr nz,l77fch		;77ba	20 40 	  @ 
-	ex de,hl			;77bc	eb 	. 
-	ld hl,(09a8bh)		;77bd	2a 8b 9a 	* . . 
+	call sub_9623h		;77b4	cd 23 96 	. # . 	 (flow from: 9800)
+	ld a,(hl)			;77b7	7e 	~ 	 (flow from: 9628)
+	cp 010h		;77b8	fe 10 	. . 	 (flow from: 77b7)
+	jr nz,l77fch		;77ba	20 40 	  @ 	 (flow from: 77b8)
+	ex de,hl			;77bc	eb 	. 	 (flow from: 77ba)
+	ld hl,(09a8bh)		;77bd	2a 8b 9a 	* . . 	 (flow from: 77bc)
 l77c0h:
-	ld a,(hl)			;77c0	7e 	~ 
-	cp 010h		;77c1	fe 10 	. . 
-	jp z,l77fch		;77c3	ca fc 77 	. . w 
-	push hl			;77c6	e5 	. 
-	call sub_9623h		;77c7	cd 23 96 	. # . 
-	push hl			;77ca	e5 	. 
-	call sub_9623h		;77cb	cd 23 96 	. # . 
-	or a			;77ce	b7 	. 
-	sbc hl,de		;77cf	ed 52 	. R 
-	jr nz,l77f5h		;77d1	20 22 	  " 
-	pop hl			;77d3	e1 	. 
-	pop de			;77d4	d1 	. 
-	push hl			;77d5	e5 	. 
-	inc hl			;77d6	23 	# 
-	inc hl			;77d7	23 	# 
-	inc hl			;77d8	23 	# 
-	ld bc,00003h		;77d9	01 03 00 	. . . 
-	ldir		;77dc	ed b0 	. . 
-	dec hl			;77de	2b 	+ 
-	dec hl			;77df	2b 	+ 
-	dec hl			;77e0	2b 	+ 
-	ex de,hl			;77e1	eb 	. 
-	ld hl,(09a89h)		;77e2	2a 89 9a 	* . . 
-	ld bc,00003h		;77e5	01 03 00 	. . . 
-	ldir		;77e8	ed b0 	. . 
-	pop de			;77ea	d1 	. 
-	ld hl,(09a89h)		;77eb	2a 89 9a 	* . . 
-	ld (hl),003h		;77ee	36 03 	6 . 
-	inc hl			;77f0	23 	# 
-	ld (hl),e			;77f1	73 	s 
-	inc hl			;77f2	23 	# 
-	ld (hl),d			;77f3	72 	r 
-	ret			;77f4	c9 	. 
+	ld a,(hl)			;77c0	7e 	~ 	 (flow from: 77bd 77fa)
+	cp 010h		;77c1	fe 10 	. . 	 (flow from: 0052 77c0)
+	jp z,l77fch		;77c3	ca fc 77 	. . w 	 (flow from: 77c1)
+	push hl			;77c6	e5 	. 	 (flow from: 77c3)
+	call sub_9623h		;77c7	cd 23 96 	. # . 	 (flow from: 77c6)
+	push hl			;77ca	e5 	. 	 (flow from: 9628)
+	call sub_9623h		;77cb	cd 23 96 	. # . 	 (flow from: 77ca)
+	or a			;77ce	b7 	. 	 (flow from: 9628)
+	sbc hl,de		;77cf	ed 52 	. R 	 (flow from: 77ce)
+	jr nz,l77f5h		;77d1	20 22 	  " 	 (flow from: 0052 77cf)
+	pop hl			;77d3	e1 	. 	 (flow from: 77d1)
+	pop de			;77d4	d1 	. 	 (flow from: 77d3)
+	push hl			;77d5	e5 	. 	 (flow from: 77d4)
+	inc hl			;77d6	23 	# 	 (flow from: 77d5)
+	inc hl			;77d7	23 	# 	 (flow from: 77d6)
+	inc hl			;77d8	23 	# 	 (flow from: 77d7)
+	ld bc,00003h		;77d9	01 03 00 	. . . 	 (flow from: 77d8)
+	ldir		;77dc	ed b0 	. . 	 (flow from: 77d9 77dc)
+	dec hl			;77de	2b 	+ 	 (flow from: 77dc)
+	dec hl			;77df	2b 	+ 	 (flow from: 77de)
+	dec hl			;77e0	2b 	+ 	 (flow from: 77df)
+	ex de,hl			;77e1	eb 	. 	 (flow from: 77e0)
+	ld hl,(09a89h)		;77e2	2a 89 9a 	* . . 	 (flow from: 77e1)
+	ld bc,00003h		;77e5	01 03 00 	. . . 	 (flow from: 77e2)
+	ldir		;77e8	ed b0 	. . 	 (flow from: 77e5 77e8)
+	pop de			;77ea	d1 	. 	 (flow from: 77e8)
+	ld hl,(09a89h)		;77eb	2a 89 9a 	* . . 	 (flow from: 77ea)
+	ld (hl),003h		;77ee	36 03 	6 . 	 (flow from: 77eb)
+	inc hl			;77f0	23 	# 	 (flow from: 77ee)
+	ld (hl),e			;77f1	73 	s 	 (flow from: 77f0)
+	inc hl			;77f2	23 	# 	 (flow from: 77f1)
+	ld (hl),d			;77f3	72 	r 	 (flow from: 77f2)
+	ret			;77f4	c9 	. 	 (flow from: 77f3)
 l77f5h:
-	pop hl			;77f5	e1 	. 
-	pop af			;77f6	f1 	. 
-	inc hl			;77f7	23 	# 
-	inc hl			;77f8	23 	# 
-	inc hl			;77f9	23 	# 
-	jr l77c0h		;77fa	18 c4 	. . 
+	pop hl			;77f5	e1 	. 	 (flow from: 77d1 9627)
+	pop af			;77f6	f1 	. 	 (flow from: 77f5)
+	inc hl			;77f7	23 	# 	 (flow from: 77f6)
+	inc hl			;77f8	23 	# 	 (flow from: 77f7)
+	inc hl			;77f9	23 	# 	 (flow from: 77f8)
+	jr l77c0h		;77fa	18 c4 	. . 	 (flow from: 0052 77f9)
 l77fch:
 	ld hl,(09a8eh)		;77fc	2a 8e 9a 	* . . 
 	ld (hl),010h		;77ff	36 10 	6 . 
@@ -3959,12 +3959,12 @@ CLMOD_string_start:
 CLMOD_string_end:
 	rst 38h			;7815	ff 	. 
 sub_7816h:
-	ld hl,l8b10h		;7816	21 10 8b 	! . . 
-	ld (09a8eh),hl		;7819	22 8e 9a 	" . . 
-	call sub_9623h		;781c	cd 23 96 	. # . 
-	ld (09a91h),hl		;781f	22 91 9a 	" . . 
-	cp a			;7822	bf 	. 
-	ret			;7823	c9 	. 
+	ld hl,l8b10h		;7816	21 10 8b 	! . . 	 (flow from: 60bb)
+	ld (09a8eh),hl		;7819	22 8e 9a 	" . . 	 (flow from: 7816)
+	call sub_9623h		;781c	cd 23 96 	. # . 	 (flow from: 7819)
+	ld (09a91h),hl		;781f	22 91 9a 	" . . 	 (flow from: 9628)
+	cp a			;7822	bf 	. 	 (flow from: 781f)
+	ret			;7823	c9 	. 	 (flow from: 7822)
 l7824h:
 	ld de,(0980ah)		;7824	ed 5b 0a 98 	. [ . . 
 	ld a,(de)			;7828	1a 	. 
@@ -4256,58 +4256,58 @@ l79e3h:
 	pop hl			;79e4	e1 	. 
 	ret			;79e5	c9 	. 
 sub_79e6h:
-	push de			;79e6	d5 	. 
-	push bc			;79e7	c5 	. 
-	xor a			;79e8	af 	. 
-	ld (09ce4h),a		;79e9	32 e4 9c 	2 . . 
-	ld de,09ca5h		;79ec	11 a5 9c 	. . . 
-	ld hl,l6000h		;79ef	21 00 60 	! . ` 
-	call sub_7a81h		;79f2	cd 81 7a 	. . z 
-	jp z,l7a7ch		;79f5	ca 7c 7a 	. | z 
-	ld hl,(09a8eh)		;79f8	2a 8e 9a 	* . . 
-	call sub_9623h		;79fb	cd 23 96 	. # . 
-	push hl			;79fe	e5 	. 
-	call sub_7a81h		;79ff	cd 81 7a 	. . z 
-	jr z,l7a1ch		;7a02	28 18 	( . 
-	pop hl			;7a04	e1 	. 
-	inc hl			;7a05	23 	# 
-	inc hl			;7a06	23 	# 
-	inc hl			;7a07	23 	# 
-	call sub_9623h		;7a08	cd 23 96 	. # . 
-	push hl			;7a0b	e5 	. 
-	call sub_7a81h		;7a0c	cd 81 7a 	. . z 
-	jr z,l7a1ch		;7a0f	28 0b 	( . 
-	pop hl			;7a11	e1 	. 
-	inc hl			;7a12	23 	# 
-	inc hl			;7a13	23 	# 
-	inc hl			;7a14	23 	# 
-	ld (09a8bh),hl		;7a15	22 8b 9a 	" . . 
-	push hl			;7a18	e5 	. 
-	call sub_7a81h		;7a19	cd 81 7a 	. . z 
+	push de			;79e6	d5 	. 	 (flow from: 6ce1 9742)
+	push bc			;79e7	c5 	. 	 (flow from: 0052 79e6)
+	xor a			;79e8	af 	. 	 (flow from: 79e7)
+	ld (09ce4h),a		;79e9	32 e4 9c 	2 . . 	 (flow from: 79e8)
+	ld de,09ca5h		;79ec	11 a5 9c 	. . . 	 (flow from: 79e9)
+	ld hl,l6000h		;79ef	21 00 60 	! . ` 	 (flow from: 79ec)
+	call sub_7a81h		;79f2	cd 81 7a 	. . z 	 (flow from: 79ef)
+	jp z,l7a7ch		;79f5	ca 7c 7a 	. | z 	 (flow from: 0052 7a84 7aac)
+	ld hl,(09a8eh)		;79f8	2a 8e 9a 	* . . 	 (flow from: 79f5)
+	call sub_9623h		;79fb	cd 23 96 	. # . 	 (flow from: 79f8)
+	push hl			;79fe	e5 	. 	 (flow from: 9628)
+	call sub_7a81h		;79ff	cd 81 7a 	. . z 	 (flow from: 79fe)
+	jr z,l7a1ch		;7a02	28 18 	( . 	 (flow from: 7a84 7aac)
+	pop hl			;7a04	e1 	. 	 (flow from: 7a02)
+	inc hl			;7a05	23 	# 	 (flow from: 7a04)
+	inc hl			;7a06	23 	# 	 (flow from: 7a05)
+	inc hl			;7a07	23 	# 	 (flow from: 7a06)
+	call sub_9623h		;7a08	cd 23 96 	. # . 	 (flow from: 7a07)
+	push hl			;7a0b	e5 	. 	 (flow from: 9628)
+	call sub_7a81h		;7a0c	cd 81 7a 	. . z 	 (flow from: 7a0b)
+	jr z,l7a1ch		;7a0f	28 0b 	( . 	 (flow from: 7a84 7aac)
+	pop hl			;7a11	e1 	. 	 (flow from: 7a0f)
+	inc hl			;7a12	23 	# 	 (flow from: 7a11)
+	inc hl			;7a13	23 	# 	 (flow from: 7a12)
+	inc hl			;7a14	23 	# 	 (flow from: 7a13)
+	ld (09a8bh),hl		;7a15	22 8b 9a 	" . . 	 (flow from: 7a14)
+	push hl			;7a18	e5 	. 	 (flow from: 7a15)
+	call sub_7a81h		;7a19	cd 81 7a 	. . z 	 (flow from: 7a18)
 l7a1ch:
-	inc sp			;7a1c	33 	3 
-	inc sp			;7a1d	33 	3 
-	jr z,l7a7ch		;7a1e	28 5c 	( \ 
-	call sub_6593h		;7a20	cd 93 65 	. . e 
-	push hl			;7a23	e5 	. 
-	inc hl			;7a24	23 	# 
-	inc hl			;7a25	23 	# 
-	inc hl			;7a26	23 	# 
-	ld de,(09a8bh)		;7a27	ed 5b 8b 9a 	. [ . . 
-	ex de,hl			;7a2b	eb 	. 
-	ld bc,00003h		;7a2c	01 03 00 	. . . 
-	ldir		;7a2f	ed b0 	. . 
-	pop de			;7a31	d1 	. 
-	ld hl,(09a8bh)		;7a32	2a 8b 9a 	* . . 
-	ld (hl),003h		;7a35	36 03 	6 . 
-	inc hl			;7a37	23 	# 
-	ld (hl),e			;7a38	73 	s 
-	inc hl			;7a39	23 	# 
-	ld (hl),d			;7a3a	72 	r 
-	ld hl,09ca5h		;7a3b	21 a5 9c 	! . . 
-	call sub_7ab5h		;7a3e	cd b5 7a 	. . z 
-	call sub_7ad1h		;7a41	cd d1 7a 	. . z 
-	jr z,l7a5dh		;7a44	28 17 	( . 
+	inc sp			;7a1c	33 	3 	 (flow from: 7a02 7a0f 7a84 7aac)
+	inc sp			;7a1d	33 	3 	 (flow from: 7a1c)
+	jr z,l7a7ch		;7a1e	28 5c 	( \ 	 (flow from: 7a1d)
+	call sub_6593h		;7a20	cd 93 65 	. . e 	 (flow from: 7a1e)
+	push hl			;7a23	e5 	. 	 (flow from: 65ea)
+	inc hl			;7a24	23 	# 	 (flow from: 7a23)
+	inc hl			;7a25	23 	# 	 (flow from: 7a24)
+	inc hl			;7a26	23 	# 	 (flow from: 7a25)
+	ld de,(09a8bh)		;7a27	ed 5b 8b 9a 	. [ . . 	 (flow from: 7a26)
+	ex de,hl			;7a2b	eb 	. 	 (flow from: 7a27)
+	ld bc,00003h		;7a2c	01 03 00 	. . . 	 (flow from: 7a2b)
+	ldir		;7a2f	ed b0 	. . 	 (flow from: 7a2c 7a2f)
+	pop de			;7a31	d1 	. 	 (flow from: 7a2f)
+	ld hl,(09a8bh)		;7a32	2a 8b 9a 	* . . 	 (flow from: 7a31)
+	ld (hl),003h		;7a35	36 03 	6 . 	 (flow from: 7a32)
+	inc hl			;7a37	23 	# 	 (flow from: 7a35)
+	ld (hl),e			;7a38	73 	s 	 (flow from: 7a37)
+	inc hl			;7a39	23 	# 	 (flow from: 7a38)
+	ld (hl),d			;7a3a	72 	r 	 (flow from: 7a39)
+	ld hl,09ca5h		;7a3b	21 a5 9c 	! . . 	 (flow from: 7a3a)
+	call sub_7ab5h		;7a3e	cd b5 7a 	. . z 	 (flow from: 7a3b)
+	call sub_7ad1h		;7a41	cd d1 7a 	. . z 	 (flow from: 7ac6)
+	jr z,l7a5dh		;7a44	28 17 	( . 	 (flow from: 7b30)
 	call sub_6713h		;7a46	cd 13 67 	. . g 
 	call sub_7ad1h		;7a49	cd d1 7a 	. . z 
 	jr z,l7a5dh		;7a4c	28 0f 	( . 
@@ -4320,170 +4320,170 @@ l7a1ch:
 	ldir		;7a58	ed b0 	. . 
 	jp l6271h		;7a5a	c3 71 62 	. q b 
 l7a5dh:
-	ex de,hl			;7a5d	eb 	. 
-	ld (hl),008h		;7a5e	36 08 	6 . 
-	inc hl			;7a60	23 	# 
-	ld (hl),e			;7a61	73 	s 
-	inc hl			;7a62	23 	# 
-	ld (hl),d			;7a63	72 	r 
-	ex de,hl			;7a64	eb 	. 
-	push hl			;7a65	e5 	. 
-	ld (hl),010h		;7a66	36 10 	6 . 
-	inc hl			;7a68	23 	# 
-	inc hl			;7a69	23 	# 
-	inc hl			;7a6a	23 	# 
-	ld de,09ca5h		;7a6b	11 a5 9c 	. . . 
+	ex de,hl			;7a5d	eb 	. 	 (flow from: 7a44)
+	ld (hl),008h		;7a5e	36 08 	6 . 	 (flow from: 7a5d)
+	inc hl			;7a60	23 	# 	 (flow from: 7a5e)
+	ld (hl),e			;7a61	73 	s 	 (flow from: 7a60)
+	inc hl			;7a62	23 	# 	 (flow from: 7a61)
+	ld (hl),d			;7a63	72 	r 	 (flow from: 7a62)
+	ex de,hl			;7a64	eb 	. 	 (flow from: 7a63)
+	push hl			;7a65	e5 	. 	 (flow from: 7a64)
+	ld (hl),010h		;7a66	36 10 	6 . 	 (flow from: 7a65)
+	inc hl			;7a68	23 	# 	 (flow from: 7a66)
+	inc hl			;7a69	23 	# 	 (flow from: 7a68)
+	inc hl			;7a6a	23 	# 	 (flow from: 7a69)
+	ld de,09ca5h		;7a6b	11 a5 9c 	. . . 	 (flow from: 7a6a)
 l7a6eh:
-	ld a,(de)			;7a6e	1a 	. 
-	ld (hl),a			;7a6f	77 	w 
-	cp 0feh		;7a70	fe fe 	. . 
-	jr z,l7a78h		;7a72	28 04 	( . 
-	inc hl			;7a74	23 	# 
-	inc de			;7a75	13 	. 
-	jr l7a6eh		;7a76	18 f6 	. . 
+	ld a,(de)			;7a6e	1a 	. 	 (flow from: 0052 7a6b 7a76)
+	ld (hl),a			;7a6f	77 	w 	 (flow from: 7a6e)
+	cp 0feh		;7a70	fe fe 	. . 	 (flow from: 7a6f)
+	jr z,l7a78h		;7a72	28 04 	( . 	 (flow from: 7a70)
+	inc hl			;7a74	23 	# 	 (flow from: 7a72)
+	inc de			;7a75	13 	. 	 (flow from: 7a74)
+	jr l7a6eh		;7a76	18 f6 	. . 	 (flow from: 7a75)
 l7a78h:
-	ld (hl),0ffh		;7a78	36 ff 	6 . 
-	pop hl			;7a7a	e1 	. 
-	cp a			;7a7b	bf 	. 
+	ld (hl),0ffh		;7a78	36 ff 	6 . 	 (flow from: 7a72)
+	pop hl			;7a7a	e1 	. 	 (flow from: 7a78)
+	cp a			;7a7b	bf 	. 	 (flow from: 7a7a)
 l7a7ch:
-	ld a,008h		;7a7c	3e 08 	> . 
-	pop bc			;7a7e	c1 	. 
-	pop de			;7a7f	d1 	. 
-	ret			;7a80	c9 	. 
+	ld a,008h		;7a7c	3e 08 	> . 	 (flow from: 79f5 7a1e 7a7b)
+	pop bc			;7a7e	c1 	. 	 (flow from: 7a7c)
+	pop de			;7a7f	d1 	. 	 (flow from: 7a7e)
+	ret			;7a80	c9 	. 	 (flow from: 7a7f)
 sub_7a81h:
-	ld a,(hl)			;7a81	7e 	~ 
-	cp 003h		;7a82	fe 03 	. . 
-	ret nz			;7a84	c0 	. 
-	call sub_9623h		;7a85	cd 23 96 	. # . 
-	ld a,(hl)			;7a88	7e 	~ 
-	cp 008h		;7a89	fe 08 	. . 
-	call nz,sub_6259h		;7a8b	c4 59 62 	. Y b 
-	push hl			;7a8e	e5 	. 
-	call sub_9623h		;7a8f	cd 23 96 	. # . 
-	push hl			;7a92	e5 	. 
-	push de			;7a93	d5 	. 
-	inc hl			;7a94	23 	# 
-	inc hl			;7a95	23 	# 
-	inc hl			;7a96	23 	# 
+	ld a,(hl)			;7a81	7e 	~ 	 (flow from: 0052 79f2 79ff 7a0c 7a19 7ab3)
+	cp 003h		;7a82	fe 03 	. . 	 (flow from: 0052 7a81 7a89d)
+	ret nz			;7a84	c0 	. 	 (flow from: 0052 7a82)
+	call sub_9623h		;7a85	cd 23 96 	. # . 	 (flow from: 0052 7a84)
+	ld a,(hl)			;7a88	7e 	~ 	 (flow from: 0052 9628)
+	cp 008h		;7a89	fe 08 	. . 	 (flow from: 0052 7a88)
+	call nz,sub_6259h		;7a8b	c4 59 62 	. Y b 	 (flow from: 0052 7a89 7a92)
+	push hl			;7a8e	e5 	. 	 (flow from: 0052 7a8b)
+	call sub_9623h		;7a8f	cd 23 96 	. # . 	 (flow from: 0052 7a8e)
+	push hl			;7a92	e5 	. 	 (flow from: 0052 9628)
+	push de			;7a93	d5 	. 	 (flow from: 0052 7a92)
+	inc hl			;7a94	23 	# 	 (flow from: 0052 7a93)
+	inc hl			;7a95	23 	# 	 (flow from: 0052 7a94)
+	inc hl			;7a96	23 	# 	 (flow from: 0052 7a95)
 l7a97h:
-	ld a,(de)			;7a97	1a 	. 
-	cp (hl)			;7a98	be 	. 
-	jr nz,l7a9fh		;7a99	20 04 	  . 
-	inc hl			;7a9b	23 	# 
-	inc de			;7a9c	13 	. 
-	jr l7a97h		;7a9d	18 f8 	. . 
+	ld a,(de)			;7a97	1a 	. 	 (flow from: 0052 7a96 7a9d)
+	cp (hl)			;7a98	be 	. 	 (flow from: 0052 7a97 96247)
+	jr nz,l7a9fh		;7a99	20 04 	  . 	 (flow from: 0052 7a98)
+	inc hl			;7a9b	23 	# 	 (flow from: 0052 7a99)
+	inc de			;7a9c	13 	. 	 (flow from: 7a9b)
+	jr l7a97h		;7a9d	18 f8 	. . 	 (flow from: 0052 7a9c)
 l7a9fh:
-	cp 0feh		;7a9f	fe fe 	. . 
-	jr nz,l7aadh		;7aa1	20 0a 	  . 
-	ld a,(hl)			;7aa3	7e 	~ 
-	cp 0ffh		;7aa4	fe ff 	. . 
-	jr nz,l7aadh		;7aa6	20 05 	  . 
-	pop de			;7aa8	d1 	. 
-	pop hl			;7aa9	e1 	. 
-	pop af			;7aaa	f1 	. 
-	cp a			;7aab	bf 	. 
-	ret			;7aac	c9 	. 
+	cp 0feh		;7a9f	fe fe 	. . 	 (flow from: 0052 7a99)
+	jr nz,l7aadh		;7aa1	20 0a 	  . 	 (flow from: 0052 7a9f)
+	ld a,(hl)			;7aa3	7e 	~ 	 (flow from: 7aa1)
+	cp 0ffh		;7aa4	fe ff 	. . 	 (flow from: 7aa3)
+	jr nz,l7aadh		;7aa6	20 05 	  . 	 (flow from: 7aa4)
+	pop de			;7aa8	d1 	. 	 (flow from: 7aa6)
+	pop hl			;7aa9	e1 	. 	 (flow from: 7aa8)
+	pop af			;7aaa	f1 	. 	 (flow from: 7aa9)
+	cp a			;7aab	bf 	. 	 (flow from: 7aaa)
+	ret			;7aac	c9 	. 	 (flow from: 7aab)
 l7aadh:
-	pop de			;7aad	d1 	. 
-	pop hl			;7aae	e1 	. 
-	pop hl			;7aaf	e1 	. 
-	inc hl			;7ab0	23 	# 
-	inc hl			;7ab1	23 	# 
-	inc hl			;7ab2	23 	# 
-	jr sub_7a81h		;7ab3	18 cc 	. . 
+	pop de			;7aad	d1 	. 	 (flow from: 0052 7aa1 7aa6)
+	pop hl			;7aae	e1 	. 	 (flow from: 0052 7aad 96)
+	pop hl			;7aaf	e1 	. 	 (flow from: 0052 7aae)
+	inc hl			;7ab0	23 	# 	 (flow from: 0052 7aaf)
+	inc hl			;7ab1	23 	# 	 (flow from: 0052 7ab0)
+	inc hl			;7ab2	23 	# 	 (flow from: 0052 7ab1)
+	jr sub_7a81h		;7ab3	18 cc 	. . 	 (flow from: 0052 7a9 7ab2)
 sub_7ab5h:
-	ld b,080h		;7ab5	06 80 	. . 
-	push hl			;7ab7	e5 	. 
-	push de			;7ab8	d5 	. 
-	ld d,005h		;7ab9	16 05 	. . 
+	ld b,080h		;7ab5	06 80 	. . 	 (flow from: 7a3e)
+	push hl			;7ab7	e5 	. 	 (flow from: 7ab5)
+	push de			;7ab8	d5 	. 	 (flow from: 7ab7)
+	ld d,005h		;7ab9	16 05 	. . 	 (flow from: 7ab8)
 l7abbh:
-	ld a,(hl)			;7abb	7e 	~ 
-	cp 0feh		;7abc	fe fe 	. . 
-	jr z,l7ac4h		;7abe	28 04 	( . 
-	cp 0ffh		;7ac0	fe ff 	. . 
-	jr nz,l7ac7h		;7ac2	20 03 	  . 
+	ld a,(hl)			;7abb	7e 	~ 	 (flow from: 7ab9 7ac9 7acf)
+	cp 0feh		;7abc	fe fe 	. . 	 (flow from: 7abb)
+	jr z,l7ac4h		;7abe	28 04 	( . 	 (flow from: 7abc)
+	cp 0ffh		;7ac0	fe ff 	. . 	 (flow from: 7abe)
+	jr nz,l7ac7h		;7ac2	20 03 	  . 	 (flow from: 7ac0)
 l7ac4h:
-	pop de			;7ac4	d1 	. 
-	pop hl			;7ac5	e1 	. 
-	ret			;7ac6	c9 	. 
+	pop de			;7ac4	d1 	. 	 (flow from: 7abe)
+	pop hl			;7ac5	e1 	. 	 (flow from: 7ac4)
+	ret			;7ac6	c9 	. 	 (flow from: 7ac5)
 l7ac7h:
-	inc hl			;7ac7	23 	# 
-	dec d			;7ac8	15 	. 
-	jr nz,l7abbh		;7ac9	20 f0 	  . 
-	ld d,008h		;7acb	16 08 	. . 
-	sra b		;7acd	cb 28 	. ( 
-	jr l7abbh		;7acf	18 ea 	. . 
+	inc hl			;7ac7	23 	# 	 (flow from: 0052 7ac2)
+	dec d			;7ac8	15 	. 	 (flow from: 7ac7)
+	jr nz,l7abbh		;7ac9	20 f0 	  . 	 (flow from: 7ac8)
+	ld d,008h		;7acb	16 08 	. . 	 (flow from: 7ac9)
+	sra b		;7acd	cb 28 	. ( 	 (flow from: 7acb)
+	jr l7abbh		;7acf	18 ea 	. . 	 (flow from: 7acd)
 sub_7ad1h:
-	push bc			;7ad1	c5 	. 
-	push de			;7ad2	d5 	. 
-	ld hl,09a99h		;7ad3	21 99 9a 	! . . 
-	ld c,000h		;7ad6	0e 00 	. . 
+	push bc			;7ad1	c5 	. 	 (flow from: 7a41)
+	push de			;7ad2	d5 	. 	 (flow from: 7ad1)
+	ld hl,09a99h		;7ad3	21 99 9a 	! . . 	 (flow from: 7ad2)
+	ld c,000h		;7ad6	0e 00 	. . 	 (flow from: 7ad3)
 l7ad8h:
-	ld a,(hl)			;7ad8	7e 	~ 
-	or a			;7ad9	b7 	. 
-	jr nz,l7ae5h		;7ada	20 09 	  . 
-	inc hl			;7adc	23 	# 
+	ld a,(hl)			;7ad8	7e 	~ 	 (flow from: 0052 7ad6 7ade)
+	or a			;7ad9	b7 	. 	 (flow from: 0052 7ad8)
+	jr nz,l7ae5h		;7ada	20 09 	  . 	 (flow from: 7ad9)
+	inc hl			;7adc	23 	# 	 (flow from: 7ada)
 l7addh:
-	inc c			;7add	0c 	. 
-	jr nz,l7ad8h		;7ade	20 f8 	  . 
+	inc c			;7add	0c 	. 	 (flow from: 0052 7adc)
+	jr nz,l7ad8h		;7ade	20 f8 	  . 	 (flow from: 7add)
 	or 001h		;7ae0	f6 01 	. . 
 	pop de			;7ae2	d1 	. 
 	pop bc			;7ae3	c1 	. 
 	ret			;7ae4	c9 	. 
 l7ae5h:
-	ld d,008h		;7ae5	16 08 	. . 
-	inc hl			;7ae7	23 	# 
-	ld e,(hl)			;7ae8	5e 	^ 
+	ld d,008h		;7ae5	16 08 	. . 	 (flow from: 7ada)
+	inc hl			;7ae7	23 	# 	 (flow from: 7ae5)
+	ld e,(hl)			;7ae8	5e 	^ 	 (flow from: 7ae7)
 l7ae9h:
-	push af			;7ae9	f5 	. 
-	xor b			;7aea	a8 	. 
-	and b			;7aeb	a0 	. 
-	jr z,l7af8h		;7aec	28 0a 	( . 
-	pop af			;7aee	f1 	. 
-	dec d			;7aef	15 	. 
-	jr z,l7addh		;7af0	28 eb 	( . 
-	rl e		;7af2	cb 13 	. . 
-	rl a		;7af4	cb 17 	. . 
-	jr l7ae9h		;7af6	18 f1 	. . 
+	push af			;7ae9	f5 	. 	 (flow from: 7ae8 7af6)
+	xor b			;7aea	a8 	. 	 (flow from: 7ae9)
+	and b			;7aeb	a0 	. 	 (flow from: 7aea)
+	jr z,l7af8h		;7aec	28 0a 	( . 	 (flow from: 7aeb)
+	pop af			;7aee	f1 	. 	 (flow from: 7aec)
+	dec d			;7aef	15 	. 	 (flow from: 7aee)
+	jr z,l7addh		;7af0	28 eb 	( . 	 (flow from: 7aef)
+	rl e		;7af2	cb 13 	. . 	 (flow from: 7af0)
+	rl a		;7af4	cb 17 	. . 	 (flow from: 7af2)
+	jr l7ae9h		;7af6	18 f1 	. . 	 (flow from: 7af4)
 l7af8h:
-	pop af			;7af8	f1 	. 
-	push af			;7af9	f5 	. 
-	xor b			;7afa	a8 	. 
-	ld b,a			;7afb	47 	G 
-	pop af			;7afc	f1 	. 
-	ld a,d			;7afd	7a 	z 
+	pop af			;7af8	f1 	. 	 (flow from: 7aec)
+	push af			;7af9	f5 	. 	 (flow from: 0052 7af8)
+	xor b			;7afa	a8 	. 	 (flow from: 7af9)
+	ld b,a			;7afb	47 	G 	 (flow from: 7afa)
+	pop af			;7afc	f1 	. 	 (flow from: 7afb)
+	ld a,d			;7afd	7a 	z 	 (flow from: 7afc)
 l7afeh:
-	rl e		;7afe	cb 13 	. . 
-	rl b		;7b00	cb 10 	. . 
-	dec a			;7b02	3d 	= 
-	jr nz,l7afeh		;7b03	20 f9 	  . 
-	rl e		;7b05	cb 13 	. . 
-	ld (hl),b			;7b07	70 	p 
-	dec hl			;7b08	2b 	+ 
-	ld (hl),e			;7b09	73 	s 
-	ld a,008h		;7b0a	3e 08 	> . 
-	sub d			;7b0c	92 	. 
-	ld b,000h		;7b0d	06 00 	. . 
-	sla c		;7b0f	cb 21 	. ! 
-	rl b		;7b11	cb 10 	. . 
-	sla c		;7b13	cb 21 	. ! 
-	rl b		;7b15	cb 10 	. . 
-	sla c		;7b17	cb 21 	. ! 
-	rl b		;7b19	cb 10 	. . 
-	or c			;7b1b	b1 	. 
-	ld c,a			;7b1c	4f 	O 
-	sla c		;7b1d	cb 21 	. ! 
-	rl b		;7b1f	cb 10 	. . 
-	sla c		;7b21	cb 21 	. ! 
-	rl b		;7b23	cb 10 	. . 
-	sla c		;7b25	cb 21 	. ! 
-	rl b		;7b27	cb 10 	. . 
-	ld hl,(09805h)		;7b29	2a 05 98 	* . . 
-	add hl,bc			;7b2c	09 	. 
-	cp a			;7b2d	bf 	. 
-	pop de			;7b2e	d1 	. 
-	pop bc			;7b2f	c1 	. 
-	ret			;7b30	c9 	. 
+	rl e		;7afe	cb 13 	. . 	 (flow from: 7afd 7b03)
+	rl b		;7b00	cb 10 	. . 	 (flow from: 0052 7afe)
+	dec a			;7b02	3d 	= 	 (flow from: 7b00)
+	jr nz,l7afeh		;7b03	20 f9 	  . 	 (flow from: 7b02)
+	rl e		;7b05	cb 13 	. . 	 (flow from: 7b03)
+	ld (hl),b			;7b07	70 	p 	 (flow from: 7b05)
+	dec hl			;7b08	2b 	+ 	 (flow from: 7b07)
+	ld (hl),e			;7b09	73 	s 	 (flow from: 7b08)
+	ld a,008h		;7b0a	3e 08 	> . 	 (flow from: 7b09)
+	sub d			;7b0c	92 	. 	 (flow from: 7b0a)
+	ld b,000h		;7b0d	06 00 	. . 	 (flow from: 7b0c)
+	sla c		;7b0f	cb 21 	. ! 	 (flow from: 7b0d)
+	rl b		;7b11	cb 10 	. . 	 (flow from: 7b0f)
+	sla c		;7b13	cb 21 	. ! 	 (flow from: 7b11)
+	rl b		;7b15	cb 10 	. . 	 (flow from: 7b13)
+	sla c		;7b17	cb 21 	. ! 	 (flow from: 7b15)
+	rl b		;7b19	cb 10 	. . 	 (flow from: 7b17)
+	or c			;7b1b	b1 	. 	 (flow from: 7b19)
+	ld c,a			;7b1c	4f 	O 	 (flow from: 7b1b)
+	sla c		;7b1d	cb 21 	. ! 	 (flow from: 7b1c)
+	rl b		;7b1f	cb 10 	. . 	 (flow from: 7b1d)
+	sla c		;7b21	cb 21 	. ! 	 (flow from: 7b1f)
+	rl b		;7b23	cb 10 	. . 	 (flow from: 7b21)
+	sla c		;7b25	cb 21 	. ! 	 (flow from: 0052 7b23)
+	rl b		;7b27	cb 10 	. . 	 (flow from: 7b25)
+	ld hl,(09805h)		;7b29	2a 05 98 	* . . 	 (flow from: 7b27)
+	add hl,bc			;7b2c	09 	. 	 (flow from: 7b29)
+	cp a			;7b2d	bf 	. 	 (flow from: 7b2c)
+	pop de			;7b2e	d1 	. 	 (flow from: 7b2d)
+	pop bc			;7b2f	c1 	. 	 (flow from: 0052 7b2e)
+	ret			;7b30	c9 	. 	 (flow from: 7b2f)
 sub_7b31h:
 	push de			;7b31	d5 	. 
 	push bc			;7b32	c5 	. 
@@ -4868,109 +4868,109 @@ CL_string_start:
 ADDCL_string_end:
 CL_string_end:
 	rst 38h			;7d31	ff 	. 
-	ld hl,(0984fh)		;7d32	2a 4f 98 	* O . 
-	ld ix,(09843h)		;7d35	dd 2a 43 98 	. * C . 
-	ld e,(ix+00ah)		;7d39	dd 5e 0a 	. ^ . 
-	ld d,(ix+00bh)		;7d3c	dd 56 0b 	. V . 
-	ld (09853h),de		;7d3f	ed 53 53 98 	. S S . 
-	call sub_6575h		;7d43	cd 75 65 	. u e 
-	cp 003h		;7d46	fe 03 	. . 
-	ret nz			;7d48	c0 	. 
-	ld de,09807h		;7d49	11 07 98 	. . . 
-	call sub_9623h		;7d4c	cd 23 96 	. # . 
-	ld (0984fh),hl		;7d4f	22 4f 98 	" O . 
-	ld c,000h		;7d52	0e 00 	. . 
-	ld a,0ffh		;7d54	3e ff 	> . 
-	ld (09870h),a		;7d56	32 70 98 	2 p . 
-	call sub_7e38h		;7d59	cd 38 7e 	. 8 ~ 
-	ld hl,09807h		;7d5c	21 07 98 	! . . 
-	call sub_9623h		;7d5f	cd 23 96 	. # . 
-	ld (09a85h),hl		;7d62	22 85 9a 	" . . 
-	ld a,(hl)			;7d65	7e 	~ 
-	cp 003h		;7d66	fe 03 	. . 
-	ret nz			;7d68	c0 	. 
-	call sub_9623h		;7d69	cd 23 96 	. # . 
-	ld a,(hl)			;7d6c	7e 	~ 
-	cp 008h		;7d6d	fe 08 	. . 
-	ret nz			;7d6f	c0 	. 
-	ld a,003h		;7d70	3e 03 	> . 
-	ld (0980dh),a		;7d72	32 0d 98 	2 . . 
-	ld (0980eh),hl		;7d75	22 0e 98 	" . . 
-	push hl			;7d78	e5 	. 
-	call sub_9623h		;7d79	cd 23 96 	. # . 
-	ld (09a87h),hl		;7d7c	22 87 9a 	" . . 
-	call sub_7653h		;7d7f	cd 53 76 	. S v 
-	jp nz,l7e1ah		;7d82	c2 1a 7e 	. . ~ 
-	ex de,hl			;7d85	eb 	. 
-	ld hl,(09a8eh)		;7d86	2a 8e 9a 	* . . 
-	call sub_9623h		;7d89	cd 23 96 	. # . 
-	inc hl			;7d8c	23 	# 
-	inc hl			;7d8d	23 	# 
-	inc hl			;7d8e	23 	# 
-	call sub_9623h		;7d8f	cd 23 96 	. # . 
+	ld hl,(0984fh)		;7d32	2a 4f 98 	* O . 	 (flow from: 60bb)
+	ld ix,(09843h)		;7d35	dd 2a 43 98 	. * C . 	 (flow from: 7d32)
+	ld e,(ix+00ah)		;7d39	dd 5e 0a 	. ^ . 	 (flow from: 7d35)
+	ld d,(ix+00bh)		;7d3c	dd 56 0b 	. V . 	 (flow from: 7d39)
+	ld (09853h),de		;7d3f	ed 53 53 98 	. S S . 	 (flow from: 7d3c)
+	call sub_6575h		;7d43	cd 75 65 	. u e 	 (flow from: 7d3f)
+	cp 003h		;7d46	fe 03 	. . 	 (flow from: 658a)
+	ret nz			;7d48	c0 	. 	 (flow from: 7d46)
+	ld de,09807h		;7d49	11 07 98 	. . . 	 (flow from: 7d48)
+	call sub_9623h		;7d4c	cd 23 96 	. # . 	 (flow from: 7d49)
+	ld (0984fh),hl		;7d4f	22 4f 98 	" O . 	 (flow from: 9628)
+	ld c,000h		;7d52	0e 00 	. . 	 (flow from: 7d4f)
+	ld a,0ffh		;7d54	3e ff 	> . 	 (flow from: 7d52)
+	ld (09870h),a		;7d56	32 70 98 	2 p . 	 (flow from: 7d54)
+	call sub_7e38h		;7d59	cd 38 7e 	. 8 ~ 	 (flow from: 7d56)
+	ld hl,09807h		;7d5c	21 07 98 	! . . 	 (flow from: 7ea7)
+	call sub_9623h		;7d5f	cd 23 96 	. # . 	 (flow from: 7d5c)
+	ld (09a85h),hl		;7d62	22 85 9a 	" . . 	 (flow from: 9628)
+	ld a,(hl)			;7d65	7e 	~ 	 (flow from: 7d62)
+	cp 003h		;7d66	fe 03 	. . 	 (flow from: 7d65)
+	ret nz			;7d68	c0 	. 	 (flow from: 7d66)
+	call sub_9623h		;7d69	cd 23 96 	. # . 	 (flow from: 7d68)
+	ld a,(hl)			;7d6c	7e 	~ 	 (flow from: 9628)
+	cp 008h		;7d6d	fe 08 	. . 	 (flow from: 7d6c)
+	ret nz			;7d6f	c0 	. 	 (flow from: 7d6d)
+	ld a,003h		;7d70	3e 03 	> . 	 (flow from: 7d6f)
+	ld (0980dh),a		;7d72	32 0d 98 	2 . . 	 (flow from: 7d70)
+	ld (0980eh),hl		;7d75	22 0e 98 	" . . 	 (flow from: 7d72)
+	push hl			;7d78	e5 	. 	 (flow from: 7d75)
+	call sub_9623h		;7d79	cd 23 96 	. # . 	 (flow from: 7d78)
+	ld (09a87h),hl		;7d7c	22 87 9a 	" . . 	 (flow from: 9628)
+	call sub_7653h		;7d7f	cd 53 76 	. S v 	 (flow from: 7d7c)
+	jp nz,l7e1ah		;7d82	c2 1a 7e 	. . ~ 	 (flow from: 7662)
+	ex de,hl			;7d85	eb 	. 	 (flow from: 7d82)
+	ld hl,(09a8eh)		;7d86	2a 8e 9a 	* . . 	 (flow from: 7d85)
+	call sub_9623h		;7d89	cd 23 96 	. # . 	 (flow from: 7d86)
+	inc hl			;7d8c	23 	# 	 (flow from: 9628)
+	inc hl			;7d8d	23 	# 	 (flow from: 7d8c)
+	inc hl			;7d8e	23 	# 	 (flow from: 7d8d)
+	call sub_9623h		;7d8f	cd 23 96 	. # . 	 (flow from: 7d8e)
 l7d92h:
-	ld a,(hl)			;7d92	7e 	~ 
-	cp 010h		;7d93	fe 10 	. . 
-	jr z,l7daeh		;7d95	28 17 	( . 
-	cp 003h		;7d97	fe 03 	. . 
-	call nz,sub_6259h		;7d99	c4 59 62 	. Y b 
-	call sub_9623h		;7d9c	cd 23 96 	. # . 
-	push hl			;7d9f	e5 	. 
-	call sub_9623h		;7da0	cd 23 96 	. # . 
-	or a			;7da3	b7 	. 
-	sbc hl,de		;7da4	ed 52 	. R 
-	jr z,l7e1ah		;7da6	28 72 	( r 
-	pop hl			;7da8	e1 	. 
-	inc hl			;7da9	23 	# 
-	inc hl			;7daa	23 	# 
-	inc hl			;7dab	23 	# 
-	jr l7d92h		;7dac	18 e4 	. . 
+	ld a,(hl)			;7d92	7e 	~ 	 (flow from: 7dac 9628)
+	cp 010h		;7d93	fe 10 	. . 	 (flow from: 7d92)
+	jr z,l7daeh		;7d95	28 17 	( . 	 (flow from: 7d93)
+	cp 003h		;7d97	fe 03 	. . 	 (flow from: 0052 7d95)
+	call nz,sub_6259h		;7d99	c4 59 62 	. Y b 	 (flow from: 7d97)
+	call sub_9623h		;7d9c	cd 23 96 	. # . 	 (flow from: 7d99)
+	push hl			;7d9f	e5 	. 	 (flow from: 9628)
+	call sub_9623h		;7da0	cd 23 96 	. # . 	 (flow from: 7d9f)
+	or a			;7da3	b7 	. 	 (flow from: 9628)
+	sbc hl,de		;7da4	ed 52 	. R 	 (flow from: 7da3)
+	jr z,l7e1ah		;7da6	28 72 	( r 	 (flow from: 7da4)
+	pop hl			;7da8	e1 	. 	 (flow from: 7da6)
+	inc hl			;7da9	23 	# 	 (flow from: 7da8)
+	inc hl			;7daa	23 	# 	 (flow from: 7da9)
+	inc hl			;7dab	23 	# 	 (flow from: 7daa)
+	jr l7d92h		;7dac	18 e4 	. . 	 (flow from: 7dab)
 l7daeh:
-	pop hl			;7dae	e1 	. 
-	inc hl			;7daf	23 	# 
-	inc hl			;7db0	23 	# 
-	inc hl			;7db1	23 	# 
-	push hl			;7db2	e5 	. 
-	push bc			;7db3	c5 	. 
-	ld bc,00003h		;7db4	01 03 00 	. . . 
-	ld de,(09a85h)		;7db7	ed 5b 85 9a 	. [ . . 
-	ldir		;7dbb	ed b0 	. . 
-	pop bc			;7dbd	c1 	. 
-	dec de			;7dbe	1b 	. 
-	dec de			;7dbf	1b 	. 
-	dec de			;7dc0	1b 	. 
-	pop hl			;7dc1	e1 	. 
-	ld (hl),003h		;7dc2	36 03 	6 . 
-	inc hl			;7dc4	23 	# 
-	ld (hl),e			;7dc5	73 	s 
-	inc hl			;7dc6	23 	# 
-	ld (hl),d			;7dc7	72 	r 
-	ld hl,(0980eh)		;7dc8	2a 0e 98 	* . . 
-	ld d,000h		;7dcb	16 00 	. . 
-	ld e,c			;7dcd	59 	Y 
-	ld (hl),004h		;7dce	36 04 	6 . 
-	inc hl			;7dd0	23 	# 
-	ld (hl),e			;7dd1	73 	s 
-	inc hl			;7dd2	23 	# 
-	ld (hl),d			;7dd3	72 	r 
-	call sub_6593h		;7dd4	cd 93 65 	. . e 
-	ld de,(0980eh)		;7dd7	ed 5b 0e 98 	. [ . . 
-	ld (09a85h),hl		;7ddb	22 85 9a 	" . . 
-	ld (hl),003h		;7dde	36 03 	6 . 
-	inc hl			;7de0	23 	# 
-	ld (hl),e			;7de1	73 	s 
-	inc hl			;7de2	23 	# 
-	ld (hl),d			;7de3	72 	r 
-	ld hl,(0984fh)		;7de4	2a 4f 98 	* O . 
-	inc hl			;7de7	23 	# 
-	inc hl			;7de8	23 	# 
-	inc hl			;7de9	23 	# 
-	ld de,(09853h)		;7dea	ed 5b 53 98 	. [ S . 
-	call sub_6575h		;7dee	cd 75 65 	. u e 
-	cp 010h		;7df1	fe 10 	. . 
-	jr nz,l7dfah		;7df3	20 05 	  . 
-	ld bc,l7fffh		;7df5	01 ff 7f 	. .  
-	jr l7e0bh		;7df8	18 11 	. . 
+	pop hl			;7dae	e1 	. 	 (flow from: 7d95)
+	inc hl			;7daf	23 	# 	 (flow from: 7dae)
+	inc hl			;7db0	23 	# 	 (flow from: 7daf)
+	inc hl			;7db1	23 	# 	 (flow from: 7db0)
+	push hl			;7db2	e5 	. 	 (flow from: 7db1)
+	push bc			;7db3	c5 	. 	 (flow from: 7db2)
+	ld bc,00003h		;7db4	01 03 00 	. . . 	 (flow from: 7db3)
+	ld de,(09a85h)		;7db7	ed 5b 85 9a 	. [ . . 	 (flow from: 7db4)
+	ldir		;7dbb	ed b0 	. . 	 (flow from: 7db7 7dbb)
+	pop bc			;7dbd	c1 	. 	 (flow from: 7dbb)
+	dec de			;7dbe	1b 	. 	 (flow from: 7dbd)
+	dec de			;7dbf	1b 	. 	 (flow from: 7dbe)
+	dec de			;7dc0	1b 	. 	 (flow from: 7dbf)
+	pop hl			;7dc1	e1 	. 	 (flow from: 7dc0)
+	ld (hl),003h		;7dc2	36 03 	6 . 	 (flow from: 7dc1)
+	inc hl			;7dc4	23 	# 	 (flow from: 7dc2)
+	ld (hl),e			;7dc5	73 	s 	 (flow from: 7dc4)
+	inc hl			;7dc6	23 	# 	 (flow from: 7dc5)
+	ld (hl),d			;7dc7	72 	r 	 (flow from: 7dc6)
+	ld hl,(0980eh)		;7dc8	2a 0e 98 	* . . 	 (flow from: 7dc7)
+	ld d,000h		;7dcb	16 00 	. . 	 (flow from: 7dc8)
+	ld e,c			;7dcd	59 	Y 	 (flow from: 7dcb)
+	ld (hl),004h		;7dce	36 04 	6 . 	 (flow from: 7dcd)
+	inc hl			;7dd0	23 	# 	 (flow from: 7dce)
+	ld (hl),e			;7dd1	73 	s 	 (flow from: 7dd0)
+	inc hl			;7dd2	23 	# 	 (flow from: 7dd1)
+	ld (hl),d			;7dd3	72 	r 	 (flow from: 7dd2)
+	call sub_6593h		;7dd4	cd 93 65 	. . e 	 (flow from: 7dd3)
+	ld de,(0980eh)		;7dd7	ed 5b 0e 98 	. [ . . 	 (flow from: 65ea)
+	ld (09a85h),hl		;7ddb	22 85 9a 	" . . 	 (flow from: 7dd7)
+	ld (hl),003h		;7dde	36 03 	6 . 	 (flow from: 7ddb)
+	inc hl			;7de0	23 	# 	 (flow from: 7dde)
+	ld (hl),e			;7de1	73 	s 	 (flow from: 7de0)
+	inc hl			;7de2	23 	# 	 (flow from: 7de1)
+	ld (hl),d			;7de3	72 	r 	 (flow from: 7de2)
+	ld hl,(0984fh)		;7de4	2a 4f 98 	* O . 	 (flow from: 7de3)
+	inc hl			;7de7	23 	# 	 (flow from: 7de4)
+	inc hl			;7de8	23 	# 	 (flow from: 7de7)
+	inc hl			;7de9	23 	# 	 (flow from: 7de8)
+	ld de,(09853h)		;7dea	ed 5b 53 98 	. [ S . 	 (flow from: 7de9)
+	call sub_6575h		;7dee	cd 75 65 	. u e 	 (flow from: 7dea)
+	cp 010h		;7df1	fe 10 	. . 	 (flow from: 658a)
+	jr nz,l7dfah		;7df3	20 05 	  . 	 (flow from: 7df1)
+	ld bc,l7fffh		;7df5	01 ff 7f 	. .  	 (flow from: 7df3)
+	jr l7e0bh		;7df8	18 11 	. . 	 (flow from: 7df5)
 l7dfah:
 	cp 003h		;7dfa	fe 03 	. . 
 	ret nz			;7dfc	c0 	. 
@@ -4982,108 +4982,108 @@ l7dfah:
 	ld c,l			;7e09	4d 	M 
 	ld b,h			;7e0a	44 	D 
 l7e0bh:
-	ld hl,(09a87h)		;7e0b	2a 87 9a 	* . . 
-	call sub_7f55h		;7e0e	cd 55 7f 	. U  
-	ld a,(hl)			;7e11	7e 	~ 
-	cp 003h		;7e12	fe 03 	. . 
-	jr z,l7e20h		;7e14	28 0a 	( . 
-	cp 010h		;7e16	fe 10 	. . 
-	jr z,l7e20h		;7e18	28 06 	( . 
+	ld hl,(09a87h)		;7e0b	2a 87 9a 	* . . 	 (flow from: 7df8)
+	call sub_7f55h		;7e0e	cd 55 7f 	. U  	 (flow from: 0052 7e0b)
+	ld a,(hl)			;7e11	7e 	~ 	 (flow from: 7f5e)
+	cp 003h		;7e12	fe 03 	. . 	 (flow from: 7e11)
+	jr z,l7e20h		;7e14	28 0a 	( . 	 (flow from: 7e12)
+	cp 010h		;7e16	fe 10 	. . 	 (flow from: 0052 7e14)
+	jr z,l7e20h		;7e18	28 06 	( . 	 (flow from: 7e16)
 l7e1ah:
 	ld hl,00004h		;7e1a	21 04 00 	! . . 
 	jp l62a7h		;7e1d	c3 a7 62 	. . b 
 l7e20h:
-	ld de,(09a85h)		;7e20	ed 5b 85 9a 	. [ . . 
-	push de			;7e24	d5 	. 
-	push hl			;7e25	e5 	. 
-	inc de			;7e26	13 	. 
-	inc de			;7e27	13 	. 
-	inc de			;7e28	13 	. 
-	ld bc,00003h		;7e29	01 03 00 	. . . 
-	ldir		;7e2c	ed b0 	. . 
-	pop hl			;7e2e	e1 	. 
-	pop de			;7e2f	d1 	. 
-	ld (hl),003h		;7e30	36 03 	6 . 
-	inc hl			;7e32	23 	# 
-	ld (hl),e			;7e33	73 	s 
-	inc hl			;7e34	23 	# 
-	ld (hl),d			;7e35	72 	r 
-	cp a			;7e36	bf 	. 
-	ret			;7e37	c9 	. 
+	ld de,(09a85h)		;7e20	ed 5b 85 9a 	. [ . . 	 (flow from: 7e18)
+	push de			;7e24	d5 	. 	 (flow from: 7e20)
+	push hl			;7e25	e5 	. 	 (flow from: 7e24)
+	inc de			;7e26	13 	. 	 (flow from: 0052 7e25)
+	inc de			;7e27	13 	. 	 (flow from: 7e26)
+	inc de			;7e28	13 	. 	 (flow from: 7e27)
+	ld bc,00003h		;7e29	01 03 00 	. . . 	 (flow from: 7e28)
+	ldir		;7e2c	ed b0 	. . 	 (flow from: 7e29 7e2c)
+	pop hl			;7e2e	e1 	. 	 (flow from: 7e2c)
+	pop de			;7e2f	d1 	. 	 (flow from: 7e2e)
+	ld (hl),003h		;7e30	36 03 	6 . 	 (flow from: 7e2f)
+	inc hl			;7e32	23 	# 	 (flow from: 7e30)
+	ld (hl),e			;7e33	73 	s 	 (flow from: 7e32)
+	inc hl			;7e34	23 	# 	 (flow from: 7e33)
+	ld (hl),d			;7e35	72 	r 	 (flow from: 7e34)
+	cp a			;7e36	bf 	. 	 (flow from: 7e35)
+	ret			;7e37	c9 	. 	 (flow from: 7e36)
 sub_7e38h:
-	push hl			;7e38	e5 	. 
-	push de			;7e39	d5 	. 
+	push hl			;7e38	e5 	. 	 (flow from: 7d59 7e58)
+	push de			;7e39	d5 	. 	 (flow from: 0052 7e38)
 l7e3ah:
-	push de			;7e3a	d5 	. 
-	ld de,(09853h)		;7e3b	ed 5b 53 98 	. [ S . 
-	call sub_6575h		;7e3f	cd 75 65 	. u e 
-	pop de			;7e42	d1 	. 
-	cp 003h		;7e43	fe 03 	. . 
-	jr nz,l7e63h		;7e45	20 1c 	  . 
-	push hl			;7e47	e5 	. 
-	push de			;7e48	d5 	. 
-	call sub_6593h		;7e49	cd 93 65 	. . e 
-	pop de			;7e4c	d1 	. 
-	ex de,hl			;7e4d	eb 	. 
-	ld (hl),003h		;7e4e	36 03 	6 . 
-	inc hl			;7e50	23 	# 
-	ld (hl),e			;7e51	73 	s 
-	inc hl			;7e52	23 	# 
-	ld (hl),d			;7e53	72 	r 
-	pop hl			;7e54	e1 	. 
-	call sub_9623h		;7e55	cd 23 96 	. # . 
-	call sub_7e38h		;7e58	cd 38 7e 	. 8 ~ 
-	inc hl			;7e5b	23 	# 
-	inc hl			;7e5c	23 	# 
-	inc hl			;7e5d	23 	# 
-	inc de			;7e5e	13 	. 
-	inc de			;7e5f	13 	. 
-	inc de			;7e60	13 	. 
-	jr l7e3ah		;7e61	18 d7 	. . 
+	push de			;7e3a	d5 	. 	 (flow from: 7e39 7e61)
+	ld de,(09853h)		;7e3b	ed 5b 53 98 	. [ S . 	 (flow from: 0052 7e3a)
+	call sub_6575h		;7e3f	cd 75 65 	. u e 	 (flow from: 0052 7e3b)
+	pop de			;7e42	d1 	. 	 (flow from: 658a)
+	cp 003h		;7e43	fe 03 	. . 	 (flow from: 7e42)
+	jr nz,l7e63h		;7e45	20 1c 	  . 	 (flow from: 7e43)
+	push hl			;7e47	e5 	. 	 (flow from: 7e45)
+	push de			;7e48	d5 	. 	 (flow from: 0052 7e47)
+	call sub_6593h		;7e49	cd 93 65 	. . e 	 (flow from: 7e48)
+	pop de			;7e4c	d1 	. 	 (flow from: 0052 65ea)
+	ex de,hl			;7e4d	eb 	. 	 (flow from: 7e4c)
+	ld (hl),003h		;7e4e	36 03 	6 . 	 (flow from: 7e4d)
+	inc hl			;7e50	23 	# 	 (flow from: 7e4e)
+	ld (hl),e			;7e51	73 	s 	 (flow from: 7e50)
+	inc hl			;7e52	23 	# 	 (flow from: 7e51)
+	ld (hl),d			;7e53	72 	r 	 (flow from: 7e52)
+	pop hl			;7e54	e1 	. 	 (flow from: 7e53)
+	call sub_9623h		;7e55	cd 23 96 	. # . 	 (flow from: 7e54)
+	call sub_7e38h		;7e58	cd 38 7e 	. 8 ~ 	 (flow from: 9628)
+	inc hl			;7e5b	23 	# 	 (flow from: 7ea7)
+	inc hl			;7e5c	23 	# 	 (flow from: 7e5b)
+	inc hl			;7e5d	23 	# 	 (flow from: 7e5c)
+	inc de			;7e5e	13 	. 	 (flow from: 7e5d)
+	inc de			;7e5f	13 	. 	 (flow from: 7e5e)
+	inc de			;7e60	13 	. 	 (flow from: 7e5f)
+	jr l7e3ah		;7e61	18 d7 	. . 	 (flow from: 7e60)
 l7e63h:
-	cp 000h		;7e63	fe 00 	. . 
-	jr nz,l7e9eh		;7e65	20 37 	  7 
-	ld a,00ch		;7e67	3e 0c 	> . 
-	ld (de),a			;7e69	12 	. 
-	inc de			;7e6a	13 	. 
-	ld b,000h		;7e6b	06 00 	. . 
-	ld ix,0986fh		;7e6d	dd 21 6f 98 	. ! o . 
+	cp 000h		;7e63	fe 00 	. . 	 (flow from: 7e45)
+	jr nz,l7e9eh		;7e65	20 37 	  7 	 (flow from: 7e63)
+	ld a,00ch		;7e67	3e 0c 	> . 	 (flow from: 7e65)
+	ld (de),a			;7e69	12 	. 	 (flow from: 7e67)
+	inc de			;7e6a	13 	. 	 (flow from: 7e69)
+	ld b,000h		;7e6b	06 00 	. . 	 (flow from: 0052 7e6a)
+	ld ix,0986fh		;7e6d	dd 21 6f 98 	. ! o . 	 (flow from: 7e6b)
 l7e71h:
-	ld a,(ix+001h)		;7e71	dd 7e 01 	. ~ . 
-	cp 0ffh		;7e74	fe ff 	. . 
-	jr z,l7e8ch		;7e76	28 14 	( . 
-	push de			;7e78	d5 	. 
-	ld d,a			;7e79	57 	W 
-	ld e,(ix+000h)		;7e7a	dd 5e 00 	. ^ . 
-	call sub_65f1h		;7e7d	cd f1 65 	. . e 
-	pop de			;7e80	d1 	. 
-	jr z,l7e97h		;7e81	28 14 	( . 
-	inc b			;7e83	04 	. 
-	inc b			;7e84	04 	. 
-	inc b			;7e85	04 	. 
-	inc ix		;7e86	dd 23 	. # 
-	inc ix		;7e88	dd 23 	. # 
-	jr l7e71h		;7e8a	18 e5 	. . 
+	ld a,(ix+001h)		;7e71	dd 7e 01 	. ~ . 	 (flow from: 7e6d 7e8a)
+	cp 0ffh		;7e74	fe ff 	. . 	 (flow from: 0052 7e71)
+	jr z,l7e8ch		;7e76	28 14 	( . 	 (flow from: 0052 7e74)
+	push de			;7e78	d5 	. 	 (flow from: 7e76)
+	ld d,a			;7e79	57 	W 	 (flow from: 7e78)
+	ld e,(ix+000h)		;7e7a	dd 5e 00 	. ^ . 	 (flow from: 7e79)
+	call sub_65f1h		;7e7d	cd f1 65 	. . e 	 (flow from: 0052 7e7a)
+	pop de			;7e80	d1 	. 	 (flow from: 65f6)
+	jr z,l7e97h		;7e81	28 14 	( . 	 (flow from: 7e80)
+	inc b			;7e83	04 	. 	 (flow from: 7e81)
+	inc b			;7e84	04 	. 	 (flow from: 0052 7e83)
+	inc b			;7e85	04 	. 	 (flow from: 7e84)
+	inc ix		;7e86	dd 23 	. # 	 (flow from: 7e85)
+	inc ix		;7e88	dd 23 	. # 	 (flow from: 7e86)
+	jr l7e71h		;7e8a	18 e5 	. . 	 (flow from: 7e88)
 l7e8ch:
-	ld (ix+000h),l		;7e8c	dd 75 00 	. u . 
-	ld (ix+001h),h		;7e8f	dd 74 01 	. t . 
-	ld (ix+003h),0ffh		;7e92	dd 36 03 ff 	. 6 . . 
-	inc c			;7e96	0c 	. 
+	ld (ix+000h),l		;7e8c	dd 75 00 	. u . 	 (flow from: 7e76)
+	ld (ix+001h),h		;7e8f	dd 74 01 	. t . 	 (flow from: 7e8c)
+	ld (ix+003h),0ffh		;7e92	dd 36 03 ff 	. 6 . . 	 (flow from: 7e8f)
+	inc c			;7e96	0c 	. 	 (flow from: 7e92)
 l7e97h:
-	ex de,hl			;7e97	eb 	. 
-	ld (hl),b			;7e98	70 	p 
-	inc hl			;7e99	23 	# 
-	ld (hl),000h		;7e9a	36 00 	6 . 
-	jr l7ea5h		;7e9c	18 07 	. . 
+	ex de,hl			;7e97	eb 	. 	 (flow from: 7e81 7e96)
+	ld (hl),b			;7e98	70 	p 	 (flow from: 7e97)
+	inc hl			;7e99	23 	# 	 (flow from: 7e98)
+	ld (hl),000h		;7e9a	36 00 	6 . 	 (flow from: 7e99)
+	jr l7ea5h		;7e9c	18 07 	. . 	 (flow from: 7e9a)
 l7e9eh:
-	push bc			;7e9e	c5 	. 
-	ld bc,00003h		;7e9f	01 03 00 	. . . 
-	ldir		;7ea2	ed b0 	. . 
-	pop bc			;7ea4	c1 	. 
+	push bc			;7e9e	c5 	. 	 (flow from: 7e65)
+	ld bc,00003h		;7e9f	01 03 00 	. . . 	 (flow from: 7e9e)
+	ldir		;7ea2	ed b0 	. . 	 (flow from: 7e9f 7ea2)
+	pop bc			;7ea4	c1 	. 	 (flow from: 7ea2)
 l7ea5h:
-	pop de			;7ea5	d1 	. 
-	pop hl			;7ea6	e1 	. 
-	ret			;7ea7	c9 	. 
+	pop de			;7ea5	d1 	. 	 (flow from: 0052 7e9c 7ea4)
+	pop hl			;7ea6	e1 	. 	 (flow from: 7ea5)
+	ret			;7ea7	c9 	. 	 (flow from: 7ea6)
 	inc b			;7ea8	04 	. 
 	xor l			;7ea9	ad 	. 
 	ld a,(hl)			;7eaa	7e 	~ 
@@ -5189,21 +5189,21 @@ l7ef7h:
 	cp a			;7f53	bf 	. 
 	ret			;7f54	c9 	. 
 sub_7f55h:
-	ld a,c			;7f55	79 	y 
-	cp b			;7f56	b8 	. 
-	jr nz,l7f5bh		;7f57	20 02 	  . 
+	ld a,c			;7f55	79 	y 	 (flow from: 7e0e 7f66)
+	cp b			;7f56	b8 	. 	 (flow from: 7f55)
+	jr nz,l7f5bh		;7f57	20 02 	  . 	 (flow from: 7f56)
 	or a			;7f59	b7 	. 
 	ret z			;7f5a	c8 	. 
 l7f5bh:
-	ld a,(hl)			;7f5b	7e 	~ 
-	cp 003h		;7f5c	fe 03 	. . 
-	ret nz			;7f5e	c0 	. 
-	call sub_9623h		;7f5f	cd 23 96 	. # . 
-	inc hl			;7f62	23 	# 
-	inc hl			;7f63	23 	# 
-	inc hl			;7f64	23 	# 
-	dec bc			;7f65	0b 	. 
-	jr sub_7f55h		;7f66	18 ed 	. . 
+	ld a,(hl)			;7f5b	7e 	~ 	 (flow from: 7f57)
+	cp 003h		;7f5c	fe 03 	. . 	 (flow from: 7f5b)
+	ret nz			;7f5e	c0 	. 	 (flow from: 7f5c)
+	call sub_9623h		;7f5f	cd 23 96 	. # . 	 (flow from: 7f5e)
+	inc hl			;7f62	23 	# 	 (flow from: 9628)
+	inc hl			;7f63	23 	# 	 (flow from: 7f62)
+	inc hl			;7f64	23 	# 	 (flow from: 0052 7f63)
+	dec bc			;7f65	0b 	. 	 (flow from: 7f64)
+	jr sub_7f55h		;7f66	18 ed 	. . 	 (flow from: 7f65)
 	ex af,af'			;7f68	08 	. 
 	ld l,(hl)			;7f69	6e 	n 
 	ld a,a			;7f6a	7f 	 
@@ -8297,16 +8297,16 @@ l8e6dh:
 	pop hl			;8e7b	e1 	. 
 	ret			;8e7c	c9 	. 
 sub_8e7dh:
-	push bc			;8e7d	c5 	. 
-	push de			;8e7e	d5 	. 
-	push hl			;8e7f	e5 	. 
-	ld b,009h		;8e80	06 09 	. . 
-	inc hl			;8e82	23 	# 
-	ld c,(hl)			;8e83	4e 	N 
-	inc hl			;8e84	23 	# 
-	ld a,(hl)			;8e85	7e 	~ 
-	or a			;8e86	b7 	. 
-	jr z,l8e9ch		;8e87	28 13 	( . 
+	push bc			;8e7d	c5 	. 	 (flow from: 6ebd)
+	push de			;8e7e	d5 	. 	 (flow from: 8e7d)
+	push hl			;8e7f	e5 	. 	 (flow from: 8e7e)
+	ld b,009h		;8e80	06 09 	. . 	 (flow from: 8e7f)
+	inc hl			;8e82	23 	# 	 (flow from: 8e80)
+	ld c,(hl)			;8e83	4e 	N 	 (flow from: 8e82)
+	inc hl			;8e84	23 	# 	 (flow from: 8e83)
+	ld a,(hl)			;8e85	7e 	~ 	 (flow from: 8e84)
+	or a			;8e86	b7 	. 	 (flow from: 8e85)
+	jr z,l8e9ch		;8e87	28 13 	( . 	 (flow from: 8e86)
 	inc c			;8e89	0c 	. 
 	jp z,l629fh		;8e8a	ca 9f 62 	. . b 
 	push hl			;8e8d	e5 	. 
@@ -8322,42 +8322,42 @@ sub_8e7dh:
 	xor a			;8e9a	af 	. 
 	ld (hl),a			;8e9b	77 	w 
 l8e9ch:
-	inc hl			;8e9c	23 	# 
-	cp (hl)			;8e9d	be 	. 
-	jr nz,l8eb8h		;8e9e	20 18 	  . 
-	dec b			;8ea0	05 	. 
-	jr z,l8ea9h		;8ea1	28 06 	( . 
-	dec c			;8ea3	0d 	. 
-	jr nz,l8e9ch		;8ea4	20 f6 	  . 
+	inc hl			;8e9c	23 	# 	 (flow from: 8e87 8ea4)
+	cp (hl)			;8e9d	be 	. 	 (flow from: 8e9c)
+	jr nz,l8eb8h		;8e9e	20 18 	  . 	 (flow from: 8e9d)
+	dec b			;8ea0	05 	. 	 (flow from: 8e9e)
+	jr z,l8ea9h		;8ea1	28 06 	( . 	 (flow from: 8ea0)
+	dec c			;8ea3	0d 	. 	 (flow from: 8ea1)
+	jr nz,l8e9ch		;8ea4	20 f6 	  . 	 (flow from: 8ea3)
 	jp l629ah		;8ea6	c3 9a 62 	. . b 
 l8ea9h:
-	pop hl			;8ea9	e1 	. 
-	push hl			;8eaa	e5 	. 
-	ld b,009h		;8eab	06 09 	. . 
-	xor a			;8ead	af 	. 
-	ld (hl),a			;8eae	77 	w 
-	inc hl			;8eaf	23 	# 
-	ld (hl),080h		;8eb0	36 80 	6 . 
+	pop hl			;8ea9	e1 	. 	 (flow from: 8ea1)
+	push hl			;8eaa	e5 	. 	 (flow from: 8ea9)
+	ld b,009h		;8eab	06 09 	. . 	 (flow from: 8eaa)
+	xor a			;8ead	af 	. 	 (flow from: 8eab)
+	ld (hl),a			;8eae	77 	w 	 (flow from: 8ead)
+	inc hl			;8eaf	23 	# 	 (flow from: 8eae)
+	ld (hl),080h		;8eb0	36 80 	6 . 	 (flow from: 8eaf)
 l8eb2h:
-	inc hl			;8eb2	23 	# 
-	ld (hl),a			;8eb3	77 	w 
-	djnz l8eb2h		;8eb4	10 fc 	. . 
-	jr l8ec4h		;8eb6	18 0c 	. . 
+	inc hl			;8eb2	23 	# 	 (flow from: 8eb0 8eb4)
+	ld (hl),a			;8eb3	77 	w 	 (flow from: 8eb2)
+	djnz l8eb2h		;8eb4	10 fc 	. . 	 (flow from: 8eb3)
+	jr l8ec4h		;8eb6	18 0c 	. . 	 (flow from: 8eb4)
 l8eb8h:
-	pop de			;8eb8	d1 	. 
-	push de			;8eb9	d5 	. 
-	inc de			;8eba	13 	. 
-	ld a,c			;8ebb	79 	y 
-	ld (de),a			;8ebc	12 	. 
-	inc de			;8ebd	13 	. 
-	inc de			;8ebe	13 	. 
-	ld bc,00008h		;8ebf	01 08 00 	. . . 
-	ldir		;8ec2	ed b0 	. . 
+	pop de			;8eb8	d1 	. 	 (flow from: 8e9e)
+	push de			;8eb9	d5 	. 	 (flow from: 8eb8)
+	inc de			;8eba	13 	. 	 (flow from: 8eb9)
+	ld a,c			;8ebb	79 	y 	 (flow from: 8eba)
+	ld (de),a			;8ebc	12 	. 	 (flow from: 8ebb)
+	inc de			;8ebd	13 	. 	 (flow from: 8ebc)
+	inc de			;8ebe	13 	. 	 (flow from: 8ebd)
+	ld bc,00008h		;8ebf	01 08 00 	. . . 	 (flow from: 8ebe)
+	ldir		;8ec2	ed b0 	. . 	 (flow from: 8ebf 8ec2)
 l8ec4h:
-	pop hl			;8ec4	e1 	. 
-	pop de			;8ec5	d1 	. 
-	pop bc			;8ec6	c1 	. 
-	ret			;8ec7	c9 	. 
+	pop hl			;8ec4	e1 	. 	 (flow from: 8eb6 8ec2)
+	pop de			;8ec5	d1 	. 	 (flow from: 8ec4)
+	pop bc			;8ec6	c1 	. 	 (flow from: 8ec5)
+	ret			;8ec7	c9 	. 	 (flow from: 8ec6)
 sub_8ec8h:
 	push hl			;8ec8	e5 	. 
 	push de			;8ec9	d5 	. 
@@ -8752,70 +8752,70 @@ l90b8h:
 	pop hl			;90ba	e1 	. 
 	ret			;90bb	c9 	. 
 sub_90bch:
-	push hl			;90bc	e5 	. 
-	push bc			;90bd	c5 	. 
-	inc hl			;90be	23 	# 
-	push hl			;90bf	e5 	. 
-	ld a,(hl)			;90c0	7e 	~ 
-	sub 080h		;90c1	d6 80 	. . 
-	jr c,l9117h		;90c3	38 52 	8 R 
-	cp 008h		;90c5	fe 08 	. . 
-	jr nc,l9117h		;90c7	30 4e 	0 N 
-	ld c,a			;90c9	4f 	O 
-	ld b,000h		;90ca	06 00 	. . 
-	adc hl,bc		;90cc	ed 4a 	. J 
-	ld a,008h		;90ce	3e 08 	> . 
-	sub c			;90d0	91 	. 
-	ld b,a			;90d1	47 	G 
-	xor a			;90d2	af 	. 
+	push hl			;90bc	e5 	. 	 (flow from: 6ec0)
+	push bc			;90bd	c5 	. 	 (flow from: 90bc)
+	inc hl			;90be	23 	# 	 (flow from: 90bd)
+	push hl			;90bf	e5 	. 	 (flow from: 90be)
+	ld a,(hl)			;90c0	7e 	~ 	 (flow from: 90bf)
+	sub 080h		;90c1	d6 80 	. . 	 (flow from: 90c0)
+	jr c,l9117h		;90c3	38 52 	8 R 	 (flow from: 90c1)
+	cp 008h		;90c5	fe 08 	. . 	 (flow from: 90c3)
+	jr nc,l9117h		;90c7	30 4e 	0 N 	 (flow from: 90c5)
+	ld c,a			;90c9	4f 	O 	 (flow from: 90c7)
+	ld b,000h		;90ca	06 00 	. . 	 (flow from: 90c9)
+	adc hl,bc		;90cc	ed 4a 	. J 	 (flow from: 90ca)
+	ld a,008h		;90ce	3e 08 	> . 	 (flow from: 90cc)
+	sub c			;90d0	91 	. 	 (flow from: 90ce)
+	ld b,a			;90d1	47 	G 	 (flow from: 90d0)
+	xor a			;90d2	af 	. 	 (flow from: 90d1)
 l90d3h:
-	inc hl			;90d3	23 	# 
-	cp (hl)			;90d4	be 	. 
-	jr nz,l9117h		;90d5	20 40 	  @ 
-	djnz l90d3h		;90d7	10 fa 	. . 
-	pop de			;90d9	d1 	. 
-	ld b,c			;90da	41 	A 
-	ld hl,00000h		;90db	21 00 00 	! . . 
-	inc b			;90de	04 	. 
-	dec b			;90df	05 	. 
-	jr z,l9107h		;90e0	28 25 	( % 
-	inc de			;90e2	13 	. 
+	inc hl			;90d3	23 	# 	 (flow from: 90d2 90d7)
+	cp (hl)			;90d4	be 	. 	 (flow from: 90d3)
+	jr nz,l9117h		;90d5	20 40 	  @ 	 (flow from: 90d4)
+	djnz l90d3h		;90d7	10 fa 	. . 	 (flow from: 90d5)
+	pop de			;90d9	d1 	. 	 (flow from: 90d7)
+	ld b,c			;90da	41 	A 	 (flow from: 90d9)
+	ld hl,00000h		;90db	21 00 00 	! . . 	 (flow from: 90da)
+	inc b			;90de	04 	. 	 (flow from: 90db)
+	dec b			;90df	05 	. 	 (flow from: 90de)
+	jr z,l9107h		;90e0	28 25 	( % 	 (flow from: 90df)
+	inc de			;90e2	13 	. 	 (flow from: 90e0)
 l90e3h:
-	inc de			;90e3	13 	. 
-	push bc			;90e4	c5 	. 
-	adc hl,hl		;90e5	ed 6a 	. j 
-	jp pe,l9117h		;90e7	ea 17 91 	. . . 
-	ld b,h			;90ea	44 	D 
-	ld c,l			;90eb	4d 	M 
-	adc hl,hl		;90ec	ed 6a 	. j 
-	jp pe,l9117h		;90ee	ea 17 91 	. . . 
-	adc hl,hl		;90f1	ed 6a 	. j 
-	jp pe,l9117h		;90f3	ea 17 91 	. . . 
-	adc hl,bc		;90f6	ed 4a 	. J 
-	jp pe,l9117h		;90f8	ea 17 91 	. . . 
-	ld a,(de)			;90fb	1a 	. 
-	ld c,a			;90fc	4f 	O 
-	ld b,000h		;90fd	06 00 	. . 
-	adc hl,bc		;90ff	ed 4a 	. J 
-	jp pe,l9117h		;9101	ea 17 91 	. . . 
-	pop bc			;9104	c1 	. 
-	djnz l90e3h		;9105	10 dc 	. . 
+	inc de			;90e3	13 	. 	 (flow from: 90e2 9105)
+	push bc			;90e4	c5 	. 	 (flow from: 90e3)
+	adc hl,hl		;90e5	ed 6a 	. j 	 (flow from: 90e4)
+	jp pe,l9117h		;90e7	ea 17 91 	. . . 	 (flow from: 90e5)
+	ld b,h			;90ea	44 	D 	 (flow from: 90e7)
+	ld c,l			;90eb	4d 	M 	 (flow from: 90ea)
+	adc hl,hl		;90ec	ed 6a 	. j 	 (flow from: 90eb)
+	jp pe,l9117h		;90ee	ea 17 91 	. . . 	 (flow from: 90ec)
+	adc hl,hl		;90f1	ed 6a 	. j 	 (flow from: 90ee)
+	jp pe,l9117h		;90f3	ea 17 91 	. . . 	 (flow from: 90f1)
+	adc hl,bc		;90f6	ed 4a 	. J 	 (flow from: 90f3)
+	jp pe,l9117h		;90f8	ea 17 91 	. . . 	 (flow from: 90f6)
+	ld a,(de)			;90fb	1a 	. 	 (flow from: 90f8)
+	ld c,a			;90fc	4f 	O 	 (flow from: 90fb)
+	ld b,000h		;90fd	06 00 	. . 	 (flow from: 90fc)
+	adc hl,bc		;90ff	ed 4a 	. J 	 (flow from: 90fd)
+	jp pe,l9117h		;9101	ea 17 91 	. . . 	 (flow from: 90ff)
+	pop bc			;9104	c1 	. 	 (flow from: 9101)
+	djnz l90e3h		;9105	10 dc 	. . 	 (flow from: 9104)
 l9107h:
-	ex de,hl			;9107	eb 	. 
-	pop bc			;9108	c1 	. 
-	pop hl			;9109	e1 	. 
-	bit 3,(hl)		;910a	cb 5e 	. ^ 
-	jr z,l9116h		;910c	28 08 	( . 
-	ld a,e			;910e	7b 	{ 
-	cpl			;910f	2f 	/ 
-	ld e,a			;9110	5f 	_ 
-	ld a,d			;9111	7a 	z 
-	cpl			;9112	2f 	/ 
-	ld d,a			;9113	57 	W 
-	inc de			;9114	13 	. 
-	cp a			;9115	bf 	. 
+	ex de,hl			;9107	eb 	. 	 (flow from: 90e0 9105)
+	pop bc			;9108	c1 	. 	 (flow from: 9107)
+	pop hl			;9109	e1 	. 	 (flow from: 9108)
+	bit 3,(hl)		;910a	cb 5e 	. ^ 	 (flow from: 9109)
+	jr z,l9116h		;910c	28 08 	( . 	 (flow from: 910a)
+	ld a,e			;910e	7b 	{ 	 (flow from: 910c)
+	cpl			;910f	2f 	/ 	 (flow from: 910e)
+	ld e,a			;9110	5f 	_ 	 (flow from: 910f)
+	ld a,d			;9111	7a 	z 	 (flow from: 9110)
+	cpl			;9112	2f 	/ 	 (flow from: 9111)
+	ld d,a			;9113	57 	W 	 (flow from: 9112)
+	inc de			;9114	13 	. 	 (flow from: 9113)
+	cp a			;9115	bf 	. 	 (flow from: 9114)
 l9116h:
-	ret			;9116	c9 	. 
+	ret			;9116	c9 	. 	 (flow from: 910c 9115)
 l9117h:
 	inc sp			;9117	33 	3 
 	inc sp			;9118	33 	3 
@@ -8897,27 +8897,27 @@ l9164h:
 	pop hl			;9174	e1 	. 
 	ret			;9175	c9 	. 
 sub_9176h:
-	push de			;9176	d5 	. 
-	push hl			;9177	e5 	. 
-	push ix		;9178	dd e5 	. . 
-	ld a,c			;917a	79 	y 
-	cp 005h		;917b	fe 05 	. . 
-	jr z,l91e9h		;917d	28 6a 	( j 
-	cp 006h		;917f	fe 06 	. . 
-	jr nz,l91efh		;9181	20 6c 	  l 
-	ld a,e			;9183	7b 	{ 
-	cp 0ffh		;9184	fe ff 	. . 
-	jr z,l91adh		;9186	28 25 	( % 
+	push de			;9176	d5 	. 	 (flow from: 0052 15fa 72b7 72cb 7300 9317 93e1 95d5 95e2)
+	push hl			;9177	e5 	. 	 (flow from: 0052 9176)
+	push ix		;9178	dd e5 	. . 	 (flow from: 0052 9177)
+	ld a,c			;917a	79 	y 	 (flow from: 0052 178 9178)
+	cp 005h		;917b	fe 05 	. . 	 (flow from: 917a)
+	jr z,l91e9h		;917d	28 6a 	( j 	 (flow from: 0052 917b)
+	cp 006h		;917f	fe 06 	. . 	 (flow from: 0052 917d 9186)
+	jr nz,l91efh		;9181	20 6c 	  l 	 (flow from: 917f)
+	ld a,e			;9183	7b 	{ 	 (flow from: 9181)
+	cp 0ffh		;9184	fe ff 	. . 	 (flow from: 9183)
+	jr z,l91adh		;9186	28 25 	( % 	 (flow from: 0052 9184)
 l9188h:
-	cp 0ceh		;9188	fe ce 	. . 
-	jr z,l919fh		;918a	28 13 	( . 
-	cp 0cfh		;918c	fe cf 	. . 
-	jr nz,l9195h		;918e	20 05 	  . 
+	cp 0ceh		;9188	fe ce 	. . 	 (flow from: 9186)
+	jr z,l919fh		;918a	28 13 	( . 	 (flow from: 9188)
+	cp 0cfh		;918c	fe cf 	. . 	 (flow from: 918a)
+	jr nz,l9195h		;918e	20 05 	  . 	 (flow from: 0ae6 918c)
 	ld e,000h		;9190	1e 00 	. . 
 	jp l929ch		;9192	c3 9c 92 	. . . 
 l9195h:
-	cp 0a5h		;9195	fe a5 	. . 
-	jp c,l929ch		;9197	da 9c 92 	. . . 
+	cp 0a5h		;9195	fe a5 	. . 	 (flow from: 0052 918e)
+	jp c,l929ch		;9197	da 9c 92 	. . . 	 (flow from: 9195)
 	ld e,03fh		;919a	1e 3f 	. ? 
 	jp l929ch		;919c	c3 9c 92 	. . . 
 l919fh:
@@ -8927,29 +8927,29 @@ l919fh:
 	call 003b5h		;91a7	cd b5 03 	. . . 
 	jp l92c5h		;91aa	c3 c5 92 	. . . 
 l91adh:
-	call sub_91d0h		;91ad	cd d0 91 	. . . 
-	jp nc,l92c5h		;91b0	d2 c5 92 	. . . 
-	res 3,(iy+002h)		;91b3	fd cb 02 9e 	. . . . 
-	ld hl,(05c4fh)		;91b7	2a 4f 5c 	* O \ 
-	ld (05c51h),hl		;91ba	22 51 5c 	" Q \ 
-	call 015e6h		;91bd	cd e6 15 	. . . 
-	jr nc,l91cch		;91c0	30 0a 	0 . 
-	res 0,(iy+007h)		;91c2	fd cb 07 86 	. . . . 
-	ld (09b69h),a		;91c6	32 69 9b 	2 i . 
-	jp l92c5h		;91c9	c3 c5 92 	. . . 
+	call sub_91d0h		;91ad	cd d0 91 	. . . 	 (flow from: 0052 9186 91b0)
+	jp nc,l92c5h		;91b0	d2 c5 92 	. . . 	 (flow from: 0052 91d5 91dc)
+	res 3,(iy+002h)		;91b3	fd cb 02 9e 	. . . . 	 (flow from: 0052 91b0)
+	ld hl,(05c4fh)		;91b7	2a 4f 5c 	* O \ 	 (flow from: 0052 15e3 91b3)
+	ld (05c51h),hl		;91ba	22 51 5c 	" Q \ 	 (flow from: 0052 91b7)
+	call 015e6h		;91bd	cd e6 15 	. . . 	 (flow from: 91ba)
+	jr nc,l91cch		;91c0	30 0a 	0 . 	 (flow from: 0052 1600 92t)
+	res 0,(iy+007h)		;91c2	fd cb 07 86 	. . . . 	 (flow from: 91c0)
+	ld (09b69h),a		;91c6	32 69 9b 	2 i . 	 (flow from: 91c2)
+	jp l92c5h		;91c9	c3 c5 92 	. . . 	 (flow from: 91c6)
 l91cch:
-	xor a			;91cc	af 	. 
-	jp l92c5h		;91cd	c3 c5 92 	. . . 
+	xor a			;91cc	af 	. 	 (flow from: 0052 9184 91c0 92c8)
+	jp l92c5h		;91cd	c3 c5 92 	. . . 	 (flow from: 91cc)
 sub_91d0h:
-	ld a,07fh		;91d0	3e 7f 	>  
-	in a,(0feh)		;91d2	db fe 	. . 
-	rra			;91d4	1f 	. 
-	ret c			;91d5	d8 	. 
-	ld a,07fh		;91d6	3e 7f 	>  
-	in a,(0feh)		;91d8	db fe 	. . 
-	rra			;91da	1f 	. 
-	rra			;91db	1f 	. 
-	ret c			;91dc	d8 	. 
+	ld a,07fh		;91d0	3e 7f 	>  	 (flow from: 0052 91ad)
+	in a,(0feh)		;91d2	db fe 	. . 	 (flow from: 91b3 91d0)
+	rra			;91d4	1f 	. 	 (flow from: 0052 91d2)
+	ret c			;91d5	d8 	. 	 (flow from: 0052 91b7 91d4)
+	ld a,07fh		;91d6	3e 7f 	>  	 (flow from: 91d5)
+	in a,(0feh)		;91d8	db fe 	. . 	 (flow from: 91d6)
+	rra			;91da	1f 	. 	 (flow from: 91d8)
+	rra			;91db	1f 	. 	 (flow from: 91da)
+	ret c			;91dc	d8 	. 	 (flow from: 91db)
 	ld hl,09b69h		;91dd	21 69 9b 	! i . 
 	ld a,(hl)			;91e0	7e 	~ 
 	ld (hl),018h		;91e1	36 18 	6 . 
@@ -8963,33 +8963,33 @@ l91e9h:
 	set 1,(iy+001h)		;91e9	fd cb 01 ce 	. . . . 
 	jr l9188h		;91ed	18 99 	. . 
 l91efh:
-	cp 01ah		;91ef	fe 1a 	. . 
-	jr nz,l91fah		;91f1	20 07 	  . 
-	ld (09b6ah),de		;91f3	ed 53 6a 9b 	. S j . 
-	jp l92c4h		;91f7	c3 c4 92 	. . . 
+	cp 01ah		;91ef	fe 1a 	. . 	 (flow from: 9181)
+	jr nz,l91fah		;91f1	20 07 	  . 	 (flow from: 91ef)
+	ld (09b6ah),de		;91f3	ed 53 6a 9b 	. S j . 	 (flow from: 91f1)
+	jp l92c4h		;91f7	c3 c4 92 	. . . 	 (flow from: 91f3)
 l91fah:
-	cp 014h		;91fa	fe 14 	. . 
-	jr nz,l9251h		;91fc	20 53 	  S 
-	push de			;91fe	d5 	. 
-	pop ix		;91ff	dd e1 	. . 
-	call sub_931dh		;9201	cd 1d 93 	. . . 
+	cp 014h		;91fa	fe 14 	. . 	 (flow from: 91f1)
+	jr nz,l9251h		;91fc	20 53 	  S 	 (flow from: 91fa)
+	push de			;91fe	d5 	. 	 (flow from: 91fc)
+	pop ix		;91ff	dd e1 	. . 	 (flow from: 91fe)
+	call sub_931dh		;9201	cd 1d 93 	. . . 	 (flow from: 91ff)
 l9204h:
-	ld ix,(09b6ah)		;9204	dd 2a 6a 9b 	. * j . 
-	push de			;9208	d5 	. 
-	ld de,0010ah		;9209	11 0a 01 	. . . 
-	ld a,0fbh		;920c	3e fb 	> . 
-	scf			;920e	37 	7 
-	call sub_92cah		;920f	cd ca 92 	. . . 
-	pop de			;9212	d1 	. 
-	jr nc,BLOCK_OK___string_end		;9213	30 1f 	0 . 
-	ld hl,(09b6ah)		;9215	2a 6a 9b 	* j . 
-	inc h			;9218	24 	$ 
-	call sub_9372h		;9219	cd 72 93 	. r . 
-	jr nz,READ_ERROR_string_end		;921c	20 26 	  & 
-	ld ix,BLOCK_OK___string_start		;921e	dd 21 2a 92 	. ! * . 
-	call sub_933eh		;9222	cd 3e 93 	. > . 
-	call sub_9365h		;9225	cd 65 93 	. e . 
-	jr l924fh		;9228	18 25 	. % 
+	ld ix,(09b6ah)		;9204	dd 2a 6a 9b 	. * j . 	 (flow from: 933d)
+	push de			;9208	d5 	. 	 (flow from: 0052 9204)
+	ld de,0010ah		;9209	11 0a 01 	. . . 	 (flow from: 9208)
+	ld a,0fbh		;920c	3e fb 	> . 	 (flow from: 9209)
+	scf			;920e	37 	7 	 (flow from: 920c)
+	call sub_92cah		;920f	cd ca 92 	. . . 	 (flow from: 920e)
+	pop de			;9212	d1 	. 	 (flow from: 0555)
+	jr nc,BLOCK_OK___string_end		;9213	30 1f 	0 . 	 (flow from: 9212)
+	ld hl,(09b6ah)		;9215	2a 6a 9b 	* j . 	 (flow from: 9213)
+	inc h			;9218	24 	$ 	 (flow from: 9215)
+	call sub_9372h		;9219	cd 72 93 	. r . 	 (flow from: 9218)
+	jr nz,READ_ERROR_string_end		;921c	20 26 	  & 	 (flow from: 9386)
+	ld ix,BLOCK_OK___string_start		;921e	dd 21 2a 92 	. ! * . 	 (flow from: 921c)
+	call sub_933eh		;9222	cd 3e 93 	. > . 	 (flow from: 921e)
+	call sub_9365h		;9225	cd 65 93 	. e . 	 (flow from: 9357)
+	jr l924fh		;9228	18 25 	. % 	 (flow from: 9371)
 
 ; BLOCK 'BLOCK_OK___string' (start 0x922a end 0x9234)
 BLOCK_OK___string_start:
@@ -9027,10 +9027,10 @@ l9247h:
 	call sub_9368h		;924a	cd 68 93 	. h . 
 	jr l9204h		;924d	18 b5 	. . 
 l924fh:
-	jr l92c4h		;924f	18 73 	. s 
+	jr l92c4h		;924f	18 73 	. s 	 (flow from: 9228)
 l9251h:
-	cp 015h		;9251	fe 15 	. . 
-	jr nz,l9275h		;9253	20 20 	    
+	cp 015h		;9251	fe 15 	. . 	 (flow from: 91fc)
+	jr nz,l9275h		;9253	20 20 	    	 (flow from: 9251)
 	ld b,064h		;9255	06 64 	. d 
 l9257h:
 	halt			;9257	76 	v 
@@ -9047,14 +9047,14 @@ l9257h:
 	call 004c2h		;9270	cd c2 04 	. . . 
 	jr l92c4h		;9273	18 4f 	. O 
 l9275h:
-	cp 00fh		;9275	fe 0f 	. . 
-	jr nz,l9286h		;9277	20 0d 	  . 
-	push de			;9279	d5 	. 
-	pop ix		;927a	dd e1 	. . 
-	ld a,030h		;927c	3e 30 	> 0 
-	ld (ix+008h),a		;927e	dd 77 08 	. w . 
-	ld (ix+009h),a		;9281	dd 77 09 	. w . 
-	jr l92c4h		;9284	18 3e 	. > 
+	cp 00fh		;9275	fe 0f 	. . 	 (flow from: 9253)
+	jr nz,l9286h		;9277	20 0d 	  . 	 (flow from: 9275)
+	push de			;9279	d5 	. 	 (flow from: 9277)
+	pop ix		;927a	dd e1 	. . 	 (flow from: 9279)
+	ld a,030h		;927c	3e 30 	> 0 	 (flow from: 927a)
+	ld (ix+008h),a		;927e	dd 77 08 	. w . 	 (flow from: 927c)
+	ld (ix+009h),a		;9281	dd 77 09 	. w . 	 (flow from: 927e)
+	jr l92c4h		;9284	18 3e 	. > 	 (flow from: 9281)
 l9286h:
 	cp 016h		;9286	fe 16 	. . 
 	jr nz,l92c4h		;9288	20 3a 	  : 
@@ -9069,15 +9069,15 @@ l9286h:
 	ld (de),a			;9299	12 	. 
 	jr l92c4h		;929a	18 28 	. ( 
 l929ch:
-	ld hl,(05c4fh)		;929c	2a 4f 5c 	* O \ 
-	ld (05c51h),hl		;929f	22 51 5c 	" Q \ 
-	ld a,0ffh		;92a2	3e ff 	> . 
-	ld (05c8ch),a		;92a4	32 8c 5c 	2 . \ 
-	ld a,e			;92a7	7b 	{ 
-	call 015f2h		;92a8	cd f2 15 	. . . 
-	res 1,(iy+001h)		;92ab	fd cb 01 8e 	. . . . 
-	bit 0,(iy+002h)		;92af	fd cb 02 46 	. . . F 
-	jr z,l92c4h		;92b3	28 0f 	( . 
+	ld hl,(05c4fh)		;929c	2a 4f 5c 	* O \ 	 (flow from: 0052 9197)
+	ld (05c51h),hl		;929f	22 51 5c 	" Q \ 	 (flow from: 0052 929c)
+	ld a,0ffh		;92a2	3e ff 	> . 	 (flow from: 0052 929f)
+	ld (05c8ch),a		;92a4	32 8c 5c 	2 . \ 	 (flow from: 92a2)
+	ld a,e			;92a7	7b 	{ 	 (flow from: 92a4)
+	call 015f2h		;92a8	cd f2 15 	. . . 	 (flow from: 92a7)
+	res 1,(iy+001h)		;92ab	fd cb 01 8e 	. . . . 	 (flow from: 1600)
+	bit 0,(iy+002h)		;92af	fd cb 02 46 	. . . F 	 (flow from: 92ab)
+	jr z,l92c4h		;92b3	28 0f 	( . 	 (flow from: 0052 92af)
 	ld hl,05c6bh		;92b5	21 6b 5c 	! k \ 
 	ld a,(hl)			;92b8	7e 	~ 
 	cp 004h		;92b9	fe 04 	. . 
@@ -9086,223 +9086,223 @@ l929ch:
 	ld a,016h		;92bf	3e 16 	> . 
 	ld (05c8bh),a		;92c1	32 8b 5c 	2 . \ 
 l92c4h:
-	xor a			;92c4	af 	. 
+	xor a			;92c4	af 	. 	 (flow from: 91f7 924f 9284 92b3)
 l92c5h:
-	pop ix		;92c5	dd e1 	. . 
-	pop hl			;92c7	e1 	. 
-	pop de			;92c8	d1 	. 
-	ret			;92c9	c9 	. 
+	pop ix		;92c5	dd e1 	. . 	 (flow from: 0052 72bb 91c9 91cd 92c4)
+	pop hl			;92c7	e1 	. 	 (flow from: 0052 92c5)
+	pop de			;92c8	d1 	. 	 (flow from: 0052 92c7)
+	ret			;92c9	c9 	. 	 (flow from: 72c0 92c8)
 sub_92cah:
-	inc d			;92ca	14 	. 
-	ex af,af'			;92cb	08 	. 
-	dec d			;92cc	15 	. 
-	di			;92cd	f3 	. 
-	ld a,00fh		;92ce	3e 0f 	> . 
-	out (0feh),a		;92d0	d3 fe 	. . 
-	ld hl,0053fh		;92d2	21 3f 05 	! ? . 
-	push hl			;92d5	e5 	. 
-	in a,(0feh)		;92d6	db fe 	. . 
-	rra			;92d8	1f 	. 
-	and 020h		;92d9	e6 20 	.   
-	or 002h		;92db	f6 02 	. . 
-	ld c,a			;92dd	4f 	O 
-	cp a			;92de	bf 	. 
+	inc d			;92ca	14 	. 	 (flow from: 920f)
+	ex af,af'			;92cb	08 	. 	 (flow from: 92ca)
+	dec d			;92cc	15 	. 	 (flow from: 92cb)
+	di			;92cd	f3 	. 	 (flow from: 92cc)
+	ld a,00fh		;92ce	3e 0f 	> . 	 (flow from: 92cd)
+	out (0feh),a		;92d0	d3 fe 	. . 	 (flow from: 92ce)
+	ld hl,0053fh		;92d2	21 3f 05 	! ? . 	 (flow from: 92d0)
+	push hl			;92d5	e5 	. 	 (flow from: 92d2)
+	in a,(0feh)		;92d6	db fe 	. . 	 (flow from: 92d5)
+	rra			;92d8	1f 	. 	 (flow from: 92d6)
+	and 020h		;92d9	e6 20 	.   	 (flow from: 92d8)
+	or 002h		;92db	f6 02 	. . 	 (flow from: 92d9)
+	ld c,a			;92dd	4f 	O 	 (flow from: 92db)
+	cp a			;92de	bf 	. 	 (flow from: 92dd)
 l92dfh:
-	ret nz			;92df	c0 	. 
+	ret nz			;92df	c0 	. 	 (flow from: 92de 92e3)
 l92e0h:
-	call 005e7h		;92e0	cd e7 05 	. . . 
-	jr nc,l92dfh		;92e3	30 fa 	0 . 
-	ld hl,00180h		;92e5	21 80 01 	! . . 
+	call 005e7h		;92e0	cd e7 05 	. . . 	 (flow from: 92df)
+	jr nc,l92dfh		;92e3	30 fa 	0 . 	 (flow from: 05ee 0604)
+	ld hl,00180h		;92e5	21 80 01 	! . . 	 (flow from: 92e3)
 l92e8h:
-	djnz l92e8h		;92e8	10 fe 	. . 
-	dec hl			;92ea	2b 	+ 
-	ld a,h			;92eb	7c 	| 
-	or l			;92ec	b5 	. 
-	jr nz,l92e8h		;92ed	20 f9 	  . 
-	call 005e3h		;92ef	cd e3 05 	. . . 
-	jr nc,l92dfh		;92f2	30 eb 	0 . 
+	djnz l92e8h		;92e8	10 fe 	. . 	 (flow from: 92e5 92e8 92ed)
+	dec hl			;92ea	2b 	+ 	 (flow from: 92e8)
+	ld a,h			;92eb	7c 	| 	 (flow from: 92ea)
+	or l			;92ec	b5 	. 	 (flow from: 92eb)
+	jr nz,l92e8h		;92ed	20 f9 	  . 	 (flow from: 92ec)
+	call 005e3h		;92ef	cd e3 05 	. . . 	 (flow from: 92ed)
+	jr nc,l92dfh		;92f2	30 eb 	0 . 	 (flow from: 0604)
 l92f4h:
-	ld b,09ch		;92f4	06 9c 	. . 
-	call 005e3h		;92f6	cd e3 05 	. . . 
-	jr nc,l92dfh		;92f9	30 e4 	0 . 
-	ld a,0c6h		;92fb	3e c6 	> . 
-	cp b			;92fd	b8 	. 
-	jr nc,l92e0h		;92fe	30 e0 	0 . 
-	inc h			;9300	24 	$ 
-	jr nz,l92f4h		;9301	20 f1 	  . 
+	ld b,09ch		;92f4	06 9c 	. . 	 (flow from: 92f2 9301)
+	call 005e3h		;92f6	cd e3 05 	. . . 	 (flow from: 92f4)
+	jr nc,l92dfh		;92f9	30 e4 	0 . 	 (flow from: 0604)
+	ld a,0c6h		;92fb	3e c6 	> . 	 (flow from: 92f9)
+	cp b			;92fd	b8 	. 	 (flow from: 92fb)
+	jr nc,l92e0h		;92fe	30 e0 	0 . 	 (flow from: 92fd)
+	inc h			;9300	24 	$ 	 (flow from: 92fe)
+	jr nz,l92f4h		;9301	20 f1 	  . 	 (flow from: 9300)
 l9303h:
-	ld b,0c9h		;9303	06 c9 	. . 
-	call 005e7h		;9305	cd e7 05 	. . . 
-	jr nc,l92dfh		;9308	30 d5 	0 . 
-	ld a,b			;930a	78 	x 
-	cp 0d4h		;930b	fe d4 	. . 
-	jr nc,l9303h		;930d	30 f4 	0 . 
-	jp 0059bh		;930f	c3 9b 05 	. . . 
+	ld b,0c9h		;9303	06 c9 	. . 	 (flow from: 9301 930d)
+	call 005e7h		;9305	cd e7 05 	. . . 	 (flow from: 9303)
+	jr nc,l92dfh		;9308	30 d5 	0 . 	 (flow from: 0604)
+	ld a,b			;930a	78 	x 	 (flow from: 9308)
+	cp 0d4h		;930b	fe d4 	. . 	 (flow from: 930a)
+	jr nc,l9303h		;930d	30 f4 	0 . 	 (flow from: 930b)
+	jp 0059bh		;930f	c3 9b 05 	. . . 	 (flow from: 930d)
 sub_9312h:
-	push af			;9312	f5 	. 
-	push de			;9313	d5 	. 
-	ld c,006h		;9314	0e 06 	. . 
-	ld e,a			;9316	5f 	_ 
-	call sub_9176h		;9317	cd 76 91 	. v . 
-	pop de			;931a	d1 	. 
-	pop af			;931b	f1 	. 
-	ret			;931c	c9 	. 
+	push af			;9312	f5 	. 	 (flow from: 9345 9350 935c 936c)
+	push de			;9313	d5 	. 	 (flow from: 9312)
+	ld c,006h		;9314	0e 06 	. . 	 (flow from: 9313)
+	ld e,a			;9316	5f 	_ 	 (flow from: 9314)
+	call sub_9176h		;9317	cd 76 91 	. v . 	 (flow from: 9316)
+	pop de			;931a	d1 	. 	 (flow from: 0052 92c9)
+	pop af			;931b	f1 	. 	 (flow from: 931a)
+	ret			;931c	c9 	. 	 (flow from: 0052 931b)
 sub_931dh:
-	inc (ix+009h)		;931d	dd 34 09 	. 4 . 
-	ld a,039h		;9320	3e 39 	> 9 
-	cp (ix+009h)		;9322	dd be 09 	. . . 
-	jr nc,l9337h		;9325	30 10 	0 . 
-	ld (ix+009h),030h		;9327	dd 36 09 30 	. 6 . 0 
-	inc (ix+008h)		;932b	dd 34 08 	. 4 . 
-	cp (ix+008h)		;932e	dd be 08 	. . . 
-	jr nc,l9337h		;9331	30 04 	0 . 
+	inc (ix+009h)		;931d	dd 34 09 	. 4 . 	 (flow from: 9201)
+	ld a,039h		;9320	3e 39 	> 9 	 (flow from: 931d)
+	cp (ix+009h)		;9322	dd be 09 	. . . 	 (flow from: 9320)
+	jr nc,l9337h		;9325	30 10 	0 . 	 (flow from: 9322)
+	ld (ix+009h),030h		;9327	dd 36 09 30 	. 6 . 0 	 (flow from: 9325)
+	inc (ix+008h)		;932b	dd 34 08 	. 4 . 	 (flow from: 9327)
+	cp (ix+008h)		;932e	dd be 08 	. . . 	 (flow from: 932b)
+	jr nc,l9337h		;9331	30 04 	0 . 	 (flow from: 932e)
 	ld (ix+008h),030h		;9333	dd 36 08 30 	. 6 . 0 
 l9337h:
-	call sub_933eh		;9337	cd 3e 93 	. > . 
-	call sub_9358h		;933a	cd 58 93 	. X . 
-	ret			;933d	c9 	. 
+	call sub_933eh		;9337	cd 3e 93 	. > . 	 (flow from: 9325 9331)
+	call sub_9358h		;933a	cd 58 93 	. X . 	 (flow from: 9357)
+	ret			;933d	c9 	. 	 (flow from: 9364)
 sub_933eh:
-	push ix		;933e	dd e5 	. . 
-	ld b,00ah		;9340	06 0a 	. . 
+	push ix		;933e	dd e5 	. . 	 (flow from: 9222 9337)
+	ld b,00ah		;9340	06 0a 	. . 	 (flow from: 933e)
 l9342h:
-	ld a,(ix+000h)		;9342	dd 7e 00 	. ~ . 
-	call sub_9312h		;9345	cd 12 93 	. . . 
-	inc ix		;9348	dd 23 	. # 
-	djnz l9342h		;934a	10 f6 	. . 
-	ld a,020h		;934c	3e 20 	>   
-	ld b,004h		;934e	06 04 	. . 
+	ld a,(ix+000h)		;9342	dd 7e 00 	. ~ . 	 (flow from: 9340 934a)
+	call sub_9312h		;9345	cd 12 93 	. . . 	 (flow from: 9342)
+	inc ix		;9348	dd 23 	. # 	 (flow from: 931c)
+	djnz l9342h		;934a	10 f6 	. . 	 (flow from: 9348)
+	ld a,020h		;934c	3e 20 	>   	 (flow from: 934a)
+	ld b,004h		;934e	06 04 	. . 	 (flow from: 934c)
 l9350h:
-	call sub_9312h		;9350	cd 12 93 	. . . 
-	djnz l9350h		;9353	10 fb 	. . 
-	pop ix		;9355	dd e1 	. . 
-	ret			;9357	c9 	. 
+	call sub_9312h		;9350	cd 12 93 	. . . 	 (flow from: 934e 9353)
+	djnz l9350h		;9353	10 fb 	. . 	 (flow from: 931c)
+	pop ix		;9355	dd e1 	. . 	 (flow from: 9353)
+	ret			;9357	c9 	. 	 (flow from: 9355)
 sub_9358h:
-	ld b,00eh		;9358	06 0e 	. . 
-	ld a,020h		;935a	3e 20 	>   
+	ld b,00eh		;9358	06 0e 	. . 	 (flow from: 933a)
+	ld a,020h		;935a	3e 20 	>   	 (flow from: 9358)
 l935ch:
-	call sub_9312h		;935c	cd 12 93 	. . . 
-	djnz l935ch		;935f	10 fb 	. . 
-	call sub_9368h		;9361	cd 68 93 	. h . 
-	ret			;9364	c9 	. 
+	call sub_9312h		;935c	cd 12 93 	. . . 	 (flow from: 935a 935f)
+	djnz l935ch		;935f	10 fb 	. . 	 (flow from: 931c)
+	call sub_9368h		;9361	cd 68 93 	. h . 	 (flow from: 935f)
+	ret			;9364	c9 	. 	 (flow from: 9371)
 sub_9365h:
-	call sub_9368h		;9365	cd 68 93 	. h . 
+	call sub_9368h		;9365	cd 68 93 	. h . 	 (flow from: 9225)
 sub_9368h:
-	ld b,00eh		;9368	06 0e 	. . 
-	ld a,008h		;936a	3e 08 	> . 
+	ld b,00eh		;9368	06 0e 	. . 	 (flow from: 9361 9365 9371)
+	ld a,008h		;936a	3e 08 	> . 	 (flow from: 9368)
 l936ch:
-	call sub_9312h		;936c	cd 12 93 	. . . 
-	djnz l936ch		;936f	10 fb 	. . 
-	ret			;9371	c9 	. 
+	call sub_9312h		;936c	cd 12 93 	. . . 	 (flow from: 936a 936f)
+	djnz l936ch		;936f	10 fb 	. . 	 (flow from: 0052 931c)
+	ret			;9371	c9 	. 	 (flow from: 936f)
 sub_9372h:
-	push de			;9372	d5 	. 
-	push hl			;9373	e5 	. 
-	ld a,(de)			;9374	1a 	. 
-	cp 020h		;9375	fe 20 	.   
-	jr z,l9387h		;9377	28 0e 	( . 
-	ld b,00ah		;9379	06 0a 	. . 
+	push de			;9372	d5 	. 	 (flow from: 9219)
+	push hl			;9373	e5 	. 	 (flow from: 9372)
+	ld a,(de)			;9374	1a 	. 	 (flow from: 9373)
+	cp 020h		;9375	fe 20 	.   	 (flow from: 9374)
+	jr z,l9387h		;9377	28 0e 	( . 	 (flow from: 9375)
+	ld b,00ah		;9379	06 0a 	. . 	 (flow from: 9377)
 l937bh:
-	ld a,(de)			;937b	1a 	. 
-	cp (hl)			;937c	be 	. 
-	jr nz,l9384h		;937d	20 05 	  . 
-	inc hl			;937f	23 	# 
-	inc de			;9380	13 	. 
-	djnz l937bh		;9381	10 f8 	. . 
+	ld a,(de)			;937b	1a 	. 	 (flow from: 9379 9381)
+	cp (hl)			;937c	be 	. 	 (flow from: 937b)
+	jr nz,l9384h		;937d	20 05 	  . 	 (flow from: 0052 937c)
+	inc hl			;937f	23 	# 	 (flow from: 937d)
+	inc de			;9380	13 	. 	 (flow from: 937f)
+	djnz l937bh		;9381	10 f8 	. . 	 (flow from: 9380)
 l9383h:
-	cp a			;9383	bf 	. 
+	cp a			;9383	bf 	. 	 (flow from: 9381)
 l9384h:
-	pop hl			;9384	e1 	. 
-	pop de			;9385	d1 	. 
-	ret			;9386	c9 	. 
+	pop hl			;9384	e1 	. 	 (flow from: 9383)
+	pop de			;9385	d1 	. 	 (flow from: 9384)
+	ret			;9386	c9 	. 	 (flow from: 9385)
 l9387h:
 	ld bc,00008h		;9387	01 08 00 	. . . 
 	ldir		;938a	ed b0 	. . 
 	jr l9383h		;938c	18 f5 	. . 
 sub_938eh:
-	push af			;938e	f5 	. 
-	push bc			;938f	c5 	. 
-	push hl			;9390	e5 	. 
-	push hl			;9391	e5 	. 
-	ld hl,09b96h		;9392	21 96 9b 	! . . 
-	ld de,00134h		;9395	11 34 01 	. 4 . 
-	ld b,001h		;9398	06 01 	. . 
+	push af			;938e	f5 	. 	 (flow from: 93d4)
+	push bc			;938f	c5 	. 	 (flow from: 938e)
+	push hl			;9390	e5 	. 	 (flow from: 938f)
+	push hl			;9391	e5 	. 	 (flow from: 9390)
+	ld hl,09b96h		;9392	21 96 9b 	! . . 	 (flow from: 9391)
+	ld de,00134h		;9395	11 34 01 	. 4 . 	 (flow from: 9392)
+	ld b,001h		;9398	06 01 	. . 	 (flow from: 9395)
 l939ah:
-	ld a,(hl)			;939a	7e 	~ 
-	or a			;939b	b7 	. 
-	jr z,l93a7h		;939c	28 09 	( . 
+	ld a,(hl)			;939a	7e 	~ 	 (flow from: 9398)
+	or a			;939b	b7 	. 	 (flow from: 939a)
+	jr z,l93a7h		;939c	28 09 	( . 	 (flow from: 939b)
 	add hl,de			;939e	19 	. 
 	djnz l939ah		;939f	10 f9 	. . 
 	ld hl,00006h		;93a1	21 06 00 	! . . 
 	jp l62a7h		;93a4	c3 a7 62 	. . b 
 l93a7h:
-	ex de,hl			;93a7	eb 	. 
-	pop hl			;93a8	e1 	. 
-	push de			;93a9	d5 	. 
-	ld (hl),006h		;93aa	36 06 	6 . 
-	inc hl			;93ac	23 	# 
-	ld (hl),e			;93ad	73 	s 
-	inc hl			;93ae	23 	# 
-	ld (hl),d			;93af	72 	r 
-	inc hl			;93b0	23 	# 
-	push hl			;93b1	e5 	. 
-	ld hl,0ffdch		;93b2	21 dc ff 	! . . 
-	add hl,de			;93b5	19 	. 
-	ex de,hl			;93b6	eb 	. 
-	pop hl			;93b7	e1 	. 
-	call sub_93c0h		;93b8	cd c0 93 	. . . 
-	pop de			;93bb	d1 	. 
-	pop hl			;93bc	e1 	. 
-	pop bc			;93bd	c1 	. 
-	pop af			;93be	f1 	. 
-	ret			;93bf	c9 	. 
+	ex de,hl			;93a7	eb 	. 	 (flow from: 939c)
+	pop hl			;93a8	e1 	. 	 (flow from: 93a7)
+	push de			;93a9	d5 	. 	 (flow from: 93a8)
+	ld (hl),006h		;93aa	36 06 	6 . 	 (flow from: 93a9)
+	inc hl			;93ac	23 	# 	 (flow from: 93aa)
+	ld (hl),e			;93ad	73 	s 	 (flow from: 93ac)
+	inc hl			;93ae	23 	# 	 (flow from: 93ad)
+	ld (hl),d			;93af	72 	r 	 (flow from: 93ae)
+	inc hl			;93b0	23 	# 	 (flow from: 93af)
+	push hl			;93b1	e5 	. 	 (flow from: 93b0)
+	ld hl,0ffdch		;93b2	21 dc ff 	! . . 	 (flow from: 93b1)
+	add hl,de			;93b5	19 	. 	 (flow from: 93b2)
+	ex de,hl			;93b6	eb 	. 	 (flow from: 93b5)
+	pop hl			;93b7	e1 	. 	 (flow from: 93b6)
+	call sub_93c0h		;93b8	cd c0 93 	. . . 	 (flow from: 93b7)
+	pop de			;93bb	d1 	. 	 (flow from: 93d3)
+	pop hl			;93bc	e1 	. 	 (flow from: 93bb)
+	pop bc			;93bd	c1 	. 	 (flow from: 93bc)
+	pop af			;93be	f1 	. 	 (flow from: 93bd)
+	ret			;93bf	c9 	. 	 (flow from: 93be)
 sub_93c0h:
-	push de			;93c0	d5 	. 
-	push hl			;93c1	e5 	. 
-	ld b,008h		;93c2	06 08 	. . 
+	push de			;93c0	d5 	. 	 (flow from: 93b8)
+	push hl			;93c1	e5 	. 	 (flow from: 93c0)
+	ld b,008h		;93c2	06 08 	. . 	 (flow from: 93c1)
 l93c4h:
-	ld a,(hl)			;93c4	7e 	~ 
-	cp 0ffh		;93c5	fe ff 	. . 
-	jr nz,l93cch		;93c7	20 03 	  . 
-	dec hl			;93c9	2b 	+ 
-	ld a,020h		;93ca	3e 20 	>   
+	ld a,(hl)			;93c4	7e 	~ 	 (flow from: 93c2 93cf)
+	cp 0ffh		;93c5	fe ff 	. . 	 (flow from: 93c4)
+	jr nz,l93cch		;93c7	20 03 	  . 	 (flow from: 93c5)
+	dec hl			;93c9	2b 	+ 	 (flow from: 93c7)
+	ld a,020h		;93ca	3e 20 	>   	 (flow from: 93c9)
 l93cch:
-	ld (de),a			;93cc	12 	. 
-	inc de			;93cd	13 	. 
-	inc hl			;93ce	23 	# 
-	djnz l93c4h		;93cf	10 f3 	. . 
-	pop hl			;93d1	e1 	. 
-	pop de			;93d2	d1 	. 
-	ret			;93d3	c9 	. 
+	ld (de),a			;93cc	12 	. 	 (flow from: 93c7 93ca)
+	inc de			;93cd	13 	. 	 (flow from: 93cc)
+	inc hl			;93ce	23 	# 	 (flow from: 93cd)
+	djnz l93c4h		;93cf	10 f3 	. . 	 (flow from: 93ce)
+	pop hl			;93d1	e1 	. 	 (flow from: 93cf)
+	pop de			;93d2	d1 	. 	 (flow from: 93d1)
+	ret			;93d3	c9 	. 	 (flow from: 93d2)
 l93d4h:
-	call sub_938eh		;93d4	cd 8e 93 	. . . 
+	call sub_938eh		;93d4	cd 8e 93 	. . . 	 (flow from: 94aa)
 l93d7h:
-	push hl			;93d7	e5 	. 
-	push de			;93d8	d5 	. 
-	push bc			;93d9	c5 	. 
-	ld hl,0ffdch		;93da	21 dc ff 	! . . 
-	add hl,de			;93dd	19 	. 
-	ex de,hl			;93de	eb 	. 
-	ld c,00fh		;93df	0e 0f 	. . 
-	call sub_9176h		;93e1	cd 76 91 	. v . 
-	pop bc			;93e4	c1 	. 
-	pop de			;93e5	d1 	. 
-	call sub_6713h		;93e6	cd 13 67 	. . g 
-	push ix		;93e9	dd e5 	. . 
-	push de			;93eb	d5 	. 
-	pop ix		;93ec	dd e1 	. . 
-	ld (ix+002h),0ffh		;93ee	dd 36 02 ff 	. 6 . . 
-	ld (ix+000h),001h		;93f2	dd 36 00 01 	. 6 . . 
-	ld (ix-004h),000h		;93f6	dd 36 fc 00 	. 6 . . 
-	pop ix		;93fa	dd e1 	. . 
-	ex de,hl			;93fc	eb 	. 
-	call sub_95bfh		;93fd	cd bf 95 	. . . 
-	pop hl			;9400	e1 	. 
-	ret nz			;9401	c0 	. 
-	inc de			;9402	13 	. 
-	inc de			;9403	13 	. 
-	ex de,hl			;9404	eb 	. 
-	dec (hl)			;9405	35 	5 
-	cp a			;9406	bf 	. 
-	ret			;9407	c9 	. 
+	push hl			;93d7	e5 	. 	 (flow from: 93bf)
+	push de			;93d8	d5 	. 	 (flow from: 93d7)
+	push bc			;93d9	c5 	. 	 (flow from: 93d8)
+	ld hl,0ffdch		;93da	21 dc ff 	! . . 	 (flow from: 93d9)
+	add hl,de			;93dd	19 	. 	 (flow from: 93da)
+	ex de,hl			;93de	eb 	. 	 (flow from: 93dd)
+	ld c,00fh		;93df	0e 0f 	. . 	 (flow from: 93de)
+	call sub_9176h		;93e1	cd 76 91 	. v . 	 (flow from: 93df)
+	pop bc			;93e4	c1 	. 	 (flow from: 92c9)
+	pop de			;93e5	d1 	. 	 (flow from: 93e4)
+	call sub_6713h		;93e6	cd 13 67 	. . g 	 (flow from: 93e5)
+	push ix		;93e9	dd e5 	. . 	 (flow from: 688b)
+	push de			;93eb	d5 	. 	 (flow from: 93e9)
+	pop ix		;93ec	dd e1 	. . 	 (flow from: 93eb)
+	ld (ix+002h),0ffh		;93ee	dd 36 02 ff 	. 6 . . 	 (flow from: 93ec)
+	ld (ix+000h),001h		;93f2	dd 36 00 01 	. 6 . . 	 (flow from: 93ee)
+	ld (ix-004h),000h		;93f6	dd 36 fc 00 	. 6 . . 	 (flow from: 93f2)
+	pop ix		;93fa	dd e1 	. . 	 (flow from: 93f6)
+	ex de,hl			;93fc	eb 	. 	 (flow from: 93fa)
+	call sub_95bfh		;93fd	cd bf 95 	. . . 	 (flow from: 93fc)
+	pop hl			;9400	e1 	. 	 (flow from: 9601)
+	ret nz			;9401	c0 	. 	 (flow from: 9400)
+	inc de			;9402	13 	. 	 (flow from: 9401)
+	inc de			;9403	13 	. 	 (flow from: 9402)
+	ex de,hl			;9404	eb 	. 	 (flow from: 9403)
+	dec (hl)			;9405	35 	5 	 (flow from: 9404)
+	cp a			;9406	bf 	. 	 (flow from: 9405)
+	ret			;9407	c9 	. 	 (flow from: 9406)
 sub_9408h:
 	call sub_938eh		;9408	cd 8e 93 	. . . 
 sub_940bh:
@@ -9390,8 +9390,8 @@ OPEN_string_start:
 	defb 04eh		;9484	4e 	N 
 OPEN_string_end:
 	rst 38h			;9485	ff 	. 
-	ld ix,l948dh		;9486	dd 21 8d 94 	. ! . . 
-	jp l65f7h		;948a	c3 f7 65 	. . e 
+	ld ix,l948dh		;9486	dd 21 8d 94 	. ! . . 	 (flow from: 60bb)
+	jp l65f7h		;948a	c3 f7 65 	. . e 	 (flow from: 9486)
 l948dh:
 	rst 38h			;948d	ff 	. 
 	rst 38h			;948e	ff 	. 
@@ -9403,15 +9403,15 @@ l948dh:
 	rst 38h			;9494	ff 	. 
 	rst 38h			;9495	ff 	. 
 	rst 38h			;9496	ff 	. 
-	ld hl,(0980ah)		;9497	2a 0a 98 	* . . 
-	ld a,(hl)			;949a	7e 	~ 
-	cp 006h		;949b	fe 06 	. . 
-	jr z,l94adh		;949d	28 0e 	( . 
-	cp 010h		;949f	fe 10 	. . 
-	jp nz,l6290h		;94a1	c2 90 62 	. . b 
-	call sub_7653h		;94a4	cd 53 76 	. S v 
-	jp nz,l6290h		;94a7	c2 90 62 	. . b 
-	jp l93d4h		;94aa	c3 d4 93 	. . . 
+	ld hl,(0980ah)		;9497	2a 0a 98 	* . . 	 (flow from: 663c)
+	ld a,(hl)			;949a	7e 	~ 	 (flow from: 9497)
+	cp 006h		;949b	fe 06 	. . 	 (flow from: 949a)
+	jr z,l94adh		;949d	28 0e 	( . 	 (flow from: 949b)
+	cp 010h		;949f	fe 10 	. . 	 (flow from: 949d)
+	jp nz,l6290h		;94a1	c2 90 62 	. . b 	 (flow from: 949f)
+	call sub_7653h		;94a4	cd 53 76 	. S v 	 (flow from: 94a1)
+	jp nz,l6290h		;94a7	c2 90 62 	. . b 	 (flow from: 7662)
+	jp l93d4h		;94aa	c3 d4 93 	. . . 	 (flow from: 94a7)
 l94adh:
 	call sub_7653h		;94ad	cd 53 76 	. S v 
 	jr z,l94b4h		;94b0	28 02 	( . 
@@ -9521,8 +9521,8 @@ CLOSE_string_start:
 	defb 045h		;9540	45 	E 
 CLOSE_string_end:
 	rst 38h			;9541	ff 	. 
-	ld ix,l9549h		;9542	dd 21 49 95 	. ! I . 
-	jp l65f7h		;9546	c3 f7 65 	. . e 
+	ld ix,l9549h		;9542	dd 21 49 95 	. ! I . 	 (flow from: 60bb)
+	jp l65f7h		;9546	c3 f7 65 	. . e 	 (flow from: 9542)
 l9549h:
 	rst 38h			;9549	ff 	. 
 	rst 38h			;954a	ff 	. 
@@ -9534,32 +9534,32 @@ l9549h:
 	rst 38h			;9550	ff 	. 
 	rst 38h			;9551	ff 	. 
 	rst 38h			;9552	ff 	. 
-	ld hl,(0980ah)		;9553	2a 0a 98 	* . . 
-	ld a,(hl)			;9556	7e 	~ 
-	cp 006h		;9557	fe 06 	. . 
-	ret nz			;9559	c0 	. 
-	call sub_7653h		;955a	cd 53 76 	. S v 
-	jr z,l9561h		;955d	28 02 	( . 
+	ld hl,(0980ah)		;9553	2a 0a 98 	* . . 	 (flow from: 663c)
+	ld a,(hl)			;9556	7e 	~ 	 (flow from: 9553)
+	cp 006h		;9557	fe 06 	. . 	 (flow from: 9556)
+	ret nz			;9559	c0 	. 	 (flow from: 9557)
+	call sub_7653h		;955a	cd 53 76 	. S v 	 (flow from: 9559)
+	jr z,l9561h		;955d	28 02 	( . 	 (flow from: 7662)
 	cp a			;955f	bf 	. 
 	ret			;9560	c9 	. 
 l9561h:
-	call sub_9623h		;9561	cd 23 96 	. # . 
-	ex de,hl			;9564	eb 	. 
-	ld a,(de)			;9565	1a 	. 
-	ld hl,(0980ah)		;9566	2a 0a 98 	* . . 
-	cp 002h		;9569	fe 02 	. . 
-	push hl			;956b	e5 	. 
-	push de			;956c	d5 	. 
-	call z,sub_945dh		;956d	cc 5d 94 	. ] . 
-	pop de			;9570	d1 	. 
-	pop hl			;9571	e1 	. 
-	ld a,000h		;9572	3e 00 	> . 
-	ld (de),a			;9574	12 	. 
-	ld (hl),010h		;9575	36 10 	6 . 
-	ld a,00dh		;9577	3e 0d 	> . 
-	call l72fah		;9579	cd fa 72 	. . r 
-	cp a			;957c	bf 	. 
-	ret			;957d	c9 	. 
+	call sub_9623h		;9561	cd 23 96 	. # . 	 (flow from: 955d)
+	ex de,hl			;9564	eb 	. 	 (flow from: 9628)
+	ld a,(de)			;9565	1a 	. 	 (flow from: 9564)
+	ld hl,(0980ah)		;9566	2a 0a 98 	* . . 	 (flow from: 9565)
+	cp 002h		;9569	fe 02 	. . 	 (flow from: 9566)
+	push hl			;956b	e5 	. 	 (flow from: 9569)
+	push de			;956c	d5 	. 	 (flow from: 956b)
+	call z,sub_945dh		;956d	cc 5d 94 	. ] . 	 (flow from: 956c)
+	pop de			;9570	d1 	. 	 (flow from: 956d)
+	pop hl			;9571	e1 	. 	 (flow from: 9570)
+	ld a,000h		;9572	3e 00 	> . 	 (flow from: 9571)
+	ld (de),a			;9574	12 	. 	 (flow from: 9572)
+	ld (hl),010h		;9575	36 10 	6 . 	 (flow from: 9574)
+	ld a,00dh		;9577	3e 0d 	> . 	 (flow from: 9575)
+	call l72fah		;9579	cd fa 72 	. . r 	 (flow from: 9577)
+	cp a			;957c	bf 	. 	 (flow from: 734b)
+	ret			;957d	c9 	. 	 (flow from: 957c)
 sub_957eh:
 	push af			;957e	f5 	. 
 	ld a,(hl)			;957f	7e 	~ 
@@ -9612,56 +9612,56 @@ sub_959dh:
 	pop af			;95bd	f1 	. 
 	ret			;95be	c9 	. 
 sub_95bfh:
-	push de			;95bf	d5 	. 
-	push bc			;95c0	c5 	. 
-	push hl			;95c1	e5 	. 
+	push de			;95bf	d5 	. 	 (flow from: 0052 93fd 9615)
+	push bc			;95c0	c5 	. 	 (flow from: 0052 95bf)
+	push hl			;95c1	e5 	. 	 (flow from: 0052 95c0)
 l95c2h:
-	push hl			;95c2	e5 	. 
-	ld a,(hl)			;95c3	7e 	~ 
-	cp 001h		;95c4	fe 01 	. . 
-	jr nz,l95fdh		;95c6	20 35 	  5 
-	inc hl			;95c8	23 	# 
-	inc hl			;95c9	23 	# 
-	ld a,(hl)			;95ca	7e 	~ 
-	cp 0ffh		;95cb	fe ff 	. . 
-	jr nz,l95ebh		;95cd	20 1c 	  . 
-	ld (hl),000h		;95cf	36 00 	6 . 
-	ld c,01ah		;95d1	0e 1a 	. . 
-	ex de,hl			;95d3	eb 	. 
-	inc de			;95d4	13 	. 
-	call sub_9176h		;95d5	cd 76 91 	. v . 
-	dec de			;95d8	1b 	. 
-	dec de			;95d9	1b 	. 
-	dec de			;95da	1b 	. 
-	ld hl,0ffdch		;95db	21 dc ff 	! . . 
-	add hl,de			;95de	19 	. 
-	ex de,hl			;95df	eb 	. 
-	ld c,014h		;95e0	0e 14 	. . 
-	call sub_9176h		;95e2	cd 76 91 	. v . 
-	or a			;95e5	b7 	. 
-	jr nz,l95fdh		;95e6	20 15 	  . 
-	pop hl			;95e8	e1 	. 
-	jr l95c2h		;95e9	18 d7 	. . 
+	push hl			;95c2	e5 	. 	 (flow from: 0052 95c1 95e9)
+	ld a,(hl)			;95c3	7e 	~ 	 (flow from: 95c2)
+	cp 001h		;95c4	fe 01 	. . 	 (flow from: 95c3)
+	jr nz,l95fdh		;95c6	20 35 	  5 	 (flow from: 95c4)
+	inc hl			;95c8	23 	# 	 (flow from: 0052 95c6)
+	inc hl			;95c9	23 	# 	 (flow from: 0052 95c8)
+	ld a,(hl)			;95ca	7e 	~ 	 (flow from: 95c9)
+	cp 0ffh		;95cb	fe ff 	. . 	 (flow from: 95ca)
+	jr nz,l95ebh		;95cd	20 1c 	  . 	 (flow from: 95cb)
+	ld (hl),000h		;95cf	36 00 	6 . 	 (flow from: 95cd)
+	ld c,01ah		;95d1	0e 1a 	. . 	 (flow from: 95cf)
+	ex de,hl			;95d3	eb 	. 	 (flow from: 95d1)
+	inc de			;95d4	13 	. 	 (flow from: 95d3)
+	call sub_9176h		;95d5	cd 76 91 	. v . 	 (flow from: 95d4)
+	dec de			;95d8	1b 	. 	 (flow from: 92c9)
+	dec de			;95d9	1b 	. 	 (flow from: 95d8)
+	dec de			;95da	1b 	. 	 (flow from: 95d9)
+	ld hl,0ffdch		;95db	21 dc ff 	! . . 	 (flow from: 95da)
+	add hl,de			;95de	19 	. 	 (flow from: 95db)
+	ex de,hl			;95df	eb 	. 	 (flow from: 95de)
+	ld c,014h		;95e0	0e 14 	. . 	 (flow from: 95df)
+	call sub_9176h		;95e2	cd 76 91 	. v . 	 (flow from: 95e0)
+	or a			;95e5	b7 	. 	 (flow from: 92c9)
+	jr nz,l95fdh		;95e6	20 15 	  . 	 (flow from: 95e5)
+	pop hl			;95e8	e1 	. 	 (flow from: 95e6)
+	jr l95c2h		;95e9	18 d7 	. . 	 (flow from: 95e8)
 l95ebh:
-	ld e,a			;95eb	5f 	_ 
-	inc (hl)			;95ec	34 	4 
-	ld d,000h		;95ed	16 00 	. . 
-	inc hl			;95ef	23 	# 
-	add hl,de			;95f0	19 	. 
-	ld a,(hl)			;95f1	7e 	~ 
-	cp 01ah		;95f2	fe 1a 	. . 
-	jr z,l95f9h		;95f4	28 03 	( . 
-	cp a			;95f6	bf 	. 
-	jr l95fdh		;95f7	18 04 	. . 
+	ld e,a			;95eb	5f 	_ 	 (flow from: 95cd)
+	inc (hl)			;95ec	34 	4 	 (flow from: 95eb)
+	ld d,000h		;95ed	16 00 	. . 	 (flow from: 0052 95ec)
+	inc hl			;95ef	23 	# 	 (flow from: 0052 95ed)
+	add hl,de			;95f0	19 	. 	 (flow from: 0052 95ef)
+	ld a,(hl)			;95f1	7e 	~ 	 (flow from: 0052 95f0)
+	cp 01ah		;95f2	fe 1a 	. . 	 (flow from: 95f1)
+	jr z,l95f9h		;95f4	28 03 	( . 	 (flow from: 0052 95f2)
+	cp a			;95f6	bf 	. 	 (flow from: 95f4)
+	jr l95fdh		;95f7	18 04 	. . 	 (flow from: 95f6)
 l95f9h:
-	call l961ah		;95f9	cd 1a 96 	. . . 
-	or a			;95fc	b7 	. 
+	call l961ah		;95f9	cd 1a 96 	. . . 	 (flow from: 95f4)
+	or a			;95fc	b7 	. 	 (flow from: 9622)
 l95fdh:
-	pop hl			;95fd	e1 	. 
-	pop hl			;95fe	e1 	. 
-	pop bc			;95ff	c1 	. 
-	pop de			;9600	d1 	. 
-	ret			;9601	c9 	. 
+	pop hl			;95fd	e1 	. 	 (flow from: 0052 95f7 95fc)
+	pop hl			;95fe	e1 	. 	 (flow from: 0052 95fd)
+	pop bc			;95ff	c1 	. 	 (flow from: 0052 95fe)
+	pop de			;9600	d1 	. 	 (flow from: 0052 95ff)
+	ret			;9601	c9 	. 	 (flow from: 0052 9600)
 l9602h:
 	push hl			;9602	e5 	. 
 	ld hl,(09b6dh)		;9603	2a 6d 9b 	* m . 
@@ -9670,29 +9670,29 @@ l9602h:
 	pop hl			;960c	e1 	. 
 	ret			;960d	c9 	. 
 l960eh:
-	push hl			;960e	e5 	. 
-	ld hl,(09b6dh)		;960f	2a 6d 9b 	* m . 
-	call sub_7310h		;9612	cd 10 73 	. . s 
-	call sub_95bfh		;9615	cd bf 95 	. . . 
-	pop hl			;9618	e1 	. 
-	ret			;9619	c9 	. 
+	push hl			;960e	e5 	. 	 (flow from: 0052 9865)
+	ld hl,(09b6dh)		;960f	2a 6d 9b 	* m . 	 (flow from: 960e)
+	call sub_7310h		;9612	cd 10 73 	. . s 	 (flow from: 0052 960f)
+	call sub_95bfh		;9615	cd bf 95 	. . . 	 (flow from: 0052 734b)
+	pop hl			;9618	e1 	. 	 (flow from: 9601)
+	ret			;9619	c9 	. 	 (flow from: 0052 9618)
 l961ah:
-	push hl			;961a	e5 	. 
-	ld hl,(09b6dh)		;961b	2a 6d 9b 	* m . 
-	inc hl			;961e	23 	# 
-	inc hl			;961f	23 	# 
-	dec (hl)			;9620	35 	5 
-	pop hl			;9621	e1 	. 
-	ret			;9622	c9 	. 
+	push hl			;961a	e5 	. 	 (flow from: 95f9 9868)
+	ld hl,(09b6dh)		;961b	2a 6d 9b 	* m . 	 (flow from: 961a)
+	inc hl			;961e	23 	# 	 (flow from: 961b)
+	inc hl			;961f	23 	# 	 (flow from: 961e)
+	dec (hl)			;9620	35 	5 	 (flow from: 961f)
+	pop hl			;9621	e1 	. 	 (flow from: 9620)
+	ret			;9622	c9 	. 	 (flow from: 9621)
 sub_9623h:
-	inc hl			;9623	23 	# 
-	ld a,(hl)			;9624	7e 	~ 
-	inc hl			;9625	23 	# 
-	ld h,(hl)			;9626	66 	f 
-	ld l,a			;9627	6f 	o 
-	ret			;9628	c9 	. 
+	inc hl			;9623	23 	# 	 (flow from: 0052 6076 6085 6097 60ab 60b8 60c3 60fa 6100 612a 6177 631f 6327 6331 6372 63b7 63d2 63f4 6420 6499 6516 652c 657a 6583 658b 65bf 65ec 667f 66eb 67d0 6896 68af 68f8 6908 692e 6934 6955 6964 6972 6983 6a1a 6a7b 6f93 6f9e 6fab 6fb4 720c 7691 769f 7760 7766 77b4 77c7 77cb 781c 79fb 7a08 7a85 7a8f 7d4c 7d5f 7d69 7d79 7d89 7d8f 7d9c 7da0 7e55 7f5f 9561)
+	ld a,(hl)			;9624	7e 	~ 	 (flow from: 0052 9623)
+	inc hl			;9625	23 	# 	 (flow from: 0052 7a98 9624)
+	ld h,(hl)			;9626	66 	f 	 (flow from: 0052 9625)
+	ld l,a			;9627	6f 	o 	 (flow from: 0052 9626)
+	ret			;9628	c9 	. 	 (flow from: 0052 9627)
 sub_9629h:
-	call sub_7296h		;9629	cd 96 72 	. . r 
+	call sub_7296h		;9629	cd 96 72 	. . r 	 (flow from: 6019)
 
 ; BLOCK 'INTRO_string' (start 0x962c end 0x9663)
 INTRO_string_start:
@@ -9753,31 +9753,31 @@ INTRO_string_start:
 	defb 0e4h		;9662	e4 	. 
 INTRO_string_end:
 	xor (hl)			;9663	ae 	. 
-	nop			;9664	00 	. 
-	ld hl,09da5h		;9665	21 a5 9d 	! . . 
-	ld (09805h),hl		;9668	22 05 98 	" . . 
-	ld hl,0ffffh		;966b	21 ff ff 	! . . 
-	ld (0985bh),hl		;966e	22 5b 98 	" [ . 
-	ld a,0c3h		;9671	3e c3 	> . 
-	ld (09865h),a		;9673	32 65 98 	2 e . 
-	ld (09868h),a		;9676	32 68 98 	2 h . 
-	ld (0986bh),a		;9679	32 6b 98 	2 k . 
-	ld (09800h),a		;967c	32 00 98 	2 . . 
-	ld hl,l72fah		;967f	21 fa 72 	! . r 
-	ld (0986ch),hl		;9682	22 6c 98 	" l . 
-	ld hl,(09803h)		;9685	2a 03 98 	* . . 
-	ld bc,0fc01h		;9688	01 01 fc 	. . . 
-	add hl,bc			;968b	09 	. 
-	res 0,l		;968c	cb 85 	. . 
-	ld (09839h),hl		;968e	22 39 98 	" 9 . 
-	ld (0983bh),hl		;9691	22 3b 98 	" ; . 
-	ld (hl),080h		;9694	36 80 	6 . 
-	ld de,(09805h)		;9696	ed 5b 05 98 	. [ . . 
-	or a			;969a	b7 	. 
-	sbc hl,de		;969b	ed 52 	. R 
-	push hl			;969d	e5 	. 
-	call sub_6b26h		;969e	cd 26 6b 	. & k 
-	call sub_7296h		;96a1	cd 96 72 	. . r 
+	nop			;9664	00 	. 	 (flow from: 72a0)
+	ld hl,09da5h		;9665	21 a5 9d 	! . . 	 (flow from: 9664)
+	ld (09805h),hl		;9668	22 05 98 	" . . 	 (flow from: 9665)
+	ld hl,0ffffh		;966b	21 ff ff 	! . . 	 (flow from: 9668)
+	ld (0985bh),hl		;966e	22 5b 98 	" [ . 	 (flow from: 966b)
+	ld a,0c3h		;9671	3e c3 	> . 	 (flow from: 966e)
+	ld (09865h),a		;9673	32 65 98 	2 e . 	 (flow from: 9671)
+	ld (09868h),a		;9676	32 68 98 	2 h . 	 (flow from: 9673)
+	ld (0986bh),a		;9679	32 6b 98 	2 k . 	 (flow from: 9676)
+	ld (09800h),a		;967c	32 00 98 	2 . . 	 (flow from: 9679)
+	ld hl,l72fah		;967f	21 fa 72 	! . r 	 (flow from: 967c)
+	ld (0986ch),hl		;9682	22 6c 98 	" l . 	 (flow from: 967f)
+	ld hl,(09803h)		;9685	2a 03 98 	* . . 	 (flow from: 9682)
+	ld bc,0fc01h		;9688	01 01 fc 	. . . 	 (flow from: 9685)
+	add hl,bc			;968b	09 	. 	 (flow from: 9688)
+	res 0,l		;968c	cb 85 	. . 	 (flow from: 968b)
+	ld (09839h),hl		;968e	22 39 98 	" 9 . 	 (flow from: 968c)
+	ld (0983bh),hl		;9691	22 3b 98 	" ; . 	 (flow from: 968e)
+	ld (hl),080h		;9694	36 80 	6 . 	 (flow from: 9691)
+	ld de,(09805h)		;9696	ed 5b 05 98 	. [ . . 	 (flow from: 9694)
+	or a			;969a	b7 	. 	 (flow from: 9696)
+	sbc hl,de		;969b	ed 52 	. R 	 (flow from: 969a)
+	push hl			;969d	e5 	. 	 (flow from: 969b)
+	call sub_6b26h		;969e	cd 26 6b 	. & k 	 (flow from: 969d)
+	call sub_7296h		;96a1	cd 96 72 	. . r 	 (flow from: 6b55)
 
 ; BLOCK 'BYTESFREE_string' (start 0x96a4 end 0x96b0)
 BYTESFREE_string_start:
@@ -9794,84 +9794,84 @@ BYTESFREE_string_start:
 	defb 0e5h		;96ae	e5 	. 
 	defb 0a0h		;96af	a0 	. 
 BYTESFREE_string_end:
-	nop			;96b0	00 	. 
-	pop hl			;96b1	e1 	. 
-	srl h		;96b2	cb 3c 	. < 
-	rr l		;96b4	cb 1d 	. . 
-	push hl			;96b6	e5 	. 
-	srl h		;96b7	cb 3c 	. < 
-	rr l		;96b9	cb 1d 	. . 
-	srl h		;96bb	cb 3c 	. < 
-	rr l		;96bd	cb 1d 	. . 
-	push hl			;96bf	e5 	. 
-	srl h		;96c0	cb 3c 	. < 
-	rr l		;96c2	cb 1d 	. . 
-	pop bc			;96c4	c1 	. 
-	add hl,bc			;96c5	09 	. 
-	ld a,l			;96c6	7d 	} 
-	and 0c0h		;96c7	e6 c0 	. . 
-	ld l,a			;96c9	6f 	o 
-	push hl			;96ca	e5 	. 
-	add hl,de			;96cb	19 	. 
-	ld (09837h),hl		;96cc	22 37 98 	" 7 . 
-	ld (0984bh),hl		;96cf	22 4b 98 	" K . 
-	pop hl			;96d2	e1 	. 
-	sla l		;96d3	cb 25 	. % 
-	rl h		;96d5	cb 14 	. . 
-	sla l		;96d7	cb 25 	. % 
-	rl h		;96d9	cb 14 	. . 
-	ld b,h			;96db	44 	D 
-	ld hl,09a99h		;96dc	21 99 9a 	! . . 
+	nop			;96b0	00 	. 	 (flow from: 72a0)
+	pop hl			;96b1	e1 	. 	 (flow from: 96b0)
+	srl h		;96b2	cb 3c 	. < 	 (flow from: 96b1)
+	rr l		;96b4	cb 1d 	. . 	 (flow from: 96b2)
+	push hl			;96b6	e5 	. 	 (flow from: 96b4)
+	srl h		;96b7	cb 3c 	. < 	 (flow from: 96b6)
+	rr l		;96b9	cb 1d 	. . 	 (flow from: 96b7)
+	srl h		;96bb	cb 3c 	. < 	 (flow from: 96b9)
+	rr l		;96bd	cb 1d 	. . 	 (flow from: 96bb)
+	push hl			;96bf	e5 	. 	 (flow from: 96bd)
+	srl h		;96c0	cb 3c 	. < 	 (flow from: 96bf)
+	rr l		;96c2	cb 1d 	. . 	 (flow from: 96c0)
+	pop bc			;96c4	c1 	. 	 (flow from: 96c2)
+	add hl,bc			;96c5	09 	. 	 (flow from: 96c4)
+	ld a,l			;96c6	7d 	} 	 (flow from: 96c5)
+	and 0c0h		;96c7	e6 c0 	. . 	 (flow from: 96c6)
+	ld l,a			;96c9	6f 	o 	 (flow from: 96c7)
+	push hl			;96ca	e5 	. 	 (flow from: 96c9)
+	add hl,de			;96cb	19 	. 	 (flow from: 96ca)
+	ld (09837h),hl		;96cc	22 37 98 	" 7 . 	 (flow from: 96cb)
+	ld (0984bh),hl		;96cf	22 4b 98 	" K . 	 (flow from: 96cc)
+	pop hl			;96d2	e1 	. 	 (flow from: 96cf)
+	sla l		;96d3	cb 25 	. % 	 (flow from: 96d2)
+	rl h		;96d5	cb 14 	. . 	 (flow from: 96d3)
+	sla l		;96d7	cb 25 	. % 	 (flow from: 96d5)
+	rl h		;96d9	cb 14 	. . 	 (flow from: 96d7)
+	ld b,h			;96db	44 	D 	 (flow from: 96d9)
+	ld hl,09a99h		;96dc	21 99 9a 	! . . 	 (flow from: 96db)
 l96dfh:
-	ld (hl),0ffh		;96df	36 ff 	6 . 
-	inc hl			;96e1	23 	# 
-	djnz l96dfh		;96e2	10 fb 	. . 
-	pop de			;96e4	d1 	. 
-	ld hl,(09839h)		;96e5	2a 39 98 	* 9 . 
-	or a			;96e8	b7 	. 
-	sbc hl,de		;96e9	ed 52 	. R 
-	ld (0985dh),hl		;96eb	22 5d 98 	" ] . 
-	ld a,05ah		;96ee	3e 5a 	> Z 
-	ld (09970h),a		;96f0	32 70 99 	2 p . 
-	xor a			;96f3	af 	. 
-	ld (0996fh),a		;96f4	32 6f 99 	2 o . 
-	ld (09a73h),a		;96f7	32 73 9a 	2 s . 
-	ld (09a84h),a		;96fa	32 84 9a 	2 . . 
-	ld de,09971h		;96fd	11 71 99 	. q . 
-	ld (de),a			;9700	12 	. 
-	inc de			;9701	13 	. 
-	inc a			;9702	3c 	< 
-	ld (de),a			;9703	12 	. 
-	inc de			;9704	13 	. 
-	ld a,00dh		;9705	3e 0d 	> . 
-	ld (de),a			;9707	12 	. 
-	ld b,001h		;9708	06 01 	. . 
-	ld hl,09b96h		;970a	21 96 9b 	! . . 
-	ld de,00134h		;970d	11 34 01 	. 4 . 
-	ld a,000h		;9710	3e 00 	> . 
+	ld (hl),0ffh		;96df	36 ff 	6 . 	 (flow from: 96dc 96e2)
+	inc hl			;96e1	23 	# 	 (flow from: 96df)
+	djnz l96dfh		;96e2	10 fb 	. . 	 (flow from: 96e1)
+	pop de			;96e4	d1 	. 	 (flow from: 96e2)
+	ld hl,(09839h)		;96e5	2a 39 98 	* 9 . 	 (flow from: 96e4)
+	or a			;96e8	b7 	. 	 (flow from: 96e5)
+	sbc hl,de		;96e9	ed 52 	. R 	 (flow from: 96e8)
+	ld (0985dh),hl		;96eb	22 5d 98 	" ] . 	 (flow from: 96e9)
+	ld a,05ah		;96ee	3e 5a 	> Z 	 (flow from: 96eb)
+	ld (09970h),a		;96f0	32 70 99 	2 p . 	 (flow from: 96ee)
+	xor a			;96f3	af 	. 	 (flow from: 96f0)
+	ld (0996fh),a		;96f4	32 6f 99 	2 o . 	 (flow from: 96f3)
+	ld (09a73h),a		;96f7	32 73 9a 	2 s . 	 (flow from: 96f4)
+	ld (09a84h),a		;96fa	32 84 9a 	2 . . 	 (flow from: 96f7)
+	ld de,09971h		;96fd	11 71 99 	. q . 	 (flow from: 96fa)
+	ld (de),a			;9700	12 	. 	 (flow from: 96fd)
+	inc de			;9701	13 	. 	 (flow from: 9700)
+	inc a			;9702	3c 	< 	 (flow from: 9701)
+	ld (de),a			;9703	12 	. 	 (flow from: 9702)
+	inc de			;9704	13 	. 	 (flow from: 9703)
+	ld a,00dh		;9705	3e 0d 	> . 	 (flow from: 9704)
+	ld (de),a			;9707	12 	. 	 (flow from: 9705)
+	ld b,001h		;9708	06 01 	. . 	 (flow from: 9707)
+	ld hl,09b96h		;970a	21 96 9b 	! . . 	 (flow from: 9708)
+	ld de,00134h		;970d	11 34 01 	. 4 . 	 (flow from: 970a)
+	ld a,000h		;9710	3e 00 	> . 	 (flow from: 970d)
 l9712h:
-	ld (hl),a			;9712	77 	w 
-	add hl,de			;9713	19 	. 
-	djnz l9712h		;9714	10 fc 	. . 
-	ld hl,sub_9623h		;9716	21 23 96 	! # . 
-	ld (00031h),hl		;9719	22 31 00 	" 1 . 
-	ld a,0c3h		;971c	3e c3 	> . 
-	ld (00030h),a		;971e	32 30 00 	2 0 . 
-	ld hl,l83a0h		;9721	21 a0 83 	! . . 
-	ld de,09a8dh		;9724	11 8d 9a 	. . . 
-	ld bc,0000ch		;9727	01 0c 00 	. . . 
-	ldir		;972a	ed b0 	. . 
-	ld hl,l8b0ah		;972c	21 0a 8b 	! . . 
-	ld de,09b19h		;972f	11 19 9b 	. . . 
-	ld bc,00006h		;9732	01 06 00 	. . . 
-	ldir		;9735	ed b0 	. . 
-	ld hl,_ERROR__string_start		;9737	21 49 97 	! I . 
-	ld de,09ca5h		;973a	11 a5 9c 	. . . 
-	ld bc,00008h		;973d	01 08 00 	. . . 
-	ldir		;9740	ed b0 	. . 
-	call sub_79e6h		;9742	cd e6 79 	. . y 
-	ld (09b1ah),hl		;9745	22 1a 9b 	" . . 
-	ret			;9748	c9 	. 
+	ld (hl),a			;9712	77 	w 	 (flow from: 9710)
+	add hl,de			;9713	19 	. 	 (flow from: 9712)
+	djnz l9712h		;9714	10 fc 	. . 	 (flow from: 9713)
+	ld hl,sub_9623h		;9716	21 23 96 	! # . 	 (flow from: 9714)
+	ld (00031h),hl		;9719	22 31 00 	" 1 . 	 (flow from: 9716)
+	ld a,0c3h		;971c	3e c3 	> . 	 (flow from: 9719)
+	ld (00030h),a		;971e	32 30 00 	2 0 . 	 (flow from: 971c)
+	ld hl,l83a0h		;9721	21 a0 83 	! . . 	 (flow from: 971e)
+	ld de,09a8dh		;9724	11 8d 9a 	. . . 	 (flow from: 9721)
+	ld bc,0000ch		;9727	01 0c 00 	. . . 	 (flow from: 9724)
+	ldir		;972a	ed b0 	. . 	 (flow from: 9727 972a)
+	ld hl,l8b0ah		;972c	21 0a 8b 	! . . 	 (flow from: 972a)
+	ld de,09b19h		;972f	11 19 9b 	. . . 	 (flow from: 972c)
+	ld bc,00006h		;9732	01 06 00 	. . . 	 (flow from: 972f)
+	ldir		;9735	ed b0 	. . 	 (flow from: 9732 9735)
+	ld hl,_ERROR__string_start		;9737	21 49 97 	! I . 	 (flow from: 9735)
+	ld de,09ca5h		;973a	11 a5 9c 	. . . 	 (flow from: 9737)
+	ld bc,00008h		;973d	01 08 00 	. . . 	 (flow from: 973a)
+	ldir		;9740	ed b0 	. . 	 (flow from: 973d 9740)
+	call sub_79e6h		;9742	cd e6 79 	. . y 	 (flow from: 9740)
+	ld (09b1ah),hl		;9745	22 1a 9b 	" . . 	 (flow from: 7a80)
+	ret			;9748	c9 	. 	 (flow from: 9745)
 
 ; BLOCK '_ERROR__string' (start 0x9749 end 0x9750)
 _ERROR__string_start:
@@ -9911,3 +9911,13 @@ _ERROR__string_end:
 	nop			;9775	00 	. 
 	nop			;9776	00 	. 
 	nop			;9777	00 	. 
+
+
+l9800h:
+;	indirect jump. e.g.: JP l6962h
+l9865h:
+;	indirect jump. e.g.: JP l73a8h
+l9868h:
+;	indirect jump. e.g.: JP l7428h
+l986Bh:
+;	indirect jump. e.g.: JP l72fah 
