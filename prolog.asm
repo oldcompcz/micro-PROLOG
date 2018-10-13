@@ -1,6 +1,15 @@
 ; z80dasm 1.1.3
 ; command line: z80dasm -a -t -l -g 24576 -b blocks.txt prolog.bin
 
+; ROM routines
+
+ROM_LD_EDGE_1:                 equ 005e7h
+ROM_LD_EDGE_2:                 equ 005e3h
+ROM_OUT_CURS_WITHOUT_CHECK:    equ 018e8h
+ROM_INPUT_AD:                  equ 015e6h
+ROM_PRINT_A_2:                 equ 015f2h
+
+
     org     06000h
 
 l6000h:
@@ -2968,7 +2977,7 @@ sub_72c1h:
     push bc                    ;72c1    c5      .                  (flow from: 7468 7551)
     push de                    ;72c2    d5      .                  (flow from: 72c1)
     push hl                    ;72c3    e5      .                  (flow from: 72c2)
-    call 018e8h                ;72c4    cd e8 18    . . .          (flow from: 72c3)
+    call ROM_OUT_CURS_WITHOUT_CHECK ;72c4    cd e8 18    . . .     (flow from: 72c3)
     ld e,008h                  ;72c7    1e 08   . .                (flow from: 190e)
     ld c,006h                  ;72c9    0e 06   . .                (flow from: 72c7)
     call sub_9176h             ;72cb    cd 76 91    . v .          (flow from: 72c9)
@@ -8932,7 +8941,7 @@ l91adh:
     res 3,(iy+002h)            ;91b3    fd cb 02 9e     . . . .    (flow from: 91b0)
     ld hl,(05c4fh)             ;91b7    2a 4f 5c    * O \          (flow from: 15e3 91b3)
     ld (05c51h),hl             ;91ba    22 51 5c    " Q \          (flow from: 91b7)
-    call 015e6h                ;91bd    cd e6 15    . . .          (flow from: 91ba)
+    call ROM_INPUT_AD          ;91bd    cd e6 15    . . .          (flow from: 91ba)
     jr nc,l91cch               ;91c0    30 0a   0 .                (flow from: 1600 92t)
     res 0,(iy+007h)            ;91c2    fd cb 07 86     . . . .    (flow from: 91c0)
     ld (09b69h),a              ;91c6    32 69 9b    2 i .          (flow from: 91c2)
@@ -9074,7 +9083,7 @@ l929ch:
     ld a,0ffh                  ;92a2    3e ff   > .                (flow from: 929f)
     ld (05c8ch),a              ;92a4    32 8c 5c    2 . \          (flow from: 92a2)
     ld a,e                     ;92a7    7b      {                  (flow from: 92a4)
-    call 015f2h                ;92a8    cd f2 15    . . .          (flow from: 92a7)
+    call ROM_PRINT_A_2         ;92a8    cd f2 15    . . .          (flow from: 92a7)
     res 1,(iy+001h)            ;92ab    fd cb 01 8e     . . . .    (flow from: 1600)
     bit 0,(iy+002h)            ;92af    fd cb 02 46     . . . F    (flow from: 92ab)
     jr z,l92c4h                ;92b3    28 0f   ( .                (flow from: 92af)
@@ -9110,7 +9119,7 @@ sub_92cah:
 l92dfh:
     ret nz                     ;92df    c0      .                  (flow from: 92de 92e3)
 l92e0h:
-    call 005e7h                ;92e0    cd e7 05    . . .          (flow from: 92df)
+    call ROM_LD_EDGE_1         ;92e0    cd e7 05    . . .          (flow from: 92df)
     jr nc,l92dfh               ;92e3    30 fa   0 .                (flow from: 05ee 0604)
     ld hl,00180h               ;92e5    21 80 01    ! . .          (flow from: 92e3)
 l92e8h:
@@ -9119,11 +9128,11 @@ l92e8h:
     ld a,h                     ;92eb    7c      |                  (flow from: 92ea)
     or l                       ;92ec    b5      .                  (flow from: 92eb)
     jr nz,l92e8h               ;92ed    20 f9     .                (flow from: 92ec)
-    call 005e3h                ;92ef    cd e3 05    . . .          (flow from: 92ed)
+    call ROM_LD_EDGE_2         ;92ef    cd e3 05    . . .          (flow from: 92ed)
     jr nc,l92dfh               ;92f2    30 eb   0 .                (flow from: 0604)
 l92f4h:
     ld b,09ch                  ;92f4    06 9c   . .                (flow from: 92f2 9301)
-    call 005e3h                ;92f6    cd e3 05    . . .          (flow from: 92f4)
+    call ROM_LD_EDGE_2         ;92f6    cd e3 05    . . .          (flow from: 92f4)
     jr nc,l92dfh               ;92f9    30 e4   0 .                (flow from: 0604)
     ld a,0c6h                  ;92fb    3e c6   > .                (flow from: 92f9)
     cp b                       ;92fd    b8      .                  (flow from: 92fb)
@@ -9132,7 +9141,7 @@ l92f4h:
     jr nz,l92f4h               ;9301    20 f1     .                (flow from: 9300)
 l9303h:
     ld b,0c9h                  ;9303    06 c9   . .                (flow from: 9301 930d)
-    call 005e7h                ;9305    cd e7 05    . . .          (flow from: 9303)
+    call ROM_LD_EDGE_1         ;9305    cd e7 05    . . .          (flow from: 9303)
     jr nc,l92dfh               ;9308    30 d5   0 .                (flow from: 0604)
     ld a,b                     ;930a    78      x                  (flow from: 9308)
     cp 0d4h                    ;930b    fe d4   . .                (flow from: 930a)
