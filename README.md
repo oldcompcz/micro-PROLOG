@@ -27,7 +27,11 @@ Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates 
 * [micro-PROLOG 2.12 Programmer's Reference Manual - BW](http://oldcomputers-ddns.org/public/pub/manuals/microprolog_bw.pdf) in PDF
 * [micro-PROLOG 3.1 Programmer's Reference Manual](http://docplayer.net/4951997-Micro-prolog-3-1-per-gra-er-s-reference-u1-cp-m-and-msdos-versions-f-g-mccabe-k-l-clark-b-d-steel-fourth-edition.html)
 
-## 2.3 Other sources
+## 2.3 Books
+
+* [Micro-PROLOG and Artificial Intelligence (A.A. Berk, 1985).pdf](https://uloz.to/!FsjLrdbjsEze/micro-prolog-and-artificial-intelligence-a-a-berk-1985-pdf)
+
+## 2.4 Other sources
 
 * [Microcomputer PROLOG implementations: The state-of-the-art](http://www.berghel.com/publications/micropro/micropro_ncc87.pdf) (1987)
 * [Logické programování v malém](http://www.abclinuxu.cz/blog/squeaker/2018/10/logicke-programovani-v-malem) (article, Czech)
