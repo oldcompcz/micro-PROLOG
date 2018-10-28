@@ -29,7 +29,7 @@ Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates 
 
 ## 2.3 Books
 
-* [Micro-PROLOG and Artificial Intelligence (A.A. Berk, 1985).pdf](https://uloz.to/!FsjLrdbjsEze/micro-prolog-and-artificial-intelligence-a-a-berk-1985-pdf)
+* [Micro-PROLOG and Artificial Intelligence (A.A. Berk, 1985)](https://uloz.to/!FsjLrdbjsEze/micro-prolog-and-artificial-intelligence-a-a-berk-1985-pdf) in PDF
 
 ## 2.4 Other sources
 
