@@ -34,6 +34,7 @@ Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates 
 
 ## 2.4 Other sources
 
+* [Article by George Beckett](http://www.thespectrumshow.co.uk/DL/mags/TSSmag23.pdf) (page 24)
 * [Microcomputer PROLOG implementations: The state-of-the-art](http://www.berghel.com/publications/micropro/micropro_ncc87.pdf) (1987)
 * [Logické programování v malém](http://www.abclinuxu.cz/blog/squeaker/2018/10/logicke-programovani-v-malem) (article, Czech)
 * [LPA micro-PROLOG v3.1 for DOS](https://archive.org/details/LPAMicro-PROLOGV3.1) 
