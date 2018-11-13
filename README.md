@@ -22,6 +22,7 @@ Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates 
 
 ## 2.2 CP/M version
 
+* [Try it on-line](http://www.jbox.dk/rc702/rc700.shtm?a=PROLOG30&autorun=1) (RC700 simulator)
 * [micro-PROLOG Primer](http://oldcomputers-ddns.org/public/pub/manuals/micropro-primer.pdf) in PDF
 * [micro-PROLOG 2.12 Programmer's Reference Manual](http://oldcomputers-ddns.org/public/pub/manuals/microprolog.pdf) in PDF
 * [micro-PROLOG 2.12 Programmer's Reference Manual - BW](http://oldcomputers-ddns.org/public/pub/manuals/microprolog_bw.pdf) in PDF
