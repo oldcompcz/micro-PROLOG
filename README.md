@@ -17,6 +17,7 @@ Marketed from 1980 by the British company LPA Ltd (Logic Programming Associates 
 
 * [SPECTRUM micro-PROLOG Manual](http://www.worldofspectrum.org/pub/sinclair/games-info/m/Micro-PROLOG.pdf) in PDF
 * [SPECTRUM micro-PROLOG Primer](http://www.worldofspectrum.org/pub/sinclair/games-info/m/Micro-PROLOGPrimer.pdf) in PDF
+* [SPECTRUM micro-PROLOG Programmer's Reference Manual](https://archive.org/details/zx-spectrum-micro-prolog-programmers-reference-manual) - NEW!
 * [The Czech version of the manual](https://sam.speccy.cz/olddocs/microprolog_use-man_cz.pdf)
 * [The Purple Planet: Micro-PROLOG for the Spectrum 48K](https://books.google.fr/books?id=kjJdDwAAQBAJ&printsec=frontcover&dq=The+Purple+Planet:+Micro-PROLOG&hl=en&sa=X&ved=0ahUKEwjhyrHH9undAhVmzoUKHS1jDE8Q6AEIKTAA#v=onepage&q=The%20Purple%20Planet%3A%20Micro-PROLOG&f=false), book, incomplete
 
