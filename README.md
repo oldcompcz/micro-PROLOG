@@ -5,8 +5,7 @@ and contains a literate resurrection of its Z80 interpreter source.
 
 The maintained source is under [`src/`](src/). It is split into thirteen
 architecture-oriented modules and assembles to the **exact original 14,200-byte
-interpreter image**. The historical root [`prolog.asm`](prolog.asm) is retained
-as the earlier disassembly and is not used by the new build.
+interpreter image**.
 
 ![micro-PROLOG](pictures/Micro-PROLOG.png)
 
